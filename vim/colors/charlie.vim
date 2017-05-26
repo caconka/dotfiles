@@ -284,20 +284,21 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Label", s:purple, "", "")
 	call <SID>X("Exception", s:purple, "", "")
 	call <SID>X("Structure", s:purple, "", "")
-	call <SID>X("Function", s:blue, "", "")
+	call <SID>X("Function", s:purple, "", "")
 	call <SID>X("Constant", s:red, "", "")
 	call <SID>X("String", s:yellow, "", "")
 	call <SID>X("Boolean", s:red, "", "")
         call <SID>X("Special", s:red, "", "")
 	call <SID>X("PreProc", s:purple, "", "")
 	call <SID>X("Operator", s:aqua, "", "none")
-	call <SID>X("Type", s:purple, "", "none")
+	call <SID>X("Type", s:green, "", "none")
 	call <SID>X("Define", s:purple, "", "none")
 	call <SID>X("Include", s:green, "", "")
 	call <SID>X("Noise", s:foreground, "", "")
 	call <SID>X("Number", s:orange, "", "")
 	call <SID>X("Float", s:orange, "", "")
 	call <SID>X("Character", s:rosa, "", "")
+        call <SID>X("Keyword", s:aqua, "", "")
 	"call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
@@ -401,7 +402,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
        	call <SID>X("jsFuncName", s:blue, "", "") 
        	call <SID>X("jsFuncCall", s:blue, "", "")
        	call <SID>X("jsVariableDef", s:foreground, "", "")
+       	call <SID>X("jsStorageClass", s:red, "", "")
 
+    " Typescript Hightlighting
+        call <SID>X("typescriptBraces", s:foreground, "", "")
+        call <SID>X("typescriptParens", s:foreground, "", "")
+        call <SID>X("typescriptEndColons", s:foreground, "", "")
+        call <SID>X("typescriptOperator", s:blue, "", "")
 
 	" Diff Highlighting
   let s:diffbackground = "494e56"

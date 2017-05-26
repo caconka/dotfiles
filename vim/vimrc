@@ -28,6 +28,7 @@ Plug 'nono/jquery.vim'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-endwise'
 Plug 'alvan/vim-closetag'
+Plug 'leafgarland/typescript-vim'
 
 
 " Colorschemes
@@ -132,9 +133,9 @@ let g:user_emmet_leader_key='<C-Z>'
 
 " Working with buffers is cool.
 set hidden
-map <C-n>  :bnext<CR>
+map <C-o>  :bnext<CR>
 map <C-p>  :bprev<CR>
-imap <C-n> <Esc>:bnext<CR>a
+imap <C-o> <Esc>:bnext<CR>a
 imap <C-p> <Esc>:bprev<CR>a
 
 " Resize splits
