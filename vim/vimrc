@@ -27,6 +27,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'nono/jquery.vim'
 Plug 'alvan/vim-closetag'
 Plug 'leafgarland/typescript-vim'
+Plug 'valloric/youcompleteme'
 
 
 " Colorschemes

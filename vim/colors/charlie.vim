@@ -410,6 +410,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
         call <SID>X("typescriptEndColons", s:foreground, "", "")
         call <SID>X("typescriptOperator", s:blue, "", "")
 
+    " Buftabline Hightlighting
+        call <SID>X("TabLineFill", s:background, "", "")
+        call <SID>X("TabLine", s:background, s:foreground, "")
+        call <SID>X("TabLineSel", s:background, s:foreground, "")
+
 	" Diff Highlighting
   let s:diffbackground = "494e56"
 
