@@ -19,6 +19,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/syntastic'
 
 " Language support
 Plug 'othree/html5.vim'
