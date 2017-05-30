@@ -14,12 +14,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ap/vim-buftabline'
-Plug 'mattn/emmet-vim'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Language support
 Plug 'othree/html5.vim'
@@ -48,9 +48,6 @@ set shiftwidth=4            " spaces for autoindenting
 set softtabstop=4           " remove a full pseudo-TAB when i press <BS>
 set mouse=a                 " mouse all
 
-" Search down into subfolders
-set path+=**
-
 " Display all matching files when we tab complete
 set wildmenu
 
@@ -67,6 +64,9 @@ autocmd FileType yaml setlocal sw=2 sts=2
 
 " Required for alvan/vim-closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
+
+" Required for UltiSnip
+let g:UltiSnipsExpandTrigger="<C-o>"
 
 " tmux screen view
 if &term == "screen"
@@ -128,15 +128,12 @@ map <C-l> <C-w>l
 " Move CtrlP to CtrlT (CtrlP is for buffers)
 let g:ctrlp_map = '<C-t>'
 
-" Move CtrlY, to CtrlZ, (Emmet)
-let g:user_emmet_leader_key='<C-Z>'
-
 " Working with buffers is cool.
 set hidden
-map <C-o>  :bnext<CR>
-map <C-p>  :bprev<CR>
-imap <C-o> <Esc>:bnext<CR>a
-imap <C-p> <Esc>:bprev<CR>a
+map <C-p>  :bnext<CR>
+map <C-o>  :bprev<CR>
+imap <C-p> <Esc>:bnext<CR>a
+imap <C-o> <Esc>:bprev<CR>a
 
 " Resize splits
 nnoremap <silent> + :exe "vertical resize +5"<CR>
@@ -148,10 +145,6 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
-
-" Use tab to jump between blocks, because it's easier
-nnoremap <tab> %
-vnoremap <tab> %
 
 " Relative numbering is pretty useful for motions (3g, 5k...). However I'd
 " prefer to have a way for switching relative numbers with a single map.
