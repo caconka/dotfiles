@@ -49,12 +49,12 @@ snippet ng2-pipe
 snippet ng2-routes
 	import { RouterModule, Routes } from '@angular/router';
 
-	const app_routes: Routes = [
-	    { path: '<url-segment>', component: <component-name> },
-	    { path: '**', pathMatch: 'full', redirectTo: '<url-segment>' }
+	const APP_ROUTES: Routes = [
+	    { path: '${1:url-segment}', component: ${2:component-name} },
+	    { path: '**', pathMatch: 'full', redirectTo: '${3:url-segment}' }
 	];
 
-	export const app_routing = RouterModule.forRoot(app_routes);
+	export const app_routing = RouterModule.forRoot(APP_ROUTES);
 # Angular RouteDefinition
 snippet ng2-route-path
 	{ path: '/${1:path}', component: ${2:Component} }${3}
