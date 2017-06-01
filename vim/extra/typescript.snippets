@@ -6,13 +6,23 @@ snippet ng2-component
 	@Component({
 	    moduleId: module.id,
 	    selector: '${1:selector}',
-	    templateUrl: '${2:name}.component.html'
+	    templateUrl: '${2:ComponentName}.component.html'
 	})
 	export class ${3:ComponentName}Component implements OnInit {
 	    constructor() { }
 	    ngOnInit() { }
 	    ${4}
 	}
+# Angular Module
+snippet ng2-module
+	import { NgModule } from '@angular/core';
+
+	@NgModule({
+	  imports: [${1:modules}],
+	  declarations: [${2:components}, ${3:directives}],
+	  providers: [${4:services}]
+	})
+	export class ${5:ModuleName} { }
 # Angular Service
 snippet ng2-service
 	import { Injectable } from '@angular/core';
@@ -31,15 +41,20 @@ snippet ng2-pipe
 	})
 
 	export class ${2:PipeName}Pipe implements PipeTransform {
-	    transform(value: any, args: any[]): any {
-		${3}
+	    transform(value: ${3:value-type}, args: any[]) : ${4:value-type} {
+		${5}
 	    }
 	}
 # Angular Routes
 snippet ng2-routes
-	@Routes([
-	    { path: '/${1:path}', component: ${2:Component} }${3}
-	])
+	import { RouterModule, Routes } from '@angular/router';
+
+	const app_routes: Routes = [
+	    { path: '<url-segment>', component: <component-name> },
+	    { path: '**', pathMatch: 'full', redirectTo: '<url-segment>' }
+	];
+
+	export const app_routing = RouterModule.forRoot(app_routes);
 # Angular RouteDefinition
 snippet ng2-route-path
 	{ path: '/${1:path}', component: ${2:Component} }${3}
@@ -49,22 +64,17 @@ snippet ng2-http-get
 	.map((res: Response) => res.json()${2});
 # Subscribe
 snippet ng2-subscribe
-	this.${1:service}.${2:function}
+	this.${1:serviceName}.${2:serviceFunction}
 	.subscribe(${3:arg} => this.${4:property} = ${5:arg});
 	${6}
 # Angular Bootstrapping
 snippet ng2-bootstrap
+	import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 	import { enableProdMode } from '@angular/core';
-	import { bootstrap } from '@angular/platform-browser-dynamic';
-
-	import { ${1:AppComponent} } from './${2:name}.component';
-
-	//enableProdMode();
-
-	bootstrap(${3:AppComponent})
-	.then(success => console.log('Bootstrap success'))
-	.catch(error => console.log(error));
-	${4}
+	import { ${1:moduleName} } from './<path-to-module>.module';
+	 
+	//enableProdMode(); //Uncomment for production
+	platformBrowserDynamic().bootstrapModule(${2:moduleName});
 # AppComponent
 snippet ng2-component-root
 	import { Component } from '@angular/core';
@@ -88,3 +98,21 @@ snippet ng2-component-root
 	])
 
 	export class AppComponent {}
+#input
+snippet ng2-input
+	@Input() ${1:peroperty}: ${2:type};
+#output
+snippet ng2-output
+	@Output() ${1:event}: EventEmitter<type> = new EventEmitter();
+#import
+snippet ng2-import
+	import {${1:ModuleOrComponent}} from '${2:path to component}';
+#directive
+snippet ng2-directive
+	import { Directive, Input } from '@angular/core';
+
+	@Directive({ selector: '[${1:selector}]' })
+	export class [DirectiveName]Directive { }
+#rx-map
+snippet ng2-rx-map
+	import 'rxjs/add/operator/map';
