@@ -20,6 +20,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
+Plugin 'mattn/emmet-vim'
 
 " Language support
 Plug 'othree/html5.vim'

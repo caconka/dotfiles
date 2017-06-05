@@ -54,7 +54,7 @@ snippet ng2-routes
 	    { path: '**', pathMatch: 'full', redirectTo: '${3:url-segment}' }
 	];
 
-	export const app_routing = RouterModule.forRoot(APP_ROUTES);
+	export const APP_ROUTES = RouterModule.forRoot(APP_ROUTES);
 # Angular RouteDefinition
 snippet ng2-route-path
 	{ path: '/${1:path}', component: ${2:Component} }${3}
