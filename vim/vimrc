@@ -28,8 +28,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'nono/jquery.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'valloric/youcompleteme'
-
 
 " Colorschemes
 call plug#end()
@@ -66,7 +64,7 @@ autocmd FileType yaml setlocal sw=2 sts=2
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 
 " Required for UltiSnip
-let g:UltiSnipsExpandTrigger="<C-o>"
+let g:UltiSnipsExpandTrigger="<tab>"
 
 " Move CtrlY to Ctrl> (Emmet)
 let g:user_emmet_leader_key='<C-Z>'
@@ -134,9 +132,9 @@ let g:ctrlp_map = '<C-t>'
 " Working with buffers is cool.
 set hidden
 map <C-p>  :bnext<CR>
-map <C-o>  :bprev<CR>
+map <C-m>  :bprev<CR>
 imap <C-p> <Esc>:bnext<CR>a
-imap <C-o> <Esc>:bprev<CR>a
+imap <C-m> <Esc>:bprev<CR>a
 
 " Resize splits
 nnoremap <silent> + :exe "vertical resize +5"<CR>
