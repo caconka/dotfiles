@@ -1,0 +1,6 @@
+[user]
+	email = carloscabezascontra@gmail.com
+	name = Carlos Cabezas
+[alias]
+	lod = log --oneline --decorate
+	unstage = reset HEAD --
