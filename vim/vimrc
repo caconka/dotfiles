@@ -131,10 +131,10 @@ let g:ctrlp_map = '<C-t>'
 
 " Working with buffers is cool.
 set hidden
-map <C-p>  :bnext<CR>
-map <C-n>  :bprev<CR>
-imap <C-p> <Esc>:bnext<CR>a
-imap <C-n> <Esc>:bprev<CR>a
+map <Leader>n  :bnext<CR>
+map <Leader>p  :bprev<CR>
+imap <Leader>n <Esc>:bnext<CR>a
+imap <Leader>p <Esc>:bprev<CR>a
 
 " Resize splits
 nnoremap <silent> + :exe "vertical resize +5"<CR>

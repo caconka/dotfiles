@@ -16,6 +16,8 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "vim.disableAnnoyingGcMessage": true,
         "vim.handleKeys":{
-        "<C-y>": false
+        "<C-y>": false,
+        "<C-k>": false,
+        "<C-t>": false
     }
 }

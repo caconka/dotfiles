@@ -1,0 +1,17 @@
+#  Select Same Words
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-d': 'find-and-replace:select-next'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'S': 'vim-mode-plus:surround-smart-word'
+  'd s': 'vim-mode-plus:delete-surround-any-pair'
+  'c s': 'vim-mode-plus:change-surround-any-pair'
+  'ctrl-h': 'window:focus-previous-pane'
+  'ctrl-l': 'window:focus-next-pane'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+  'S': 'vim-mode-plus:surround'
+
+'atom-text-editor:not([mini])':
+  'ctrl-alt-h': 'emmet:prev-edit-point'
+  'ctrl-alt-l': 'emmet:next-edit-point'
