@@ -1,11 +1,13 @@
 // Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
 {
-    "editor.fontFamily": "Monaco",
+    "editor.fontFamily": "Inconsolata",
+    "editor.fontSize": 15,
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
     "workbench.colorTheme": "Base16 Ocean Dark",
     "workbench.iconTheme": "vs-seti",
-    "terminal.integrated.fontFamily": "Monaco",
+    "terminal.integrated.fontFamily": "Inconsolata",
     "terminal.integrated.enableBold": false,
     "terminal.integrated.cursorBlinking": true,
     "terminal.external.linuxExec": "konsole",
@@ -19,5 +21,6 @@
         "<C-y>": false,
         "<C-k>": false,
         "<C-t>": false
-    }
+    },
+    "workbench.startupEditor": "newUntitledFile",
 }
