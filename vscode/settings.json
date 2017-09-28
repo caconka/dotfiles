@@ -1,12 +1,10 @@
 // Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
 {
     "editor.fontFamily": "Inconsolata",
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Base16 Ocean Dark",
-    "workbench.iconTheme": "vs-seti",
     "terminal.integrated.fontFamily": "Inconsolata",
     "terminal.integrated.enableBold": false,
     "terminal.integrated.cursorBlinking": true,
@@ -16,11 +14,6 @@
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
     "editor.multiCursorModifier": "ctrlCmd",
-    "vim.disableAnnoyingGcMessage": true,
-        "vim.handleKeys":{
-        "<C-y>": false,
-        "<C-k>": false,
-        "<C-t>": false
-    },
     "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Ocean Dark Extended"
 }
