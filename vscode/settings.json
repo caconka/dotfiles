@@ -1,7 +1,7 @@
 // Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
 {
-    "editor.fontFamily": "Inconsolata",
-    "editor.fontSize": 16,
+    "editor.fontFamily": "Source Code Pro",
+    "editor.fontSize": 13,
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
@@ -15,5 +15,6 @@
     "window.zoomLevel": 0,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Ocean Dark Extended"
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "material-icon-theme"
 }

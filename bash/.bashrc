@@ -2,9 +2,10 @@
 # ~/.bashrc
 
 # Config colors and git
-. ~/.git-prompt.sh
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
-PS1='\n\[\e[1;33m\]\w$(__git_ps1 " \[\e[39m\]git:\[\e[1;34m\]%s") \[\e[1;31m\]\$\[\e[39m\] '
+PS1='\n\[\e[1;31m\]λ \[\e[39m\]\w$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
 #PS1='\[\e[1;36m\]# \[\e[1;34m\]\u \[\e[0m\]at \[\e[1;32m\]\h \[\e[0m\]in  \[\e[1;33m\]\w$(__git_ps1 " \[\e[0m\]on \[\e[1;36m\]git:\[\e[1;34m\]%s") \[\e[0m\][\t]\n\[\e[1;35m\]\$\[\e[0m\] '
 
 # Default text-editor
@@ -43,3 +44,7 @@ colors() {
 [[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
