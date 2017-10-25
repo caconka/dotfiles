@@ -1,4 +1,3 @@
-// Coloque su configuración en este archivo para sobrescribir la configuración predeterminada.
 {
     "editor.fontFamily": "Source Code Pro",
     "editor.fontSize": 13,
@@ -8,12 +7,11 @@
     "terminal.integrated.fontFamily": "Inconsolata",
     "terminal.integrated.enableBold": false,
     "terminal.integrated.cursorBlinking": true,
-    "terminal.external.linuxExec": "konsole",
     "vim.disableAnnoyingNeovimMessage": true,
     "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Ocean Dark Extended"
+    "workbench.colorTheme": "One Dark Pro"
 }

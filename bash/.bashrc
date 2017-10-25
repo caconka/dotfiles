@@ -2,7 +2,7 @@
 # ~/.bashrc
 
 # Config colors and git
-source ~/.git-completion.bash
+#source ~/.git-completion.bash
 source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1='\n\[\e[1;31m\]λ \[\e[39m\]\w$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
