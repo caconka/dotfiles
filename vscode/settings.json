@@ -4,8 +4,8 @@
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
-    "terminal.integrated.fontFamily": "Inconsolata",
-    "terminal.integrated.enableBold": false,
+    "terminal.integrated.fontFamily": "Source Code Pro",
+    "terminal.integrated.fontSize": 12,
     "terminal.integrated.cursorBlinking": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "workbench.statusBar.visible": true,
@@ -13,5 +13,5 @@
     "window.zoomLevel": 2,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "One Dark Pro"
+    "workbench.colorTheme": "One Dark Pro",
 }
