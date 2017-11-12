@@ -23,7 +23,7 @@ hi Delimiter       guifg=#8F8F8F
 
 " Console 256 Colours
 if !has("gui_running")
-	let s:background = "2c2c2c"
+	let s:background = "282828"
 	let s:window = "4f4f4f"
 	let s:line = "4f4f4f"
 	let s:selection = "6f6f6f"

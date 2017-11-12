@@ -42,8 +42,8 @@ set nobackup                " don't backup, use git!
 set autoindent              " autoindent always ON.
 set smartindent             " intelligent indent
 set expandtab               " expand tabs
-set shiftwidth=4            " spaces for autoindenting
-set softtabstop=4           " remove a full pseudo-TAB when i press <BS>
+set shiftwidth=2            " spaces for autoindenting
+set softtabstop=2           " remove a full pseudo-TAB when i press <BS>
 set mouse=a                 " mouse all
 
 " Display all matching files when we tab complete
@@ -77,14 +77,8 @@ endif
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
    syntax on
-   " set colorcolumn=80
+   set colorcolumn=80
    silent! color charlie
-endif
-
-" Extra fancyness if full pallete is supported.
-if &t_Co >= 256 || has("gui_running")
-    set cursorline
-    set cursorcolumn
 endif
 
 " Mark trailing spaces depending on whether we have a fancy terminal or not
