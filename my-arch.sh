@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Dotfiles
-git clone https://github.com/caconka/dotfiles.git
-cd ~/
-mv dotfiles/ .dotfiles/
+# first git clone https://github.com/caconka/dotfiles.git
+# cd ~/
+# mv dotfiles/ .dotfiles/
 
 # Fonts
 mkdir ~/.fonts
