@@ -5,6 +5,11 @@ git clone https://github.com/caconka/dotfiles.git
 cd ~/
 mv dotfiles/ .dotfiles/
 
+# Fonts
+mkdir ~/.fonts
+ln -s ~/.dotfiles/fonts/SourceCodePro-Regular.ttf ~/.fonts/
+ln -s ~/.dotfiles/fonts/SourceSansPro-Regular.ttf ~/.fonts/
+
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
