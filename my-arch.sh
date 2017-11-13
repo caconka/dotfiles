@@ -41,6 +41,11 @@ sudo pacman -S mongodb
 sudo systemctl enable mongodb
 sudo systemctl start mongodb
 
+# vscode
+yaourt -S visual-studio-code
+ln -s --force ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
+
 # Install basics
-yaourt -S visual-studio-code firefox-developer google-chrome slack-desktop postman-bin studio-3t gimp inkscape spotify
+yaourt -S firefox-developer google-chrome slack-desktop postman-bin studio-3t gimp inkscape spotify
+
 
