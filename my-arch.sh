@@ -9,6 +9,7 @@ mv dotfiles/ .dotfiles/
 mkdir ~/.fonts
 ln -s ~/.dotfiles/fonts/SourceCodePro-Regular.ttf ~/.fonts/
 ln -s ~/.dotfiles/fonts/SourceSansPro-Regular.ttf ~/.fonts/
+fc-cache -f -v
 
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
