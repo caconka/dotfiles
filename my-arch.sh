@@ -2,8 +2,6 @@
 
 # Dotfiles
 # first git clone https://github.com/caconka/dotfiles.git
-# cd ~/
-# mv dotfiles/ .dotfiles/
 
 # Fonts
 mkdir ~/.fonts
@@ -53,5 +51,5 @@ mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 
 # Install basics
-yaourt -S firefox-developer google-chrome slack-desktop postman-bin studio-3t gimp inkscape spotify
+yaourt -S firefox-developer google-chrome slack-desktop postman-bin gimp inkscape spotify
 
