@@ -21,7 +21,7 @@ ln -s ~/.dotfiles/vim ~/.vim
 
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
-ln -s --foce ~/.dotfiles/bash/.bashrc ~/
+ln -s --force ~/.dotfiles/bash/.bashrc ~/
 
 # NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
