@@ -5,8 +5,10 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (wombat)))
- '(fringe-mode nil nil (fringe))
+ '(display-time-mode t)
+ '(menu-bar-mode nil)
  '(package-selected-packages (quote (evil)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
@@ -16,7 +18,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Source Code Pro" :foundry "ADBE" :slant normal :weight normal :height 128 :width normal)))))
 (require 'package)
 (add-to-list 'package-archives
                           '("melpa" . "http://melpa.milkbox.net/packages/") t)
