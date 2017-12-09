@@ -3,5 +3,5 @@
 	name = Carlos Cabezas
 [alias]
         lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %C(white)%ad - %s %Cblue<%an>%Creset' \
-        --abbrev-commit --date=short
+        --abbrev-commit --date=format:'%Y.%m.%d %H:%M'
 	unstage = reset HEAD --
