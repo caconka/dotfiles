@@ -45,6 +45,12 @@ sudo pacman -S mongodb
 sudo systemctl enable mongodb
 sudo systemctl start mongodb
 
+# emacs / evil-mode
+sudo pacman -S emacs
+rm -rf ~/.emacs.d/
+git clone https://github.com/bling/emacs-evil-bootstrap.git ~/.emacs.d
+ln -s --force ~/.dotfiles/emacs/.emacs ~/
+
 # vscode
 yaourt -S visual-studio-code
 mkdir -p ~/.config/Code/User
