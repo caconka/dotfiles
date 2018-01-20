@@ -7,7 +7,7 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (wombat)))
+ '(custom-enabled-themes (quote (tango)))
  '(display-time-mode t)
  '(menu-bar-mode nil)
  '(package-selected-packages (quote (evil)))

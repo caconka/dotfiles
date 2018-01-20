@@ -7,13 +7,13 @@
     "terminal.integrated.fontFamily": "Source Code Pro",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.cursorBlinking": true,
-    "vim.disableAnnoyingNeovimMessage": true,
     "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 2,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "One Dark Pro",
+    "vim.visualstar": true,
     "vim.statusBarColorControl": true,
     "vim.statusBarColors" : {
         "normal": "#000000",
@@ -22,5 +22,10 @@
         "visualline": "#005f87",
         "visualblock": "#005f5f",
         "replace": "#000000"
+    },
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#000000",
+        "statusBar.noFolderBackground": "#000000",
+        "statusBar.debuggingBackground": "#000000"
     }
 }

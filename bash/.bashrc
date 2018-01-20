@@ -1,10 +1,10 @@
 #
 # ~/.bashrc
 
-# Config colors and git
+# Config colors and git λ
 source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
-PS1='\n\[\e[1;31m\]λ \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
+PS1='\n\[\e[1;31m\]> \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
 
 # Default text-editor
 export Editor="vim"
