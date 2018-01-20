@@ -18,8 +18,8 @@
     "vim.statusBarColors" : {
         "normal": "#000000",
         "insert": "#5f00af",
-        "visual": "#86592d",
-        "visualline": "#005f87",
+        "visual": "#005f87",
+        "visualline": "#005f5f",
         "visualblock": "#005f5f",
         "replace": "#000000"
     },
