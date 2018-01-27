@@ -47,3 +47,4 @@
 
 (require 'evil)
 (evil-mode t)
+(global-linum-mode t)

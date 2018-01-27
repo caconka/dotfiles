@@ -47,7 +47,8 @@ sudo systemctl start mongodb
 
 # emacs / evil-mode
 sudo pacman -S emacs
-ln -s --force ~/.dotfiles/emacs/init.el ~/.emacs.d/
+mkdir ~/.emacs.d
+ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
 ln -s --force ~/.dotfiles/emacs/.emacs ~/
 
 # vscode
