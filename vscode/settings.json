@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "Source Code Pro",
-    "editor.fontSize": 13,
+    "editor.fontSize": 12.5,
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
@@ -9,7 +9,7 @@
     "terminal.integrated.cursorBlinking": true,
     "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "One Dark Pro",
@@ -27,5 +27,6 @@
         "statusBar.background": "#000000",
         "statusBar.noFolderBackground": "#000000",
         "statusBar.debuggingBackground": "#000000"
-    }
+    },
+    "workbench.iconTheme": "material-icon-theme"
 }
