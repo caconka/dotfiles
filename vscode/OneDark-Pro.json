@@ -1,4 +1,6 @@
 {
+  "name": "OneDark Pro",
+  "type": "dark",
   "colors": {
     "activityBar.background": "#2F333D",
     "activityBar.foreground": "#D7DAE0",
@@ -70,7 +72,6 @@
     "titleBar.inactiveBackground": "#282C34",
     "titleBar.inactiveForeground": "#6B717D"
   },
-  "name": "OneDark Pro Italic",
   "tokenColors": [
     {
       "name": "regexp constant character-class",
@@ -581,8 +582,7 @@
       "name": "Keyword Control",
       "scope": "keyword.control",
       "settings": {
-        "foreground": "#c678dd",
-        "fontStyle": "italic"
+        "foreground": "#c678dd"
       }
     },
     {
@@ -603,8 +603,7 @@
       "name": "Storage",
       "scope": "storage",
       "settings": {
-        "foreground": "#c678dd",
-        "fontStyle": "italic"
+        "foreground": "#c678dd"
       }
     },
     {
@@ -1296,6 +1295,5 @@
         "fontStyle": "italic"
       }
     }
-  ],
-  "type": "dark"
+  ]
 }
