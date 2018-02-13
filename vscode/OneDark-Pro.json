@@ -328,7 +328,7 @@
     },
     {
       "name": "js object literal",
-      "scope": "meta.object-literal.key",
+      "scope": "meta.object-literal.key,variable.other.property,variable.other.object.property,variable.object.property,support.variable.property",
       "settings": {
         "foreground": "#bbbbbb"
       }
