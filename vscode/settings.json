@@ -7,12 +7,11 @@
     "terminal.integrated.fontFamily": "Source Code Pro",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.cursorBlinking": true,
-    "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 1,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "One Dark Pro Italic",
     "vim.visualstar": true,
     "vim.statusBarColorControl": true,
     "vim.statusBarColors" : {
