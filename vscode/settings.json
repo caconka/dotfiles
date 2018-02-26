@@ -27,5 +27,7 @@
         "statusBar.noFolderBackground": "#000000",
         "statusBar.debuggingBackground": "#000000"
     },
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.hidesExplorerArrows": true,
+    "material-icon-theme.activeIconPack": ""
 }
