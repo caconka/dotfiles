@@ -84,7 +84,7 @@
       "name": "regexp operator.quantifier",
       "scope": "keyword.operator.quantifier.regexp",
       "settings": {
-        "foreground": "#d19a66ff"
+        "foreground": "#de935fff"
       }
     },
     {
@@ -98,7 +98,7 @@
       "name": "Text",
       "scope": "variable.parameter.function",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -197,14 +197,14 @@
       "name": "math property js/ts",
       "scope": "support.constant.property.math",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
       "name": "js/ts variable.other.constant",
       "scope": "variable.other.constant",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -267,14 +267,14 @@
       "name": "support.constant.property-value.scss",
       "scope": "support.constant.property-value.scss,support.constant.property-value.css",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
       "name": "css color standard name",
       "scope": "support.constant.color.w3c-standard-color-name.css,support.constant.color.w3c-standard-color-name.scss",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -288,7 +288,7 @@
       "name": "css attribute-name.id",
       "scope": "support.constant.color.w3c-standard-color-name.css",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -344,7 +344,7 @@
       "name": "js/ts json",
       "scope": "support.constant.json",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -365,7 +365,7 @@
       "name": "js/ts support.variable.property.process",
       "scope": "support.variable.property.process",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -428,7 +428,7 @@
       "name": "python parameter",
       "scope": "variable.parameter.function.language.python",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -589,7 +589,7 @@
       "name": "Control Elements",
       "scope": "control.elements, keyword.operator.less",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -652,7 +652,7 @@
       "name": "Support type",
       "scope": "support.constant.font-name",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -680,35 +680,35 @@
       "name": "Integers",
       "scope": "constant.numeric",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
       "name": "Floats",
       "scope": "none",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
       "name": "Boolean",
       "scope": "none",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
       "name": "Constants",
       "scope": "constant",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
       "name": "Constants",
       "scope": "punctuation.definition.constant",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -722,7 +722,7 @@
       "name": "Attributes",
       "scope": "entity.other.attribute-name",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -738,7 +738,7 @@
       "scope": "entity.other.attribute-name.class.css",
       "settings": {
         "fontStyle": "normal",
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -774,7 +774,7 @@
       "name": "Units",
       "scope": "keyword.other.unit",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -782,7 +782,7 @@
       "scope": "markup.bold,todo.bold",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -831,7 +831,7 @@
       "name": "[VSCODE-CUSTOM] Markdown Punctuation Definition Bold",
       "scope": "punctuation.definition.bold.markdown",
       "settings": {
-        "foreground": "#D19A66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -1081,7 +1081,7 @@
       "name": "support php constants",
       "scope": "support.constant.ext.php,support.constant.std.php,support.constant.core.php,support.constant.parser-token.php",
       "settings": {
-        "foreground": "#D19A66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -1144,7 +1144,7 @@
       "name": "parameter function",
       "scope": "function.parameter",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -1179,14 +1179,14 @@
       "name": "rgb value #",
       "scope": "inline-color-decoration rgb-value",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
       "name": "rgb value less",
       "scope": "less rgb-value",
       "settings": {
-        "foreground": "#d19a66"
+        "foreground": "#de935f"
       }
     },
     {
@@ -1291,7 +1291,7 @@
       "name": "Parameters",
       "scope": "variable.parameter,entity.other.function-parameter.cfml",
       "settings": {
-        "foreground": "#d19a66",
+        "foreground": "#de935f",
         "fontStyle": "italic"
       }
     }
