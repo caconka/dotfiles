@@ -35,7 +35,7 @@ nvm use node
 ) && . "$NVM_DIR/nvm.sh"
 
 # NPM
-sudo pacman -S npm
+sudo pacman -Syy npm
 mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/bashrc
@@ -52,10 +52,11 @@ ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
 ln -s --force ~/.dotfiles/emacs/.emacs ~/
 
 # vscode
-yaourt -S visual-studio-code
+yaourt -Syy visual-studio-code
 mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
+ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
 
 # Install basics
-yaourt -S firefox-developer google-chrome slack-desktop postman-bin gimp inkscape spotify
+yaourt -S firefox-developer google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring
 
