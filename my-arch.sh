@@ -56,6 +56,8 @@ yaourt -Syy visual-studio-code
 mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
+mkdir -p ~/.vscode/extensions/
+ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 yaourt -S firefox-developer google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring
