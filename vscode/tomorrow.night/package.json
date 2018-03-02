@@ -1,0 +1,17 @@
+{        
+  "name": "tomorrow-night",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": ">=0.9.0-pre.1"
+  },
+  "publisher": "caconka",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Tomorrow Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/tomorrownight.tmTheme"
+      }
+    ]
+  }
+}
