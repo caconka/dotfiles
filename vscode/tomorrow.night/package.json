@@ -10,7 +10,7 @@
       {
         "label": "Tomorrow Night",
         "uiTheme": "vs-dark",
-        "path": "./themes/tomorrownight.tmTheme"
+        "path": "./themes/tomorrownight.json"
       }
     ]
   }
