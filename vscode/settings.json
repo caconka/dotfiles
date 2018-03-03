@@ -11,7 +11,7 @@
     "window.zoomLevel": 1,
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "One Dark Pro Italic",
+    "workbench.colorTheme": "Tomorrow Night",
     "vim.visualstar": true,
     "vim.statusBarColorControl": true,
     "vim.statusBarColors" : {
