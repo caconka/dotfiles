@@ -48,3 +48,13 @@
 (require 'evil)
 (evil-mode t)
 (global-linum-mode t)
+
+;; Move between buffers
+(define-key evil-normal-state-map (kbd "<tab>") 'evil-next-buffer)
+(define-key evil-normal-state-map (kbd "<backtab>") 'evil-prev-buffer)
+
+;; Move between splits
+(global-set-key (kbd "C-k") 'windmove-up)
+(global-set-key (kbd "C-j") 'windmove-down)
+(global-set-key (kbd "C-h") 'windmove-left)
+(global-set-key (kbd "C-l") 'windmove-right)

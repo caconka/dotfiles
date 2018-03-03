@@ -1,4 +1,4 @@
-" charlie
+" caconka
 
 " vim-plug is not installed
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -118,15 +118,15 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Move CtrlP to CtrlT (CtrlP is for buffers)
-let g:ctrlp_map = '<C-t>'
-
 " Working with buffers is cool.
 set hidden
-map <Leader>n  :bnext<CR>
-map <Leader>p  :bprev<CR>
-imap <Leader>n <Esc>:bnext<CR>a
-imap <Leader>p <Esc>:bprev<CR>a
+map <tab>  :bnext<CR>
+map <s-tab>  :bprev<CR>
+imap <tab> <Esc>:bnext<CR>a
+imap <s-tab> <Esc>:bprev<CR>a
+
+" System clipboard
+vnoremap <C-c> "*y
 
 " Resize splits
 nnoremap <silent> + :exe "vertical resize +5"<CR>
