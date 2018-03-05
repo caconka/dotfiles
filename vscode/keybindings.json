@@ -1,6 +1,6 @@
 [
   {
-    "key": "alt+b",
+    "key": "n+t",
     "command": "workbench.action.toggleSidebarVisibility"
   }
 ]
