@@ -1,4 +1,3 @@
- 
 [
   {
     "key": "ctrl+n t",
@@ -21,7 +20,7 @@
     "command": "-workbench.action.focusFirstEditorGroup"
   },
   {
-    "key": "tab",
+    "key": "ctrl+tab",
     "command": "workbench.action.nextEditor"
   },
   {
