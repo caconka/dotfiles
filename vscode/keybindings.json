@@ -4,6 +4,10 @@
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
+    "key": "ctrl+n ctrl+t",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
     "key": "ctrl+l",
     "command": "workbench.action.focusSecondEditorGroup"
   },
@@ -30,11 +34,7 @@
     "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
   },
   {
-    "key": "ctrl+oem_5",
+    "key": "ctrl+1",
     "command": "workbench.action.focusSideBar"
-  },
-  {
-    "key": "ctrl+oem_5",
-    "command": "-workbench.action.splitEditor"
   }
 ]
