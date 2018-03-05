@@ -1,6 +1,6 @@
 [
   {
-    "key": "n+t",
+    "key": "ctrl+n t",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
@@ -8,7 +8,15 @@
     "command": "workbench.action.focusSecondEditorGroup"
   },
   {
+    "key": "ctrl+2",
+    "command": "-workbench.action.focusSecondEditorGroup"
+  },
+  {
     "key": "ctrl+h",
     "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "-workbench.action.focusFirstEditorGroup"
   }
 ]
