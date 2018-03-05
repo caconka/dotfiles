@@ -8,32 +8,16 @@
     "command": "workbench.action.focusSecondEditorGroup"
   },
   {
-    "key": "ctrl+2",
-    "command": "-workbench.action.focusSecondEditorGroup"
-  },
-  {
     "key": "ctrl+h",
     "command": "workbench.action.focusFirstEditorGroup"
-  },
-  {
-    "key": "ctrl+1",
-    "command": "-workbench.action.focusFirstEditorGroup"
   },
   {
     "key": "ctrl+tab",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "ctrl+pagedown",
-    "command": "-workbench.action.nextEditor"
-  },
-  {
     "key": "ctrl+shift+tab",
     "command": "workbench.action.previousEditor"
-  },
-  {
-    "key": "ctrl+pageup",
-    "command": "-workbench.action.previousEditor"
   },
   {
     "key": "tab",
@@ -41,19 +25,8 @@
     "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
   },
   {
-    "key": "tab",
-    "command": "-tab",
-    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-  },
-  {
     "key": "shift+tab",
     "command": "outdent",
     "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "-outdent",
-    "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
   }
 ]
-
