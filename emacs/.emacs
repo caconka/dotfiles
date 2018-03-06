@@ -47,7 +47,33 @@
 
 (require 'evil)
 (evil-mode t)
+
+;; Numbers column
 (global-linum-mode t)
+(defvar relative-linum-format-string "%3d")
+
+(add-hook 'linum-before-numbering-hook 'relative-linum-get-format-string)
+
+(defun relative-linum-get-format-string ()
+    (let* ((width (1+ (length (number-to-string
+                                                             (count-lines (point-min) (point-max))))))
+                    (format (concat "%" (number-to-string width) "d")))
+          (setq relative-linum-format-string format)))
+
+(defvar relative-linum-current-line-number 0)
+
+(setq linum-format 'relative-linum-relative-line-numbers)
+
+(defun relative-linum-relative-line-numbers (line-number)
+    (let ((offset (- line-number relative-linum-current-line-number)))
+          (propertize (format relative-linum-format-string offset) 'face 'linum)))
+
+(defadvice linum-update (around relative-linum-update)
+             (let ((relative-linum-current-line-number (line-number-at-pos)))
+                   ad-do-it))
+(ad-activate 'linum-update)
+
+(provide 'relative-linum)
 
 ;; Auto-save null
 (setq make-backup-files nil)
