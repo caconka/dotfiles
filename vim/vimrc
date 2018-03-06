@@ -120,10 +120,11 @@ map <C-l> <C-w>l
 
 " Working with buffers is cool.
 set hidden
-map <C-tab>  :bnext<CR>
-map <s-tab>  :bprev<CR>
-imap <C-tab>  <ESC>:bnext<CR>a
-imap <s-tab>  <ESC>:bprev<CR>a
+map <C-k>  :bnext<CR>
+map <C-j>  :bprev<CR>
+imap <C-k>  <ESC>:bnext<CR>a
+imap <s-j>  <ESC>:bprev<CR>a
+map <C-t> :tabnew<CR>
 
 " System clipboard
 vnoremap <C-c> "*y
