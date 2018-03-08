@@ -48,33 +48,6 @@
 (require 'evil)
 (evil-mode t)
 
-;; Numbers column
-(global-linum-mode t)
-(defvar relative-linum-format-string "%3d")
-
-(add-hook 'linum-before-numbering-hook 'relative-linum-get-format-string)
-
-(defun relative-linum-get-format-string ()
-    (let* ((width (1+ (length (number-to-string
-                                                             (count-lines (point-min) (point-max))))))
-                    (format (concat "%" (number-to-string width) "d")))
-          (setq relative-linum-format-string format)))
-
-(defvar relative-linum-current-line-number 0)
-
-(setq linum-format 'relative-linum-relative-line-numbers)
-
-(defun relative-linum-relative-line-numbers (line-number)
-    (let ((offset (- line-number relative-linum-current-line-number)))
-          (propertize (format relative-linum-format-string offset) 'face 'linum)))
-
-(defadvice linum-update (around relative-linum-update)
-             (let ((relative-linum-current-line-number (line-number-at-pos)))
-                   ad-do-it))
-(ad-activate 'linum-update)
-
-(provide 'relative-linum)
-
 ;; Auto-save null
 (setq make-backup-files nil)
 
@@ -85,3 +58,75 @@
 ;; Move between splits
 (global-set-key (kbd "C-h") 'windmove-left)
 (global-set-key (kbd "C-l") 'windmove-right)
+
+;; Numbers column
+(global-linum-mode t)
+(eval-when-compile (require 'cl))
+(require 'linum)
+
+(defgroup linum-relative nil
+          "Show relative line numbers on fringe."
+          :group 'convenience)
+
+;;;; Faces
+(defface linum-relative-current-face
+         '((t :inherit linum :foreground "#CAE682" :background "#444444" :weight bold))
+         "Face for displaying current line."
+         :group 'linum-relative)
+
+;;;; Customize Variables
+
+(defcustom linum-relative-current-symbol "0"
+           "The symbol you want to show on the current line, by default it is 0.
+           You can use any string like \"->\". If this variable is empty string,
+           linum-releative will show the real line number at current line."
+           :type 'string
+           :group 'linum-relative)
+
+(defcustom linum-relative-plusp-offset 0
+           "Offset to use for positive relative line numbers."
+           :type 'integer
+           :group 'linum-relative)
+
+(defcustom linum-relative-format "%3s"
+           "Format for each line. Good for adding spaces/paddings like so: \" %3s \""
+           :type 'string
+           :group 'linum-relative)
+
+;;;; Internal Variables
+
+(defvar linum-relative-last-pos 0
+    "Store last position.")
+
+;;;; Advices
+(defadvice linum-update (before relative-linum-update activate)
+           "This advice get the last position of linum."
+           (setq linum-relative-last-pos (line-number-at-pos)))
+
+;;;; Functions
+(defun linum-relative (line-number)
+  (let* ((diff1 (abs (- line-number linum-relative-last-pos)))
+         (diff (if (minusp diff1)
+                 diff1
+                 (+ diff1 linum-relative-plusp-offset)))
+         (current-p (= diff linum-relative-plusp-offset))
+         (current-symbol (if (and linum-relative-current-symbol current-p)
+                           (if (string= "" linum-relative-current-symbol)
+                             (number-to-string line-number)
+                             linum-relative-current-symbol)
+                           (number-to-string diff)))
+         (face (if current-p 'linum-relative-current-face 'linum)))
+    (propertize (format linum-relative-format current-symbol) 'face face)))
+
+(defun linum-relative-toggle ()
+  "Toggle between linum-relative and linum."
+  (interactive)
+  (if (eq linum-format 'dynamic)
+    (setq linum-format 'linum-relative)
+    (setq linum-format 'dynamic)))
+
+(setq linum-format 'linum-relative)
+
+(provide 'linum-relative)
+;;; linum-relative.el ends here.
+
