@@ -48,6 +48,9 @@
 (require 'evil)
 (evil-mode t)
 
+;; Toggle between visual-line-mode
+(global-set-key (kbd "M-z") 'visual-line-mode)
+
 ;; Auto-save null
 (setq make-backup-files nil)
 
