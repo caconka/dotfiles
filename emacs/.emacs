@@ -10,6 +10,7 @@
  '(custom-enabled-themes (quote (tango)))
  '(display-time-mode t)
  '(menu-bar-mode nil)
+ '(org-agenda-files (quote ("~/Dropbox/notes/orgzly.org")))
  '(package-selected-packages (quote (evil)))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
@@ -61,6 +62,13 @@
 ;; Move between splits
 (global-set-key (kbd "C-h") 'windmove-left)
 (global-set-key (kbd "C-l") 'windmove-right)
+
+;; Open org-agenda
+(global-set-key (kbd "C-c a") 'org-agenda-list)
+
+;; Load all org files org-agenda
+;; (setq org-agenda-files (list "~/Dropbox/notes"))
+;; Shortcuts C-c [ -> add file C-c ] -> remove file
 
 ;; Numbers column
 (global-linum-mode t)
