@@ -60,5 +60,5 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-yaourt -S firefox-developer google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring dropbox
+yaourt -S firefox google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring dropbox
 
