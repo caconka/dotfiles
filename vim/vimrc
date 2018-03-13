@@ -12,7 +12,8 @@ call plug#begin('~/.vim/plugged/')
 " General purpose plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
@@ -121,14 +122,26 @@ map <C-l> <C-w>l
 
 " Working with buffers is cool.
 set hidden
-map <C-k>  :bnext<CR>
-map <C-j>  :bprev<CR>
-imap <C-k>  <ESC>:bnext<CR>a
-imap <s-j>  <ESC>:bprev<CR>a
+map <C-k> :bnext<CR>
+map <C-j> :bprev<CR>
+map <C-k> <ESC>:bnext<CR>a
+map <C-j> <ESC>:bprev<CR>a
 map <C-t> :tabnew<CR>
 
 " System clipboard
 vnoremap <C-c> "*y
+
+" fzf
+nmap <C-p> :GFiles<CR>
+nmap <C-P> :Files<CR>
+imap <C-p> <ESC>:GFiles<CR>a
+imap <C-P> <ESC>:Files<CR>a
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>h :History<CR>
+nmap <Leader>t :BTags<CR>
+nmap <Leader>T :Tags<CR>
+nmap <Leader>l :BLines<CR>
+nmap <Leader>L :Lines<CR>
 
 " Resize splits
 nnoremap <silent> + :exe "vertical resize +5"<CR>
@@ -140,9 +153,6 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
-
-" CtrlP ignore folders
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Change cursor in different modes
 let &t_SI = "\<Esc>[5 q"

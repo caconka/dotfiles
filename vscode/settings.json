@@ -1,6 +1,6 @@
 {
-    "editor.fontFamily": "Source Code Pro",
-    "editor.fontSize": 12.5,
+    "editor.fontFamily": "Inconsolata, Source Code Pro",
+    "editor.fontSize": 14.5,
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
@@ -29,5 +29,6 @@
     },
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.hidesExplorerArrows": true,
-    "material-icon-theme.activeIconPack": ""
+    "material-icon-theme.activeIconPack": "",
+    "gitlens.keymap": "alternate"
 }

@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 # Dotfiles
 # first git clone https://github.com/caconka/dotfiles.git
