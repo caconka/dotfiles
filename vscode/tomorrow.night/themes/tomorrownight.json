@@ -582,7 +582,8 @@
       "name": "Keyword Control",
       "scope": "keyword.control",
       "settings": {
-        "foreground": "#B293BB"
+        "foreground": "#B293BB",
+        "fontStyle": "italic"
       }
     },
     {
@@ -603,7 +604,8 @@
       "name": "Storage",
       "scope": "storage",
       "settings": {
-        "foreground": "#B293BB"
+        "foreground": "#B293BB",
+        "fontStyle": "italic"
       }
     },
     {
@@ -611,6 +613,13 @@
       "scope": "token.storage",
       "settings": {
         "foreground": "#B293BB"
+      }
+    },
+    {
+      "name": "Arrow function",
+      "scope": "storage.type.function.arrow",
+      "settings": {
+        "fontStyle": "normal"
       }
     },
     {
