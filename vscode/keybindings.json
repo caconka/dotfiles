@@ -16,11 +16,11 @@
     "command": "workbench.action.focusFirstEditorGroup"
   },
   {
-    "key": "ctrl+k",
+    "key": "alt+l",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "ctrl+j",
+    "key": "alt+h",
     "command": "workbench.action.previousEditor"
   },
   {
