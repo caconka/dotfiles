@@ -13,7 +13,7 @@ fc-cache -f -v
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
 # Install tmux and vim
-sudo pacman -S tmux vim
+sudo pacman -S tmux gvim
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 
@@ -60,5 +60,5 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-yaourt -S firefox google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring dropbox
+yaourt -S firefox google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring dropbox ack
 
