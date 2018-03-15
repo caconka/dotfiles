@@ -302,7 +302,7 @@
       "name": "js/ts template-expression",
       "scope": "punctuation.definition.template-expression.begin,punctuation.definition.template-expression.end",
       "settings": {
-        "foreground": "#81A2BE"
+        "foreground": "#BE4F44"
       }
     },
     {
