@@ -28,7 +28,9 @@
         "statusBar.debuggingBackground": "#000000"
     },
     "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.theme": "specific",
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.activeIconPack": "",
-    "gitlens.keymap": "alternate"
+    "gitlens.keymap": "alternate",
+    "standard.semistandard": true
 }

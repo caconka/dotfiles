@@ -40,6 +40,9 @@ mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/bashrc
 
+# Pacaur
+sudo pacman -S pacaur
+
 # MongoDB
 sudo pacman -S mongodb
 sudo systemctl enable mongodb
@@ -52,7 +55,7 @@ ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
 ln -s --force ~/.dotfiles/emacs/.emacs ~/
 
 # vscode
-yaourt -Syy visual-studio-code
+pacaur -Syy visual-studio-code
 mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
@@ -60,5 +63,5 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-yaourt -S firefox google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring dropbox ack
+pacaur -S firefox google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring dropbox ack
 
