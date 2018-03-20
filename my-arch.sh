@@ -22,7 +22,7 @@ ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
 
 # NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 source ~/.bashrc
 nvm install stable
 nvm use node

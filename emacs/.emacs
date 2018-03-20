@@ -56,8 +56,8 @@
 (setq make-backup-files nil)
 
 ;; Move between buffers
-(define-key evil-normal-state-map (kbd "C-k") 'evil-next-buffer)
-(define-key evil-normal-state-map (kbd "C-j") 'evil-prev-buffer)
+(global-set-key (kbd "M-l") 'evil-next-buffer)
+(global-set-key (kbd "M-h") 'evil-prev-buffer)
 
 ;; Move between splits
 (global-set-key (kbd "C-h") 'windmove-left)
