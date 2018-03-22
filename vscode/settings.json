@@ -32,5 +32,17 @@
     "material-icon-theme.hidesExplorerArrows": true,
     "material-icon-theme.activeIconPack": "",
     "gitlens.keymap": "alternate",
-    "standard.semistandard": true
+    "standard.semistandard": true,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["u"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo",
+                    "args": []
+                }
+            ]
+        }
+    ]
 }

@@ -36,5 +36,15 @@
   {
     "key": "ctrl+1",
     "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "redo",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+z",
+    "command": "redo",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
