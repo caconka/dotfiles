@@ -55,6 +55,12 @@
 ;; Auto-save null
 (setq make-backup-files nil)
 
+;; Remove M-h shortcut in org-mode
+(require 'org)
+(eval-after-load 'org
+                 (progn
+                   (define-key org-mode-map (kbd "M-h") nil)))
+
 ;; Move between buffers
 (global-set-key (kbd "M-l") 'evil-next-buffer)
 (global-set-key (kbd "M-h") 'evil-prev-buffer)
