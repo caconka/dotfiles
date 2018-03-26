@@ -20,6 +20,7 @@ ln -s ~/.dotfiles/vim ~/.vim
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
+source ~/.bashrc
 
 # NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
@@ -38,7 +39,7 @@ nvm use node
 sudo pacman -Syy npm
 mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
-source ~/bashrc
+source ~/.bashrc
 
 # Pacaur
 sudo pacman -S pacaur
@@ -55,7 +56,7 @@ ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
 ln -s --force ~/.dotfiles/emacs/.emacs ~/
 
 # vscode
-pacaur -Syy visual-studio-code
+pacaur -Syy visual-studio-code-bin
 mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
@@ -63,5 +64,5 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-pacaur -S firefox google-chrome slack-desktop postman-bin gimp inkscape spotify mailspring dropbox ack
+pacaur -S firefox google-chrome slack-desktop postman-bin telegram-desktop gimp inkscape spotify mailspring dropbox ack
 
