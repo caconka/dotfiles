@@ -33,6 +33,7 @@
     "material-icon-theme.activeIconPack": "",
     "gitlens.keymap": "alternate",
     "standard.semistandard": true,
+    "prettier.singleQuote": true,
     "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": ["u"],

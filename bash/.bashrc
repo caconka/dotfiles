@@ -64,3 +64,13 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+
+# needed by PhoneGap
+ANDROID_HOME=/opt/android-sdk
+PATH="$PATH:$ANDROID_HOME/tools"
+
+###-tns-completion-start-###
+if [ -f /home/carlos/.tnsrc ]; then 
+    source /home/carlos/.tnsrc 
+fi
+###-tns-completion-end-###

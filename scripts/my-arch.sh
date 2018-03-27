@@ -13,7 +13,7 @@ fc-cache -f -v
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
 # Install tmux and vim
-sudo pacman -S tmux gvim
+sudo pacman -Syy --noconfirm tmux gvim
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 
@@ -36,27 +36,25 @@ nvm use node
 ) && . "$NVM_DIR/nvm.sh"
 
 # NPM
-sudo pacman -Syy npm
+sudo pacman -S --noconfirm npm
 mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/.bashrc
 
-# Pacaur
-sudo pacman -S pacaur
+# Install pacaur, mongodb, emacs
+sudo pacman -S --noconfirm pacaur mongodb emacs linux-headers virtualbox
 
 # MongoDB
-sudo pacman -S mongodb
 sudo systemctl enable mongodb
 sudo systemctl start mongodb
 
 # emacs / evil-mode
-sudo pacman -S emacs
 mkdir ~/.emacs.d
 ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
 ln -s --force ~/.dotfiles/emacs/.emacs ~/
 
 # vscode
-pacaur -Syy visual-studio-code-bin
+pacaur -Syy --noconfirm visual-studio-code-bin
 mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
@@ -64,5 +62,6 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-pacaur -S firefox google-chrome slack-desktop postman-bin telegram-desktop gimp inkscape spotify mailspring dropbox ack
+pacaur -S --noconfirm firefox google-chrome slack-desktop postman-bin \
+  telegram-desktop gimp inkscape spotify mailspring dropbox ack
 
