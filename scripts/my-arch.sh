@@ -1,12 +1,12 @@
-!/bin/bash
+#!/bin/bash
 
-# Dotfiles
-# first git clone https://github.com/caconka/dotfiles.git
+# Dotfiles caconka
 
 # Fonts
 mkdir ~/.fonts
 ln -s ~/.dotfiles/fonts/SourceCodePro-Regular.ttf ~/.fonts/
 ln -s ~/.dotfiles/fonts/SourceSansPro-Regular.ttf ~/.fonts/
+ln -s ~/.dotfiles/fonts/Inconsolata-Regular.ttf ~/.fonts/
 fc-cache -f -v
 
 # Git
@@ -64,4 +64,10 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 # Install basics
 pacaur -S --noconfirm firefox google-chrome slack-desktop postman-bin \
   telegram-desktop gimp inkscape spotify mailspring dropbox ack
+
+# Code dir config
+sudo mkdir ~/code
+cd ~/code
+sudo mkdir ephemeral projects
+sudo chown $USER ephemeral/ projects/
 

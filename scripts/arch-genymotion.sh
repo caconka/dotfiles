@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # SDK
 bash <(curl -s archibold.io/install/android)
 sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" \
