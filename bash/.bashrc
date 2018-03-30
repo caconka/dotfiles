@@ -74,3 +74,13 @@ if [ -f /home/carlos/.tnsrc ]; then
     source /home/carlos/.tnsrc 
 fi
 ###-tns-completion-end-###
+
+# needed by PhoneGap
+ANDROID_HOME=/opt/android-sdk
+PATH="$PATH:$ANDROID_HOME/tools"
+
+###-tns-completion-start-###
+if [ -f /home/charlie/.tnsrc ]; then 
+    source /home/charlie/.tnsrc 
+fi
+###-tns-completion-end-###
