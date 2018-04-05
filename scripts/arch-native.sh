@@ -7,6 +7,7 @@ sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" \
 
 # nativescript & genymotion
 npm i -g nativescript
+sudo pacman -S --noconfirm gradle
 pacaur -S --noconfirm genymotion
 sudo vboxreload
 

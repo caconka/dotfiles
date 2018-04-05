@@ -53,6 +53,9 @@ mkdir ~/.emacs.d
 ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
 ln -s --force ~/.dotfiles/emacs/.emacs ~/
 
+# Android support mtp protocol
+sudo pacman -S --noconfirm mtpfs gvfs-mtp gvfs-gphoto2
+
 # vscode
 pacaur -Syy --noconfirm visual-studio-code-bin
 mkdir -p ~/.config/Code/User
@@ -63,7 +66,10 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 pacaur -S --noconfirm firefox google-chrome slack-desktop postman-bin \
-  telegram-desktop gimp inkscape spotify mailspring dropbox ack
+  telegram-desktop gimp inkscape mailspring dropbox ack jmtpfs
+
+# Install extras
+pacaur -S --noconfirm spotify
 
 # Code dir config
 sudo mkdir ~/code

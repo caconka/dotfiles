@@ -62,12 +62,12 @@
                    (define-key org-mode-map (kbd "M-h") nil)))
 
 ;; Move between buffers
-(global-set-key (kbd "M-l") 'evil-next-buffer)
-(global-set-key (kbd "M-h") 'evil-prev-buffer)
+(global-set-key (kbd "C-l") 'evil-next-buffer)
+(global-set-key (kbd "C-h") 'evil-prev-buffer)
 
 ;; Move between splits
-(global-set-key (kbd "C-h") 'windmove-left)
-(global-set-key (kbd "C-l") 'windmove-right)
+;;(global-set-key (kbd "C-h") 'windmove-left)
+;;(global-set-key (kbd "C-l") 'windmove-right)
 
 ;; Open org-agenda
 (global-set-key (kbd "C-c a") 'org-agenda-list)

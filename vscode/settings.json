@@ -55,5 +55,6 @@
         "suppressNoRepositoryWarning": false,
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
-    }
+    },
+    "editor.wordWrap": "wordWrapColumn"
 }

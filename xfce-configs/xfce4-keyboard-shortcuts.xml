@@ -39,10 +39,10 @@
         <property name="startup-notify" type="bool" value="true"/>
       </property>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="xfce4-terminal"/>
       <property name="&lt;Super&gt;s" type="string" value="/usr/bin/xfce4-screenshooter"/>
       <property name="&lt;Super&gt;e" type="string" value="thunar"/>
+      <property name="&lt;Primary&gt;q" type="string" value="/bin/true"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
