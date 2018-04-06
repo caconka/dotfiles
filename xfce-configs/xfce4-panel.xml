@@ -54,6 +54,7 @@
     <property name="plugin-17" type="string" value="battery"/>
     <property name="plugin-1" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="spotify"/>
     </property>
     <property name="plugin-2" type="string" value="separator">
       <property name="style" type="uint" value="1"/>

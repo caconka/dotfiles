@@ -3,7 +3,7 @@
 # XFCE Configs
 
 sudo pacman -Syy --noconfirm gnome-screensaver deepin-icon-theme arc-gtk-theme \
-  dockbarx vala-panel-appmenu-xfce-git
+  dockbarx vala-panel-appmenu-xfce-git blueberry
 
 mkdir ~/.icons ~/.themes
 rm -rf ~/.config/xfce4/xfconf/xfce-perchannel-xml
