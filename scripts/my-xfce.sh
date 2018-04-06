@@ -9,4 +9,5 @@ mkdir ~/.icons ~/.themes
 rm -rf ~/.config/xfce4/xfconf/xfce-perchannel-xml
 
 ln -s --force ~/.dotfiles/xfce-configs ~/.config/xfce4/xfconf/xfce-perchannel-xml
+ln -s /usr/share/icons/deepin ~/.icons/
 
