@@ -23,6 +23,7 @@
       <property name="background-alpha" type="uint" value="100"/>
       <property name="background-style" type="uint" value="0"/>
       <property name="leave-opacity" type="uint" value="100"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -44,6 +45,7 @@
       <property name="names-visible" type="array">
         <value type="string" value="slack"/>
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="blueberry-tray.py"/>
         <value type="string" value="telegramdesktop"/>
         <value type="string" value="pamac-tray"/>
         <value type="string" value="mailspring"/>
