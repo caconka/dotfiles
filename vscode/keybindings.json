@@ -46,5 +46,15 @@
     "key": "ctrl+shift+z",
     "command": "redo",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
   }
 ]
