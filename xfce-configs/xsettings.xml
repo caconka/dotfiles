@@ -34,7 +34,7 @@
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="string" value="default"/>
     <property name="CursorThemeSize" type="empty"/>
-    <property name="DecorationLayout" type="string" value="close,minimize,maximize:"/>
+    <property name="DecorationLayout" type="string" value=":minimize,maximize,close"/>
     <property name="Modules" type="string" value="appmenu-gtk-module"/>
   </property>
 </channel>
