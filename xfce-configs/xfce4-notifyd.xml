@@ -6,6 +6,7 @@
       <value type="string" value="Dropbox"/>
       <value type="string" value="Electron"/>
       <value type="string" value="Firefox"/>
+      <value type="string" value="Firefox Developer Edition"/>
       <value type="string" value="google-chrome"/>
       <value type="string" value="nm-applet"/>
       <value type="string" value="notify-send"/>
@@ -18,6 +19,7 @@
     </property>
     <property name="muted_applications" type="array">
       <value type="string" value="xfce4-power-manager"/>
+      <value type="string" value="Spotify"/>
     </property>
   </property>
   <property name="primary-monitor" type="uint" value="0"/>
