@@ -34,7 +34,7 @@
     "gitlens.keymap": "chorded",
     "standard.semistandard": true,
     "prettier.singleQuote": true,
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.otherModesKeyBindings": [
         {
             "before": ["u"],
             "after": [],
