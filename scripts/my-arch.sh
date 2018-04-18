@@ -7,13 +7,14 @@ mkdir ~/.fonts
 ln -s ~/.dotfiles/fonts/SourceCodePro-Regular.ttf ~/.fonts/
 ln -s ~/.dotfiles/fonts/SourceSansPro-Regular.ttf ~/.fonts/
 ln -s ~/.dotfiles/fonts/Inconsolata-Regular.ttf ~/.fonts/
+ln -s ~/.dotfiles/fonts/AnonymousPro-Regular.ttf ~/.fonts/
 fc-cache -f -v
 
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
 # Install tmux and vim
-sudo pacman -Syy --noconfirm tmux gvim
+sudo pacman -Syy --noconfirm tmux gvim ctags
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 
