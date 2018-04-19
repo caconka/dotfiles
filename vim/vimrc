@@ -30,6 +30,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'nono/jquery.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
 
 " Colorschemes
 call plug#end()
@@ -79,6 +80,10 @@ let g:ale_sign_warning = '--'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" Move lines
+xnoremap K :move '<-2<CR>gv=gv
+xnoremap J :move '>+1<CR>gv=gv
+
 " Autoclose
 ino " ""<left>
 ino ' ''<left>
@@ -96,7 +101,7 @@ endif
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
    syntax on
-   set colorcolumn=80
+   let &colorcolumn=join(range(81,999),",")
    silent! color charlie
 endif
 
@@ -150,6 +155,10 @@ noremap <C-t> :tabnew<CR>
 " System clipboard
 vnoremap <C-c> "+y
 
+" Tabs
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
 " fzf
 nmap <C-p> :GFiles<CR>
 nmap <Leader>p :Files<CR>
@@ -163,6 +172,10 @@ nmap <Leader>L :Lines<CR>
 
 " Ack
 nnoremap <leader>f :Ack!<Space>
+
+" Autosave
+au FocusGained,BufEnter * :silent! !
+au FocusLost,WinLeave * :silent! w
 
 " Resize splits
 nnoremap <silent> + :exe "vertical resize +5"<CR>
