@@ -58,7 +58,7 @@ set backspace=indent,eol,start  " backspace always works on insert mode
 set hidden
 
 " Some programming languages work better when only 2 spaces padding is used.
-autocmd FileType html,css,sass,scss,javascript setlocal sw=2 sts=2
+autocmd FileType html,css,sass,scss,javascript,typescript setlocal sw=2 sts=2
 autocmd FileType json setlocal sw=2 sts=2
 autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
@@ -71,7 +71,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 " Move CtrlY to CtrlZ (Emmet)
 " let g:user_emmet_expandabbr_key = '<Tab>' "<C-z>, as default
-let g:user_emmet_leader_key='<C-Z>'
+" let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_mode='a'
 
 " ALE config
 let g:ale_completion_enabled = 1
@@ -80,9 +81,9 @@ let g:ale_sign_warning = '--'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Move lines
-xnoremap K :move '<-2<CR>gv=gv
-xnoremap J :move '>+1<CR>gv=gv
+" Omnicomplete
+set completeopt=longest,menuone
+set completeopt+=preview
 
 " Autoclose
 ino " ""<left>
@@ -92,6 +93,12 @@ ino [ []<left>
 ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
 ino {;<CR> {<CR>};<ESC>O
+
+" Move lines vertically
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " tmux screen view
 if &term == "screen"
@@ -143,6 +150,9 @@ let mapleader=","
 "map <C-j> <C-w>j
 "map <C-k> <C-w>k
 "map <C-l> <C-w>l
+
+" Enable CursorLine
+set cursorline
 
 " Working with buffers is cool.
 set hidden

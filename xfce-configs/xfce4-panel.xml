@@ -47,10 +47,12 @@
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="telegramdesktop"/>
         <value type="string" value="mailspring"/>
+        <value type="string" value="wavebox"/>
         <value type="string" value="gdevilspie"/>
         <value type="string" value="pamac-tray"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="slack"/>
+        <value type="string" value="franz"/>
         <value type="string" value="blueberry-tray.py"/>
       </property>
     </property>
