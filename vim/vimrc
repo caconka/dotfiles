@@ -57,6 +57,9 @@ set encoding=utf-8              " always use unicode (god damnit, windows)
 set backspace=indent,eol,start  " backspace always works on insert mode
 set hidden
 
+" Highlighting when search
+set hlsearch
+
 " Some programming languages work better when only 2 spaces padding is used.
 autocmd FileType html,css,sass,scss,javascript,typescript setlocal sw=2 sts=2
 autocmd FileType json setlocal sw=2 sts=2
