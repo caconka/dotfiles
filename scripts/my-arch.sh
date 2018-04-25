@@ -14,7 +14,7 @@ fc-cache -f -v
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
 # Install tmux and vim
-sudo pacman -Syy --noconfirm tmux gvim ctags
+sudo pacman -Syy --noconfirm tmux gvim ctags tree
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 
@@ -43,7 +43,10 @@ npm config set prefix ~/.npm-global
 source ~/.bashrc
 
 # Install pacaur, mongodb, emacs
-sudo pacman -S --noconfirm pacaur mongodb emacs linux-headers virtualbox
+sudo pacman -S --noconfirm pacaur mongodb emacs
+
+# Install virtualbox
+sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 
 # MongoDB
 sudo systemctl enable mongodb
