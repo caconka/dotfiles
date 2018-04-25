@@ -22,6 +22,7 @@ Plug 'mattn/emmet-vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
+Plug 'ap/vim-css-color'
 
 " Language support
 Plug 'othree/html5.vim'
@@ -205,11 +206,12 @@ let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[5 q"
 let &t_EI = "\<Esc>[1 q"
 
-" Relative numbering is pretty useful for motions (3g, 5k...). However I'd
-" prefer to have a way for switching relative numbers with a single map.
+" Toggle relative numbering
 nmap <F5> :set invrelativenumber<CR>
 imap <F5> <ESC>:set invrelativenumber<CR>a
 
+" NERDTree
 map <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
+
