@@ -14,7 +14,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 Plug 'ap/vim-buftabline'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
@@ -184,7 +183,7 @@ nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 
 " Ack
-nnoremap <leader>f :Ack!<Space>
+nnoremap <leader>f :Ag<CR>
 
 " Autosave
 au FocusGained,BufEnter * :silent! !
