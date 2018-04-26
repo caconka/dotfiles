@@ -17,12 +17,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'mattn/emmet-vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
 Plug 'ap/vim-css-color'
+Plug 'Yggdroot/indentLine'
 
 " Language support
 Plug 'othree/html5.vim'
@@ -33,6 +33,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 
 " Colorschemes
+Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 " Stop acting like classic vi
@@ -48,6 +49,22 @@ set expandtab               " expand tabs
 set shiftwidth=2            " spaces for autoindenting
 set softtabstop=2           " remove a full pseudo-TAB when i press <BS>
 set mouse=a                 " mouse all
+
+" -- git command on current file
+fun! GitCommand(command)
+  silent! !clear
+  exec "!git " . a:command . " %"
+endfun
+" -- git diff for current file
+map <leader>d :call GitCommand("diff") <CR>
+" -- git log for current file
+map <leader>l :call GitCommand("log -p") <CR>
+" -- git blame for current file
+map <leader>b :call
+GitCommand("blame") <CR>
+
+" Tabs guide lines
+let g:indentLine_char = '·'
 
 " Display all matching files when we tab complete
 set wildmenu
@@ -69,12 +86,8 @@ autocmd FileType yaml setlocal sw=2 sts=2
 " Required for alvan/vim-closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
 
-" Required for UltiSnip
-let g:UltiSnipsExpandTrigger="<tab>"
-
 " Move CtrlY to CtrlZ (Emmet)
-" let g:user_emmet_expandabbr_key = '<Tab>' "<C-z>, as default
-" let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_expandabbr_key = '<C-Z>'
 let g:user_emmet_mode='a'
 
 " ALE config
@@ -87,15 +100,6 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Omnicomplete
 set completeopt=longest,menuone
 set completeopt+=preview
-
-" Autoclose
-ino " ""<left>
-ino ' ''<left>
-ino ( ()<left>
-ino [ []<left>
-ino { {}<left>
-ino {<CR> {<CR>}<ESC>O
-ino {;<CR> {<CR>};<ESC>O
 
 " Move lines vertically
 nnoremap <C-j> :m .+1<CR>==
@@ -112,7 +116,9 @@ endif
 if &t_Co > 2 || has("gui_running")
    syntax on
    let &colorcolumn=join(range(81,999),",")
-   silent! color charlie
+   let g:seoul256_srgb = 1
+   let g:seoul256_background = 234
+   silent! colo seoul256
 endif
 
 " Mark trailing spaces depending on whether we have a fancy terminal or not
