@@ -6,6 +6,9 @@ if empty(glob("~/.vim/autoload/plug.vim"))
     autocmd VimEnter * PlugInstall
 end
 
+" utf-8
+scriptencoding utf-8
+
 " Init vim-plug plugins
 call plug#begin('~/.vim/plugged/')
 
@@ -23,6 +26,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-commentary'
 
 " Language support
 Plug 'othree/html5.vim'
@@ -50,21 +54,9 @@ set shiftwidth=2            " spaces for autoindenting
 set softtabstop=2           " remove a full pseudo-TAB when i press <BS>
 set mouse=a                 " mouse all
 
-" -- git command on current file
-fun! GitCommand(command)
-  silent! !clear
-  exec "!git " . a:command . " %"
-endfun
-" -- git diff for current file
-map <leader>d :call GitCommand("diff") <CR>
-" -- git log for current file
-map <leader>l :call GitCommand("log -p") <CR>
-" -- git blame for current file
-map <leader>b :call
-GitCommand("blame") <CR>
-
 " Tabs guide lines
 let g:indentLine_char = '·'
+let g:indentLine_concealcursor = 0
 
 " Display all matching files when we tab complete
 set wildmenu
@@ -83,8 +75,14 @@ autocmd FileType json setlocal sw=2 sts=2
 autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
 
-" Required for alvan/vim-closetag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb,*.xml.erb,*.xml"
+" Close braces
+ino " ""<left>
+ino ' ''<left>
+ino ( ()<left>
+ino [ []<left>
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O
+ino {;<CR> {<CR>};<ESC>O
 
 " Move CtrlY to CtrlZ (Emmet)
 let g:user_emmet_expandabbr_key = '<C-Z>'
@@ -100,12 +98,6 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Omnicomplete
 set completeopt=longest,menuone
 set completeopt+=preview
-
-" Move lines vertically
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " tmux screen view
 if &term == "screen"
@@ -143,25 +135,13 @@ set relativenumber      " show numbers as relative by default
 set showmatch           " higlight matching parentheses and brackets
 set ignorecase          " searching is not case sensitive
 
-" To change the shape of the cursor in different modes [konsole&tmux]
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
 let mapleader=","
-
-" Make window navigation less painful.
-"map <C-h> <C-w>h
-"map <C-j> <C-w>j
-"map <C-k> <C-w>k
-"map <C-l> <C-w>l
 
 " Enable CursorLine
 set cursorline
+
+" Toggle wrap
+nnoremap <leader>z :set wrap!<CR>
 
 " Working with buffers is cool.
 set hidden
@@ -171,12 +151,15 @@ inoremap <C-l> <ESC>:bnext<CR>a
 inoremap <C-h> <ESC>:bprev<CR>a
 noremap <C-t> :tabnew<CR>
 
-" System clipboard
-vnoremap <C-c> "+y
-
 " Tabs
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+" Move lines vertically
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " fzf
 nmap <C-p> :GFiles<CR>
@@ -208,9 +191,9 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Change cursor in different modes
-let &t_SI = "\<Esc>[5 q"
-let &t_SR = "\<Esc>[5 q"
-let &t_EI = "\<Esc>[1 q"
+let &t_SI = "\<Esc>]12;orange\x7"
+let &t_EI = "\<Esc>]12;gray\x7"
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
 
 " Toggle relative numbering
 nmap <F5> :set invrelativenumber<CR>
