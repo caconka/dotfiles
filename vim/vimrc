@@ -27,6 +27,7 @@ Plug 'w0rp/ale'
 Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
+Plug 'editorconfig/editorconfig-vim'
 
 " Language support
 Plug 'othree/html5.vim'
@@ -49,9 +50,9 @@ set nobackup                " don't backup, use git!
 " Modify indenting settings
 set autoindent              " autoindent always ON.
 set smartindent             " intelligent indent
-set expandtab               " expand tabs
-set shiftwidth=2            " spaces for autoindenting
+set tabstop=2               " tab width
 set softtabstop=2           " remove a full pseudo-TAB when i press <BS>
+set shiftwidth=2            " spaces for autoindenting
 set mouse=a                 " mouse all
 
 " Tabs guide lines
