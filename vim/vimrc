@@ -100,6 +100,9 @@ let g:ale_sign_warning = '--'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" Vim-vue disable checking for preprocessors
+let g:vue_disable_pre_processors=1
+
 " Omnicomplete
 set completeopt=longest,menuone
 set completeopt+=preview
@@ -206,6 +209,6 @@ imap <F5> <ESC>:set invrelativenumber<CR>a
 
 " NERDTree
 map <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
+let NERDTreeShowHidden=1
 let NERDTreeWinSize=35
-
