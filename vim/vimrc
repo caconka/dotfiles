@@ -18,15 +18,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
-Plug 'ap/vim-css-color'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
 
 " Language support
@@ -36,7 +33,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'nono/jquery.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
-Plug 'elzr/vim-json'
 
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
@@ -57,11 +53,6 @@ set shiftwidth=2            " spaces for autoindenting
 set mouse=a                 " mouse all
 set list
 set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
-
-" Tabs guide lines
-let g:indentLine_char='·'
-let g:indentLine_concealcursor=0
-let g:vim_json_syntax_conceal=0
 
 " Display all matching files when we tab complete
 set wildmenu
@@ -145,9 +136,6 @@ set ignorecase          " searching is not case sensitive
 
 let mapleader=","
 
-" Enable CursorLine
-set cursorline
-
 " Toggle wrap
 nnoremap <leader>z :set wrap!<CR>
 
@@ -199,9 +187,9 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Change cursor in different modes
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[1 q"
-autocmd VimLeave * silent !echo -ne "\033]112\007"
+let &t_SI = "\<Esc>]12;#ef5777\x7\e[1 q"
+let &t_EI = "\<Esc>]12;\e[0 q"
+autocmd VimLeave * silent !echo -ne "\033]112\007;\e[1 q"
 
 " Toggle relative numbering
 nmap <F5> :set invrelativenumber<CR>
