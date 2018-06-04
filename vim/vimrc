@@ -21,11 +21,10 @@ Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'Valloric/YouCompleteMe' " Compile plugged/YouCompleMe  ./install.py
+" npm i --production in YouCompleteMe/third_party/ycmd/third_party/tern_runtime
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -38,9 +37,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'nono/jquery.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
 
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
@@ -88,7 +84,7 @@ ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
 ino {;<CR> {<CR>};<ESC>O
 
-" Move CtrlY to CtrlZ (Emmet)
+" Emmet
 let g:user_emmet_mode='a'
 
 " ALE config
@@ -104,9 +100,8 @@ nmap <silent> <F8> <Plug>(ale_fix)
 " Vim-vue disable checking for preprocessors
 let g:vue_disable_pre_processors=1
 
-" Omnicomplete
-set completeopt=longest,menuone
-set completeopt+=preview
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-Z>"
 
 " tmux screen view
 if &term == "screen"
