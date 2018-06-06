@@ -8,7 +8,7 @@
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="20"/>
+      <property name="size" type="uint" value="19"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="16"/>
         <value type="int" value="15"/>
@@ -22,10 +22,16 @@
         <value type="int" value="12"/>
       </property>
       <property name="disable-struts" type="bool" value="false"/>
-      <property name="background-alpha" type="uint" value="100"/>
+      <property name="background-alpha" type="uint" value="80"/>
       <property name="background-style" type="uint" value="0"/>
       <property name="leave-opacity" type="uint" value="100"/>
       <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="17219"/>
+        <value type="uint" value="17219"/>
+        <value type="uint" value="17219"/>
+        <value type="uint" value="65535"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -35,7 +41,7 @@
     </property>
     <property name="plugin-4" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>
-      <property name="miniature-view" type="bool" value="true"/>
+      <property name="miniature-view" type="bool" value="false"/>
       <property name="workspace-scrolling" type="bool" value="false"/>
     </property>
     <property name="plugin-5" type="string" value="clock">
@@ -59,6 +65,7 @@
         <value type="string" value="franz"/>
         <value type="string" value="blueberry-tray.py"/>
       </property>
+      <property name="show-frame" type="bool" value="false"/>
     </property>
     <property name="plugin-16" type="string" value="whiskermenu"/>
     <property name="plugin-17" type="string" value="battery"/>
@@ -67,9 +74,11 @@
       <property name="mpris-players" type="string" value="spotify"/>
     </property>
     <property name="plugin-2" type="string" value="separator">
-      <property name="style" type="uint" value="1"/>
+      <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-11" type="string" value="separator"/>
+    <property name="plugin-11" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
     <property name="plugin-12" type="string" value="windowmenu">
       <property name="style" type="uint" value="0"/>
       <property name="workspace-actions" type="bool" value="false"/>
