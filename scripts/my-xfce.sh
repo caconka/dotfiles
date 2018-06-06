@@ -5,6 +5,8 @@
 sudo pacman -Syy --noconfirm gnome-screensaver deepin-icon-theme arc-gtk-theme \
   blueberry
 
+sudo pacaur -Syy --noconfirm x-arc-shadow x-arc-plus
+
 mkdir ~/.icons ~/.themes
 rm -rf ~/.config/xfce4/xfconf/xfce-perchannel-xml
 

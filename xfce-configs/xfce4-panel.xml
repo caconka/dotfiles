@@ -23,13 +23,13 @@
       </property>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="background-alpha" type="uint" value="80"/>
-      <property name="background-style" type="uint" value="0"/>
+      <property name="background-style" type="uint" value="1"/>
       <property name="leave-opacity" type="uint" value="100"/>
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="background-color" type="array">
-        <value type="uint" value="17219"/>
-        <value type="uint" value="17219"/>
-        <value type="uint" value="17219"/>
+        <value type="uint" value="11822"/>
+        <value type="uint" value="13107"/>
+        <value type="uint" value="15677"/>
         <value type="uint" value="65535"/>
       </property>
     </property>
