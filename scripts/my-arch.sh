@@ -42,8 +42,8 @@ mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/.bashrc
 
-# Install pacaur, mongodb, emacs
-sudo pacman -S --noconfirm pacaur mongodb emacs
+# Install pacaur, mongodb, emacs, docker
+sudo pacman -S --noconfirm pacaur mongodb emacs docker
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
