@@ -42,8 +42,8 @@ mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/.bashrc
 
-# Install pacaur, mongodb, emacs, docker
-sudo pacman -S --noconfirm pacaur mongodb emacs docker
+# Install yaourt, mongodb, emacs, docker, fzf, Ag
+sudo pacman -S --noconfirm yaourt mongodb emacs docker fzf the_silver_searcher
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
@@ -61,7 +61,7 @@ ln -s --force ~/.dotfiles/emacs/.emacs ~/
 sudo pacman -S --noconfirm mtpfs gvfs-mtp gvfs-gphoto2
 
 # vscode
-pacaur -Syy --noconfirm visual-studio-code-bin
+yaourt -Syy --noconfirm visual-studio-code-bin
 mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
@@ -69,11 +69,11 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-pacaur -S --noconfirm firefox google-chrome slack-desktop postman-bin \
-  telegram-desktop gimp inkscape mailspring dropbox ack jmtpfs
+yaourt -S --noconfirm firefox google-chrome slack-desktop postman-bin \
+  gimp inkscape mailspring dropbox ack jmtpfs
 
 # Install extras
-pacaur -S --noconfirm spotify
+yaourt -S --noconfirm spotify
 
 # Code dir config
 sudo mkdir ~/code
