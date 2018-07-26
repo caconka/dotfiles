@@ -61,6 +61,12 @@ ln -s --force ~/.dotfiles/emacs/.emacs ~/
 # Android support mtp protocol
 sudo pacman -S --noconfirm mtpfs gvfs-mtp gvfs-gphoto2
 
+# Code dir config
+sudo mkdir ~/code
+cd ~/code
+sudo mkdir ephemeral projects
+sudo chown $USER ephemeral/ projects/
+
 # vscode
 yaourt -Syy --noconfirm visual-studio-code-bin
 mkdir -p ~/.config/Code/User
@@ -70,15 +76,9 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-yaourt -S --noconfirm firefox google-chrome slack-desktop postman-bin \
-  gimp inkscape mailspring dropbox ack jmtpfs
+sudo pacman -S --noconfirm firefox gimp inkscape
+yaourt -S --noconfirm google-chrome slack-desktop postman-bin mailspring \
+	dropbox ack jmtpfs
 
 # Install extras
 yaourt -S --noconfirm spotify
-
-# Code dir config
-sudo mkdir ~/code
-cd ~/code
-sudo mkdir ephemeral projects
-sudo chown $USER ephemeral/ projects/
-
