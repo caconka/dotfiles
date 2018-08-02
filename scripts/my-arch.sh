@@ -53,6 +53,9 @@ sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 sudo systemctl enable mongodb
 sudo systemctl start mongodb
 
+# LANG env
+export LANG=en_US.UTF-8
+
 # emacs / evil-mode
 mkdir ~/.emacs.d
 ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
