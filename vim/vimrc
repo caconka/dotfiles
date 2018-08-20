@@ -86,6 +86,9 @@ ino {;<CR> {<CR>};<ESC>O
 " Emmet
 let g:user_emmet_mode='a'
 
+" Gitgutter
+let g:gitgutter_terminal_reports_focus=0
+
 " ALE config
 let g:ale_completion_enabled = 1
 let g:ale_sign_error = '>>'
