@@ -47,6 +47,11 @@ colors() {
   done
 }
 
+# ls colors
+alias ls='ls --color'
+LS_COLORS='ln=1;32:ex=1;31'
+export LS_COLORS
+
 [[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
@@ -69,9 +74,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 
 # needed by PhoneGap
 ANDROID_HOME=/opt/android-sdk
