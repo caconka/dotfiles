@@ -195,9 +195,8 @@ set sidescrolloff=15
 set sidescroll=1
 
 " Change cursor in different modes
-let &t_SI = "\<Esc>]12;#ef5777\x7\e[1 q"
-let &t_EI = "\<Esc>]12;\e[0 q"
-autocmd VimLeave * silent !echo -ne "\033]112\007;\e[1 q"
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=0\x7\<Esc>\\"
 
 " Toggle relative numbering
 nmap <F5> :set invrelativenumber<CR>
