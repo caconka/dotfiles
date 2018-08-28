@@ -1,5 +1,4 @@
 # Caconka
-# ~/.bashrc
 
 # Config colors and git λ
 source ~/.git-prompt.sh
@@ -21,30 +20,30 @@ shopt -s histappend
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 colors() {
-  local fgc bgc vals seq0
+	local fgc bgc vals seq0
 
-  printf "Color escapes are %s\n" '\e[${value};...;${value}m'
-  printf "Values 30..37 are \e[33mforeground colors\e[m\n"
-  printf "Values 40..47 are \e[43mbackground colors\e[m\n"
-  printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
+	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
+	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
+	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
+	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
 
-  # foreground colors
-  for fgc in {30..37}; do
-    # background colors
-    for bgc in {40..47}; do
-      fgc=${fgc#37} # white
-      bgc=${bgc#40} # black
+	# foreground colors
+	for fgc in {30..37}; do
+		# background colors
+		for bgc in {40..47}; do
+			fgc=${fgc#37} # white
+			bgc=${bgc#40} # black
 
-      vals="${fgc:+$fgc;}${bgc}"
-      vals=${vals%%;}
+			vals="${fgc:+$fgc;}${bgc}"
+			vals=${vals%%;}
 
-      seq0="${vals:+\e[${vals}m}"
-      printf "  %-9s" "${seq0:-(default)}"
-      printf " ${seq0}TEXT\e[m"
-      printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
-    done
-    echo; echo
-  done
+			seq0="${vals:+\e[${vals}m}"
+			printf "  %-9s" "${seq0:-(default)}"
+			printf " ${seq0}TEXT\e[m"
+			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+		done
+		echo; echo
+	done
 }
 
 # ls colors
@@ -58,12 +57,12 @@ export LS_COLORS
 
 # TMUX
 if [[ -z "$TMUX" ]] ;then
-    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
-    if [[ -z "$ID" ]] ;then
-        tmux new-session
-    else
-        tmux attach-session -t "$ID"
-    fi
+	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
+	if [[ -z "$ID" ]] ;then
+		tmux new-session
+	else
+		tmux attach-session -t "$ID"
+	fi
 fi
 
 # NPM without sudo
@@ -76,23 +75,9 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# needed by PhoneGap
-ANDROID_HOME=/opt/android-sdk
-PATH="$PATH:$ANDROID_HOME/tools"
-
 ###-tns-completion-start-###
-if [ -f /home/carlos/.tnsrc ]; then 
-    source /home/carlos/.tnsrc 
-fi
-###-tns-completion-end-###
-
-# needed by PhoneGap
-ANDROID_HOME=/opt/android-sdk
-PATH="$PATH:$ANDROID_HOME/tools"
-
-###-tns-completion-start-###
-if [ -f /home/charlie/.tnsrc ]; then 
-    source /home/charlie/.tnsrc 
+if [ -f /home/carlos/.tnsrc ]; then
+	source /home/carlos/.tnsrc
 fi
 ###-tns-completion-end-###
 

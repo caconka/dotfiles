@@ -43,11 +43,15 @@ mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/.bashrc
 
-# Install yaourt, mongodb, emacs, docker, fzf, Ag
-sudo pacman -S --noconfirm yaourt mongodb emacs docker fzf the_silver_searcher
+# Install yay, mongodb, emacs, docker, fzf, Ag
+sudo pacman -S --noconfirm yay mongodb emacs docker fzf the_silver_searcher
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
+
+# golang
+sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+echo >> ~/.bash_profile 'export GOPATH=$HOME/code/go'
 
 # MongoDB
 sudo systemctl enable mongodb
@@ -67,11 +71,11 @@ sudo pacman -S --noconfirm mtpfs gvfs-mtp gvfs-gphoto2
 # Code dir config
 sudo mkdir ~/code
 cd ~/code
-sudo mkdir ephemeral projects
-sudo chown $USER ephemeral/ projects/
+sudo mkdir ephemeral projects go
+sudo chown $USER ephemeral/ projects/ go/
 
 # vscode
-yaourt -Syy --noconfirm visual-studio-code-bin
+yay -Syy --noconfirm visual-studio-code-bin
 mkdir -p ~/.config/Code/User
 ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
@@ -80,8 +84,8 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape
-yaourt -S --noconfirm google-chrome slack-desktop postman-bin mailspring \
+yay -S --noconfirm google-chrome slack-desktop postman-bin mailspring \
 	dropbox ack jmtpfs
 
 # Install extras
-yaourt -S --noconfirm spotify
+yay -S --noconfirm spotify
