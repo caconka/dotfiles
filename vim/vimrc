@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged/')
 " General purpose plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
@@ -36,6 +36,7 @@ Plug 'mxw/vim-jsx'
 Plug 'nono/jquery.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
