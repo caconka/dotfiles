@@ -20,6 +20,7 @@ ln -s ~/.dotfiles/vim ~/.vim
 
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
+ln -s ~/.dotfiles/bash/.inputrc ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
 echo > ~/.inputrc 'set colored-stats on'
 source ~/.bashrc

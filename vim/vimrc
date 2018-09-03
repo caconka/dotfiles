@@ -93,6 +93,10 @@ imap <silent> <Esc>OF <End>
 imap <silent> <Esc>[5~ <PageUp>
 imap <silent> <Esc>[6~ <PageDown>
 
+" remap C-Left and C-Right
+map 5D vB
+map 5C vE
+
 " Emmet
 let g:user_emmet_mode='a'
 
