@@ -14,7 +14,7 @@ fc-cache -f -v
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
 # Install xclip, tmux and vim
-sudo pacman -Syy --noconfirm xclip tmux gvim ctags tree the_silver_searcher
+sudo pacman -Syy --noconfirm xclip tmux gvim ctags tree the_silver_searcher ctags
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 
