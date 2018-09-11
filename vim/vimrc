@@ -1,7 +1,7 @@
 " vim-plug is not installed
 if empty(glob("~/.vim/autoload/plug.vim"))
-    silent !curl -fLso ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall
+	silent !curl -fLso ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall
 end
 
 " utf-8
@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'Valloric/YouCompleteMe' " Compile plugged/YouCompleMe  ./install.py
 " npm i --production in YouCompleteMe/third_party/ycmd/third_party/tern_runtime
 
@@ -58,9 +59,6 @@ set mouse=a                 " mouse all
 set list
 set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
 
-" Display all matching files when we tab complete
-set wildmenu
-
 " Modify some other settings about files
 set encoding=utf-8              " always use unicode (god damnit, windows)
 set backspace=indent,eol,start  " backspace always works on insert mode
@@ -68,6 +66,28 @@ set hidden
 
 " Highlighting when search
 set hlsearch
+
+" Scrolling when we're n lines away from margins
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
+
+set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
+" Sauce on this: http://stackoverflow.com/a/9001540
+
+set showmode            " always show which more are we in
+set laststatus=2        " always show statusbar
+set wildmenu            " enable visual wildmenu
+
+set nowrap              " don't wrap long lines
+set number              " show line numbers
+set relativenumber      " show numbers as relative by default
+set showmatch           " higlight matching parentheses and brackets
+set ignorecase          " searching is not case sensitive
+set autoread            " if file is changed on disk
+
+" Autosave
+au FocusLost,WinLeave * :silent! w
 
 " Some programming languages work better when only 2 spaces padding is used.
 autocmd FileType html,css,sass,scss,javascript,typescript setlocal sw=2 sts=2
@@ -109,7 +129,7 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '-'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 let g:ale_fixers = { 'javascript': ['eslint'], 'vue': ['eslint'],
-\ 'css': ['prettier'], 'scss': ['prettier'] }
+	\ 'css': ['prettier'], 'scss': ['prettier'] }
 nmap <silent> <F3> <Plug>(ale_previous_wrap)
 nmap <silent> <F4> <Plug>(ale_next_wrap)
 nmap <silent> <F8> <Plug>(ale_fix)
@@ -122,39 +142,26 @@ let g:UltiSnipsExpandTrigger="<C-Z>"
 
 " tmux screen view
 if &term == "screen"
-  set t_Co=256
+	set t_Co=256
 endif
 
 " Are we supporting colors?
 if &t_Co > 2 || has("gui_running")
-   syntax on
-   let &colorcolumn=join(range(81,999),",")
-   let g:seoul256_srgb = 1
-   let g:seoul256_background = 234
-   silent! colo seoul256
+	syntax on
+	let &colorcolumn=join(range(81,999),",")
+	let g:seoul256_srgb = 1
+	let g:seoul256_background = 234
+	silent! colo seoul256
 endif
 
 " Mark trailing spaces depending on whether we have a fancy terminal or not
 if &t_Co > 2 || has("gui_running")
-    highlight ExtraWhitespace ctermbg=red guibg=red
-    match ExtraWhitespace /\s\+$/
+	highlight ExtraWhitespace ctermbg=red guibg=red
+	match ExtraWhitespace /\s\+$/
 else
-    set listchars=trail:~
-    set list
+	set listchars=trail:~
+	set list
 endif
-
-set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
-                        " Sauce on this: http://stackoverflow.com/a/9001540
-
-set showmode            " always show which more are we in
-set laststatus=2        " always show statusbar
-set wildmenu            " enable visual wildmenu
-
-set nowrap              " don't wrap long lines
-set number              " show line numbers
-set relativenumber      " show numbers as relative by default
-set showmatch           " higlight matching parentheses and brackets
-set ignorecase          " searching is not case sensitive
 
 let mapleader=","
 
@@ -193,20 +200,11 @@ nmap <Leader>L :Lines<CR>
 " Ack
 nnoremap <leader>f :Ag<CR>
 
-" Autosave
-au FocusGained,BufEnter * :silent! !
-au FocusLost,WinLeave * :silent! w
-
 " Resize splits
-nnoremap <silent> + :exe "vertical resize +5"<CR>
+ nnoremap <silent> + :exe "vertical resize +5"<CR>
 nnoremap <silent> - :exe "vertical resize -5"<CR>
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-
-" Scrolling when we're n lines away from margins
-set scrolloff=8
-set sidescrolloff=15
-set sidescroll=1
 
 " Change cursor in different modes
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=1\x7\<Esc>\\"
