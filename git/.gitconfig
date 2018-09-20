@@ -8,3 +8,4 @@
 	st = status
 	poh = push origin HEAD
 	com = commit -m
+	ch = checkout
