@@ -185,6 +185,9 @@ nnoremap <C-k> :m .-2<CR>==
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Tags
+set tags+=tags;$HOME
+
 " fzf
 nmap <C-p> :GFiles<CR>
 nmap <Leader>p :Files<CR>

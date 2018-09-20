@@ -17,6 +17,7 @@ ln -s ~/.dotfiles/git/.gitconfig ~/
 sudo pacman -Syy --noconfirm xclip tmux gvim ctags tree the_silver_searcher ctags
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
+ln -s ~/.dotfiles/ctags/.ctags ~/
 
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
