@@ -46,8 +46,9 @@ mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/.bashrc
 
-# Install yay, mongodb, emacs, docker, fzf, Ag
-sudo pacman -S --noconfirm yay mongodb emacs docker fzf the_silver_searcher
+# Install yay, mongodb, postgre, redis, emacs, docker, fzf, Ag
+sudo pacman -S --noconfirm yay mongodb emacs docker fzf the_silver_searcher \
+	redis postgresql
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
