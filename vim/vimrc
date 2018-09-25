@@ -134,6 +134,10 @@ nmap <silent> <F3> <Plug>(ale_previous_wrap)
 nmap <silent> <F4> <Plug>(ale_next_wrap)
 nmap <silent> <F8> <Plug>(ale_fix)
 
+" Vim-go auto-format
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+
 " Vim-vue disable checking for preprocessors
 let g:vue_disable_pre_processors=1
 
