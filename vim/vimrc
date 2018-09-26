@@ -64,8 +64,9 @@ set encoding=utf-8              " always use unicode (god damnit, windows)
 set backspace=indent,eol,start  " backspace always works on insert mode
 set hidden
 
-" Highlighting when search
-set hlsearch
+" Search
+set hlsearch  " Highlighting when search
+set smartcase " case sensitive
 
 " Scrolling when we're n lines away from margins
 set scrolloff=8
