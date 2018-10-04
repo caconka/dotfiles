@@ -13,11 +13,12 @@ export VISUAL="vim"
 [[ $- != *i* ]] && return
 
 # History
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
-PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+PROMPT_COMMAND="history -n; history -w; history -c; history -a; history -r; \
+	$PROMPT_COMMAND"
 
 colors() {
 	local fgc bgc vals seq0
@@ -59,7 +60,7 @@ export LS_COLORS
 if [[ -z "$TMUX" ]] ;then
 	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
 	if [[ -z "$ID" ]] ;then
-		tmux new-session
+		tmux new-session 'HISTFILE=$HOME/.bash_history bash'
 	else
 		tmux attach-session -t "$ID"
 	fi
@@ -84,3 +85,10 @@ fi
 # needed by PhoneGap
 ANDROID_HOME=/opt/android-sdk
 PATH="$PATH:$ANDROID_HOME/tools"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then source '/opt/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then source '/opt/google-cloud-sdk/completion.bash.inc'; fi
+

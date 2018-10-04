@@ -97,10 +97,10 @@ autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
 
 " Close braces
-ino " ""<left>
-ino ' ''<left>
-ino ( ()<left>
-ino [ []<left>
+" ino " ""<left>
+" ino ' ''<left>
+" ino ( ()<left>
+" ino [ []<left>
 ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
 ino {;<CR> {<CR>};<ESC>O
