@@ -4,8 +4,7 @@
 
 # Fonts
 mkdir ~/.fonts
-ln -s ~/.dotfiles/fonts/SourceCodePro-Regular.ttf ~/.fonts/
-ln -s ~/.dotfiles/fonts/SourceSansPro-Regular.ttf ~/.fonts/
+sudo pacman -Syy --noconfirm adobe-source-code-pro-fonts
 ln -s ~/.dotfiles/fonts/Inconsolata-Regular.ttf ~/.fonts/
 ln -s ~/.dotfiles/fonts/AnonymousPro-Regular.ttf ~/.fonts/
 fc-cache -f -v
@@ -14,7 +13,7 @@ fc-cache -f -v
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
 # Install xclip, tmux and vim
-sudo pacman -Syy --noconfirm xclip tmux gvim ctags tree the_silver_searcher ctags
+sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher ctags
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
