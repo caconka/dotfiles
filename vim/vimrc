@@ -10,6 +10,10 @@ scriptencoding utf-8
 " Init vim-plug plugins
 call plug#begin('~/.vim/plugged/')
 
+" #################
+" #    Plugins    #
+" #################
+
 " General purpose plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -24,6 +28,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'Valloric/YouCompleteMe' " Compile plugged/YouCompleMe  ./install.py
 " npm i --production in YouCompleteMe/third_party/ycmd/third_party/tern_runtime
+
+" Office
+Plug 'xolox/vim-misc' " vim-notes needs this plugin
+Plug 'xolox/vim-notes'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -42,6 +50,10 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
 call plug#end()
+
+" ##################
+" #    Settings    #
+" ##################
 
 " Stop acting like classic vi
 set nocompatible            " disable vi compatibility mode
@@ -76,16 +88,16 @@ set sidescroll=1
 set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
 " Sauce on this: http://stackoverflow.com/a/9001540
 
-set showmode            " always show which more are we in
-set laststatus=2        " always show statusbar
-set wildmenu            " enable visual wildmenu
+set showmode         " always show which more are we in
+set laststatus=2     " always show statusbar
+set wildmenu         " enable visual wildmenu
 
-set nowrap              " don't wrap long lines
-set number              " show line numbers
-set relativenumber      " show numbers as relative by default
-set showmatch           " higlight matching parentheses and brackets
-set ignorecase          " searching is not case sensitive
-set autoread            " if file is changed on disk
+set nowrap           " don't wrap long lines
+set number           " show line numbers
+set relativenumber   " show numbers as relative by default
+set showmatch        " higlight matching parentheses and brackets
+set ignorecase       " searching is not case sensitive
+set autoread         " if file is changed on disk
 
 " Autosave
 au FocusLost,WinLeave * :silent! w
@@ -95,6 +107,52 @@ autocmd FileType html,css,sass,scss,javascript,typescript setlocal sw=2 sts=2
 autocmd FileType json setlocal sw=2 sts=2
 autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
+
+" Tags
+set tags+=tags;$HOME
+
+
+" Change cursor in different modes
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=0\x7\<Esc>\\"
+" upon hitting escape to change modes, send successive move-left and move-right
+" commands to immediately redraw the cursor
+inoremap <special> <Esc> <Esc>hl
+" don't blink the cursor
+set guicursor+=i:blinkwait0
+
+" Mark trailing spaces depending on whether we have a fancy terminal or not
+if &t_Co > 2 || has("gui_running")
+	highlight ExtraWhitespace ctermbg=red guibg=red
+	match ExtraWhitespace /\s\+$/
+else
+	set listchars=trail:~
+	set list
+endif
+
+" Change tab tittle
+autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+autocmd VimLeave * call system("tmux rename-window bash")
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
+
+" tmux screen view
+if &term == "screen"
+	set t_Co=256
+endif
+
+" Are we supporting colors?
+if &t_Co > 2 || has("gui_running")
+	syntax on
+	let &colorcolumn=join(range(81,999),",")
+	let g:seoul256_srgb = 1
+	let g:seoul256_background = 234
+	silent! colo seoul256
+endif
+
+" ###################
+" #  Key remapping  #
+" ###################
 
 " Close braces
 " ino " ""<left>
@@ -117,6 +175,42 @@ imap <silent> <Esc>[6~ <PageDown>
 " remap C-Left and C-Right
 map 5D vB
 map 5C vE
+
+let mapleader=","
+
+" Toggle wrap
+nnoremap <leader>z :set wrap!<CR>
+
+" Working with buffers is cool.
+set hidden
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
+inoremap <C-l> <ESC>:bnext<CR>a
+inoremap <C-h> <ESC>:bprev<CR>a
+
+" Tabs
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
+" Move lines vertically
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Resize splits
+nnoremap <silent> + :exe "vertical resize +5"<CR>
+nnoremap <silent> - :exe "vertical resize -5"<CR>
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" Toggle relative numbering
+nmap <F5> :set invrelativenumber<CR>
+imap <F5> <ESC>:set invrelativenumber<CR>a
+
+" ###################
+" # Plugin settings #
+" ###################
 
 " Emmet
 let g:user_emmet_mode='a'
@@ -145,54 +239,6 @@ let g:vue_disable_pre_processors=1
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-Z>"
 
-" tmux screen view
-if &term == "screen"
-	set t_Co=256
-endif
-
-" Are we supporting colors?
-if &t_Co > 2 || has("gui_running")
-	syntax on
-	let &colorcolumn=join(range(81,999),",")
-	let g:seoul256_srgb = 1
-	let g:seoul256_background = 234
-	silent! colo seoul256
-endif
-
-" Mark trailing spaces depending on whether we have a fancy terminal or not
-if &t_Co > 2 || has("gui_running")
-	highlight ExtraWhitespace ctermbg=red guibg=red
-	match ExtraWhitespace /\s\+$/
-else
-	set listchars=trail:~
-	set list
-endif
-
-let mapleader=","
-
-" Toggle wrap
-nnoremap <leader>z :set wrap!<CR>
-
-" Working with buffers is cool.
-set hidden
-nnoremap <C-l> :bnext<CR>
-nnoremap <C-h> :bprev<CR>
-inoremap <C-l> <ESC>:bnext<CR>a
-inoremap <C-h> <ESC>:bprev<CR>a
-
-" Tabs
-vmap <Tab> >gv
-vmap <S-Tab> <gv
-
-" Move lines vertically
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
-" Tags
-set tags+=tags;$HOME
-
 " fzf
 nmap <C-p> :GFiles<CR>
 nmap <Leader>p :Files<CR>
@@ -207,30 +253,13 @@ nmap <Leader>L :Lines<CR>
 " Ack
 nnoremap <leader>f :Ag<CR>
 
-" Resize splits
- nnoremap <silent> + :exe "vertical resize +5"<CR>
-nnoremap <silent> - :exe "vertical resize -5"<CR>
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-
-" Change cursor in different modes
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=0\x7\<Esc>\\"
-" upon hitting escape to change modes, send successive move-left and move-right
-" commands to immediately redraw the cursor
-inoremap <special> <Esc> <Esc>hl
-" don't blink the cursor
-set guicursor+=i:blinkwait0
-
-" Change tab tittle
-autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
-autocmd VimLeave * call system("tmux rename-window bash")
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
-set title
-
-" Toggle relative numbering
-nmap <F5> :set invrelativenumber<CR>
-imap <F5> <ESC>:set invrelativenumber<CR>a
+" vim-notes
+let g:notes_directories = ['~/Dropbox/notes']
+let g:notes_suffix = '.txt'
+let g:notes_conceal_code = 0
+let g:notes_conceal_italic = 0
+let g:notes_conceal_bold = 0
+let g:notes_conceal_url = 0
 
 " NERDTree
 map <Leader>nt :NERDTreeToggle<CR>
