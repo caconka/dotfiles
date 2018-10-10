@@ -30,8 +30,8 @@ Plug 'Valloric/YouCompleteMe' " Compile plugged/YouCompleMe  ./install.py
 " npm i --production in YouCompleteMe/third_party/ycmd/third_party/tern_runtime
 
 " Office
-Plug 'xolox/vim-misc' " vim-notes needs this plugin
-Plug 'xolox/vim-notes'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'plasticboy/vim-markdown'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -255,13 +255,9 @@ nmap <Leader>L :Lines<CR>
 " Ack
 nnoremap <leader>f :Ag<CR>
 
-" vim-notes
-let g:notes_directories = ['~/Dropbox/notes']
-let g:notes_suffix = '.txt'
-let g:notes_conceal_code = 0
-let g:notes_conceal_italic = 0
-let g:notes_conceal_bold = 0
-let g:notes_conceal_url = 0
+" Vim-Markdown
+let g:vim_markdown_folding_level = 2
+let g:vim_markdown_new_list_item_indent = 0
 
 " NERDTree
 map <Leader>nt :NERDTreeToggle<CR>
