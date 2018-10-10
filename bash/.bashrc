@@ -82,6 +82,13 @@ if [ -f /home/carlos/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 
+# Aliases
+alias open="xdg-open"
+alias grep="grep --color"
+alias calc="libreoffice --calc"
+alias writer="libreoffice --writer"
+alias myip="curl http://myip.dnsomatic.com && echo ''"
+
 # needed by PhoneGap
 ANDROID_HOME=/opt/android-sdk
 PATH="$PATH:$ANDROID_HOME/tools"
