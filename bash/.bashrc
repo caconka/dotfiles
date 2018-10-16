@@ -87,7 +87,7 @@ alias open="xdg-open"
 alias grep="grep --color"
 alias calc="libreoffice --calc"
 alias writer="libreoffice --writer"
-alias myip="curl http://myip.dnsomatic.com && echo ''"
+alias myip="ifconfig | grep 'inet 192' | awk '{ print \$2}'"
 
 # needed by PhoneGap
 ANDROID_HOME=/opt/android-sdk
@@ -98,4 +98,3 @@ if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then source '/opt/google-cloud-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then source '/opt/google-cloud-sdk/completion.bash.inc'; fi
-
