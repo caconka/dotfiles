@@ -45,9 +45,9 @@ mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/.bashrc
 
-# Install yay, mongodb, postgre, redis, emacs, docker, fzf, Ag
-sudo pacman -S --noconfirm yay mongodb emacs docker fzf the_silver_searcher \
-	redis postgresql
+# Install yay, mongodb, postgre, redis, docker, fzf, Ag
+sudo pacman -S --noconfirm yay mongodb docker fzf the_silver_searcher redis \
+	postgresql
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
@@ -62,11 +62,6 @@ sudo systemctl start mongodb
 
 # LANG env
 export LANG=en_US.UTF-8
-
-# emacs / evil-mode
-mkdir ~/.emacs.d
-ln -s ~/.dotfiles/emacs/init.el ~/.emacs.d/
-ln -s --force ~/.dotfiles/emacs/.emacs ~/
 
 # Android support mtp protocol
 sudo pacman -S --noconfirm mtpfs gvfs-mtp gvfs-gphoto2
