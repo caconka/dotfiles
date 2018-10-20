@@ -82,8 +82,7 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape
-yay -S --noconfirm google-chrome slack-desktop postman-bin mailspring \
-	dropbox ack jmtpfs
+yay -S --noconfirm slack-desktop postman-bin mailspring dropbox ack jmtpfs
 
 # Install extras
 yay -S --noconfirm spotify
