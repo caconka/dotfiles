@@ -81,7 +81,7 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-sudo pacman -S --noconfirm firefox gimp inkscape
+sudo pacman -S --noconfirm firefox gimp inkscape mpv
 yay -S --noconfirm slack-desktop postman-bin mailspring dropbox ack jmtpfs
 
 # Install extras
