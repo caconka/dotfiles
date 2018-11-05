@@ -13,7 +13,7 @@ fc-cache -f -v
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
 # Install xclip, tmux and vim
-sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher ctags
+sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
@@ -46,8 +46,7 @@ npm config set prefix ~/.npm-global
 source ~/.bashrc
 
 # Install yay, mongodb, postgre, redis, docker, fzf, Ag
-sudo pacman -S --noconfirm yay mongodb docker fzf the_silver_searcher redis \
-	postgresql
+sudo pacman -S --noconfirm yay mongodb docker fzf redis postgresql
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
@@ -82,7 +81,4 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape mpv
-yay -S --noconfirm slack-desktop postman-bin mailspring dropbox ack jmtpfs
-
-# Install extras
-yay -S --noconfirm spotify
+yay -S --noconfirm slack-desktop postman-bin dropbox ack jmtpfs
