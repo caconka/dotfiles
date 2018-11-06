@@ -271,7 +271,8 @@ nmap <Leader>L :Lines<CR>
 nnoremap <leader>f :Ag<CR>
 
 " Vim-Markdown
-let g:vim_markdown_folding_level = 2
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_new_list_item_indent = 0
 let g:table_mode_corner='|'
 
