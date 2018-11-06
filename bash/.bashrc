@@ -49,7 +49,7 @@ colors() {
 
 # ls colors
 alias ls='ls --color'
-LS_COLORS='ln=1;32:ex=1;31:di=0;33:fi=0'
+LS_COLORS='ln=1;32:ex=1;31:di=1;34:fi=0'
 export LS_COLORS
 
 [[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
