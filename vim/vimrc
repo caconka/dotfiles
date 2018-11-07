@@ -223,7 +223,6 @@ nmap <F6> "=strftime("%F")<CR>P
 imap <F6> <C-R>=strftime("%F")<CR>
 
 " Paste clipboard
-inoremap <C-R>+ <ESC>:r !xclip -selection clipboard -o<CR>
 nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
 
 " ###################
