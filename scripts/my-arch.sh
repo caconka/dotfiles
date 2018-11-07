@@ -27,7 +27,7 @@ source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash
 
 # NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 source ~/.bashrc
 nvm install stable
 nvm use node
@@ -45,8 +45,12 @@ mkdir ~/.npm-global
 npm config set prefix ~/.npm-global
 source ~/.bashrc
 
-# Install yay, mongodb, postgre, redis, docker, fzf, Ag
+# Install yay, mongodb, postgre, redis, docker, fzf
 sudo pacman -S --noconfirm yay mongodb docker fzf redis postgresql
+
+# MongoDB
+sudo systemctl enable mongodb
+sudo systemctl start mongodb
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
@@ -54,10 +58,6 @@ sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 # golang
 sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 echo >> ~/.bash_profile 'export GOPATH=$HOME/code/go'
-
-# MongoDB
-sudo systemctl enable mongodb
-sudo systemctl start mongodb
 
 # LANG env
 export LANG=en_US.UTF-8
