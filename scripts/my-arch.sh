@@ -26,25 +26,6 @@ echo > ~/.inputrc 'set colored-stats on'
 source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash
 
-# NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-source ~/.bashrc
-nvm install stable
-nvm use node
-
-# Upgrade NVM
-(
-  cd "$NVM_DIR"
-  git fetch origin
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-) && . "$NVM_DIR/nvm.sh"
-
-# NPM
-sudo pacman -S --noconfirm npm
-mkdir ~/.npm-global
-npm config set prefix ~/.npm-global
-source ~/.bashrc
-
 # Install yay, mongodb, postgre, redis, docker, fzf
 sudo pacman -S --noconfirm yay mongodb docker fzf redis postgresql
 
@@ -82,3 +63,22 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape mpv
 yay -S --noconfirm slack-desktop postman-bin dropbox ack jmtpfs
+
+# NVM
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+source ~/.bashrc
+nvm install stable
+nvm use node
+
+# Upgrade NVM
+(
+  cd "$NVM_DIR"
+  git fetch origin
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+) && . "$NVM_DIR/nvm.sh"
+
+# NPM
+sudo pacman -S --noconfirm npm
+mkdir ~/.npm-global
+npm config set prefix ~/.npm-global
+source ~/.bashrc
