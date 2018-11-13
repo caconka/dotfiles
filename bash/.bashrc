@@ -87,7 +87,7 @@ alias open="xdg-open"
 alias grep="grep --color"
 alias calc="libreoffice --calc"
 alias writer="libreoffice --writer"
-alias myip="ifconfig | grep 'inet 192' | awk '{ print \$2}'"
+alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 
 # needed by PhoneGap
 ANDROID_HOME=/opt/android-sdk
