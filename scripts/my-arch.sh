@@ -38,6 +38,7 @@ sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 
 # golang
 sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+export PATH=$PATH:/usr/local/go/bin
 echo >> ~/.bash_profile 'export GOPATH=$HOME/code/go'
 
 # LANG env
