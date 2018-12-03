@@ -64,7 +64,7 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape mpv
-yay -S --noconfirm postman-bin dropbox ack jmtpfs
+yay -S --noconfirm postman-bin dropbox ack jmtpfs kubectl-bin
 
 # Touchpad gestures
 yay -S --noconfirm libinput-gestures
