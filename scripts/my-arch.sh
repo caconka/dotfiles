@@ -27,7 +27,7 @@ source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash
 
 # Install yay, mongodb, postgre, redis, docker, fzf
-sudo pacman -S --noconfirm yay mongodb docker fzf redis postgresql
+sudo pacman -S --noconfirm yay mongodb docker docker-compose fzf redis postgresql
 
 # MongoDB
 sudo systemctl enable mongodb
@@ -63,14 +63,8 @@ mkdir -p ~/.vscode/extensions/
 ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
-sudo pacman -S --noconfirm firefox gimp inkscape mpv
+sudo pacman -S --noconfirm firefox gimp inkscape mpv chromium
 yay -S --noconfirm postman-bin dropbox ack jmtpfs
-
-# Touchpad gestures
-yay -S --noconfirm libinput-gestures
-cp ~/.dotfiles/libinput/libinput-gestures.conf ~/.config/
-libinput-gestures-setup autostart
-libinput-gestures-setup restart
 
 # NVM
 yay -S --noconfirm nvm
