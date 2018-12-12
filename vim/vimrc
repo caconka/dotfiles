@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged/')
 " #################
 
 " General purpose plugins
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
@@ -26,7 +27,7 @@ Plug 'mattn/emmet-vim'
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'Valloric/YouCompleteMe' " Compile plugged/YouCompleMe  ./install.py
+Plug 'Valloric/YouCompleteMe' " Compile plugged/YouCompleMe  ./install.py --all
 " npm i --production in YouCompleteMe/third_party/ycmd/third_party/tern_runtime
 
 " Office
@@ -163,15 +164,6 @@ endif
 " ###################
 " #  Key remapping  #
 " ###################
-
-" Close braces
-" ino " ""<left>
-" ino ' ''<left>
-" ino ( ()<left>
-" ino [ []<left>
-ino { {}<left>
-ino {<CR> {<CR>}<ESC>O
-ino {;<CR> {<CR>};<ESC>O
 
 imap <silent> <Esc>OA <Up>
 imap <silent> <Esc>OB <Down>
