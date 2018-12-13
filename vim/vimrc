@@ -47,6 +47,7 @@ Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
 " Colorschemes
 Plug 'junegunn/seoul256.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " ##################
@@ -139,7 +140,7 @@ if &t_Co > 2 || has("gui_running")
 	let &colorcolumn=join(range(81,999),",")
 	let g:seoul256_srgb = 1
 	let g:seoul256_background = 234
-	silent! colo seoul256
+	silent! colo nord
 endif
 
 syn sync fromstart
