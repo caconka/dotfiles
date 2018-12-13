@@ -26,8 +26,9 @@ echo > ~/.inputrc 'set colored-stats on'
 source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash
 
-# Install yay, mongodb, postgre, redis, docker, fzf
-sudo pacman -S --noconfirm yay mongodb docker docker-compose fzf redis postgresql
+# Install yay, mongodb, postgre, redis, docker, fzf, dbeaver
+sudo pacman -S --noconfirm yay mongodb docker docker-compose fzf redis \
+	dbeaver postgresql
 
 # MongoDB
 sudo systemctl enable mongodb
