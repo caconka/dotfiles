@@ -23,8 +23,6 @@ ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
 ln -s ~/.dotfiles/bash/.inputrc ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
 echo > ~/.inputrc 'set colored-stats on'
-source ~/.bashrc
-source /usr/share/git/completion/git-completion.bash
 
 # Install yay, mongodb, postgre, redis, docker, fzf, dbeaver
 sudo pacman -S --noconfirm yay mongodb docker docker-compose fzf redis \
@@ -70,6 +68,7 @@ yay -S --noconfirm postman-bin dropbox ack jmtpfs kubectl-bin
 # NVM
 yay -S --noconfirm nvm
 source ~/.bashrc
+source /usr/share/git/completion/git-completion.bash
 nvm install stable
 nvm use node
 
