@@ -36,10 +36,8 @@ sudo systemctl start mongodb
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 
 # golang
-sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
-export PATH=$PATH:/usr/local/go/bin
+sudo pacman -S --noconfirm go
 echo >> ~/.bash_profile 'export GOPATH=$HOME/code/go'
-echo >> ~/.bash_profile 'export PATH=$PATH:/usr/local/go/bin'
 
 # LANG env
 export LANG=en_US.UTF-8
