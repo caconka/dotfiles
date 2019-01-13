@@ -37,7 +37,11 @@ sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 
 # golang
 sudo pacman -S --noconfirm go
-echo >> ~/.bash_profile 'export GOPATH=$HOME/code/go'
+echo >> ~/.profile 'export GOPATH=$HOME/code/go'
+
+# java
+sudo pacman -S --noconfirm jdk-openjdk
+echo >> ~/.profile 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk'
 
 # LANG env
 export LANG=en_US.UTF-8
