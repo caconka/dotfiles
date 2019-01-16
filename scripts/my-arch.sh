@@ -35,10 +35,6 @@ sudo systemctl start mongodb
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 
-# golang
-sudo pacman -S --noconfirm go
-echo >> ~/.profile 'export GOPATH=$HOME/code/go'
-
 # java
 sudo pacman -S --noconfirm jdk-openjdk
 echo >> ~/.profile 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk'
@@ -54,6 +50,12 @@ sudo mkdir ~/code
 cd ~/code
 sudo mkdir ephemeral projects go
 sudo chown $USER ephemeral/ projects/ go/
+mkdir ~/code/go/bin
+
+# golang
+sudo pacman -S --noconfirm go
+echo >> ~/.profile 'export GOPATH=$HOME/code/go'
+export PATH=$PATH:$HOME/code/go/bin
 
 # vscode
 yay -Syy --noconfirm visual-studio-code-bin
