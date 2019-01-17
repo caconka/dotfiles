@@ -32,7 +32,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 " Office
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown'
+Plug 'suan/vim-instant-markdown' " Install npm -g install instant-markdown-d
 
 
 " Snippets
