@@ -30,8 +30,10 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Office
-Plug 'dhruvasagar/vim-table-mode'
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'suan/vim-instant-markdown'
+
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -268,10 +270,25 @@ nmap <Leader>L :Lines<CR>
 nnoremap <leader>f :Ag<CR>
 
 " Vim-Markdown
-let g:vim_markdown_folding_level = 6
+let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_new_list_item_indent = 2
 let g:table_mode_corner='|'
+" Instant markdown preview
+let g:instant_markdown_autostart = 0
+
+" Tabularize
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
 " NERDTree
 map <Leader>nt :NERDTreeToggle<CR>
