@@ -67,6 +67,9 @@ if [[ -z "$TMUX" ]] ;then
 	fi
 fi
 
+# Golang exec
+export PATH=$PATH:$HOME/code/go/bin
+
 # NPM without sudo
 export PATH=~/.npm-global/bin:$PATH
 
