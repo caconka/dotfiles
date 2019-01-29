@@ -94,6 +94,9 @@ alias calc="libreoffice --calc"
 alias writer="libreoffice --writer"
 alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 
+# golang
+export PATH=$PATH:$GOPATH/bin
+
 # needed by PhoneGap
 ANDROID_HOME=/opt/android-sdk
 PATH="$PATH:$ANDROID_HOME/tools"
