@@ -67,7 +67,7 @@ ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape mpv chromium
-yay -S --noconfirm postman-bin dropbox ack jmtpfs kubectl-bin
+yay -S --noconfirm postman-bin dropbox ack jmtpfs kubectl-bin kubernetes-helm
 
 # NVM
 yay -S --noconfirm nvm

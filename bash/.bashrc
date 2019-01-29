@@ -6,6 +6,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 PS1='\n\[\e[1;31m\]> \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
 source /usr/share/git/completion/git-completion.bash
 source /usr/share/nvm/init-nvm.sh
+source <(kubectl completion bash)
 
 # Default text-editor
 export Editor="vim"
