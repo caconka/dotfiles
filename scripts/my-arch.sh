@@ -20,9 +20,9 @@ ln -s ~/.dotfiles/ctags/.ctags ~/
 
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
-ln -s ~/.dotfiles/bash/.inputrc ~/
+ln -s --force ~/.dotfiles/bash/.inputrc ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
-echo > ~/.inputrc 'set colored-stats on'
+ln -s --force ~/.dotfiles/bash/.bash_profile ~/
 
 # Install yay, mongodb, postgre, redis, docker, fzf, dbeaver
 sudo pacman -S --noconfirm yay mongodb docker docker-compose fzf redis \
@@ -35,12 +35,8 @@ sudo systemctl start mongodb
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
 
-# java
-sudo pacman -S --noconfirm jdk-openjdk
-echo >> ~/.profile 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk'
-
-# LANG env
-export LANG=en_US.UTF-8
+# Programming lang
+sudo pacman -S --noconfirm jdk-openjdk go
 
 # Android support mtp protocol
 sudo pacman -S --noconfirm mtpfs gvfs-mtp gvfs-gphoto2
@@ -51,11 +47,6 @@ cd ~/code
 sudo mkdir ephemeral projects go
 sudo chown $USER ephemeral/ projects/ go/
 mkdir ~/code/go/bin
-
-# golang
-sudo pacman -S --noconfirm go
-echo >> ~/.profile 'export GOPATH=$HOME/code/go'
-export PATH=$PATH:$HOME/code/go/bin
 
 # vscode
 yay -Syy --noconfirm visual-studio-code-bin

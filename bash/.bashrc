@@ -1,16 +1,18 @@
 # Caconka
 
+# Source .bash_profile
+source ~/.bash_profile
+
 # Config colors and git λ
 source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1='\n\[\e[1;31m\]> \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
+
+# Bash completion
 source /usr/share/git/completion/git-completion.bash
 source /usr/share/nvm/init-nvm.sh
 source <(kubectl completion bash)
-
-# Default text-editor
-export Editor="vim"
-export VISUAL="vim"
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 [[ $- != *i* ]] && return
 
@@ -49,15 +51,6 @@ colors() {
 	done
 }
 
-# ls colors
-alias ls='ls --color'
-LS_COLORS='ln=1;32:ex=1;31:di=1;34:fi=0'
-export LS_COLORS
-
-[[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
-
-[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
-
 # TMUX
 if [[ -z "$TMUX" ]] ;then
 	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
@@ -68,17 +61,7 @@ if [[ -z "$TMUX" ]] ;then
 	fi
 fi
 
-# Golang exec
-export PATH=$PATH:$HOME/code/go/bin
-
-# NPM without sudo
-export PATH=~/.npm-global/bin:$PATH
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 ###-tns-completion-start-###
@@ -86,20 +69,6 @@ if [ -f /home/carlos/.tnsrc ]; then
 	source /home/carlos/.tnsrc
 fi
 ###-tns-completion-end-###
-
-# Aliases
-alias open="xdg-open"
-alias grep="grep --color"
-alias calc="libreoffice --calc"
-alias writer="libreoffice --writer"
-alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-
-# golang
-export PATH=$PATH:$GOPATH/bin
-
-# needed by PhoneGap
-ANDROID_HOME=/opt/android-sdk
-PATH="$PATH:$ANDROID_HOME/tools"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then source '/opt/google-cloud-sdk/path.bash.inc'; fi
