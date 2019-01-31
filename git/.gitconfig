@@ -7,5 +7,6 @@
 	unstage = reset HEAD --
 	st = status
 	poh = push origin HEAD
+	pom = pull origin master
 	com = commit -m
 	ch = checkout
