@@ -18,16 +18,23 @@ export NVM_DIR="$HOME/.nvm"
 # needed by PhoneGap
 export PATH=$PATH:/opt/android-sdk/tools
 # colors
-LS_COLORS='ln=1;32:ex=1;31:di=1;34:fi=0'
+LS_COLORS="ln=1;32:ex=1;31:di=1;34:fi=0"
 export LS_COLORS
 
-# Alias
-alias ls='ls --color'
+##### Alias #####
+alias ls="ls --color"
 alias open="xdg-open"
 alias grep="grep --color"
 alias calc="libreoffice --calc"
 alias writer="libreoffice --writer"
 alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 
+# Ctags
+alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git -f ./.git/tags"
+
+# maven
+alias mvn:dev="mvn clean package && java -jar ./target/*-dependencies.jar"
+
+# kubernetes
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
 alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev"
