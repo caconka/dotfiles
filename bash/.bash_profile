@@ -33,7 +33,7 @@ alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git -f ./.git/tags"
 
 # maven
-alias mvn:dev="mvn clean package && java -jar ./target/*-dependencies.jar"
+alias mvn-dev="mvn clean package && java -jar ./target/*-dependencies.jar"
 
 # kubernetes
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
