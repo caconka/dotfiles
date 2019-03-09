@@ -12,8 +12,11 @@ fc-cache -f -v
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
+# Installs basics
+sudo pacman -S --noconfirm zip file-roller
+
 # Install xclip, tmux and vim
-sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher cmake zip
+sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher cmake
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
