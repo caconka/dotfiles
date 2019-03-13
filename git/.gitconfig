@@ -10,3 +10,4 @@
 	pom = pull origin master
 	com = commit -m
 	ch = checkout
+	sc = show --name-only
