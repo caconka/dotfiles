@@ -49,12 +49,12 @@ sudo chown $USER ephemeral/ projects/ go/
 mkdir ~/code/go/bin
 
 # vscode
-yay -Syy --noconfirm visual-studio-code-bin
-mkdir -p ~/.config/Code/User
-ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
-ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
-mkdir -p ~/.vscode/extensions/
-ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
+# yay -Syy --noconfirm visual-studio-code-bin
+# mkdir -p ~/.config/Code/User
+# ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
+# ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
+# mkdir -p ~/.vscode/extensions/
+# ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape mpv chromium
