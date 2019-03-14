@@ -1,8 +1,8 @@
 vim/autoload/*
 vim/plugged/*
 xfce-configs/thunar.xml
-password*
 /mutt/*~
+/mutt/inc/ps*
 /mutt/.cache/certificates
 /mutt/.cache/headercache
 /mutt/.cache/messagecache

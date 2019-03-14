@@ -4,7 +4,7 @@ source ~/.mutt/inc/sidebar
 source ~/.mutt/inc/commands
 
 source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/imap
-source "gpg -d ~/.mutt/inc/passwords.gpg |"
+source "gpg -d ~/.mutt/inc/pss.gpg |"
 source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/ident
 source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/smtp
 source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/mailboxes
