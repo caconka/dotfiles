@@ -12,6 +12,10 @@ ln -s ~/.dotfiles/fonts/Inconsolata-Regular.ttf ~/.fonts/
 ln -s ~/.dotfiles/fonts/AnonymousPro-Regular.ttf ~/.fonts/
 fc-cache -f -v
 
+# mutt
+sudo pacman -S --noconfirm mutt
+ln -s ~/.dotfiles/mutt ~/.mutt
+
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
