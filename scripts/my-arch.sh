@@ -15,6 +15,9 @@ fc-cache -f -v
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
 
+# Installs basics
+sudo pacman -S --noconfirm zip file-roller qpdfview
+
 # Install xclip, tmux and vim
 sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher cmake
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
@@ -27,9 +30,9 @@ ln -s --force ~/.dotfiles/bash/.inputrc ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
 ln -s --force ~/.dotfiles/bash/.bash_profile ~/
 
-# Install yay, mongodb, postgre, redis, docker, fzf, dbeaver
+# Programming
 sudo pacman -S --noconfirm yay mongodb docker docker-compose fzf redis \
-	dbeaver postgresql
+	dbeaver postgresql go
 
 # MongoDB
 sudo systemctl enable mongodb
@@ -37,9 +40,6 @@ sudo systemctl start mongodb
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
-
-# Programming lang
-sudo pacman -S --noconfirm jdk-openjdk go
 
 # Android support mtp protocol
 sudo pacman -S --noconfirm mtpfs gvfs-mtp gvfs-gphoto2
@@ -52,18 +52,24 @@ sudo chown $USER ephemeral/ projects/ go/
 mkdir ~/code/go/bin
 
 # vscode
-yay -Syy --noconfirm visual-studio-code-bin
-mkdir -p ~/.config/Code/User
-ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
-ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
-mkdir -p ~/.vscode/extensions/
-ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
+# yay -Syy --noconfirm visual-studio-code-bin
+# mkdir -p ~/.config/Code/User
+# ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
+# ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
+# mkdir -p ~/.vscode/extensions/
+# ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape mpv chromium
 yay -S --noconfirm postman-bin dropbox ack jmtpfs kubectl-bin kubernetes-helm
 
-# NVM
+# Java
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install java
+sdk install maven
+
+# Node
 yay -S --noconfirm nvm
 source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash

@@ -75,3 +75,7 @@ if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then source '/opt/google-cloud-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then source '/opt/google-cloud-sdk/completion.bash.inc'; fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/charlie/.sdkman"
+[[ -s "/home/charlie/.sdkman/bin/sdkman-init.sh" ]] && source "/home/charlie/.sdkman/bin/sdkman-init.sh"
