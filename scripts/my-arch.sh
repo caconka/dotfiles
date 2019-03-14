@@ -2,6 +2,9 @@
 
 # Dotfiles caconka
 
+# Caps-lock -> ESC
+setxkbmap -option caps:escape
+
 # Fonts
 mkdir ~/.fonts
 sudo pacman -Syy --noconfirm adobe-source-code-pro-fonts
