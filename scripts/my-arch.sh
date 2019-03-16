@@ -18,6 +18,7 @@ ln -s ~/.dotfiles/mutt ~/.mutt
 
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
+ln -s ~/.dotfiles/git/.gitignore_global ~/
 
 # Installs basics
 sudo pacman -S --noconfirm zip file-roller qpdfview
