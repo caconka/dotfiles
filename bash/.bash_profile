@@ -34,6 +34,7 @@ alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git -f ./.git/tags"
 
 # maven
 alias mvn-dev="mvn clean package && java -jar ./target/*-dependencies.jar"
+alias mvn-debug="mvn clean package && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
 
 # kubernetes
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
