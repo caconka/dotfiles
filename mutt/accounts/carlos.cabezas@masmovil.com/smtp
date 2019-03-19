@@ -1,0 +1,2 @@
+set ssl_starttls=yes
+set smtp_url='smtp://carlos.cabezas@masmovil.com@smtp.office365.com:587/'

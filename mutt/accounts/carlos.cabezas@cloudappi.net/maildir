@@ -1,6 +1,0 @@
-set mbox_type=Maildir
-set folder = '~/Mail/carlos.cabezas@cloudappi.net'
-set mbox='~/Mail/carlos.cabezas@cloudappi.net'
-set spoolfile='~/Mail/carlos.cabezas@cloudappi.net/INBOX'
-set record='~/Mail/carlos.cabezas@cloudappi.net/INBOX'
-set postponed='~/Mail/carlos.cabezas@cloudappi.net/Drafts'

@@ -1,0 +1,5 @@
+set imap_user="carlos.cabezas@masmovil.com"
+set folder = "imaps://outlook.office365.com:993"
+set spoolfile = "+INBOX"
+set record='+'
+set postponed ="+Drafts"

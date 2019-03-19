@@ -1,4 +1,0 @@
-set realname = 'Carlos Cabezas'
-set from = 'carlos.cabezas@cloudappi.net'
-set sig_dashes="no"
-set signature = "~/.mutt/accounts/carlos.cabezas@cloudappi.net/signature"

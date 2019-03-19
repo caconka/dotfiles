@@ -1,2 +1,0 @@
-set ssl_starttls=yes
-set smtp_url='smtp://carlos.cabezas@cloudappi.net@smtp.gmail.com:587/'

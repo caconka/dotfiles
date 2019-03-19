@@ -3,8 +3,8 @@ source ~/.mutt/inc/colors
 source ~/.mutt/inc/sidebar
 source ~/.mutt/inc/commands
 
-source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/imap
+source ~/.mutt/accounts/carlos.cabezas@masmovil.com/imap
 source "gpg -d ~/.mutt/inc/pss.gpg |"
-source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/ident
-source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/smtp
-source ~/.mutt/accounts/carlos.cabezas@cloudappi.net/mailboxes
+source ~/.mutt/accounts/carlos.cabezas@masmovil.com/ident
+source ~/.mutt/accounts/carlos.cabezas@masmovil.com/smtp
+source ~/.mutt/accounts/carlos.cabezas@masmovil.com/mailboxes
