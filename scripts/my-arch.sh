@@ -24,6 +24,7 @@ ln -s ~/.dotfiles/git/.gitignore_global ~/
 sudo pacman -S --noconfirm zip file-roller qpdfview
 
 # Install xclip, tmux and vim
+sudo pacman -R --noconfirm vim
 sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher cmake
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
@@ -36,12 +37,11 @@ ln -s --force ~/.dotfiles/bash/.bashrc ~/
 ln -s --force ~/.dotfiles/bash/.bash_profile ~/
 
 # Programming
-sudo pacman -S --noconfirm yay mongodb docker docker-compose fzf redis \
-	dbeaver postgresql go
+sudo pacman -S --noconfirm docker docker-compose fzf redis dbeaver postgresql go
 
 # MongoDB
-sudo systemctl enable mongodb
-sudo systemctl start mongodb
+# sudo systemctl enable mongodb
+# sudo systemctl start mongodb
 
 # Install virtualbox
 sudo pacman -S --noconfirm linux-headers virtualbox virtualbox-ext-vnc
@@ -64,6 +64,11 @@ mkdir ~/code/go/bin
 # mkdir -p ~/.vscode/extensions/
 # ln -s ~/.dotfiles/vscode/tomorrow.night ~/.vscode/extensions/tomorrow.night
 
+# yay
+git clone https://aur.archlinux.org/yay.git ~/yay
+cd ~/yay && makepkg -si
+cd ~/ && rm -rf ~/yay
+
 # Install basics
 sudo pacman -S --noconfirm firefox gimp inkscape mpv chromium
 yay -S --noconfirm postman-bin dropbox ack jmtpfs kubectl-bin kubernetes-helm
@@ -83,6 +88,6 @@ nvm use node
 
 # NPM
 sudo pacman -S --noconfirm npm
-mkdir ~/.npm-global
-npm config set prefix ~/.npm-global
+# mkdir ~/.npm-global
+# npm config set prefix ~/.npm-global
 source ~/.bashrc
