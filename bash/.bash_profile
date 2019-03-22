@@ -30,7 +30,7 @@ alias writer="libreoffice --writer"
 alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 
 # Ctags
-alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git -f ./.git/tags"
+alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
 # maven
 alias mvn-dev="mvn clean package && java -jar ./target/*-dependencies.jar"
