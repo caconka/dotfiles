@@ -1,5 +1,8 @@
 # Caconka
 
+# Caps-lock -> ESC
+setxkbmap -option caps:escape
+
 # Source .bash_profile
 source ~/.bash_profile
 
