@@ -1,10 +1,8 @@
 # Caconka
 
-# Caps-lock -> ESC
-setxkbmap -option caps:escape
-
-# Source .bash_profile
-source ~/.bash_profile
+if [ -f ~/.bash_profile ]; then
+	source ~/.bash_profile;
+fi
 
 # Config colors and git λ
 source ~/.git-prompt.sh
@@ -12,9 +10,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 PS1='\n\[\e[1;31m\]> \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
 
 # Bash completion
-source /usr/share/git/completion/git-completion.bash
-source /usr/share/nvm/init-nvm.sh
-source <(kubectl completion bash)
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 [[ $- != *i* ]] && return
@@ -58,7 +53,7 @@ colors() {
 if [[ -z "$TMUX" ]] ;then
 	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
 	if [[ -z "$ID" ]] ;then
-		tmux new-session 'HISTFILE=$HOME/.bash_history bash'
+		tmux new-session
 	else
 		tmux attach-session -t "$ID"
 	fi
@@ -80,5 +75,9 @@ if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then source '/opt/google-cloud-
 if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then source '/opt/google-cloud-sdk/completion.bash.inc'; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/charlie/.sdkman"
-[[ -s "/home/charlie/.sdkman/bin/sdkman-init.sh" ]] && source "/home/charlie/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME.sdkman"
+[[ -s "$HOME.sdkman/bin/sdkman-init.sh" ]] && source "$HOME.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
