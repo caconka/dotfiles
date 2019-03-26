@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged/')
 " #################
 
 " General purpose plugins
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
@@ -23,7 +22,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
-Plug 'mattn/emmet-vim'
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
