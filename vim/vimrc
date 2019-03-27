@@ -213,7 +213,12 @@ nmap <F6> "=strftime("%F")<CR>P
 imap <F6> <C-R>=strftime("%F")<CR>
 
 " Paste clipboard
-nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
+let os=substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+	nnoremap <C-R>+ :r !pbpaste<CR>
+elseif os == 'Linux'
+	nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
+endif
 
 " ###################
 " # Plugin settings #
