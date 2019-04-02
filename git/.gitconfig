@@ -12,4 +12,4 @@
 	ch = checkout
 	sc = show --name-only
 [core]
-	excludesfile = /home/charlie/.gitignore_global
+	excludesfile = ~/.gitignore_global

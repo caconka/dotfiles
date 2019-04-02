@@ -43,8 +43,5 @@ alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev
 # git-completion
 source /usr/share/git/completion/git-completion.bash
 
-# kubectl
-source <(kubectl completion bash)
-
 # Caps-lock -> ESC
 setxkbmap -option caps:escape

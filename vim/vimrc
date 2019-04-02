@@ -185,8 +185,8 @@ nnoremap <leader>z :set wrap!<CR>
 set hidden
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprev<CR>
-inoremap <C-l> <ESC>:bnext<CR>a
-inoremap <C-h> <ESC>:bprev<CR>a
+inoremap <C-l> <ESC>:bnext<CR>
+inoremap <C-h> <ESC>:bprev<CR>
 
 " Tabs
 vmap <Tab> >gv
@@ -216,6 +216,7 @@ imap <F6> <C-R>=strftime("%F")<CR>
 let os=substitute(system('uname'), '\n', '', '')
 if os == 'Darwin' || os == 'Mac'
 	nnoremap <C-R>+ :r !pbpaste<CR>
+	noremap! <C-?> <C-h>
 elseif os == 'Linux'
 	nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
 endif
