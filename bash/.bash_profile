@@ -32,9 +32,18 @@ alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 # Ctags
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
+# export env vars
+function dotenv() {
+	while read LINE
+		do export ${LINE%'='*}=${LINE#*'='}
+	done < .env
+}
+
+export -f dotenv
+
 # maven
-alias mvn-dev="mvn clean package && java -jar ./target/*-dependencies.jar"
-alias mvn-debug="mvn clean package && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
+alias mvn-dev="dotenv && mvn clean package && java -jar ./target/*-dependencies.jar"
+alias mvn-debug="dotenv && mvn clean package && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
 
 # kubernetes
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"

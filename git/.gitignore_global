@@ -17,5 +17,8 @@ tags
 # Persistent undo
 [._]*.un~
 
+# env
+.env
+
 ### Mac ###
 .DS_Store
