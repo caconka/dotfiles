@@ -34,9 +34,12 @@ alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
 # export env vars
 function dotenv() {
-	while read LINE
-		do export ${LINE%'='*}=${LINE#*'='}
-	done < .env
+	if [ -e .env ]; then
+		while read LINE
+		do
+			export ${LINE%'='*}=${LINE#*'='}
+		done < .env
+	fi
 }
 
 export -f dotenv
