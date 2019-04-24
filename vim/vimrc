@@ -137,7 +137,7 @@ endif
 if &t_Co > 2 || has("gui_running")
 	filetype plugin on
 	syntax on
-	let &colorcolumn=join(range(81,999),",")
+	let &colorcolumn="81,".join(range(121,999),",")
 	let g:seoul256_srgb = 1
 	let g:seoul256_background = 234
 	silent! colo nord
