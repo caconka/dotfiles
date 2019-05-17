@@ -26,6 +26,7 @@ Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'Yggdroot/indentLine'
 
 " Office
 Plug 'godlygeek/tabular'
@@ -69,6 +70,8 @@ set shiftwidth=2            " spaces for autoindenting
 set mouse=a                 " mouse all
 set list
 set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
+" Plug indentLine
+let g:indentLine_char = '│'
 
 " Modify some other settings about files
 set encoding=utf-8              " always use unicode (god damnit, windows)
@@ -106,6 +109,9 @@ autocmd FileType html,css,sass,scss,javascript,typescript setlocal sw=2 sts=2
 autocmd FileType json setlocal sw=2 sts=2
 autocmd FileType ruby,eruby setlocal sw=2 sts=2
 autocmd FileType yaml setlocal sw=2 sts=2
+
+let java_highlight_functions = 1
+"let java_highlight_all = 1
 
 " Office line breaks
 au BufRead,BufNewFile *.txt,*.md set wrap linebreak nolist tw=80 wrapmargin=20
