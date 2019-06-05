@@ -10,15 +10,15 @@ ln -s ~/.dotfiles/fonts/AnonymousPro-Regular.ttf ~/.fonts/
 fc-cache -f -v
 
 # mutt
-sudo pacman -S --noconfirm mutt
-ln -s ~/.dotfiles/mutt ~/.mutt
+# sudo pacman -S --noconfirm mutt
+# ln -s ~/.dotfiles/mutt ~/.mutt
 
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
 ln -s ~/.dotfiles/git/.gitignore_global ~/
 
 # Installs basics
-sudo pacman -S --noconfirm zip file-roller qpdfview
+sudo pacman -S --noconfirm zip file-roller qpdfview jq
 
 # Install xclip, tmux and vim
 sudo pacman -R --noconfirm vim
