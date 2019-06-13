@@ -73,6 +73,7 @@ set shiftwidth=2            " spaces for autoindenting
 set mouse=a                 " mouse all
 set list
 set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
+
 " Plug indentLine
 let g:indentLine_char = '│'
 
@@ -80,6 +81,7 @@ let g:indentLine_char = '│'
 set encoding=utf-8              " always use unicode (god damnit, windows)
 set backspace=indent,eol,start  " backspace always works on insert mode
 set hidden
+let g:indentLine_setConceal=0   " conceallevel
 
 " Search
 set hlsearch  " Highlighting when search
