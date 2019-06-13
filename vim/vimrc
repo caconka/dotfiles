@@ -55,6 +55,9 @@ call plug#end()
 " #    Settings    #
 " ##################
 
+" Modeline secure
+set nomodeline
+
 " Stop acting like classic vi
 set nocompatible            " disable vi compatibility mode
 set history=1000            " increase history size
@@ -284,6 +287,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_new_list_item_indent = 2
 let g:table_mode_corner='|'
+
 " Instant markdown preview
 let g:instant_markdown_autostart = 0
 
