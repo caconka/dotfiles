@@ -55,6 +55,11 @@ alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
 alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev"
 
+# Google Cloud SDK.
+if [ -f "/Users/$USER/.google-cloud-sdk/path.bash.inc" ]; then source "/Users/$USER/.google-cloud-sdk/path.bash.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -f "/Users/$USER/.google-cloud-sdk/completion.bash.inc" ]; then source "/Users/$USER/.google-cloud-sdk/completion.bash.inc"; fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/carloscabezas/.sdkman"
-[[ -s "/Users/carloscabezas/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/carloscabezas/.sdkman/bin/sdkman-init.sh"
+[[ -s "/Users/$USER/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/$USER/.sdkman/bin/sdkman-init.sh"
