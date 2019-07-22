@@ -28,3 +28,6 @@
 [submodule "vim/pack/caconka/start/ale"]
 	path = vim/pack/caconka/start/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "vim/pack/caconka/start/editorconfig-vim"]
+	path = vim/pack/caconka/start/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
