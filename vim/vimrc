@@ -43,7 +43,6 @@ if &t_Co > 2
 	silent! colorscheme dim
 	set background=dark
 
-
 	highlight Folded cterm=reverse ctermbg=0 ctermfg=8
 	highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=8
 	highlight Conceal cterm=NONE ctermbg=NONE ctermfg=8
@@ -95,7 +94,7 @@ set guicursor+=i:blinkwait0
 " Change tab tittle
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux rename-window bash")
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+autocmd BufEnter * let &titlestring = "%:t"
 set title
 
 " tmux screen view

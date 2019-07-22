@@ -4,6 +4,7 @@ let g:webdevicons_enable_airline_statusline = 0
 let g:airline_powerline_fonts = 0
 let g:airline_theme='atomic'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 function! AirlineInit()
 	let g:airline_section_b = airline#section#create([])
