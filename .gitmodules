@@ -37,3 +37,6 @@
 [submodule "vim/pack/caconka/start/indentLine"]
 	path = vim/pack/caconka/start/indentLine
 	url = git@github.com:Yggdroot/indentLine.git
+[submodule "vim/pack/caconka/start/tabular"]
+	path = vim/pack/caconka/start/tabular
+	url = git@github.com:godlygeek/tabular.git
