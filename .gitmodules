@@ -1,0 +1,12 @@
+[submodule "vim/pack/theme/start/vim-airline"]
+	path = vim/pack/theme/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "vim/pack/theme/start/vim-airline-themes"]
+	path = vim/pack/theme/start/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "vim/pack/theme/start/vim-devicons"]
+	path = vim/pack/theme/start/vim-devicons
+	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule "vim/pack/theme/start/vim-dim"]
+	path = vim/pack/theme/start/vim-dim
+	url = git@github.com:jeffkreeftmeijer/vim-dim.git
