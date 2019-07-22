@@ -10,3 +10,9 @@
 [submodule "vim/pack/theme/start/vim-dim"]
 	path = vim/pack/theme/start/vim-dim
 	url = git@github.com:jeffkreeftmeijer/vim-dim.git
+[submodule "vim/pack/caconka/start/vim-gitgutter"]
+	path = vim/pack/caconka/start/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/pack/caconka/start/vim-fugitive"]
+	path = vim/pack/caconka/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
