@@ -13,3 +13,5 @@
 	sc = show --name-only
 [core]
 	excludesfile = ~/.gitignore_global
+[diff "sopsdiffer"]
+	textconv = sops -d

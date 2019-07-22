@@ -54,6 +54,7 @@ alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=
 # kubernetes
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
 alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev"
+alias helm-tiller="helm --tiller-namespace tiller-system"
 
 # Google Cloud SDK.
 if [ -f "/Users/$USER/.google-cloud-sdk/path.bash.inc" ]; then source "/Users/$USER/.google-cloud-sdk/path.bash.inc"; fi
