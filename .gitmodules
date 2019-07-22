@@ -40,3 +40,6 @@
 [submodule "vim/pack/caconka/start/tabular"]
 	path = vim/pack/caconka/start/tabular
 	url = git@github.com:godlygeek/tabular.git
+[submodule "vim/pack/caconka/start/vim-polyglot"]
+	path = vim/pack/caconka/start/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
