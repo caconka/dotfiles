@@ -31,3 +31,6 @@
 [submodule "vim/pack/caconka/start/editorconfig-vim"]
 	path = vim/pack/caconka/start/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule "vim/pack/caconka/start/vim-tmux-focus-events"]
+	path = vim/pack/caconka/start/vim-tmux-focus-events
+	url = git@github.com:tmux-plugins/vim-tmux-focus-events.git
