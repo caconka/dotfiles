@@ -40,7 +40,7 @@ set tags+=tags;$HOME
 " Colorscheme configuration.
 if &t_Co > 2
 	syntax on
-	silent! colorscheme dim
+	silent! colorscheme nord
 	set background=dark
 
 	highlight Folded cterm=reverse ctermbg=0 ctermfg=8
