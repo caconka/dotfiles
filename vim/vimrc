@@ -126,7 +126,7 @@ nnoremap <C-k> :m .-2<CR>==
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-let mapleader=","
+let mapleader="\<Space>"
 
 " Toggle wrap
 nnoremap <leader>z :set wrap!<CR>
@@ -156,4 +156,37 @@ nmap <F5> :set invrelativenumber<CR>
 imap <F5> <ESC>:set invrelativenumber<CR>a
 
 " fzf needs to be configured before loads the plugin fzf.vim
+set rtp+=~/.fzf
 set rtp+=/usr/local/opt/fzf
+
+" ###################
+" # Custom commands #
+" ###################
+
+" Beautify JSON
+function! JsonFmt()
+  %!python -m json.tool
+  %s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
+endfunction
+
+command! JsonFmt :call JsonFmt()
+
+" Git add current buffer
+function! GitAddBuffer()
+  w
+  windo !git add %
+endfunction
+
+command! GitAddBuffer :call GitAddBuffer()
+
+" :E to create a new file inside new folder(s)
+function s:MKDir(...)
+    if         !a:0
+           \|| isdirectory(a:1)
+           \|| filereadable(a:1)
+           \|| isdirectory(fnamemodify(a:1, ':p:h'))
+        return
+    endif
+    return mkdir(fnamemodify(a:1, ':p:h'), 'p')
+endfunction
+command -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
