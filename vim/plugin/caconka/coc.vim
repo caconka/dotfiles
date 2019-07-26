@@ -9,7 +9,7 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 

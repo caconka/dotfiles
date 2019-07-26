@@ -51,7 +51,7 @@ if &t_Co > 2
 	highlight DiffDelete ctermfg=red cterm=bold
 	highlight DiffChange ctermfg=yellow
 
-	let &colorcolumn="81,".join(range(121,999),",")
+	let &colorcolumn=120
 endif
 
 " Mark trailing spaces depending on whether we have a fancy terminal or not
