@@ -1,87 +1,29 @@
-" vim-plug is not installed
-if empty(glob("~/.vim/autoload/plug.vim"))
-	silent !curl -fLso ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall
-end
-
-" utf-8
-scriptencoding utf-8
-
-" Init vim-plug plugins
-call plug#begin('~/.vim/plugged/')
-
-" #################
-" #    Plugins    #
-" #################
-
-" General purpose plugins
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim'
-Plug 'ap/vim-buftabline'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'Yggdroot/indentLine'
-
-" Office
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown' " Install npm -g install instant-markdown-d
-
-
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-" Language support
-Plug 'othree/html5.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'posva/vim-vue'
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
-
-" Colorschemes
-Plug 'junegunn/seoul256.vim'
-Plug 'arcticicestudio/nord-vim'
-call plug#end()
-
-" ##################
-" #    Settings    #
-" ##################
-
-" Modeline secure
-set nomodeline
-
 " Stop acting like classic vi
 set nocompatible            " disable vi compatibility mode
 set history=1000            " increase history size
 set noswapfile              " don't create swapfiles
 set nobackup                " don't backup, use git!
 
+" Modeline secure
+set nomodeline
+
+" Enable filetype
+filetype indent plugin on
+
+" Persist undo history between file editing sessions.
+set undofile
+set undodir=~/.vim/undodir
+
 " Modify indenting settings
 set autoindent              " autoindent always ON.
-set smartindent             " intelligent indent
-set tabstop=2               " tab width
-set softtabstop=2           " remove a full pseudo-TAB when i press <BS>
-set shiftwidth=2            " spaces for autoindenting
 set mouse=a                 " mouse all
 set list
 set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
 
-" Plug indentLine
-let g:indentLine_char = '│'
-
 " Modify some other settings about files
-set encoding=utf-8              " always use unicode (god damnit, windows)
-set backspace=indent,eol,start  " backspace always works on insert mode
+set encoding=utf-8          " always use unicode (god damnit, windows)
+set backspace=indent,eol,start " backspace always works on insert mode
 set hidden
-let g:indentLine_setConceal=0   " conceallevel
 
 " Search
 set hlsearch  " Highlighting when search
@@ -92,37 +34,53 @@ set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
 
-set fillchars+=vert:\   " Remove unpleasant pipes from vertical splits
-" Sauce on this: http://stackoverflow.com/a/9001540
-
-set showmode         " always show which more are we in
-set laststatus=2     " always show statusbar
-set wildmenu         " enable visual wildmenu
-
-set nowrap           " don't wrap long lines
-set number           " show line numbers
-set relativenumber   " show numbers as relative by default
-set showmatch        " higlight matching parentheses and brackets
-set ignorecase       " searching is not case sensitive
-set autoread         " if file is changed on disk
-
-" Autosave
-au FocusLost,WinLeave * :silent! w
-
-" Some programming languages work better when only 2 spaces padding is used.
-autocmd FileType html,css,sass,scss,javascript,typescript setlocal sw=2 sts=2
-autocmd FileType json setlocal sw=2 sts=2
-autocmd FileType ruby,eruby setlocal sw=2 sts=2
-autocmd FileType yaml setlocal sw=2 sts=2
-
-let java_highlight_functions = 1
-"let java_highlight_all = 1
-
-" Office line breaks
-au BufRead,BufNewFile *.txt,*.md set wrap linebreak nolist tw=80 wrapmargin=20
-
 " Tags
 set tags+=tags;$HOME
+
+" Colorscheme configuration.
+if &t_Co > 2
+	syntax on
+	silent! colorscheme nord
+	set background=dark
+
+	highlight Folded cterm=reverse ctermbg=0 ctermfg=8
+	highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=8
+	highlight Conceal cterm=NONE ctermbg=NONE ctermfg=8
+
+	highlight DiffAdd ctermfg=green cterm=bold
+	highlight DiffDelete ctermfg=red cterm=bold
+	highlight DiffChange ctermfg=yellow
+
+	let &colorcolumn=120
+endif
+
+" Mark trailing spaces depending on whether we have a fancy terminal or not
+if &t_Co > 2
+	highlight ExtraWhitespace ctermbg=1
+	match ExtraWhitespace /\s\+$/
+else
+	set listchars=trail:~
+	set list
+endif
+
+" Use a specific pipe ch
+set fillchars+=vert:\┊
+
+set noshowmode
+set laststatus=1        " always show statusbar
+set wildmenu            " enable visual wildmenu
+
+set nowrap              " don't wrap long lines
+set number              " show line numbers
+set relativenumber      " show numbers as relative by default
+set showmatch           " higlight matching parentheses and brackets
+set ignorecase          " searching is not case sensitive
+set autoread            " if file is changed on disk
+
+" Italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+highlight Comment cterm=italic
 
 " Change cursor in different modes
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=1\x7\<Esc>\\"
@@ -136,7 +94,7 @@ set guicursor+=i:blinkwait0
 " Change tab tittle
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux rename-window bash")
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+autocmd BufEnter * let &titlestring = "%:t"
 set title
 
 " tmux screen view
@@ -144,64 +102,23 @@ if &term == "screen"
 	set t_Co=256
 endif
 
-" Are we supporting colors?
-if &t_Co > 2 || has("gui_running")
-	filetype plugin on
-	syntax on
-	let &colorcolumn="81,".join(range(121,999),",")
-	let g:seoul256_srgb = 1
-	let g:seoul256_background = 234
-	silent! colo nord
-endif
-
-syn sync fromstart
-
-" Italics
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-highlight Comment cterm=italic
-
-" Mark trailing spaces depending on whether we have a fancy terminal or not
-if &t_Co > 2 || has("gui_running")
-	highlight ExtraWhitespace ctermbg=red guibg=red
-	match ExtraWhitespace /\s\+$/
-else
-	set listchars=trail:~
-	set list
-endif
-
-" ###################
-" #  Key remapping  #
-" ###################
-
-imap <silent> <Esc>OA <Up>
-imap <silent> <Esc>OB <Down>
-imap <silent> <Esc>OC <Right>
-imap <silent> <Esc>OD <Left>
-imap <silent> <Esc>OH <Home>
-imap <silent> <Esc>OF <End>
-imap <silent> <Esc>[5~ <PageUp>
-imap <silent> <Esc>[6~ <PageDown>
-
-" remap C-Left and C-Right
-map 5D vB
-map 5C vE
-
-let mapleader=","
-
-" Toggle wrap
-nnoremap <leader>z :set wrap!<CR>
-
-" Working with buffers is cool.
-set hidden
-nnoremap <C-l> :bnext<CR>
-nnoremap <C-h> :bprev<CR>
-inoremap <C-l> <ESC>:bnext<CR>
-inoremap <C-h> <ESC>:bprev<CR>
+" Shortcuts for switching the buffers
+map <C-l> :bnext<CR>
+map <C-h> :bprev<CR>
+imap <C-l> <Esc>:bnext<CR>i
+imap <C-h> <Esc>:bprev<CR>i
 
 " Tabs
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+" remap C-Left and C-Right
+"map 5D vB
+"map 5C vE
+imap <ESC>oA <ESC>ki
+imap <ESC>oB <ESC>ji
+imap <ESC>oC <ESC>li
+imap <ESC>oD <ESC>hi
 
 " Move lines vertically
 nnoremap <C-j> :m .+1<CR>==
@@ -209,15 +126,16 @@ nnoremap <C-k> :m .-2<CR>==
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+let mapleader="\<Space>"
+
+" Toggle wrap
+nnoremap <leader>z :set wrap!<CR>
+
 " Resize splits
 nnoremap <silent> + :exe "vertical resize +5"<CR>
 nnoremap <silent> - :exe "vertical resize -5"<CR>
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-
-" Toggle relative numbering
-nmap <F5> :set invrelativenumber<CR>
-imap <F5> <ESC>:set invrelativenumber<CR>a
 
 " Print date
 nmap <F6> "=strftime("%F")<CR>P
@@ -232,84 +150,43 @@ elseif os == 'Linux'
 	nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
 endif
 
+" Relative numbering is pretty useful for motions (3g, 5k...). However I'd
+" prefer to have a way for switching relative numbers with a single map.
+nmap <F5> :set invrelativenumber<CR>
+imap <F5> <ESC>:set invrelativenumber<CR>a
+
+" fzf needs to be configured before loads the plugin fzf.vim
+set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
+
 " ###################
-" # Plugin settings #
+" # Custom commands #
 " ###################
 
-" Emmet
-let g:user_emmet_mode='a'
-
-" Gitgutter
-let g:gitgutter_terminal_reports_focus=0
-
-" Remap keys for gotos coc.nvim
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" ALE config
-let g:ale_completion_enabled = 0
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '•'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-let g:ale_fixers = {
-\ '*': ['remove_trailing_lines', 'trim_whitespace'], 'json': ['prettier'],
-\ 'javascript': ['prettier', 'eslint'], 'vue': ['eslint'], 'css': ['prettier']
-\}
-let g:ale_fix_on_save = 1
-nmap <silent> <F3> <Plug>(ale_previous_wrap)
-nmap <silent> <F4> <Plug>(ale_next_wrap)
-nmap <silent> <F8> <Plug>(ale_fix)
-
-" Vim-go auto-format
-let g:go_fmt_command = "goimports"
-let g:go_fmt_autosave = 1
-
-" Vim-vue disable checking for preprocessors
-let g:vue_disable_pre_processors=1
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<C-Z>"
-
-" fzf
-nmap <C-p> :GFiles<CR>
-nmap <Leader>p :Files<CR>
-nmap <Leader>b :Buffers<CR>
-nmap <Leader>h :History<CR>
-nmap <Leader>t :BTags<CR>
-nmap <Leader>T :Tags<CR>
-nmap <Leader>l :BLines<CR>
-nmap <Leader>L :Lines<CR>
-
-" Ack
-nnoremap <leader>f :Ag<CR>
-
-" Vim-Markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_no_default_key_mappings = 1
-let g:vim_markdown_new_list_item_indent = 2
-let g:table_mode_corner='|'
-
-" Instant markdown preview
-let g:instant_markdown_autostart = 0
-
-" Tabularize
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
+" Beautify JSON
+function! JsonFmt()
+  %!python -m json.tool
+  %s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
 endfunction
 
-" NERDTree
-map <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=0
-let NERDTreeShowHidden=1
-let NERDTreeWinSize=28
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
+command! JsonFmt :call JsonFmt()
+
+" Git add current buffer
+function! GitAddBuffer()
+  w
+  windo !git add %
+endfunction
+
+command! GitAddBuffer :call GitAddBuffer()
+
+" :E to create a new file inside new folder(s)
+function s:MKDir(...)
+    if         !a:0
+           \|| isdirectory(a:1)
+           \|| filereadable(a:1)
+           \|| isdirectory(fnamemodify(a:1, ':p:h'))
+        return
+    endif
+    return mkdir(fnamemodify(a:1, ':p:h'), 'p')
+endfunction
+command -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
