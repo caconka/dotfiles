@@ -20,10 +20,9 @@ source <(kubectl completion bash)
 # History
 HISTSIZE=10000
 HISTFILESIZE=$HISTSIZE
-HISTCONTROL=ignoredups:erasedups
+HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
-PROMPT_COMMAND="history -n; history -w; history -c; history -a; history -r; \
-	$PROMPT_COMMAND"
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 colors() {
 	local fgc bgc vals seq0

@@ -2,7 +2,7 @@
 set nocompatible            " disable vi compatibility mode
 set history=1000            " increase history size
 set noswapfile              " don't create swapfiles
-set nobackup                " don't backup, use git!
+"set nobackup                " don't backup, use git!
 
 " Modeline secure
 set nomodeline
