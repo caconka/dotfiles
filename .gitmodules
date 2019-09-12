@@ -22,9 +22,6 @@
 [submodule "vim/pack/caconka/start/vim-surround"]
 	path = vim/pack/caconka/start/vim-surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule "vim/pack/caconka/start/nerdtree"]
-	path = vim/pack/caconka/start/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
 [submodule "vim/pack/caconka/start/ale"]
 	path = vim/pack/caconka/start/ale
 	url = git@github.com:w0rp/ale.git
