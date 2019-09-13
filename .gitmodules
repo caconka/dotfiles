@@ -7,9 +7,6 @@
 [submodule "vim/pack/theme/start/vim-devicons"]
 	path = vim/pack/theme/start/vim-devicons
 	url = git@github.com:ryanoasis/vim-devicons.git
-[submodule "vim/pack/theme/start/vim-dim"]
-	path = vim/pack/theme/start/vim-dim
-	url = git@github.com:jeffkreeftmeijer/vim-dim.git
 [submodule "vim/pack/caconka/start/vim-gitgutter"]
 	path = vim/pack/caconka/start/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
