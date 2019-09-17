@@ -1,5 +1,6 @@
 vim/autoload/*
 vim/plugged/*
+vim/undodir/
 xfce-configs/thunar.xml
 /mutt/*~
 /mutt/inc/ps*
