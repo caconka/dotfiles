@@ -61,10 +61,6 @@ if [[ -z "$TMUX" ]] ;then
 	fi
 fi
 
-# nvim
-NVIM_PACK_PATH="$HOME/.local/share/nvim"
-[[ -d "$NVIM_PACK_PATH" ]] && cp -r "$HOME/.vim/" "$NVIM_PACK_PATH/site/"; rm "$NVIM_PACK_PATH/site/vimrc"
-
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

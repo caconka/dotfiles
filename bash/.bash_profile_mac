@@ -27,13 +27,6 @@ export LS_COLORS
 		. $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 }
 
-##### Alias #####
-alias ls="ls -G"
-alias grep="grep --color"
-
-# Ctags
-alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
-
 # export env vars
 function dotenv() {
 	if [ -e .env ]; then
@@ -45,6 +38,14 @@ function dotenv() {
 }
 
 export -f dotenv
+
+##### Alias #####
+alias ls="ls -G"
+alias ll="ls -l"
+alias grep="grep --color"
+
+# Ctags
+alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
 # maven
 alias mvn-dev="dotenv && mvn clean package && java -jar ./target/*-dependencies.jar"
