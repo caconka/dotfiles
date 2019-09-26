@@ -7,7 +7,7 @@ fi
 # Config colors and git λ
 source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
-PS1='\n\[\e[1;31m\]> \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]git:\[\e[1;32m\]%s")\[\e[39m\] '
+PS1='\n\[\e[1;31m\]> \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]\[\e[1;32m\]%s")\[\e[0;39m\] '
 
 # Bash completion
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
@@ -63,23 +63,3 @@ fi
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-###-tns-completion-start-###
-if [ -f /home/carlos/.tnsrc ]; then
-	source /home/carlos/.tnsrc
-fi
-###-tns-completion-end-###
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then source '/opt/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then source '/opt/google-cloud-sdk/completion.bash.inc'; fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -42,7 +42,7 @@ if &t_Co > 2
 	syntax on
 
 	silent! colorscheme nord
-	autocmd ColorScheme nord highlight Italic cterm=italic gui=italic
+	autocmd colorscheme nord highlight Italic cterm=italic gui=italic
 
 	set background=dark
 
@@ -96,8 +96,8 @@ set guicursor+=i:blinkwait0
 
 " Change tab tittle
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
-autocmd VimLeave * call system("tmux rename-window bash")
 autocmd BufEnter * let &titlestring = "%:t"
+autocmd VimLeave * call system("tmux rename-window bash")
 set title
 
 " tmux screen view
