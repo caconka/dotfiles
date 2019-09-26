@@ -34,9 +34,6 @@
 [submodule "vim/pack/theme/start/nord-vim"]
 	path = vim/pack/theme/start/nord-vim
 	url = git@github.com:arcticicestudio/nord-vim.git
-[submodule "vim/pack/caconka/start/coc"]
-	path = vim/pack/caconka/start/coc
-	url = git@github.com:neoclide/coc.nvim.git
 [submodule "vim/pack/caconka/start/vim-go"]
 	path = vim/pack/caconka/start/vim-go
 	url = git@github.com:fatih/vim-go.git
