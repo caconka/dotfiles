@@ -18,8 +18,8 @@ PS1='\n\[\e[1;31m\]> \[\e[39m\]\W$(__git_ps1 " \[\e[39m\]\[\e[1;32m\]%s")\[\e[0;
 source <(kubectl completion bash)
 
 # History
-HISTSIZE=10000
-HISTFILESIZE=$HISTSIZE
+HISTSIZE=""
+HISTFILESIZE=100000
 HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
