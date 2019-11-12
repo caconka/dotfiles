@@ -1,8 +1,5 @@
 function dotenv
-	if [ -e .env ]                                                                                                                                                                          11:00:06
-		while read LINE
-			set lineSplit (string split "=" -- $LINE)
-			set -x $lineSplit
-		end < .env
+	if [ -e .env ]
+		export (cat .env | xargs -L 1)
 	end
 end

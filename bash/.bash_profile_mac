@@ -7,8 +7,6 @@ export VISUAL=/usr/bin/vim
 # golang
 export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin
-# java
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 # NPM without sudo
 export PATH=~/.npm-global/bin:$PATH
 # NVM
@@ -30,10 +28,7 @@ export LS_COLORS
 # export env vars
 function dotenv() {
 	if [ -e .env ]; then
-		while read LINE
-		do
-			export ${LINE%'='*}=${LINE#*'='}
-		done < .env
+		export $(cat .env | xargs -L 1)
 	fi
 }
 
