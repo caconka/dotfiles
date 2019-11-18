@@ -26,6 +26,8 @@ sudo pacman -S --noconfirm xclip tmux gvim ctags tree the_silver_searcher cmake
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
+cd ~/.dotfiles
+git submodule update --init --recursive
 
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/

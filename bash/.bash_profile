@@ -7,8 +7,7 @@ export VISUAL=/usr/bin/vim
 # golang
 export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin
-# java
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export GOBIN=$GOPATH/bin
 # NPM without sudo
 export PATH=~/.npm-global/bin:$PATH
 # NVM
@@ -17,9 +16,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # needed by PhoneGap
 export PATH=$PATH:/opt/android-sdk/tools
+
 # colors
 LS_COLORS="ln=1;32:ex=1;31:di=1;34:fi=0"
 export LS_COLORS
+
+# git-completion
+source /usr/share/git/completion/git-completion.bash
+
+# Caps-lock -> ESC
+setxkbmap -option caps:escape
 
 ##### Alias #####
 alias ls="ls --color"
@@ -35,10 +41,7 @@ alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 # export env vars
 function dotenv() {
 	if [ -e .env ]; then
-		while read LINE
-		do
-			export ${LINE%'='*}=${LINE#*'='}
-		done < .env
+		export $(cat .env | xargs -L 1)
 	fi
 }
 
@@ -53,17 +56,12 @@ alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
 alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev"
 
-# git-completion
-source /usr/share/git/completion/git-completion.bash
-
-# Caps-lock -> ESC
-setxkbmap -option caps:escape
-
 # Google Cloud SDK.
-if [ -f "~/.google-cloud-sdk/path.bash.inc" ]; then source "~/.google-cloud-sdk/path.bash.inc"; fi
+if [ -f "$HOME/.google-cloud-sdk/path.bash.inc" ]; then source "$HOME/.google-cloud-sdk/path.bash.inc"; fi
 # The next line enables shell command completion for gcloud.
-if [ -f "~/.google-cloud-sdk/completion.bash.inc" ]; then source "~/.google-cloud-sdk/completion.bash.inc"; fi
+if [ -f "$HOME/.google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/.google-cloud-sdk/completion.bash.inc"; fi
 
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/carloscabezas/.sdkman"
-[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
