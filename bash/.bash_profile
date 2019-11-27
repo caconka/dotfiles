@@ -43,6 +43,12 @@ alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 # Ctags
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
+function cd_up() {
+	cd $(printf "%0.0s../" $(seq 1 $1))
+}
+
+alias cd..=cd_up
+
 # export env vars
 function dotenv() {
 	if [ -e .env ]; then

@@ -9,5 +9,5 @@ nmap <Leader>L :Lines<CR>
 
 nnoremap <leader>f :Ag<CR>
 
-command! -nargs=* FilesCurrentPath call fzf#run({ 'source': 'git ls-files' })
+command! -nargs=* FilesCurrentPath call fzf#run({'source': 'git ls-files', 'sink': 'e'})
 nmap <C-p> :FilesCurrentPath<CR>
