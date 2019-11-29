@@ -7,7 +7,6 @@ export VISUAL=/usr/bin/vim
 
 # golang
 export GOPATH=$HOME/code/go
-export PATH=$PATH:$GOPATH/bin
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
