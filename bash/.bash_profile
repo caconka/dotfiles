@@ -1,5 +1,6 @@
 # ~/.bash_profile
 
+## ENV VARS ##
 # Basics
 export LANG=en_US.UTF-8
 export EDITOR=/usr/bin/vim
@@ -18,53 +19,44 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# needed by PhoneGap
-export PATH=$PATH:/opt/android-sdk/tools
-
 # colors
 LS_COLORS="ln=1;32:ex=1;31:di=1;34:fi=0"
 export LS_COLORS
 
-# git-completion
-source /usr/share/git/completion/git-completion.bash
-
 # Caps-lock -> ESC
-setxkbmap -option caps:escape
+if [ command -v xetxkbmap &> /dev/null ]; then
+	setxkbmap -option caps:escape
+fi
 
-##### Alias #####
-alias ls="ls --color"
-alias open="xdg-open"
-alias grep="grep --color"
-alias calc="libreoffice --calc"
-alias writer="libreoffice --writer"
-alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+## ALIASES ##
+if [ -f "$HOME/.aliases" ]; then source "$HOME/.aliases"; fi
 
-# Ctags
-alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
-
-function cd_up() {
-	cd $(printf "%0.0s../" $(seq 1 $1))
-}
-
-alias cd..=cd_up
-
+## FUNCTIONS ##
 # export env vars
 function dotenv() {
 	if [ -e .env ]; then
 		export $(cat .env | xargs -L 1)
 	fi
 }
-
 export -f dotenv
 
-# maven
-alias mvn-dev="dotenv && mvn clean package && java -jar ./target/*-dependencies.jar"
-alias mvn-dev-skip="dotenv && mvn clean package -DskipTests && java -jar ./target/*-dependencies.jar"
-alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
+function cd_up() {
+	cd $(printf "%0.0s../" $(seq 1 $1))
+}
+alias cd..=cd_up
 
-# kubernetes
-alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
-alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev"
+# git-completion
+# linux
+if [ -f /usr/share/git/completion/git-completion.bash ]; then
+	source /usr/share/git/completion/git-completion.bash
+else
+	# darwin
+	[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
+		# if not found in /usr/local/etc, try the brew --prefix location
+		[ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ] && \
+			. /usr/local/etc/bash_completion.d/git-completion.bash
+	}
+fi
 
 # Google Cloud SDK.
 if [ -f "$HOME/.google-cloud-sdk/path.bash.inc" ]; then source "$HOME/.google-cloud-sdk/path.bash.inc"; fi

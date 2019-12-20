@@ -62,4 +62,4 @@ if [[ -z "$TMUX" ]] ;then
 fi
 
 # fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
