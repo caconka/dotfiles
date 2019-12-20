@@ -34,6 +34,10 @@ ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
 ln -s --force ~/.dotfiles/bash/.inputrc ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
 ln -s --force ~/.dotfiles/bash/.bash_profile ~/
+ln -s --force ~/.dotfiles/bash/.aliases ~/
+
+# Zsh
+ln -s ~/.dotfiles/zsh/.zshrc ~/
 
 # Programming
 sudo pacman -S --noconfirm docker docker-compose fzf redis dbeaver postgresql go

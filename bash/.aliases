@@ -1,0 +1,31 @@
+##### Alias #####
+alias ls="ls -G"
+alias ll="ls -l"
+alias grep="grep --color"
+
+# Ctags
+alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
+
+# Docker
+alias docker-stop="docker stop $(docker ps -a -q)"
+alias docker-rm="docker rm $(docker ps -a -q)"
+
+# maven
+alias mvn-dev="dotenv && mvn clean package && java -jar ./target/*-dependencies.jar"
+alias mvn-dev-skip="dotenv && mvn clean package -DskipTests && java -jar ./target/*-dependencies.jar"
+alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
+
+# kubernetes
+alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
+alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev"
+alias helm-tiller="helm --tiller-namespace tiller-system"
+
+# Ctags
+alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias open="xdg-open"
+	alias calc="libreoffice --calc"
+	alias writer="libreoffice --writer"
+	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+fi
