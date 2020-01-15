@@ -40,3 +40,6 @@
 [submodule "vim/pack/caconka/start/coc"]
 	path = vim/pack/caconka/start/coc
 	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/pack/caconka/start/nerdtree"]
+	path = vim/pack/caconka/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
