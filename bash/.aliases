@@ -16,6 +16,7 @@ alias mvn-dev-skip="dotenv && mvn clean package -DskipTests && java -jar ./targe
 alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
 
 # kubernetes
+alias k="kubectl"
 alias itt-dev="kubectl --context gke_transformacion-it-dev_europe-west1-b_dev"
 alias hitt-dev="helm --kube-context gke_transformacion-it-dev_europe-west1-b_dev"
 alias helm-tiller="helm --tiller-namespace tiller-system"
