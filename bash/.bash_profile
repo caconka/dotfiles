@@ -35,7 +35,10 @@ if [ -f "$HOME/.aliases" ]; then source "$HOME/.aliases"; fi
 # export env vars
 function dotenv() {
 	if [ -e .env ]; then
-		export $(cat .env | xargs -L 1)
+		while read -r line; do
+			export $line
+		done < .env
+		#export $(cat .env | xargs -L 1)
 	fi
 }
 export -f dotenv
