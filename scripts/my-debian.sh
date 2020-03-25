@@ -66,16 +66,34 @@ wget https://dl.pstmn.io/download/latest/linux64 -O postman-linux-x64.tar.gz
 sudo tar -xvzf postman-linux-x64.tar.gz -C /opt
 sudo ln -s /opt/Postman/Postman /usr/bin/postman
 rm postman-linux-x64.tar.gz
+mkdir -p ~/.local/share/applications
+## Postman icon
+cat << EOF > ~/.local/share/applications/postman2.desktop
+[Desktop Entry]
+Name=Postman
+GenericName=API Client
+X-GNOME-FullName=Postman API Client
+Comment=Make and view REST API calls and responses
+Keywords=api;
+Exec=/opt/Postman/Postman
+Terminal=false
+Type=Application
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Categories=Development;Utilities;
+EOF
 
-# kubectl
-sudo apt install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-sudo apt update
-sudo apt install -y kubectl
+# Gcloud & kubectl
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt install -y apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt update && sudo apt -y install google-cloud-sdk kubectl
 
 # Install basics
 sudo apt install -y gimp inkscape mpv chromium ack kubectx jmtpfs
+
+# Spotify
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+sudo apt-get update && sudo apt-get install spotify-client
 
 # Java
 curl -s "https://get.sdkman.io" | bash
