@@ -18,12 +18,24 @@ sudo apt install -y zip file-roller qpdfview jq curl zsh
 
 # Install xclip, tmux and vim
 sudo apt remove -y --auto-remove vim
-sudo apt install -y xclip tmux vim-gui-common neovim exuberant-ctags tree silversearcher-ag cmake
+sudo apt install -y xclip tmux vim-gui-common neovim exuberant-ctags tree \
+	fzf silversearcher-ag cmake python3 python3-pip
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
 cd ~/.dotfiles
 git submodule update --init --recursive
+
+# Nvim
+mkdir -p ~/.local/share/nvim/site
+mkdir -p ~/.config/nvim
+mkdir -p ~/.dotfiles/vim/undodir
+ln -s ~/.dotfiles/vim/pack ~/.local/share/nvim/site/
+ln -s ~/.dotfiles/vim/ftplugin ~/.local/share/nvim/site/
+ln -s ~/.dotfiles/vim/plugin ~/.local/share/nvim/site/
+ln -s ~/.dotfiles/vim/undodir ~/.local/share/nvim/site/
+ln -s ~/.dotfiles/vim/coc-settings.json ~/.config/nvim/
+ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/
 
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
@@ -38,7 +50,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ln -s --force ~/.dotfiles/zsh/.zshrc ~/
 
 # Programming
-sudo apt install -y docker docker-compose fzf redis postgresql golang-go
+sudo apt install -y docker docker-compose redis postgresql golang-go
 
 # Docker
 sudo usermod -a -G docker $USER
