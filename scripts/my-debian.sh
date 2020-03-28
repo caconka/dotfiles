@@ -19,12 +19,16 @@ sudo apt install -y zip file-roller qpdfview jq curl zsh
 # Install xclip, tmux and vim
 sudo apt remove -y --auto-remove vim
 sudo apt install -y xclip tmux vim-gui-common neovim exuberant-ctags tree \
-	fzf silversearcher-ag cmake python3 python3-pip
+	silversearcher-ag cmake python3 python3-pip
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
 cd ~/.dotfiles
 git submodule update --init --recursive
+
+# fzf
+git clone git@github.com:19-1-skku-oss/fzf.git ~/.fzf
+cd ~/.fzf && ./install
 
 # Nvim
 mkdir -p ~/.local/share/nvim/site
@@ -50,7 +54,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ln -s --force ~/.dotfiles/zsh/.zshrc ~/
 
 # Programming
-sudo apt install -y docker docker-compose redis postgresql golang-go
+sudo apt install -y docker docker-compose redis postgresql
+
+# Golang
+wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+sudo -xvzf go1.14.1.linux-amd64.tar.gz -C /opt
+sudo ln -s /opt/go/bin/* /usr/bin/
+rm go1.14.1.linux-amd64.tar.gz
 
 # Docker
 sudo usermod -a -G docker $USER

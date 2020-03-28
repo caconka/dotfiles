@@ -171,7 +171,6 @@ imap <F5> <ESC>:set invrelativenumber<CR>a
 
 " fzf needs to be configured before loads the plugin fzf.vim
 set rtp+=~/.fzf
-set rtp+=/usr/local/opt/fzf
 
 " ###################
 " # Custom commands #
