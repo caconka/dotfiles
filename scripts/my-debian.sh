@@ -57,10 +57,11 @@ ln -s --force ~/.dotfiles/zsh/.zshrc ~/
 sudo apt install -y docker docker-compose redis postgresql
 
 # Golang
-wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
-sudo -xvzf go1.14.1.linux-amd64.tar.gz -C /opt
+goVersion=go1.14.1.linux-amd64.tar.gz
+wget https://dl.google.com/go/$goVersion
+sudo -xvzf $goVersion -C /opt
 sudo ln -s /opt/go/bin/* /usr/bin/
-rm go1.14.1.linux-amd64.tar.gz
+rm $goVersion
 
 # Docker
 sudo usermod -a -G docker $USER
