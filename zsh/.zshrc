@@ -110,6 +110,8 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+# AppImages
+export PATH=$PATH:/usr/local/appimage
 # golang
 export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin
