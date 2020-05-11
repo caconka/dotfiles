@@ -43,3 +43,6 @@
 [submodule "vim/pack/caconka/start/nerdtree"]
 	path = vim/pack/caconka/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+[submodule "vim/pack/theme/start/oceanic-next"]
+	path = vim/pack/theme/start/oceanic-next
+	url = https://github.com/mhartington/oceanic-next.git

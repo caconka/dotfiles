@@ -38,6 +38,10 @@ set sidescroll=1
 set tags+=tags;$HOME
 
 " Colorscheme configuration.
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 if &t_Co > 2
 	syntax on
 
