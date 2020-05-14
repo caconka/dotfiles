@@ -31,9 +31,6 @@
 [submodule "vim/pack/caconka/start/vim-polyglot"]
 	path = vim/pack/caconka/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
-[submodule "vim/pack/theme/start/nord-vim"]
-	path = vim/pack/theme/start/nord-vim
-	url = https://github.com/arcticicestudio/nord-vim.git
 [submodule "vim/pack/caconka/start/vim-go"]
 	path = vim/pack/caconka/start/vim-go
 	url = https://github.com/fatih/vim-go.git
@@ -43,6 +40,6 @@
 [submodule "vim/pack/caconka/start/nerdtree"]
 	path = vim/pack/caconka/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "vim/pack/theme/start/oceanic-next"]
-	path = vim/pack/theme/start/oceanic-next
-	url = https://github.com/mhartington/oceanic-next.git
+[submodule "vim/pack/theme/start/iceberg"]
+	path = vim/pack/theme/start/iceberg
+	url = https://github.com/cocopon/iceberg.vim.git

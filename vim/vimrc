@@ -45,8 +45,8 @@ endif
 if &t_Co > 2
 	syntax on
 
-	silent! colorscheme nord
-	autocmd colorscheme nord highlight Italic cterm=italic gui=italic
+	silent! colorscheme iceberg
+	autocmd colorscheme iceberg highlight Italic cterm=italic gui=italic
 
 	set background=dark
 
