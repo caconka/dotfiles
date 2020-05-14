@@ -19,7 +19,7 @@ sudo apt install -y zip file-roller qpdfview jq curl zsh
 # Install xclip, tmux and vim
 sudo apt remove -y --auto-remove vim
 sudo apt install -y xclip tmux vim-gui-common neovim exuberant-ctags tree \
-	silversearcher-ag cmake python3 python3-pip
+	fd ripgrep cmake python3 python3-pip
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
