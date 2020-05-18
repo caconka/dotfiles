@@ -185,15 +185,29 @@ function! JsonFmt()
   %!python -m json.tool
   %s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
 endfunction
-
 command! JsonFmt :call JsonFmt()
+
+" Light theme
+function! LightMode()
+	set background=light
+	colorscheme gruvbox
+	AirlineTheme gruvbox
+endfunction
+command! LightMode :call LightMode()
+
+" Dark theme
+function! DarkMode()
+	set background=dark
+	colorscheme iceberg
+	AirlineTheme iceberg
+endfunction
+command! DarkMode :call DarkMode()
 
 " Git add current buffer
 function! GitAddBuffer()
   w
   windo !git add %
 endfunction
-
 command! GitAddBuffer :call GitAddBuffer()
 
 " :E to create a new file inside new folder(s)

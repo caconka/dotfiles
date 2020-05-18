@@ -7,8 +7,14 @@ function! TreeToggle()
 	if IsNERDTreeOpen()
 		NERDTreeClose
 	else
-		NERDTreeFind
+		if line("$") == 1 && getline(1) == ""
+			NERDTree
+		else
+			NERDTreeFind
+		endif
 	endif
 endfunction
 
 map <Leader>nt :call TreeToggle()<CR>
+
+let g:NERDTreeWinSize=45

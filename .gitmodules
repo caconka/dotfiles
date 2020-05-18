@@ -43,3 +43,6 @@
 [submodule "vim/pack/theme/start/iceberg"]
 	path = vim/pack/theme/start/iceberg
 	url = https://github.com/cocopon/iceberg.vim.git
+[submodule "vim/pack/theme/start/gruvbox"]
+	path = vim/pack/theme/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
