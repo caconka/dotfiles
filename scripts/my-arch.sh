@@ -18,7 +18,7 @@ ln -s ~/.dotfiles/git/.gitconfig ~/
 ln -s ~/.dotfiles/git/.gitignore_global ~/
 
 # Installs basics
-sudo pacman -S --noconfirm zip file-roller qpdfview jq
+sudo pacman -S --noconfirm zip file-roller qpdfview jq yq
 
 # Install xclip, tmux and vim
 sudo pacman -R --noconfirm vim
