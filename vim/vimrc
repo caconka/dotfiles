@@ -192,6 +192,7 @@ function! LightMode()
 	set background=light
 	colorscheme gruvbox
 	AirlineTheme gruvbox
+	let g:fzf_colors={}
 endfunction
 command! LightMode :call LightMode()
 
@@ -200,6 +201,8 @@ function! DarkMode()
 	set background=dark
 	colorscheme iceberg
 	AirlineTheme iceberg
+	let g:fzf_colors =
+	\ { "bg+": ["bg", "CursorLine", "CursorColumn"] }
 endfunction
 command! DarkMode :call DarkMode()
 
