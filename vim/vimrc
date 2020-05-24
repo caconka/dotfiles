@@ -181,46 +181,77 @@ set rtp+=~/.fzf
 " ###################
 
 " Beautify JSON
-function! JsonFmt()
+function! s:jsonFmt()
   %!python -m json.tool
   %s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
 endfunction
-command! JsonFmt :call JsonFmt()
+command! JsonFmt :call s:jsonFmt()
 
 " Light theme
-function! LightMode()
+function! s:lightMode()
 	set background=light
 	colorscheme gruvbox
 	AirlineTheme gruvbox
 	let g:fzf_colors={}
 endfunction
-command! LightMode :call LightMode()
+command! LightMode :call s:lightMode()
 
 " Dark theme
-function! DarkMode()
+function! s:darkMode()
 	set background=dark
 	colorscheme iceberg
 	AirlineTheme iceberg
 	let g:fzf_colors =
 	\ { "bg+": ["bg", "CursorLine", "CursorColumn"] }
 endfunction
-command! DarkMode :call DarkMode()
+command! DarkMode :call s:darkMode()
 
 " Git add current buffer
-function! GitAddBuffer()
+function! s:gitAddBuffer()
   w
   windo !git add %
 endfunction
-command! GitAddBuffer :call GitAddBuffer()
+command! GitAddBuffer :call s:gitAddBuffer()
 
 " :E to create a new file inside new folder(s)
-function s:MKDir(...)
-    if         !a:0
-           \|| isdirectory(a:1)
-           \|| filereadable(a:1)
-           \|| isdirectory(fnamemodify(a:1, ':p:h'))
-        return
-    endif
-    return mkdir(fnamemodify(a:1, ':p:h'), 'p')
+function s:mkdir(...)
+	if !a:0
+			\|| isdirectory(a:1)
+			\|| filereadable(a:1)
+			\|| isdirectory(fnamemodify(a:1, ':p:h'))
+		return
+	endif
+	return mkdir(fnamemodify(a:1, ':p:h'), 'p')
 endfunction
-command -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
+command -bang -bar -nargs=? -complete=file E :call s:mkdir(<f-args>) | e<bang> <args>
+
+" floating window
+function! s:editFloatWin(file)
+	let buf = nvim_create_buf(v:false, v:true)
+	call setbufvar(buf, '&signcolumn', 'no')
+
+	let height = &lines - 10
+	let width = float2nr(&columns - (&columns * 4 / 10))
+	let col = float2nr((&columns - width) / 2)
+
+	let opts = {
+				\ 'relative': 'editor',
+				\ 'row': 5,
+				\ 'col': col,
+				\ 'width': width,
+				\ 'height': height,
+				\ 'style': 'minimal'
+				\ }
+
+	call nvim_open_win(buf, v:true, opts)
+
+	if a:file ==# 'todo'
+		e ~/notes/todo.md
+	elseif a:file ==# 'note'
+		e ~/notes/note.md
+	endif
+endfunction
+" Edit todo list
+command! Todo :call s:editFloatWin('todo')
+" Edit notes
+command! Note :call s:editFloatWin('note')
