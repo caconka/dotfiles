@@ -181,46 +181,58 @@ set rtp+=~/.fzf
 " ###################
 
 " Beautify JSON
-function! JsonFmt()
+function! s:JsonFmt()
   %!python -m json.tool
   %s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
 endfunction
-command! JsonFmt :call JsonFmt()
+command! JsonFmt :call s:JsonFmt()
 
 " Light theme
-function! LightMode()
+function! s:LightMode()
 	set background=light
 	colorscheme gruvbox
 	AirlineTheme gruvbox
 	let g:fzf_colors={}
 endfunction
-command! LightMode :call LightMode()
+command! LightMode :call s:LightMode()
 
 " Dark theme
-function! DarkMode()
+function! s:DarkMode()
 	set background=dark
 	colorscheme iceberg
 	AirlineTheme iceberg
 	let g:fzf_colors =
 	\ { "bg+": ["bg", "CursorLine", "CursorColumn"] }
 endfunction
-command! DarkMode :call DarkMode()
+command! DarkMode :call s:DarkMode()
 
 " Git add current buffer
-function! GitAddBuffer()
+function! s:GitAddBuffer()
   w
   windo !git add %
 endfunction
-command! GitAddBuffer :call GitAddBuffer()
+command! GitAddBuffer :call s:GitAddBuffer()
 
 " :E to create a new file inside new folder(s)
 function s:MKDir(...)
-    if         !a:0
-           \|| isdirectory(a:1)
-           \|| filereadable(a:1)
-           \|| isdirectory(fnamemodify(a:1, ':p:h'))
-        return
-    endif
-    return mkdir(fnamemodify(a:1, ':p:h'), 'p')
+	if !a:0
+			\|| isdirectory(a:1)
+			\|| filereadable(a:1)
+			\|| isdirectory(fnamemodify(a:1, ':p:h'))
+		return
+	endif
+	return mkdir(fnamemodify(a:1, ':p:h'), 'p')
 endfunction
 command -bang -bar -nargs=? -complete=file E :call s:MKDir(<f-args>) | e<bang> <args>
+
+" Edit todo list
+function! s:EditTodo()
+	:e ~/notes/todo.md
+endfunction
+command! Todo :call s:EditTodo()
+
+" Edit notes
+function! s:EditNote()
+	:e ~/notes/note.md
+endfunction
+command! Note :call s:EditNote()

@@ -5,6 +5,7 @@ let g:airline_powerline_fonts = 0
 let g:airline_theme='iceberg'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#coc#enabled = 1
 
 function! AirlineInit()
 	let g:airline_section_b = airline#section#create([])
