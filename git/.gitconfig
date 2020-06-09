@@ -2,17 +2,25 @@
 	email = carloscabezascontra@gmail.com
 	name = Carlos Cabezas
 [alias]
-	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %C(white)%ad - %s  %Cblue<%an>%Cred%d %Creset' \
+	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an>%Cred%d %Creset' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
+	sc = show --name-only
 	unstage = reset HEAD --
 	st = status
-	poh = push origin HEAD
-	pom = pull origin master
 	com = commit -m
 	ch = checkout
-	sc = show --name-only
+	poh = push origin HEAD
+	plom = pull origin master
+	plob = !git pull origin $(git branch --show-current)
 	ruo = remote update origin --prune
+	master = !git checkout master && git pull origin master
 [core]
 	excludesfile = ~/.gitignore_global
 [diff "sopsdiffer"]
 	textconv = sops -d
+[color]
+	ui = auto
+[color "branch"]
+	remote = magenta
+[color "status"]
+	changed = magenta
