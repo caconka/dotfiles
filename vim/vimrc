@@ -39,7 +39,7 @@ set tags+=tags;$HOME
 
 " Colorscheme configuration.
 if (has("termguicolors"))
-  set termguicolors
+	set termguicolors
 endif
 
 if &t_Co > 2
@@ -137,17 +137,8 @@ let mapleader="\<Space>"
 
 " Tabs
 set tabstop=4
-set softtabstop=4 noexpandtab
+set softtabstop=0 noexpandtab
 set shiftwidth=4
-
-" Netrw tree
-" let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
-" let g:netrw_browse_split = 4
-" let g:netrw_altv = 1
-" let g:netrw_winsize = 16
-" let g:netrw_keepdir = 0
-" map <Leader>nt :Vexplore<CR>
 
 " Toggle wrap
 nnoremap <leader>z :set wrap!<CR>
@@ -179,11 +170,23 @@ set rtp+=~/.fzf
 " ###################
 " # Custom commands #
 " ###################
+function! s:tabToggle()
+	if &expandtab
+		set shiftwidth=4
+		set softtabstop=0
+		set noexpandtab
+	else
+		set shiftwidth=4
+		set softtabstop=4
+		set expandtab
+	endif
+endfunction
+command! TabToggle :call s:tabToggle()
 
 " Beautify JSON
 function! s:jsonFmt()
-  %!python -m json.tool
-  %s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
+	%!python -m json.tool
+	%s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
 endfunction
 command! JsonFmt :call s:jsonFmt()
 
@@ -201,24 +204,23 @@ function! s:darkMode()
 	set background=dark
 	colorscheme iceberg
 	AirlineTheme iceberg
-	let g:fzf_colors =
-	\ { "bg+": ["bg", "CursorLine", "CursorColumn"] }
+	let g:fzf_colors = { "bg+": ["bg", "CursorLine", "CursorColumn"] }
 endfunction
 command! DarkMode :call s:darkMode()
 
 " Git add current buffer
 function! s:gitAddBuffer()
-  w
-  windo !git add %
+	w
+	windo !git add %
 endfunction
 command! GitAddBuffer :call s:gitAddBuffer()
 
 " :E to create a new file inside new folder(s)
 function s:mkdir(...)
 	if !a:0
-			\|| isdirectory(a:1)
-			\|| filereadable(a:1)
-			\|| isdirectory(fnamemodify(a:1, ':p:h'))
+				\|| isdirectory(a:1)
+				\|| filereadable(a:1)
+				\|| isdirectory(fnamemodify(a:1, ':p:h'))
 		return
 	endif
 	return mkdir(fnamemodify(a:1, ':p:h'), 'p')

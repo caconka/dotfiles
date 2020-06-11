@@ -7,8 +7,19 @@ alias grep="grep --color"
 alias vi=vim
 alias vim=nvim
 
-# Ctags
+# ctags
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
+
+# basics
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias open="xdg-open"
+	alias calc="libreoffice --calc"
+	alias writer="libreoffice --writer"
+	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+fi
+
+# navigation
+alias dotfiles="cd ~/.dotfiles"
 
 # Docker
 alias docker-stop="docker stop $(docker ps -a -q)"
@@ -24,13 +35,6 @@ alias bz="dotenv && bazel"
 
 # kubernetes
 alias k="kubectl"
-
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias open="xdg-open"
-	alias calc="libreoffice --calc"
-	alias writer="libreoffice --writer"
-	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-fi
 
 # navigation masmovil
 alias mas-care="cd $HOME/code/masmovil/mas-stack/pkg/mas-care/"
