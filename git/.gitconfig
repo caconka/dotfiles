@@ -14,7 +14,7 @@
 	plob = !git pull origin $(git branch --show-current)
 	cleanup = !git fetch -p && git branch -vv | grep -v '*' | grep -v 'origin' | awk '{print $1}' | \
 		grep -v 'master' | xargs git branch -D
-	master = !git checkout master && git pull origin master
+	master = !git checkout master && git pull origin master && git fetch -p
 [core]
 	excludesfile = ~/.gitignore_global
 [diff "sopsdiffer"]
