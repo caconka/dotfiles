@@ -106,10 +106,10 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 ## Profile configs ##
-if [ -f "$HOME/.bash_profile" ]; then source "$HOME/.bash_profile"; fi
+[ -f "$HOME/.profile" ] && source $HOME/.profile
 
 # fzf
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+[ -f "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
 
 # Google Cloud SDK.
 if [ -f "$HOME/.google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/.google-cloud-sdk/path.zsh.inc"; fi

@@ -34,6 +34,7 @@ ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
 ln -s --force ~/.dotfiles/bash/.inputrc ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
 ln -s --force ~/.dotfiles/bash/.bash_profile ~/
+ln -s --force ~/.dotfiles/bash/.profile ~/
 ln -s --force ~/.dotfiles/bash/.aliases ~/
 
 # Zsh
