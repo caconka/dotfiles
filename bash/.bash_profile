@@ -34,6 +34,16 @@ fi
 ## ALIASES ##
 if [ -f "$HOME/.aliases" ]; then source "$HOME/.aliases"; fi
 
+# TMUX
+if [[ -z "$TMUX" ]] ;then
+	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
+	if [[ -z "$ID" ]] ;then
+		tmux new-session
+	else
+		tmux attach-session -t "$ID"
+	fi
+fi
+
 ## FUNCTIONS ##
 # export env vars
 function dotenv() {
@@ -44,7 +54,7 @@ function dotenv() {
 		#export $(cat .env | xargs -L 1)
 	fi
 }
-export -f dotenv
+alias dotenv=dotenv
 
 function cd_up() {
 	cd $(printf "%0.0s../" $(seq 1 $1))
@@ -64,11 +74,12 @@ else
 	}
 fi
 
-# Google Cloud SDK.
-if [ -f "$HOME/.google-cloud-sdk/path.bash.inc" ]; then source "$HOME/.google-cloud-sdk/path.bash.inc"; fi
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/.google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/.google-cloud-sdk/completion.bash.inc"; fi
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# java
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

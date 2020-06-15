@@ -105,61 +105,13 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-## ENV VARS ##
-# Basics
-export LANG=en_US.UTF-8
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-# AppImages
-export PATH=$PATH:/usr/local/appimage
-# golang
-export GOPATH=$HOME/code/go
-export PATH=$PATH:$GOPATH/bin
-# NPM without sudo
-export PATH=~/.npm-global/bin:$PATH
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# TMUX
-if [[ -z "$TMUX" ]] ;then
-	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
-	if [[ -z "$ID" ]] ;then
-		tmux new-session
-	else
-		tmux attach-session -t "$ID"
-	fi
-fi
+## Profile configs ##
+if [ -f "$HOME/.bash_profile" ]; then source "$HOME/.bash_profile"; fi
 
 # fzf
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
-## ALIASES ##
-if [ -f "$HOME/.aliases" ]; then source "$HOME/.aliases"; fi
-
-## FUNCTIONS ##
-# export env vars
-function dotenv() {
-	if [ -e .env ]; then
-		while read -r line; do
-			export $line
-		done < .env
-		# export $(cat .env | xargs -L 1)
-	fi
-}
-fpath=(dotenv $fpath)
-
-function cd_up() {
-	cd $(printf "%0.0s../" $(seq 1 $1))
-}
-alias cd..=cd_up
 
 # Google Cloud SDK.
 if [ -f "$HOME/.google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/.google-cloud-sdk/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/.google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/.google-cloud-sdk/completion.zsh.inc"; fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH="/usr/local/opt/curl/bin:$PATH"

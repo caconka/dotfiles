@@ -5,7 +5,6 @@ charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailling_whitespace = true
-max_line_length = 120
 
 [*.{c,cpp,h,hpp,cc}]
 indent_style = tab
@@ -13,13 +12,18 @@ tab_width = 4
 max_line_length = 80
 
 [*.{java,scala,py,rb,go}]
+max_line_length = 120
 indent_style = tab
 tab_width = 4
 
 [*.{html,css,json,js,jsx,ts,tsx,yml,yaml}]
+max_line_length = 120
 indent_style = space
 indent_size = 2
 
 [Makefile]
 indent_style = tab
 tab_width = 4
+
+[*.md]
+trim_trailling_whitespace = false

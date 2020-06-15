@@ -51,15 +51,10 @@ colors() {
 	done
 }
 
-# TMUX
-if [[ -z "$TMUX" ]] ;then
-	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
-	if [[ -z "$ID" ]] ;then
-		tmux new-session
-	else
-		tmux attach-session -t "$ID"
-	fi
-fi
-
 # fzf
 [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+
+# Google Cloud SDK.
+if [ -f "$HOME/.google-cloud-sdk/path.bash.inc" ]; then source "$HOME/.google-cloud-sdk/path.bash.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/.google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/.google-cloud-sdk/completion.bash.inc"; fi

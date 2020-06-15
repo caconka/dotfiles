@@ -27,7 +27,7 @@ cd ~/.dotfiles
 git submodule update --init --recursive
 
 # fzf
-git clone git@github.com:19-1-skku-oss/fzf.git ~/.fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cd ~/.fzf && ./install
 
 # yq
@@ -52,11 +52,6 @@ ln -s --force ~/.dotfiles/bash/.inputrc ~/
 ln -s --force ~/.dotfiles/bash/.bashrc ~/
 ln -s --force ~/.dotfiles/bash/.bash_profile ~/
 ln -s --force ~/.dotfiles/bash/.aliases ~/
-
-# Zshrc
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-ln -s --force ~/.dotfiles/zsh/.zshrc ~/
 
 # Programming
 sudo apt install -y docker docker-compose redis postgresql
@@ -117,7 +112,8 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 sudo apt update && sudo apt -y install google-cloud-sdk kubectl
 
 # Install basics
-sudo apt install -y gimp inkscape mpv chromium ack kubectx jmtpfs
+#sudo apt install -y gimp inkscape mpv ack kubectx jmtpfs
+sudo apt install -y chromium-browser
 
 # Spotify
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
@@ -142,3 +138,8 @@ sudo apt install -y npm
 # mkdir ~/.npm-global
 # npm config set prefix ~/.npm-global
 source ~/.bashrc
+
+# Zshrc
+ln -s --force ~/.dotfiles/zsh/.zshrc ~/
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
