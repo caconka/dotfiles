@@ -56,6 +56,24 @@ function cd_up() {
 }
 alias cd..=cd_up
 
+# mas-stack masmovil
+function find_pkg_mas_stack() {
+	PKG="$HOME/code/masmovil/mas-stack/pkg/$1"
+	if [ -d "$PKG" ]; then
+		cd $PKG
+	else
+		PKG=$HOME/code/masmovil/mas-stack/pkg/mas-care/service/$1
+		if [ -d "$PKG" ]; then
+			cd $PKG
+		else
+			RED='\033[0;31m'
+			NC='\033[0m'
+			echo "${RED}[ERROR] ${NC}directory $PKG not found"
+		fi
+	fi
+}
+alias mm=find_pkg_mas_stack
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

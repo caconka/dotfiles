@@ -38,5 +38,4 @@ alias bz="dotenv && bazel"
 alias k="kubectl"
 
 # navigation masmovil
-alias mas-care="cd $HOME/code/masmovil/mas-stack/pkg/mas-care/"
 alias k8s-clusters="cd $HOME/code/masmovil/kubernetes-clusters/"
