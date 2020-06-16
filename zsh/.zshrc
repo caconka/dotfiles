@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 ## Profile configs ##
-[ -f "$HOME/.profile" ] && source $HOME/.profile
+[ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
 
 # fzf
 [ -f "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh

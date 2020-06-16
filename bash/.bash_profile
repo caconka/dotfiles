@@ -1,7 +1,7 @@
 # ~/.bash_profile
 
 # profile
-[ -f "$HOME/.profile" ] && source $HOME/.profile
+[ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
 
 # git-completion
 # linux

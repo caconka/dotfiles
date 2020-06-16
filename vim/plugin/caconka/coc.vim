@@ -1,5 +1,5 @@
 let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json',
-	\ 'coc-java', 'coc-yaml', 'coc-tsserver', 'coc-python']
+	\ 'coc-java', 'coc-yaml', 'coc-tsserver', 'coc-python', 'coc-pairs']
 
 " Better display for messages
 set cmdheight=2
@@ -49,3 +49,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" plugin settings
+let b:coc_pairs_disabled = ['<']
