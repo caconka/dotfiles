@@ -2,6 +2,10 @@
 
 # Dotfiles caconka
 
+# keybindings
+# setxkbmap -option caps:swapescape
+# macbook keybindings fix -> https://github.com/free5lot/hid-apple-patched/
+
 # Fonts
 mkdir ~/.fonts
 sudo pacman -Syy --noconfirm adobe-source-code-pro-fonts

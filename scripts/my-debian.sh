@@ -2,6 +2,10 @@
 
 # Dotfiles caconka
 
+# keybindings
+# setxkbmap -option caps:swapescape
+# macbook keybindings fix -> https://github.com/free5lot/hid-apple-patched/
+
 # Fonts
 mkdir ~/.fonts
 ln -s ~/.dotfiles/fonts/Inconsolata-Regular.ttf ~/.fonts/
