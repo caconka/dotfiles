@@ -20,4 +20,4 @@ map <Leader>nt :call TreeToggle()<CR>
 let g:NERDTreeWinSize = 45
 let g:NERDTreeDirArrowExpandable = '·'
 let g:NERDTreeDirArrowCollapsible = '›'
-let g:NERDTreeIgnore = ['bin$', 'build$', 'target$', '.DS_Store']
+let g:NERDTreeIgnore = ['bin$', 'build$', 'target$', '.DS_Store', 'node_modules$']

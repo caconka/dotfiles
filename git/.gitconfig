@@ -2,7 +2,7 @@
 	email = carloscabezascontra@gmail.com
 	name = Carlos Cabezas
 [alias]
-	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an>%C(red)%d' \
+	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an> %C(red)%D' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
 	sc = show --name-only
 	unstage = reset HEAD --
