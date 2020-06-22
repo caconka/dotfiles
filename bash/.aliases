@@ -14,7 +14,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 	alias vi=/usr/bin/vim
 	alias vim=/usr/local/appimage/nvim
-elif [[ "$OSTYPE" == "cygwin" ]]; then
+else
 	alias vi=/usr/local/bin/vim
 	alias vim=/usr/local/bin/nvim
 fi
