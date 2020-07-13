@@ -32,7 +32,7 @@ alias mvn-dev-skip="dotenv && mvn clean package -DskipTests && java -jar ./targe
 alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
 
 # bazel
-alias bz="dotenv && bazel"
+alias bz="export CONFIG_PATH=config.yaml && dotenv && bazel"
 
 # kubernetes
 alias k="kubectl"
