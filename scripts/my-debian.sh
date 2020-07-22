@@ -25,6 +25,7 @@ sudo apt remove -y --auto-remove vim
 sudo apt install -y xclip tmux vim-gui-common neovim exuberant-ctags tree \
 	ripgrep cmake python3 python3-pip
 sudo apt install -y fd-find
+sudo ln -s /usr/lib/cargo/bin/fd /usr/bin/
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
@@ -50,6 +51,11 @@ ln -s ~/.dotfiles/vim/plugin ~/.local/share/nvim/site/
 ln -s ~/.dotfiles/vim/undodir ~/.local/share/nvim/site/
 ln -s ~/.dotfiles/vim/coc-settings.json ~/.config/nvim/
 ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/
+
+sudo mkdir /usr/local/appimage
+curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+chmod u+x nvim.appimage
+sudo mv nvim.appimage /usr/local/appimage/nvim
 
 # Bashrc
 ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
@@ -121,11 +127,12 @@ sudo apt update && sudo apt -y install google-cloud-sdk kubectl
 sudo apt install openfortivpn
 
 # Install basics
-#sudo apt install -y gimp inkscape mpv ack kubectx jmtpfs
+#sudo apt install -y gimp inkscape mpv ack kubectx jmtpfs ac
 sudo apt install -y chromium-browser
 
 # Spotify
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install spotify-client
 
 # Java
@@ -135,20 +142,14 @@ sdk install java
 sdk install maven
 sdk install gradle
 
+# Zshrc
+ln -s --force ~/.dotfiles/zsh/.zshrc ~/
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 # Node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash
 nvm install stable
 nvm use node
-
-# NPM
-sudo apt install -y npm
-# mkdir ~/.npm-global
-# npm config set prefix ~/.npm-global
-source ~/.bashrc
-
-# Zshrc
-ln -s --force ~/.dotfiles/zsh/.zshrc ~/
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

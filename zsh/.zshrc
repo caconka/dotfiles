@@ -79,6 +79,7 @@ plugins=(
 	gradle
 	npm
 	yarn
+	bazel
 )
 
 source $ZSH/oh-my-zsh.sh
