@@ -78,6 +78,21 @@ function find_pkg_mas_stack() {
 }
 alias mm=find_pkg_mas_stack
 
+function tunnel_qvantel() {
+	if [ ! -z "$1" ]; then
+		if [ "$1" = "on" ]; then
+			if [ ! -e "/etc/hosts_default" ]; then
+				sudo cp /etc/hosts /etc/hosts_default
+			fi
+			sudo cp -f $HOME/Dropbox/code/hosts/mm_qvantel /etc/hosts
+			sudo kubectl -n external-services port-forward service/qvproxy 443:8443
+		elif [ "$1" = "off" ]; then
+			sudo cp -f /etc/hosts_default /etc/hosts
+		fi
+	fi
+}
+alias tunnel_qvantel=tunnel_qvantel
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
