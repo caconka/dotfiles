@@ -22,10 +22,6 @@ fi
 # navigation
 alias dotfiles="cd ~/.dotfiles"
 
-# Docker
-alias docker-stop="docker stop $(docker ps -a -q)"
-alias docker-rm="docker rm $(docker ps -a -q)"
-
 # maven
 alias mvn-dev="dotenv && mvn clean package && java -jar ./target/*-dependencies.jar"
 alias mvn-dev-skip="dotenv && mvn clean package -DskipTests && java -jar ./target/*-dependencies.jar"

@@ -60,6 +60,14 @@ function cd_up() {
 }
 alias cd..=cd_up
 
+function docker_list() {
+	docker ps -aq | while read line; do
+		docker $1 $line
+	done
+}
+alias docker-stop="docker_list stop"
+alias docker-rm="docker_list rm"
+
 # mas-stack masmovil
 function find_pkg_mas_stack() {
 	PKG="$HOME/code/masmovil/mas-stack/pkg/$1"
