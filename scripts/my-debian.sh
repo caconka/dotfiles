@@ -99,7 +99,7 @@ mkdir -p ~/.vscode/extensions/
 # Postman
 wget https://dl.pstmn.io/download/latest/linux64 -O postman-linux-x64.tar.gz
 sudo tar -xvzf postman-linux-x64.tar.gz -C /opt
-sudo ln -s /opt/Postman/Postman /usr/local/postman
+sudo ln -s /opt/Postman/Postman /usr/local/bin/postman
 rm postman-linux-x64.tar.gz
 mkdir -p ~/.local/share/applications
 ## Postman icon
