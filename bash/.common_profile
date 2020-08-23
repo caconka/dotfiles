@@ -55,11 +55,13 @@ function dotenv() {
 }
 alias dotenv=dotenv
 
+# navigate
 function cd_up() {
 	cd $(printf "%0.0s../" $(seq 1 $1))
 }
 alias cd..=cd_up
 
+# docker
 function docker_list() {
 	docker ps -aq | while read line; do
 		docker $1 $line
