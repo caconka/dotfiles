@@ -1,0 +1,43 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+nnoremap gi :action GotoImplementation<CR>
+nnoremap <leader>f :action FindInPath<CR>
+nnoremap <C-r>+ "+P<CR>
+
+nmap <C-p> :action SearchEverywhere<CR>
+
+imap <C-n> <Down>
+imap <C-p> <Up>
+
+
+map <leader>d :action Debug<CR>
+map <leader>r :action RenameElement<CR>
+map <leader>c :action Stop<CR>
+map <leader>z :action ToggleDistractionFreeMode<CR>
+
+map <leader>nt :action SelectInProjectView<CR>
+map <leader>a :action Annotate<CR>
+map <leader>h :action Vcs.ShowTabbedFileHistory<CR>
+map <S-Space> :action GotoNextError<CR>
+
+map <leader>b :action ToggleLineBreakpoint<CR>
+map <leader>o :action FileStructurePopup<CR>
