@@ -30,7 +30,7 @@ imap <C-p> <Up>
 
 
 map <leader>d :action Debug<CR>
-map <leader>r :action RenameElement<CR>
+map <leader>r :action RefactoringMenu<CR>
 map <leader>c :action Stop<CR>
 map <leader>z :action ToggleDistractionFreeMode<CR>
 
