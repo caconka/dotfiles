@@ -26,6 +26,9 @@ if [ command -v xetxkbmap &> /dev/null ]; then
 	setxkbmap -option caps:escape
 fi
 
+## FUNCTIONS ##
+if [ -f "$HOME/.bash_functions" ]; then source "$HOME/.bash_functions"; fi
+
 ## ALIASES ##
 if [ -f "$HOME/.aliases" ]; then source "$HOME/.aliases"; fi
 
@@ -38,70 +41,6 @@ if [[ -z "$TMUX" && -z "$DISABLE_TMUX" ]]; then
 		tmux attach-session -t "$ID"
 	fi
 fi
-
-## FUNCTIONS ##
-# export env vars
-function dotenv() {
-	envFile="$1"
-	if [ -z "$1" ]; then
-		envFile=.env
-	fi
-	if [ -e "$envFile" ]; then
-		while read -r line; do
-			export $line
-		done < "$envFile"
-		#export $(cat .env | xargs -L 1)
-	fi
-}
-alias dotenv=dotenv
-
-# navigate
-function cd_up() {
-	cd $(printf "%0.0s../" $(seq 1 $1))
-}
-alias cd..=cd_up
-
-# docker
-function docker_list() {
-	docker ps -aq | while read line; do
-		docker $1 $line
-	done
-}
-alias docker-stop="docker_list stop"
-alias docker-rm="docker_list rm"
-
-# mas-stack masmovil
-function find_pkg_mas_stack() {
-	PKG="$HOME/code/masmovil/mas-stack/pkg/$1"
-	if [ -d "$PKG" ]; then
-		cd $PKG
-	else
-		PKG=$HOME/code/masmovil/mas-stack/pkg/mas-care/service/$1
-		if [ -d "$PKG" ]; then
-			cd $PKG
-		else
-			RED='\033[0;31m'
-			NC='\033[0m'
-			echo "${RED}[ERROR] ${NC}directory $PKG not found"
-		fi
-	fi
-}
-alias mm=find_pkg_mas_stack
-
-function tunnel_qvantel() {
-	if [ ! -z "$1" ]; then
-		if [ "$1" = "on" ]; then
-			if [ ! -e "/etc/hosts_default" ]; then
-				sudo cp /etc/hosts /etc/hosts_default
-			fi
-			sudo cp -f $HOME/Dropbox/code/hosts/mm_qvantel /etc/hosts
-			sudo kubectl -n external-services port-forward service/qvproxy 443:8443
-		elif [ "$1" = "off" ]; then
-			sudo cp -f /etc/hosts_default /etc/hosts
-		fi
-	fi
-}
-alias tunnel_qvantel=tunnel_qvantel
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
