@@ -16,9 +16,6 @@
 [submodule "vim/pack/caconka/start/ale"]
 	path = vim/pack/caconka/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/pack/caconka/start/editorconfig-vim"]
-	path = vim/pack/caconka/start/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule "vim/pack/caconka/start/vim-tmux-focus-events"]
 	path = vim/pack/caconka/start/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
@@ -49,3 +46,6 @@
 [submodule "vim/pack/caconka/start/vim-bbye"]
 	path = vim/pack/caconka/start/vim-bbye
 	url = https://github.com/moll/vim-bbye.git
+[submodule "vim/pack/caconka/start/editorconfig-vim"]
+	path = vim/pack/caconka/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
