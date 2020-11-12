@@ -4,3 +4,4 @@ setlocal linebreak
 setlocal shiftwidth=4
 setlocal tabstop=4
 setlocal wrap
+setlocal virtualedit=all

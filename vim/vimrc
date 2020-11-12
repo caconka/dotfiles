@@ -10,9 +10,10 @@ set nomodeline
 " Enable filetype
 filetype indent plugin on
 
-" Persist undo history between file editing sessions.
+" Persist undo history and backup between file editing sessions.
+set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup//
 set undofile
-set undodir=~/.vim/undodir
 
 " Modify indenting settings
 set autoindent              " autoindent always ON.
@@ -21,8 +22,8 @@ set list
 set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
 
 " Modify some other settings about files
-set encoding=utf-8          " always use unicode (god damnit, windows)
-set backspace=indent,eol,start " backspace always works on insert mode
+set encoding=utf-8              " always use unicode (god damnit, windows)
+set backspace=indent,eol,start  " backspace always works on insert mode
 set hidden
 
 " Search
@@ -112,20 +113,12 @@ endif
 " Shortcuts for switching the buffers
 map <C-l> :bnext<CR>
 map <C-h> :bprev<CR>
-imap <C-l> <Esc>:bnext<CR>i
-imap <C-h> <Esc>:bprev<CR>i
+"imap <C-l> <Esc>:bnext<CR>i
+"imap <C-h> <Esc>:bprev<CR>i
 
 " Tabs
 vmap <Tab> >gv
 vmap <S-Tab> <gv
-
-" remap C-Left and C-Right
-"map 5D vB
-"map 5C vE
-imap <ESC>oA <ESC>ki
-imap <ESC>oB <ESC>ji
-imap <ESC>oC <ESC>li
-imap <ESC>oD <ESC>hi
 
 " Move lines vertically
 nnoremap <C-j> :m .+1<CR>==
@@ -227,26 +220,7 @@ function s:mkdir(...)
 endfunction
 command -bang -bar -nargs=? -complete=file E :call s:mkdir(<f-args>) | e<bang> <args>
 
-" floating window
-function! s:editFloatWin(file)
-	let buf = nvim_create_buf(v:false, v:true)
-	call setbufvar(buf, '&signcolumn', 'no')
-
-	let height = &lines - 10
-	let width = float2nr(&columns - (&columns * 4 / 10))
-	let col = float2nr((&columns - width) / 2)
-
-	let opts = {
-				\ 'relative': 'editor',
-				\ 'row': 5,
-				\ 'col': col,
-				\ 'width': width,
-				\ 'height': height,
-				\ 'style': 'minimal'
-				\ }
-
-	call nvim_open_win(buf, v:true, opts)
-
+function! s:editFile(file)
 	if a:file ==# 'todo'
 		e ~/notes/todo.md
 	elseif a:file ==# 'note'
@@ -254,6 +228,6 @@ function! s:editFloatWin(file)
 	endif
 endfunction
 " Edit todo list
-command! Todo :call s:editFloatWin('todo')
+command! Todo :call s:editFile('todo')
 " Edit notes
-command! Note :call s:editFloatWin('note')
+command! Note :call s:editFile('note')
