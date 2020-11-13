@@ -26,6 +26,17 @@ function docker_list() {
 	done
 }
 
+# bazel
+function bz() {
+	export CONFIG_PATH=config.yaml
+
+	if [ -n "$2" ]; then
+		dotenv "${2%:*}/.env"
+	fi
+
+	bazel "$@"
+}
+
 ### MASMOVIL ###
 function mm() {
 	MM="$HOME/code/masmovil/mas-stack"
