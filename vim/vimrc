@@ -140,8 +140,7 @@ nnoremap <leader>z :set wrap!<CR>
 nnoremap <leader>c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
 
 " Print date
-nmap <F6> "=strftime("%F")<CR>P
-imap <F6> <C-R>=strftime("%F")<CR>
+nmap <leader>d "=strftime("%F")<CR>p
 
 " Paste clipboard
 let os=substitute(system('uname'), '\n', '', '')

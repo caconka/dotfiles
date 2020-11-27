@@ -1,10 +1,10 @@
 let g:goyo_width = 120
 
 augroup markdown
-	autocmd Filetype markdown,mkd call SetUpMk()
+	autocmd Filetype markdown,mkd call s:SetUpMk()
 augroup END
 
-function! SetUpMk()
+function! s:SetUpMk()
 	" execute `Goyo` if it's not already active
 	if !exists('#goyo')
 		Goyo
@@ -13,14 +13,12 @@ endfunction
 
 function! s:goyo_enter()
 	if !exists('#limelight')
-		setlocal virtualedit=all
 		Limelight
 	endif
 endfunction
 
 function! s:goyo_leave()
 	setlocal virtualedit=
-	Bd
 	if exists('#limelight')
 		Limelight!
 	endif
