@@ -5,5 +5,9 @@
 			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
 			"filetypes": ["go"]
 		}
-	}
+	},
+  "diagnostic.displayByAle": true,
+  "diagnostic.warningSign": "•",
+  "diagnostic.errorSign": "✖",
+  "diagnostic.enableHighlightLineNumber": false
 }

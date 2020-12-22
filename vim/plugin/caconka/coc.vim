@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json',
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-go',
 	\ 'coc-java', 'coc-yaml', 'coc-tsserver', 'coc-python', 'coc-pairs']
 
 " Better display for messages
