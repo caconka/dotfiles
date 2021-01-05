@@ -1,8 +1,8 @@
 let g:goyo_width = 120
 
-augroup markdown
-	autocmd Filetype markdown,mkd call s:SetUpMk()
-augroup END
+"augroup markdown
+"	autocmd Filetype markdown,mkd call s:SetUpMk()
+"augroup END
 
 function! s:SetUpMk()
 	" execute `Goyo` if it's not already active
