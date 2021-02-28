@@ -60,10 +60,8 @@ if &t_Co > 2
 	highlight DiffChange ctermfg=yellow
 
 	let &colorcolumn=120
-endif
 
-" Mark trailing spaces depending on whether we have a fancy terminal or not
-if &t_Co > 2
+	" Mark trailing spaces depending on whether we have a fancy terminal or not
 	highlight ExtraWhitespace ctermbg=1
 	match ExtraWhitespace /\s\+$/
 else
@@ -90,14 +88,11 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 highlight Comment cterm=italic
 
-" Change cursor in different modes
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;BlinkingCursorEnabled=0\x7\<Esc>\\"
 " upon hitting escape to change modes, send successive move-left and move-right
 " commands to immediately redraw the cursor
 inoremap <special> <Esc> <Esc>hl
-" don't blink the cursor
-set guicursor+=i:blinkwait0
+" Cursor
+set guicursor+=i:blinkon1
 
 " Change tab tittle
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))

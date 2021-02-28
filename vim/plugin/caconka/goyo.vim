@@ -1,4 +1,4 @@
-let g:goyo_width = 120
+let g:goyo_width = 80
 
 "augroup markdown
 "	autocmd Filetype markdown,mkd call s:SetUpMk()
@@ -12,6 +12,7 @@ function! s:SetUpMk()
 endfunction
 
 function! s:goyo_enter()
+	setlocal virtualedit=all
 	if !exists('#limelight')
 		Limelight
 	endif

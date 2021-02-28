@@ -12,10 +12,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias calc="libreoffice --calc"
 	alias writer="libreoffice --writer"
 	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-	alias vi=/usr/bin/vim
+	alias vi="/usr/bin/vim -u NONE"
 	alias vim=/usr/local/appimage/nvim
 else
-	alias vi=/usr/local/bin/vim
+	alias vi="/usr/local/bin/vim -u NONE"
 	alias vim=/usr/local/bin/nvim
 fi
 
