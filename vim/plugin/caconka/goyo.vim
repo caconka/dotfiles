@@ -13,16 +13,10 @@ endfunction
 
 function! s:goyo_enter()
 	setlocal virtualedit=all
-	if !exists('#limelight')
-		Limelight
-	endif
 endfunction
 
 function! s:goyo_leave()
 	setlocal virtualedit=
-	if exists('#limelight')
-		Limelight!
-	endif
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

@@ -49,9 +49,6 @@
 [submodule "vim/pack/caconka/start/goyo"]
 	path = vim/pack/caconka/start/goyo
 	url = https://github.com/junegunn/goyo.vim.git
-[submodule "vim/pack/caconka/start/limelight"]
-	path = vim/pack/caconka/start/limelight
-	url = https://github.com/junegunn/limelight.vim.git
 [submodule "vim/pack/caconka/start/markdown-preview"]
 	path = vim/pack/caconka/start/markdown-preview
 	url = https://github.com/iamcco/markdown-preview.nvim.git
