@@ -9,5 +9,7 @@
   "diagnostic.displayByAle": true,
   "diagnostic.warningSign": "•",
   "diagnostic.errorSign": "✖",
-  "diagnostic.enableHighlightLineNumber": false
+  "diagnostic.enableHighlightLineNumber": false,
+  "java.format.enabled": true,
+  "java.format.onType.enabled": true
 }
