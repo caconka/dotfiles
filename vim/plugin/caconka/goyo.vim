@@ -13,6 +13,7 @@ endfunction
 
 function! s:goyo_enter()
 	setlocal virtualedit=all
+	setlocal cursorline
 endfunction
 
 function! s:goyo_leave()
