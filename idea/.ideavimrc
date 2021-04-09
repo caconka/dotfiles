@@ -3,6 +3,8 @@ let mapleader=" "
 
 """ Plugins  --------------------------------
 set surround
+set NERDTree
+"map <leader>nt :action NERDTreeFind<CR>
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -10,8 +12,10 @@ let g:argtextobj_pairs="[:],(:),<:>"
 """ Common settings -------------------------
 set showmode
 set so=5
-set incsearch
-set nu
+set incs
+set rnu
+set hls
+set ignorecase
 
 """ Idea specific settings ------------------
 set ideajoin
@@ -25,25 +29,33 @@ nnoremap gs :action GotoSuperMethod<CR>
 nnoremap U :action ShowUsages<CR>
 
 nnoremap <leader>f :action FindInPath<CR>
-nnoremap <C-r>+ "+P<CR>
+nnoremap <C-p> :action SearchEverywhere<CR>
+nnoremap <C-r>+ "+p<CR>
+
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 vnoremap == :action ReformatCode<CR>
-
-nmap <C-p> :action SearchEverywhere<CR>
 
 imap <C-n> <Down>
 imap <C-p> <Up>
 
+map <C-l> :action NextTab<CR>
+map <C-h> :action PreviousTab<CR>
+map <leader>d :action CloseEditor
+map <leader>ad :action CloseAllEditors
 
-map <leader>d :action Debug<CR>
+map <C-k> :action MoveLineUp<CR>
+map <C-j> :action MoveLineDown<CR>
+
+map <C-o> :action Back<CR>
+map <C-i> :action Forward<CR>
+
 map <leader>r :action RefactoringMenu<CR>
-map <leader>c :action Stop<CR>
 map <leader>z :action ToggleDistractionFreeMode<CR>
-
-map <leader>nt :action SelectInProjectView<CR>
-map <leader>a :action Annotate<CR>
-map <leader>h :action Vcs.ShowTabbedFileHistory<CR>
-map <S-Space> :action GotoNextError<CR>
-
 map <leader>b :action ToggleLineBreakpoint<CR>
-map <leader>o :action FileStructurePopup<CR>
+map <leader>e :action GotoNextError<CR>
+
+""" Custom commands -------------------------
+command! Blame action Annotate
+command! History action Vcs.ShowTabbedFileHistory

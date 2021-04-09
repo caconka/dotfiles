@@ -105,11 +105,16 @@ if &term == "screen"
 	set t_Co=256
 endif
 
+let mapleader="\<Space>"
+
 " Shortcuts for switching the buffers
 map <C-l> :bnext<CR>
 map <C-h> :bprev<CR>
 "imap <C-l> <Esc>:bnext<CR>i
 "imap <C-h> <Esc>:bprev<CR>i
+
+map <leader>d :bd<CR>
+map <leader>ad :%bd<CR>
 
 " Tabs
 vmap <Tab> >gv
@@ -121,8 +126,6 @@ nnoremap <C-k> :m .-2<CR>==
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-let mapleader="\<Space>"
-
 " Tabs
 set tabstop=4
 set softtabstop=0 noexpandtab
@@ -133,9 +136,6 @@ nnoremap <leader>z :set wrap!<CR>
 
 " Toggle conceallevel
 nnoremap <leader>c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
-
-" Print date
-nmap <leader>d "=strftime("%F")<CR>p
 
 " Paste clipboard
 let os=substitute(system('uname'), '\n', '', '')
