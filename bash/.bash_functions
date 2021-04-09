@@ -39,7 +39,7 @@ function bz() {
 
 ### MASMOVIL ###
 function mm() {
-	MM="$HOME/code/masmovil/mas-stack"
+	MM="$HOME/code/masmovil/mm-monorepo"
 	if [ -z "$1" ]; then
 		cd $MM
 	else
@@ -47,14 +47,10 @@ function mm() {
 		if [ -d "$PKG" ]; then
 			cd $PKG
 		else
-			PKG=$MM/pkg/mas-care/$1
-			if [ -d "$PKG" ]; then
-				cd $PKG
-			else
-				RED='\033[0;31m'
-				NC='\033[0m'
-				echo "${RED}[ERROR] ${NC}directory $PKG not found"
-			fi
+			RED='\033[0;31m'
+			NC='\033[0m'
+			echo "${RED}[ERROR] ${NC}directory $PKG not found"
+			cd $MM
 		fi
 	fi
 }
