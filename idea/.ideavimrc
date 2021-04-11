@@ -4,7 +4,7 @@ let mapleader=" "
 """ Plugins  --------------------------------
 set surround
 set NERDTree
-"map <leader>nt :action NERDTreeFind<CR>
+map <leader>nt :NERDTreeFind<CR>
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -42,8 +42,8 @@ imap <C-p> <Up>
 
 map <C-l> :action NextTab<CR>
 map <C-h> :action PreviousTab<CR>
-map <leader>d :action CloseEditor
-map <leader>ad :action CloseAllEditors
+map <leader>d :action CloseEditor<CR>
+map <leader>ad :action CloseAllEditors<CR>
 
 map <C-k> :action MoveLineUp<CR>
 map <C-j> :action MoveLineDown<CR>
@@ -57,5 +57,6 @@ map <leader>b :action ToggleLineBreakpoint<CR>
 map <leader>e :action GotoNextError<CR>
 
 """ Custom commands -------------------------
+command! Bd action CloseEditor
 command! Blame action Annotate
 command! History action Vcs.ShowTabbedFileHistory
