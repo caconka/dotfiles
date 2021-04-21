@@ -30,7 +30,8 @@ nnoremap <leader><leader> :action ShowIntentionActions<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
-nnoremap U :action ShowUsages<CR>
+nnoremap <leader>u :action ShowUsages<CR>
+nnoremap <leader>g :action Generate<CR>
 
 nnoremap <leader>f :action FindInPath<CR>
 nnoremap <C-p> :action SearchEverywhere<CR>

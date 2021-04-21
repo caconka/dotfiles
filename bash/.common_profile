@@ -48,6 +48,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # java
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+export VERTX_CONFIG_PATH=config.yaml
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
