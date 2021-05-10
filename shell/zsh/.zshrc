@@ -106,6 +106,9 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# prompt
+eval "$(starship init zsh)"
+
 ## Profile configs ##
 [ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
 [ -f "$HOME/.common_bash_zsh" ] && source $HOME/.common_bash_zsh

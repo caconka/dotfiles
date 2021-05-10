@@ -1,4 +1,4 @@
-set -x GOPATH $HOME/code/go
+set -U fish_greeting ""
 
 # TMUX
 if status is-interactive
@@ -7,6 +7,9 @@ if status is-interactive
 end
 
 [ -f "$HOME/.common_profile" ] && bass source "$HOME/.common_profile"
+
+# prompt
+starship init fish | source
 
 switch (uname)
 	case Linux

@@ -19,6 +19,9 @@ fi
 # fzf
 [ -f "$HOME/.fzf.bash" ] && source $HOME/.fzf.bash
 
+# prompt
+eval "$(starship init bash)"
+
 # Google Cloud SDK.
 if [ -f "$HOME/.google-cloud-sdk/path.bash.inc" ]; then source "$HOME/.google-cloud-sdk/path.bash.inc"; fi
 # The next line enables shell command completion for gcloud.
