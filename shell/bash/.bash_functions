@@ -20,7 +20,7 @@ function cd..() {
 }
 
 # docker
-function docker_list() {
+function docker-list() {
 	docker ps -aq | while read line; do
 		docker $1 $line
 	done
@@ -28,20 +28,7 @@ function docker_list() {
 
 ### MASMOVIL ###
 function mm() {
-	MM="$HOME/code/masmovil/mm-monorepo"
-	if [ -z "$1" ]; then
-		cd $MM
-	else
-		PKG="$MM/pkg/$1"
-		if [ -d "$PKG" ]; then
-			cd $PKG
-		else
-			RED='\033[0;31m'
-			NC='\033[0m'
-			echo "${RED}[ERROR] ${NC}directory $PKG not found"
-			cd $MM
-		fi
-	fi
+	cd "$HOME/code/masmovil/mm-monorepo/$1"
 }
 
 function mm-scripts() {
@@ -55,7 +42,7 @@ function mm-scripts() {
 	fi
 }
 
-function tunnel_qvantel() {
+function tunnel-qvantel() {
 	if [ ! -z "$1" ]; then
 		if [ "$1" = "on" ]; then
 			if [ ! -e "/etc/hosts_default" ]; then

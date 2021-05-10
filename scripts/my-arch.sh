@@ -34,13 +34,14 @@ cd ~/.dotfiles
 git submodule update --init --recursive
 
 # Bashrc
-ln -s ~/.dotfiles/bash/.git-prompt.sh ~/
-ln -s --force ~/.dotfiles/bash/.inputrc ~/
-ln -s --force ~/.dotfiles/bash/.bashrc ~/
-ln -s --force ~/.dotfiles/bash/.bash_profile ~/
-ln -s --force ~/.dotfiles/bash/.bash_functions ~/
-ln -s --force ~/.dotfiles/bash/.common_profile ~/
-ln -s --force ~/.dotfiles/bash/.aliases ~/
+ln -s ~/.dotfiles/shell/bash/.git-prompt.sh ~/
+ln -s --force ~/.dotfiles/shell/bash/.inputrc ~/
+ln -s --force ~/.dotfiles/shell/bash/.bashrc ~/
+ln -s --force ~/.dotfiles/shell/bash/.bash_profile ~/
+ln -s --force ~/.dotfiles/shell/bash/.bash_functions ~/
+ln -s --force ~/.dotfiles/shell/zsh/.zshrc ~/
+ln -s --force ~/.dotfiles/shell/.common_profile ~/
+ln -s --force ~/.dotfiles/shell/.aliases ~/
 
 # Zsh
 ln -s ~/.dotfiles/zsh/.zshrc ~/

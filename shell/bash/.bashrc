@@ -50,3 +50,7 @@ colors() {
 		echo; echo
 	done
 }
+
+## Profile configs ##
+[ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
+[ -f "$HOME/.common_bash_zsh" ] && source $HOME/.common_bash_zsh

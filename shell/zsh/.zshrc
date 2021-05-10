@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 
 ## Profile configs ##
 [ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
+[ -f "$HOME/.common_bash_zsh" ] && source $HOME/.common_bash_zsh
 
 # fzf
 [ -f "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh

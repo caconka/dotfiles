@@ -6,26 +6,17 @@ alias grep="grep --color"
 # ctags
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
-# basics
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias open="xdg-open"
-	alias calc="libreoffice --calc"
-	alias writer="libreoffice --writer"
-	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-	alias vi="/usr/bin/nvim -c 'CocDisable'"
-	alias vim=/usr/local/appimage/nvim
-else
-	alias vi="/usr/local/bin/nvim -c 'CocDisable'"
-	alias vim=/usr/local/bin/nvim
-fi
+# vim
+alias vi="nvim -c 'CocDisable'"
+alias vim=nvim
 
 # navigation
 alias dotfiles="cd ~/.dotfiles"
 
 # docker
 alias d="docker-compose"
-alias docker-stop="docker_list stop"
-alias docker-rm="docker_list rm"
+alias docker-stop="docker-list stop"
+alias docker-rm="docker-list rm"
 
 # maven
 alias mvn-dev="dotenv && mvn clean package && java -jar ./target/*-dependencies.jar"

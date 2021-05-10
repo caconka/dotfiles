@@ -1,0 +1,19 @@
+## FUNCTIONS ##
+[ -f "$HOME/.bash_functions" ] && source "$HOME/.bash_functions"
+
+# TMUX
+if [[ -z "$TMUX" && -z "$DISABLE_TMUX" ]]; then
+	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
+	if [[ -z "$ID" ]] ;then
+		tmux new-session
+	else
+		tmux attach-session -t "$ID"
+	fi
+fi
+
+## LINUX ##
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	export PATH=$PATH:/usr/local/appimage
+	alias open="xdg-open"
+	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+fi
