@@ -94,10 +94,8 @@ inoremap <special> <Esc> <Esc>hl
 " Cursor
 set guicursor+=i:blinkon1
 
-" Change tab tittle
-autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+"" Change tab tittle
 autocmd BufEnter * let &titlestring = "%:t"
-autocmd VimLeave * call system("tmux rename-window bash")
 set title
 
 " tmux screen view
@@ -139,11 +137,11 @@ nnoremap <leader>c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . 
 
 " Paste clipboard
 let os=substitute(system('uname'), '\n', '', '')
-if os == 'Darwin' || os == 'Mac'
+if os == 'Linux'
+	nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
+else
 	nnoremap <C-R>+ :r !pbpaste<CR>
 	noremap! <C-?> <C-h>
-elseif os == 'Linux'
-	nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
 endif
 
 " Relative numbering is pretty useful for motions (3g, 5k...). However I'd
