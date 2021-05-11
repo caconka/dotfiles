@@ -27,10 +27,6 @@ function docker-list() {
 }
 
 ### MASMOVIL ###
-function mm() {
-	cd "$HOME/code/masmovil/mm-monorepo/$1"
-}
-
 function mm-scripts() {
 	SCRIPTS_PATH="$(pwd)/src/main/scripts"
 	dotenv

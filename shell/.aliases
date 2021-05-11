@@ -1,6 +1,9 @@
 ##### Alias #####
 
-alias ll="ls -l"
+alias ll="exa -lg --icons"
+alias llt="ll --tree --level=2"
+alias lla="ll -a"
+alias llta="llt -a"
 alias grep="grep --color"
 
 # ctags
@@ -14,7 +17,6 @@ alias vim=nvim
 alias dotfiles="cd ~/.dotfiles"
 
 # docker
-alias d="docker-compose"
 alias docker-stop="docker-list stop"
 alias docker-rm="docker-list rm"
 
@@ -24,7 +26,11 @@ alias mvn-dev-skip="dotenv && mvn clean package -DskipTests && java -jar ./targe
 alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
 
 # kubernetes
-alias k="kubectl"
+alias k=kubectl
+
+# bazel
+alias bz=bazel
 
 # navigation masmovil
 alias k8s-clusters="cd $HOME/code/masmovil/kubernetes-clusters/"
+alias mm="cd $HOME/code/masmovil/mm-monorepo/"

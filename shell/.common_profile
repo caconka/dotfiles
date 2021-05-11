@@ -15,7 +15,7 @@ export PATH=$PATH:$GOBIN
 export PATH=~/.npm-global/bin:$PATH
 
 # colors
-export LS_COLORS="ln=0;32:ex=0;31:di=0;34:fi=0"
+export LS_COLORS="ln=0;36:ex=0;31:di=0;34:fi=0"
 
 # Caps-lock -> ESC
 [ command -v xetxkbmap &> /dev/null ] && setxkbmap -option caps:escape

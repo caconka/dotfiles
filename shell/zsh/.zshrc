@@ -113,10 +113,9 @@ eval "$(starship init zsh)"
 [ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
 [ -f "$HOME/.common_bash_zsh" ] && source $HOME/.common_bash_zsh
 
-# fzf
-[ -f "$HOME/.fzf.zsh" ] && source $HOME/.fzf.zsh
-
 # Google Cloud SDK.
 if [ -f "$HOME/.google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/.google-cloud-sdk/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/.google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/.google-cloud-sdk/completion.zsh.inc"; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

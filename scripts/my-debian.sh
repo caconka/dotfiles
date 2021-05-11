@@ -22,7 +22,7 @@ sudo apt install -y zip file-roller qpdfview jq curl zsh
 
 # Install xclip, tmux and vim
 sudo apt remove -y --auto-remove vim
-sudo apt install -y xclip tmux vim-gui-common neovim exuberant-ctags tree \
+sudo apt install -y xclip tmux vim-gui-common neovim exuberant-ctags tree exa \
 	ripgrep cmake python3 python3-pip
 sudo apt install -y fd-find
 sudo ln -s /usr/lib/cargo/bin/fd /usr/bin/
