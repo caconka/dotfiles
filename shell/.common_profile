@@ -6,10 +6,13 @@ export LANG=en_US.UTF-8
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
+# scripts
+export PATH=$HOME/.local/bin:$PATH
+
 # golang
 export GOPATH=$HOME/code/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
+export PATH=$GOBIN:$PATH
 
 # NPM without sudo
 export PATH=~/.npm-global/bin:$PATH
