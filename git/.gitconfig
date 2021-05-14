@@ -20,7 +20,7 @@
 	master = !git checkout master && git pull origin master && git fetch -p
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim --noplugin
+	editor = vim -u NONE
 [diff "sopsdiffer"]
 	textconv = sops -d
 [color]

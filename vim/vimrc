@@ -46,8 +46,8 @@ endif
 if &t_Co > 2
 	syntax on
 
-	silent! colorscheme iceberg
-	autocmd colorscheme iceberg highlight Italic cterm=italic gui=italic
+	silent! colorscheme nord
+	autocmd colorscheme nord highlight Italic cterm=italic gui=italic
 
 	set background=dark
 
@@ -187,8 +187,8 @@ command! LightMode :call s:lightMode()
 " Dark theme
 function! s:darkMode()
 	set background=dark
-	colorscheme iceberg
-	AirlineTheme iceberg
+	colorscheme nord
+	AirlineTheme nord
 	let g:fzf_colors = { "bg+": ["bg", "CursorLine", "CursorColumn"] }
 endfunction
 command! DarkMode :call s:darkMode()

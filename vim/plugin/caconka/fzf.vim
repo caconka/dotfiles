@@ -22,3 +22,5 @@ nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 
 nnoremap <leader>f :Rg<CR>
+
+imap <c-x><c-f> <plug>(fzf-complete-file)
