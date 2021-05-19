@@ -27,17 +27,6 @@ function docker-list() {
 }
 
 ### MASMOVIL ###
-function mm-scripts() {
-	SCRIPTS_PATH="$(pwd)/src/main/scripts"
-	dotenv
-	if [ -z "$1" ]; then
-		ls "$SCRIPTS_PATH"
-	else
-		mm
-		source "$SCRIPTS_PATH/$1"
-	fi
-}
-
 function tunnel-qvantel() {
 	if [ ! -z "$1" ]; then
 		if [ "$1" = "on" ]; then
