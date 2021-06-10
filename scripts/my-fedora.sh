@@ -12,7 +12,7 @@ ln -s ~/.dotfiles/git/.gitignore_global ~/
 
 # Install zsh xclip, tmux and vim
 sudo dnf update -y
-sudo dnf install -y zsh xclip tmux vim-X11 neovim exa ripgrep fd-find fzf
+sudo dnf install -y zsh xclip tmux vim vim-X11 neovim exa ripgrep fd-find fzf
 ln -s ~/.dotfiles/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
@@ -139,3 +139,19 @@ source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash
 nvm install stable
 nvm use node
+
+# flatpak
+sudo dnf install -y flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# spotify & synology drive
+flatpak install -y flathub com.spotify.Client com.synology.SynologyDrive
+
+# rpmfusion
+sudo dnf install \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# multimedia codecs
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
