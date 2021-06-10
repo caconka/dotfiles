@@ -13,7 +13,6 @@ fi
 
 ## LINUX ##
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	export PATH=$PATH:/usr/local/appimage
 	alias open="xdg-open"
 	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 fi
