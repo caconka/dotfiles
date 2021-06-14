@@ -144,7 +144,7 @@ nvm use node
 sudo dnf install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # spotify & synology drive
-flatpak install -y flathub com.spotify.Client com.synology.SynologyDrive
+flatpak install -y flathub com.spotify.Client
 
 # rpmfusion
 sudo dnf install \
@@ -155,3 +155,10 @@ sudo dnf install \
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
+
+# SynologyDrive
+#> sudo dnf install alien
+#> 1. Download .deb package from Synology website
+#> 2. sudo alien --to-rpm -vv synology-drive-*.deb
+#> 3. sudo rpm -ivh synology-drive-*.rpm --nodeps --force
+#> 4. sudo ln -s /usr/lib/nautilus/extensions-3.0/libnautilus-drive-extension.so /usr/lib64/nautilus/extensions-3.0/
