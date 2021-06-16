@@ -24,6 +24,7 @@ set iskeyword
 set ideajoin
 set ideastatusicon=gray
 set idearefactormode=keep
+set visualbell
 
 """ Mappings --------------------------------
 nnoremap <leader><leader> :action ShowIntentionActions<CR>

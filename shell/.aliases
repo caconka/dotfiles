@@ -32,5 +32,5 @@ alias k=kubectl
 alias bz=bazel
 
 # navigation masmovil
-alias k8s-clusters="cd $HOME/code/masmovil/kubernetes-clusters/"
-alias mm="cd $HOME/code/masmovil/mm-monorepo/"
+alias k8s-clusters="cd ~/code/masmovil/kubernetes-clusters/"
+alias mm="cd ~/code/masmovil/mm-monorepo/"
