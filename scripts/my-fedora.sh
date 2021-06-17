@@ -6,6 +6,18 @@
 mkdir ~/.fonts
 fc-cache -f -v
 
+# Shorcuts
+for i in {1..9}; do
+	gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"
+done
+
+for i in {1..5}; do
+	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"
+done
+
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Alt>Tab']"
+
 # Git
 ln -s ~/.dotfiles/git/.gitconfig ~/
 ln -s ~/.dotfiles/git/.gitignore_global ~/
