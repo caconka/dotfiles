@@ -25,7 +25,7 @@ ln -s ~/.dotfiles/git/.gitignore_global ~/
 # Install zsh xclip, tmux and vim
 sudo dnf update -y
 sudo dnf install -y zsh xclip tmux vim vim-X11 neovim exa ripgrep fd-find fzf
-ln -s ~/.dotfiles/tmux/.tmux.conf ~/
+ln -s ~/.dotfiles/shell/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
 cd ~/.dotfiles
@@ -37,7 +37,8 @@ mkdir -p ~/.config/nvim
 ln -s ~/.dotfiles/vim/pack ~/.local/share/nvim/site/
 ln -s ~/.dotfiles/vim/ftplugin ~/.local/share/nvim/site/
 ln -s ~/.dotfiles/vim/plugin ~/.local/share/nvim/site/
-ln -s ~/.dotfiles/vim/undodir ~/.local/share/nvim/site/
+ln -s ~/.dotfiles/vim/undo ~/.local/share/nvim/site/
+ln -s ~/.dotfiles/vim/backup ~/.local/share/nvim/site/
 ln -s ~/.dotfiles/vim/coc-settings.json ~/.config/nvim/
 ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/
 
@@ -53,14 +54,8 @@ ln -fs ~/.dotfiles/shell/bash/.bashrc ~/
 ln -fs ~/.dotfiles/shell/bash/.bash_profile ~/
 ln -fs ~/.dotfiles/shell/bash/.bash_functions ~/
 
-# Zshrc
-ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# Starship theme
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-ln -fs ~/.dotfiles/shell/startship/starship.toml ~/.config/
+# all keyboard-layouts then select English (intl. with AltGr dead keys)
+sudo dnf install kbd-legacy
 
 # Gnome nord-theme
 git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
@@ -167,6 +162,15 @@ sudo dnf install \
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
+
+# Zshrc
+ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Starship theme
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+ln -fs ~/.dotfiles/shell/startship/starship.toml ~/.config/
 
 # SynologyDrive
 #> sudo dnf install alien
