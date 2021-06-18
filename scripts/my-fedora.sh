@@ -105,11 +105,6 @@ sudo dnf install -y google-cloud-sdk kubectl
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
-mkdir -p ~/.oh-my-zsh/completions
-chmod -R 755 ~/.oh-my-zsh/completions
-ln -s /opt/kubectx/completion/kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh
-ln -s /opt/kubectx/completion/kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh
-
 
 # Postman
 POSTMAN_FILE=postman-linux-x64.tar.gz
@@ -171,6 +166,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # Starship theme
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ln -fs ~/.dotfiles/shell/startship/starship.toml ~/.config/
+
+# kubectl completions
+mkdir -p ~/.oh-my-zsh/completions
+chmod -R 755 ~/.oh-my-zsh/completions
+ln -s /opt/kubectx/completion/kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh
+ln -s /opt/kubectx/completion/kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh
 
 # SynologyDrive
 #> sudo dnf install alien
