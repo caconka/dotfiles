@@ -72,6 +72,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	golang
+	docker
 	kubectl
 	helm
 	gcloud
@@ -80,6 +81,7 @@ plugins=(
 	npm
 	yarn
 	bazel
+	fzf
 )
 
 source $ZSH/oh-my-zsh.sh
