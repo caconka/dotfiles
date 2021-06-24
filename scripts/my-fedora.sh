@@ -55,7 +55,7 @@ ln -fs ~/.dotfiles/shell/bash/.bash_profile ~/
 ln -fs ~/.dotfiles/shell/bash/.bash_functions ~/
 
 # all keyboard-layouts then select English (intl. with AltGr dead keys)
-sudo dnf install kbd-legacy
+sudo dnf install -y kbd-legacy
 
 # Gnome nord-theme
 git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
@@ -149,19 +149,19 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 flatpak install -y flathub com.spotify.Client
 
 # rpmfusion
-sudo dnf install \
+sudo dnf install -y \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # multimedia codecs
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
-sudo dnf install lame\* --exclude=lame-devel
+sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install -y lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 
 # Zshrc
-ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
 
 # Starship theme
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
