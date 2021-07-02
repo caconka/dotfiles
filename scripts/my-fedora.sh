@@ -63,7 +63,7 @@ git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
 rm -rf nord-gnome-terminal
 
 # Programming
-sudo dnf install -y docker golang openfortivpn
+sudo dnf install -y docker golang
 
 # Code dir config
 sudo mkdir ~/code
