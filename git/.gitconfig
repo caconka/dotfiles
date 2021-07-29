@@ -13,11 +13,11 @@
 	com = commit -m
 	ch = checkout
 	poh = push origin HEAD
-	plom = pull origin master
 	plob = !git pull origin $(git branch --show-current)
 	cleanup = !git fetch -p && git branch -vv | grep -v '*' | grep -v 'origin' | awk '{print $1}' | \
-		grep -v 'master' | xargs git branch -D && git prune
+		grep -v 'master|main' | xargs git branch -D && git prune
 	master = !git checkout master && git pull origin master
+	main = !git checkout main && git pull origin main
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim --noplugin
