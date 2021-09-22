@@ -1,4 +1,5 @@
 ### Vim ###
+.vim/
 # Swap
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
@@ -22,6 +23,9 @@ tags
 
 # nodejs
 node_modules/
+
+# idea
+.ijwb/
 
 ### Mac ###
 .DS_Store
