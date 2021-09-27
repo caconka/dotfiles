@@ -16,9 +16,6 @@
 [submodule "vim/pack/caconka/start/ale"]
 	path = vim/pack/caconka/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/pack/caconka/start/vim-tmux-focus-events"]
-	path = vim/pack/caconka/start/vim-tmux-focus-events
-	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
 [submodule "vim/pack/caconka/start/indentLine"]
 	path = vim/pack/caconka/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
