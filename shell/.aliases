@@ -10,7 +10,7 @@ alias grep="grep --color"
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
 # vim
-alias vi="nvim -c 'CocDisable'"
+alias vi="nvim -u NONE"
 alias vim=nvim
 
 # navigation
