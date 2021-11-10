@@ -109,7 +109,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # prompt
-eval "$(starship init zsh)"
+autoload -U promptinit; promptinit
+prompt pure
 
 ## Profile configs ##
 [ -f "$HOME/.common_profile" ] && source $HOME/.common_profile

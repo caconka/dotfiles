@@ -163,9 +163,12 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
 
+# Pure theme
+npm install --global pure-prompt
+
 # Starship theme
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-ln -fs ~/.dotfiles/shell/startship/starship.toml ~/.config/
+# sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+# ln -fs ~/.dotfiles/shell/startship/starship.toml ~/.config/
 
 # kubectl completions
 mkdir -p ~/.oh-my-zsh/completions
