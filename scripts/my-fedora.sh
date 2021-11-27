@@ -164,7 +164,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
 
 # Pure theme
-npm install --global pure-prompt
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 # Starship theme
 # sh -c "$(curl -fsSL https://starship.rs/install.sh)"
