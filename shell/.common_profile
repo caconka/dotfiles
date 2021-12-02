@@ -1,10 +1,13 @@
 # profile
 
+## ALIASES ##
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+
 ## ENV VARS ##
 # Basics
 export LANG=en_US.UTF-8
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+export EDITOR=vim
+export VISUAL="$EDITOR"
 
 # scripts
 export PATH=$HOME/.local/bin:$PATH
@@ -22,9 +25,6 @@ export LS_COLORS="ln=0;36:ex=0;31:di=0;34:fi=0"
 
 # Caps-lock -> ESC
 [ command -v xetxkbmap &> /dev/null ] && setxkbmap -option caps:escape
-
-## ALIASES ##
-[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

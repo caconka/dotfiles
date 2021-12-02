@@ -1,5 +1,8 @@
 ##### Alias #####
 
+# sudo
+alias sudo="sudo "
+
 alias ll="exa -lg --icons"
 alias llt="ll --tree --level=2"
 alias lla="ll -a"
