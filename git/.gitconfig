@@ -3,7 +3,6 @@
 	name = Carlos Cabezas
 [pull]
 	rebase = true
-	ff = only
 [alias]
 	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an> %C(red)%D' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
