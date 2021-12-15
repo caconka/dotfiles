@@ -200,6 +200,12 @@ function! s:gitAddBuffer()
 endfunction
 command! GitAddBuffer :call s:gitAddBuffer()
 
+" Git blame
+function! s:gitBlame()
+	windo !git blame %
+endfunction
+command! Blame :call s:gitBlame()
+
 " :E to create a new file inside new folder(s)
 function s:mkdir(...)
 	if !a:0
