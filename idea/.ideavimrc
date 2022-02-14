@@ -54,8 +54,8 @@ map <leader>ad :action CloseAllEditors<CR>
 map <C-k> :action MoveLineUp<CR>
 map <C-j> :action MoveLineDown<CR>
 
-map <C-o> :action Back<CR>
-map <C-i> :action Forward<CR>
+"map <C-o> :action Back<CR>
+"map <C-i> :action Forward<CR>
 
 map <leader>r :action RefactoringMenu<CR>
 map <leader>z :action ToggleDistractionFreeMode<CR>
