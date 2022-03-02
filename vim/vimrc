@@ -229,3 +229,11 @@ endfunction
 command! Todo :call s:editFile('todo')
 " Edit notes
 command! Note :call s:editFile('note')
+
+" MarkdownPreview with glow
+autocmd TermOpen * startinsert
+function! s:markdownPreview()
+	let l:path=expand('%:p')
+	:execute ":vert belowright sb|:term glow -s dark ".l:path." | less"
+endfunction
+command! MarkdownPreview :call s:markdownPreview()
