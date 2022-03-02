@@ -43,9 +43,6 @@
 [submodule "vim/pack/caconka/start/goyo"]
 	path = vim/pack/caconka/start/goyo
 	url = https://github.com/junegunn/goyo.vim.git
-[submodule "vim/pack/caconka/start/markdown-preview"]
-	path = vim/pack/caconka/start/markdown-preview
-	url = https://github.com/iamcco/markdown-preview.nvim.git
 [submodule "vim/pack/caconka/start/vim-commentary"]
 	path = vim/pack/caconka/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
