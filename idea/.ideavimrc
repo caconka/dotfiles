@@ -5,7 +5,8 @@ let mapleader=" "
 set surround
 set commentary
 set NERDTree
-map <leader>nt :NERDTreeFind<CR>
+map <leader>tt :NERDTreeToggle<CR>
+map <leader>tf :NERDTreeFind<CR>
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
