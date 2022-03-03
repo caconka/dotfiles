@@ -28,9 +28,6 @@
 [submodule "vim/pack/caconka/start/coc"]
 	path = vim/pack/caconka/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
-[submodule "vim/pack/caconka/start/nerdtree"]
-	path = vim/pack/caconka/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
 [submodule "vim/pack/theme/start/gruvbox"]
 	path = vim/pack/theme/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
@@ -49,3 +46,9 @@
 [submodule "vim/pack/theme/start/nord"]
 	path = vim/pack/theme/start/nord
 	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule "vim/pack/caconka/start/nvim-tree"]
+	path = vim/pack/caconka/start/nvim-tree
+	url = https://github.com/kyazdani42/nvim-tree.lua.git
+[submodule "vim/pack/caconka/start/nvim-tree-devicons"]
+	path = vim/pack/caconka/start/nvim-tree-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons.git
