@@ -221,8 +221,10 @@ command -bang -bar -nargs=? -complete=file E :call s:mkdir(<f-args>) | e<bang> <
 function! s:editFile(file)
 	if a:file ==# 'todo'
 		e ~/notes/todo.md
+		Goyo
 	elseif a:file ==# 'note'
 		e ~/notes/note.md
+		Goyo
 	endif
 endfunction
 " Edit todo list
