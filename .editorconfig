@@ -7,17 +7,14 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
 tab_width = 2
+indent_size = 2
+max_line_length = 120
 
 [*.{c,cpp,h,hpp,cc}]
 max_line_length = 80
 
-[*.{java,scala,py,rb,go}]
-max_line_length = 120
-
-[*.{html,css,json,js,jsx,ts,tsx,yml,yaml}]
-max_line_length = 120
+[*.{html,css,json,js,jsx,ts,tsx,yml,yaml,avsc}]
 indent_style = space
-indent_size = 2
 
 [*.md]
-trim_trailling_whitespace = false
+trim_trailing_whitespace = false
