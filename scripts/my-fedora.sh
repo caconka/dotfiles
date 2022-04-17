@@ -22,9 +22,9 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<
 ln -s ~/.dotfiles/git/.gitconfig ~/
 ln -s ~/.dotfiles/git/.gitignore_global ~/
 
-# Install zsh xclip, tmux and vim
+# Install zsh xclip, tmux and neovim
 sudo dnf update -y
-sudo dnf install -y zsh xclip tmux vim vim-X11 neovim exa ripgrep fd-find fzf
+sudo dnf install -y zsh xclip tmux vim neovim exa ripgrep fd-find fzf
 ln -s ~/.dotfiles/shell/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
@@ -53,9 +53,6 @@ ln -fs ~/.dotfiles/shell/bash/.inputrc ~/
 ln -fs ~/.dotfiles/shell/bash/.bashrc ~/
 ln -fs ~/.dotfiles/shell/bash/.bash_profile ~/
 ln -fs ~/.dotfiles/shell/bash/.bash_functions ~/
-
-# all keyboard-layouts then select English (intl. with AltGr dead keys)
-sudo dnf install -y kbd-legacy
 
 # Gnome nord-theme
 git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
@@ -136,7 +133,7 @@ sdk install maven
 sdk install gradle
 
 # Node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.bashrc
 source /usr/share/git/completion/git-completion.bash
 nvm install stable
@@ -145,7 +142,7 @@ nvm use node
 # flatpak
 sudo dnf install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-# spotify & synology drive
+# spotify
 flatpak install -y flathub com.spotify.Client
 
 # rpmfusion
@@ -176,10 +173,3 @@ mkdir -p ~/.oh-my-zsh/completions
 chmod -R 755 ~/.oh-my-zsh/completions
 ln -s /opt/kubectx/completion/kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh
 ln -s /opt/kubectx/completion/kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh
-
-# SynologyDrive
-#> sudo dnf install alien
-#> 1. Download .deb package from Synology website
-#> 2. sudo alien --to-rpm -vv synology-drive-*.deb
-#> 3. sudo rpm -ivh synology-drive-*.rpm --nodeps --force
-#> 4. sudo ln -s /usr/lib/nautilus/extensions-3.0/libnautilus-drive-extension.so /usr/lib64/nautilus/extensions-3.0/
