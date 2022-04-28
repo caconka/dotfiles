@@ -150,6 +150,9 @@ sudo dnf install -y \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+# nvidia drivers
+#sudo dnf install akmod-nvidia
+
 # multimedia codecs
 sudo dnf groupupdate multimedia sound-and-video
 # for firefox
