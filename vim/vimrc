@@ -129,9 +129,6 @@ set tabstop=4
 set softtabstop=0 noexpandtab
 set shiftwidth=4
 
-" Toggle wrap
-nnoremap <leader>z :set wrap!<CR>
-
 " Toggle conceallevel
 nnoremap <leader>c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
 
@@ -167,6 +164,28 @@ function! s:tabToggle()
 	endif
 endfunction
 command! TabToggle :call s:tabToggle()
+
+function! s:wrapToggle()
+	if &wrap
+		echo "Wrap OFF"
+		set nowrap
+		nnoremap j j
+		nnoremap k k
+		nnoremap 0 0
+		nnoremap $ $
+	else
+		echo "Wrap ON"
+		set wrap
+		set showbreak=↪\  linebreak breakindent
+		nnoremap j gj
+		nnoremap k gk
+		nnoremap 0 g0
+		nnoremap $ g$
+		onoremap <silent> j gj
+		onoremap <silent> k gk
+	endif
+endfunction
+command! WrapToggle :call s:wrapToggle()
 
 " Beautify JSON
 function! s:jsonFmt()
