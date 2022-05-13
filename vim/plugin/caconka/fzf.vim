@@ -5,8 +5,7 @@ autocmd! FileType fzf set laststatus=0 noshowmode noruler
 " layout enable window functionality
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
 " bg color
-let g:fzf_colors =
-\ { "bg+": ["bg", "CursorLine", "CursorColumn"] }
+" let g:fzf_colors = { "bg+": ["bg", "CursorLine", "CursorColumn"] }
 " use fd instead find
 let $FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude .git'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

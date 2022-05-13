@@ -46,10 +46,10 @@ endif
 if &t_Co > 2
 	syntax on
 
-	silent! colorscheme nord
-	autocmd colorscheme nord highlight Italic cterm=italic gui=italic
+	silent! colorscheme onehalflight
+	autocmd colorscheme onehalflight highlight Italic cterm=italic gui=italic
 
-	set background=dark
+	set background=light
 
 	highlight Folded cterm=reverse ctermbg=0 ctermfg=8
 	highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=8
@@ -197,8 +197,8 @@ command! JsonFmt :call s:jsonFmt()
 " Light theme
 function! s:lightMode()
 	set background=light
-	colorscheme gruvbox
-	AirlineTheme gruvbox
+	colorscheme onehalflight
+	AirlineTheme onehalflight
 	let g:fzf_colors={}
 endfunction
 command! LightMode :call s:lightMode()
