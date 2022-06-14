@@ -62,8 +62,8 @@ map <leader>r <action>(RefactoringMenu)
 map <leader>z <action>(ToggleDistractionFreeMode)
 map <leader>b <action>(ToggleLineBreakpoint)
 map <leader>e <action>(GotoNextError)
+map <leader>u <action>(FindUsages)
 
 """ Custom commands -------------------------
-command! Bd action CloseEditor
 command! Blame action Annotate
 command! History action Vcs.ShowTabbedFileHistory
