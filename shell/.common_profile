@@ -35,3 +35,6 @@ export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 export VERTX_CONFIG_PATH=config.yaml
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Gcloud Masmovil
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
