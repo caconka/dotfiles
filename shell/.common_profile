@@ -3,6 +3,10 @@
 ## ALIASES ##
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
+## FZF ##
+export FZF_DEFAULT_OPTS='--color=bg+:#d8dee9,fg+:#2e3440'
+[ -f "$HOME/.dotfiles/shell/fzf_functions" ] && source "$HOME/.dotfiles/shell/fzf_functions"
+
 ## ENV VARS ##
 # Basics
 export LANG=en_US.UTF-8
@@ -22,6 +26,9 @@ export PATH=~/.npm-global/bin:$PATH
 
 # colors
 export LS_COLORS="ln=0;36:ex=0;31:di=0;34:fi=0"
+# kubectx colors
+export KUBECTX_CURRENT_FGCOLOR=$(tput setaf 3) # yellow text
+export KUBECTX_CURRENT_BGCOLOR=$(tput setab 7) # white background
 
 # Caps-lock -> ESC
 [ command -v xetxkbmap &> /dev/null ] && setxkbmap -option caps:escape

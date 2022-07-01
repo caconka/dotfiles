@@ -26,16 +26,11 @@ alias dotfiles="cd ~/.dotfiles"
 alias docker-stop="docker-list stop"
 alias docker-rm="docker-list rm"
 
-# maven
-alias mvn-dev="dotenv && mvn clean package && java -jar ./target/*-dependencies.jar"
-alias mvn-dev-skip="dotenv && mvn clean package -DskipTests && java -jar ./target/*-dependencies.jar"
-alias mvn-debug="dotenv && mvn clean package -DskipTests && java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n -jar ./target/*-dependencies.jar"
-
 # kubernetes
 alias k=kubectl
 
 # bazel
-alias bz=bazel
+alias bz=bazel --action_env=TESTCONTAINERS_RYUK_DISABLED=true
 
 # navigation masmovil
 alias k8s-clusters="cd ~/code/masmovil/kubernetes-clusters/"

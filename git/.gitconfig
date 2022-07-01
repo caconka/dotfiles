@@ -14,7 +14,7 @@
 	poh = push origin HEAD
 	plob = !git pull origin $(git branch --show-current)
 	cleanup = !git fetch -p && git branch -vv | grep -v '*' | grep -v 'origin' | awk '{print $1}' | \
-		grep -v 'master|main' | xargs git branch -D && git prune
+		grep -v 'master|main' | xargs git branch -D && git gc
 	master = !git checkout master && git pull origin master
 	main = !git checkout main && git pull origin main
 [core]
