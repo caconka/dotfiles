@@ -1,6 +1,6 @@
 ## FUNCTIONS ##
 # export env vars
-function dotenv() {
+dotenv() {
 	envFile="$1"
 	if [ -z "$1" ]; then
 		envFile=.env
@@ -15,19 +15,19 @@ function dotenv() {
 }
 
 # navigate
-function cd..() {
-	cd $(printf "%0.0s../" $(seq 1 $1))
+cd..() {
+	cd $(printf "%0.0s../" $(seq 1 "$1"))
 }
 
 # docker
-function docker-list() {
-	docker ps -aq | while read line; do
-		docker $1 $line
+docker-list() {
+	docker "$2" -aq | while read line; do
+		docker "$1" $line
 	done
 }
 
 ### MASMOVIL ###
-function tunnel-qvantel() {
+tunnel-qvantel() {
 	if [ ! -z "$1" ]; then
 		if [ "$1" = "on" ]; then
 			if [ ! -e "/etc/hosts_default" ]; then

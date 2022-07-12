@@ -23,8 +23,9 @@ alias vim=nvim
 alias dotfiles="cd ~/.dotfiles"
 
 # docker
-alias docker-stop="docker-list stop"
-alias docker-rm="docker-list rm"
+alias docker-stop="docker-list stop ps"
+alias docker-rm="docker-list rm ps"
+alias docker-rmi="docker-list rmi images"
 
 # kubernetes
 alias k=kubectl
