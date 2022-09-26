@@ -162,6 +162,7 @@ sudo dnf install ffmpeg-libs
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
+ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
 
 # Pure theme
 mkdir -p "$HOME/.zsh"
