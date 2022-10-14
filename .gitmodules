@@ -40,9 +40,6 @@
 [submodule "vim/pack/theme/start/nord"]
 	path = vim/pack/theme/start/nord
 	url = https://github.com/arcticicestudio/nord-vim.git
-[submodule "vim/pack/caconka/start/nvim-tree"]
-	path = vim/pack/caconka/start/nvim-tree
-	url = https://github.com/kyazdani42/nvim-tree.lua.git
-[submodule "vim/pack/caconka/start/nvim-tree-devicons"]
-	path = vim/pack/caconka/start/nvim-tree-devicons
-	url = https://github.com/kyazdani42/nvim-web-devicons.git
+[submodule "vim/pack/caconka/start/fern"]
+	path = vim/pack/caconka/start/fern
+	url = https://github.com/lambdalisue/fern.vim.git
