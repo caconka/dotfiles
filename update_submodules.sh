@@ -17,4 +17,4 @@ printf "\033[0;32mCommit && push\033[0m\n"
 cd ~/.dotfiles
 git add -A
 git commit -m "update submodules"
-git push origin master
+git push origin HEAD
