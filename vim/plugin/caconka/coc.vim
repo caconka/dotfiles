@@ -52,3 +52,7 @@ endfunction
 
 " plugin settings
 let b:coc_pairs_disabled = ['<']
+
+" coc-explorer
+:nmap <leader>tt <Cmd>CocCommand explorer<CR>
+:nmap <leader>tf <Cmd>CocCommand explorer<CR>
