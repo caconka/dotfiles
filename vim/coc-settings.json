@@ -6,6 +6,7 @@
 			"filetypes": ["go"]
 		}
 	},
+	"suggest.noselect": true,
 	"diagnostic.displayByAle": true,
 	"diagnostic.warningSign": "•",
 	"diagnostic.errorSign": "✖",
