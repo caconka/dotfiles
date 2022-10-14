@@ -1,34 +1,20 @@
 " Stop acting like classic vi
-set nocompatible            " disable vi compatibility mode
-set history=1000            " increase history size
-set noswapfile              " don't create swapfiles
-"set nobackup                " don't backup, use git!
+set history=1000
 
-" Modeline secure
-set nomodeline
-
-" Enable filetype
-filetype indent plugin on
-
-" Persist undo history and backup between file editing sessions.
+" Persist undo history between file editing sessions.
 set undodir=~/.vim/undo//
-set backupdir=~/.vim/backup//
 set undofile
+set noswapfile
+set nobackup
 
-" Modify indenting settings
-set autoindent              " autoindent always ON.
-set mouse=a                 " mouse all
-set list
-set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
-
-" Modify some other settings about files
-set encoding=utf-8              " always use unicode (god damnit, windows)
-set backspace=indent,eol,start  " backspace always works on insert mode
+" Settings about files
+set encoding=utf-8
+scriptencoding utf-8
+filetype indent plugin on
+set backspace=indent,eol,start
 set hidden
-
-" Search
-set hlsearch  " Highlighting when search
-set smartcase " case sensitive
+set autoindent
+set mouse=a
 
 " Scrolling when we're n lines away from margins
 set scrolloff=8
@@ -59,40 +45,36 @@ if &t_Co > 2
 	highlight DiffDelete ctermfg=red cterm=bold
 	highlight DiffChange ctermfg=yellow
 
-	let &colorcolumn=120
+	highlight Pmenu ctermbg=8 ctermfg=0
+	highlight Pmenusel ctermbg=15 ctermfg=0
 
-	" Mark trailing spaces depending on whether we have a fancy terminal or not
+	set colorcolumn=120
+
 	highlight ExtraWhitespace ctermbg=1
 	match ExtraWhitespace /\s\+$/
 else
-	set listchars=trail:~
 	set list
+	set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
 endif
 
-" Use a specific pipe ch
 set fillchars+=vert:\┊
-
 set noshowmode
-set laststatus=1        " always show statusbar
-set wildmenu            " enable visual wildmenu
+set laststatus=1       " always show statusbar
+set wildmenu           " enable visual wildmenu
+set wildoptions=pum
 
-set nowrap              " don't wrap long lines
-set number              " show line numbers
-set relativenumber      " show numbers as relative by default
-set showmatch           " higlight matching parentheses and brackets
-set ignorecase          " searching is not case sensitive
-set autoread            " if file is changed on disk
+set nowrap          " don't wrap long lines
+set number          " show line numbers
+set relativenumber  " show numbers as relative by default
+set showmatch       " higlight matching parentheses and brackets
+set autoread        " if file is changed on disk
+set ignorecase      " searching is not case sensitive
+set hlsearch        " Highlighting when search
 
 " Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 highlight Comment cterm=italic
-
-" upon hitting escape to change modes, send successive move-left and move-right
-" commands to immediately redraw the cursor
-inoremap <special> <Esc> <Esc>hl
-" Cursor
-set guicursor+=i:blinkon1
 
 "" Change tab tittle
 autocmd BufEnter * let &titlestring = "%:t"
@@ -105,12 +87,9 @@ endif
 
 let mapleader="\<Space>"
 
-" Shortcuts for switching the buffers
+" Buffers
 map <C-l> :bnext<CR>
 map <C-h> :bprev<CR>
-"imap <C-l> <Esc>:bnext<CR>i
-"imap <C-h> <Esc>:bprev<CR>i
-
 map <leader>d :bd<CR>
 map <leader>ad :%bd<CR>
 
@@ -125,9 +104,9 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Tabs
-set tabstop=4
+set tabstop=2
 set softtabstop=0 noexpandtab
-set shiftwidth=4
+set shiftwidth=2
 
 " Toggle conceallevel
 nnoremap <leader>c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
@@ -140,11 +119,6 @@ else
 	nnoremap <C-R>+ :r !pbpaste<CR>
 	noremap! <C-?> <C-h>
 endif
-
-" Relative numbering is pretty useful for motions (3g, 5k...). However I'd
-" prefer to have a way for switching relative numbers with a single map.
-nmap <F5> :set invrelativenumber<CR>
-imap <F5> <ESC>:set invrelativenumber<CR>a
 
 " fzf needs to be configured before loads the plugin fzf.vim
 set rtp+=~/.fzf

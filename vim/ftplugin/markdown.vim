@@ -1,6 +1,4 @@
-setlocal autoindent
 setlocal colorcolumn=80
+setlocal breakindent
 setlocal linebreak
-setlocal shiftwidth=4
-setlocal tabstop=4
 setlocal wrap
