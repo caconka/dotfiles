@@ -50,12 +50,12 @@ if &t_Co > 2
 
 	set colorcolumn=120
 
-	highlight ExtraWhitespace ctermbg=1
+	highlight ExtraWhitespace ctermfg=8
 	match ExtraWhitespace /\s\+$/
-else
-	set list
-	set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
 endif
+
+set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
+set list
 
 set fillchars+=vert:\┊
 set noshowmode

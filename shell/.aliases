@@ -16,8 +16,7 @@ alias temps="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
 # vim
-alias vi="nvim -u NONE"
-alias vim=nvim
+alias vi="vim -u NONE"
 
 # navigation
 alias dotfiles="cd ~/.dotfiles"

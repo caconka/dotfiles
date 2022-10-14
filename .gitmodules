@@ -16,9 +16,6 @@
 [submodule "vim/pack/caconka/start/ale"]
 	path = vim/pack/caconka/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/pack/caconka/start/indentLine"]
-	path = vim/pack/caconka/start/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
 [submodule "vim/pack/caconka/start/tabular"]
 	path = vim/pack/caconka/start/tabular
 	url = https://github.com/godlygeek/tabular.git
