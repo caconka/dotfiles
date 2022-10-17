@@ -52,6 +52,10 @@ if &t_Co > 2
 
 	highlight ExtraWhitespace ctermfg=NONE
 	match ExtraWhitespace /\s\+$/
+
+	" Syntax often gets messed up on files with multiple languages
+	noremap <F12> <Esc>:syntax sync fromstart<CR>
+	inoremap <F12> <C-o>:syntax sync fromstart<CR>
 endif
 
 set listchars=tab:\│\ ,trail:·,eol:¬,extends:>,precedes:<
@@ -87,141 +91,5 @@ if &term == "screen"
 	set t_Co=256
 endif
 
-let mapleader="\<Space>"
-
-" Buffers
-map <C-l> :bnext<CR>
-map <C-h> :bprev<CR>
-map <leader>d :bd<CR>
-map <leader>ad :%bd<CR>
-
-" Tabs
-vmap <Tab> >gv
-vmap <S-Tab> <gv
-
-" Move lines vertically
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-
-" Tabs
-set tabstop=2
-set shiftwidth=2
-set softtabstop=0
-set noexpandtab
-
-" Toggle conceallevel
-nnoremap <leader>c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
-
-" Paste clipboard
-let os=substitute(system('uname'), '\n', '', '')
-if os == 'Linux'
-	nnoremap <C-R>+ :r !xclip -selection clipboard -o<CR>
-else
-	nnoremap <C-R>+ :r !pbpaste<CR>
-	noremap! <C-?> <C-h>
-endif
-
 " fzf needs to be configured before loads the plugin fzf.vim
 set rtp+=~/.fzf
-
-" ###################
-" # Custom commands #
-" ###################
-function! s:tabToggle()
-	if &expandtab
-		set shiftwidth=4
-		set softtabstop=0
-		set noexpandtab
-	else
-		set shiftwidth=4
-		set softtabstop=4
-		set expandtab
-	endif
-endfunction
-command! TabToggle :call s:tabToggle()
-
-function! s:wrapToggle()
-	if &wrap
-		echo "Wrap OFF"
-		set nowrap
-		nnoremap j j
-		nnoremap k k
-		nnoremap 0 0
-		nnoremap $ $
-	else
-		echo "Wrap ON"
-		set wrap
-		set showbreak=↪\  linebreak breakindent
-		nnoremap j gj
-		nnoremap k gk
-		nnoremap 0 g0
-		nnoremap $ g$
-		onoremap <silent> j gj
-		onoremap <silent> k gk
-	endif
-endfunction
-command! WrapToggle :call s:wrapToggle()
-
-" Beautify JSON
-function! s:jsonFmt()
-	%!python -m json.tool
-	%s;^\(\s\+\);\=repeat(' ', len(submatch(0))/2);g
-endfunction
-command! JsonFmt :call s:jsonFmt()
-
-" Light theme
-function! s:lightMode()
-	set background=light
-	colorscheme onehalflight
-	AirlineTheme onehalflight
-	let g:fzf_colors={}
-endfunction
-command! LightMode :call s:lightMode()
-
-" Dark theme
-function! s:darkMode()
-	set background=dark
-	colorscheme nord
-	AirlineTheme nord
-	let g:fzf_colors = { "bg+": ["bg", "CursorLine", "CursorColumn"] }
-endfunction
-command! DarkMode :call s:darkMode()
-
-" Git add current buffer
-function! s:gitAddBuffer()
-	w
-	windo !git add %
-endfunction
-command! GitAddBuffer :call s:gitAddBuffer()
-
-" Git blame
-function! s:gitBlame()
-	windo !git blame %
-endfunction
-command! Blame :call s:gitBlame()
-
-" :E to create a new file inside new folder(s)
-function s:mkdir(...)
-	if !a:0
-				\|| isdirectory(a:1)
-				\|| filereadable(a:1)
-				\|| isdirectory(fnamemodify(a:1, ':p:h'))
-		return
-	endif
-	return mkdir(fnamemodify(a:1, ':p:h'), 'p')
-endfunction
-command -bang -bar -nargs=? -complete=file E :call s:mkdir(<f-args>) | e<bang> <args>
-
-function! s:editFile(file)
-	if a:file ==# 'todo'
-		e ~/notes/todo.md
-	elseif a:file ==# 'note'
-		e ~/notes/note.md
-	endif
-endfunction
-" Edit todo list
-command! Todo :call s:editFile('todo')
-" Edit notes
-command! Note :call s:editFile('note')
