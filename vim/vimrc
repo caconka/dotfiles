@@ -91,5 +91,4 @@ if &term == "screen"
 	set t_Co=256
 endif
 
-" fzf needs to be configured before loads the plugin fzf.vim
-set rtp+=~/.fzf
+let mapleader="\<Space>"

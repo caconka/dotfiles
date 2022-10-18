@@ -1,5 +1,3 @@
-let mapleader="\<Space>"
-
 " Buffers
 map <C-l> :bnext<CR>
 map <C-h> :bprev<CR>

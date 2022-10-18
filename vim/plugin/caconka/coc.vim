@@ -1,5 +1,5 @@
 let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-go',
-	\ 'coc-java', 'coc-yaml', 'coc-tsserver', 'coc-python', 'coc-pairs']
+	\ 'coc-java', 'coc-yaml', 'coc-tsserver', 'coc-python', 'coc-pairs', 'coc-explorer']
 
 " Better display for messages
 set cmdheight=2
@@ -56,4 +56,4 @@ let b:coc_pairs_disabled = ['<']
 
 " coc-explorer
 :nmap <leader>tt <Cmd>CocCommand explorer<CR>
-:nmap <leader>tf <Cmd>CocCommand explorer<CR>
+:nmap <leader>tf <Cmd>CocCommand explorer --no-toggle<CR>
