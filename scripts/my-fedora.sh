@@ -25,9 +25,9 @@ ln -s ~/.dotfiles/git/.gitignore_global ~/
 # Terminal kitty
 sudo dnf update -y
 sudo dnf install -y kitty
-curl -O https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.conf -o ~/.config/kitty/onehalf-light.conf
-ln -s ~/.dotfiles/shell/kitty/caconka.conf ~/.config/kitty/
-echo 'include caconka.conf' >> ~/.config/kitty/kitty.conf
+mkdir ~/.config/kitty
+wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.conf -P ~/.config/kitty
+ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
 
 # Install zsh xclip, tmux and vim
 sudo dnf install -y zsh xclip tmux vim vim-X11 neovim exa ripgrep fd-find fzf kitty
