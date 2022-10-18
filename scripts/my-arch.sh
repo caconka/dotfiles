@@ -8,9 +8,6 @@
 
 # Fonts
 mkdir ~/.fonts
-sudo pacman -Syy --noconfirm adobe-source-code-pro-fonts
-ln -s ~/.dotfiles/fonts/Inconsolata-Regular.ttf ~/.fonts/
-ln -s ~/.dotfiles/fonts/AnonymousPro-Regular.ttf ~/.fonts/
 fc-cache -f -v
 
 # mutt

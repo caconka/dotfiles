@@ -22,9 +22,15 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<
 ln -s ~/.dotfiles/git/.gitconfig ~/
 ln -s ~/.dotfiles/git/.gitignore_global ~/
 
-# Install zsh xclip, tmux and neovim
+# Terminal kitty
 sudo dnf update -y
-sudo dnf install -y zsh xclip tmux vim neovim exa ripgrep fd-find fzf
+sudo dnf install -y kitty
+curl -O https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.conf -o ~/.config/kitty/onehalf-light.conf
+ln -s ~/.dotfiles/shell/kitty/caconka.conf ~/.config/kitty/
+echo 'include caconka.conf' >> ~/.config/kitty/kitty.conf
+
+# Install zsh xclip, tmux and vim
+sudo dnf install -y zsh xclip tmux vim vim-X11 neovim exa ripgrep fd-find fzf kitty
 ln -s ~/.dotfiles/shell/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
