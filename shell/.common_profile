@@ -28,7 +28,10 @@ export PATH=~/.npm-global/bin:$PATH
 export LS_COLORS="ln=0;36:ex=0;31:di=0;34:fi=0"
 # kubectx colors
 export KUBECTX_CURRENT_FGCOLOR=$(tput setaf 3) # yellow text
-export KUBECTX_CURRENT_BGCOLOR=$(tput setab 7) # white background
+export KUBECTX_CURRENT_BGCOLOR=$(tput sgr0) # white background
+
+# bat
+export BAT_THEME=OneHalfLight
 
 # Caps-lock -> ESC
 [ command -v xetxkbmap &> /dev/null ] && setxkbmap -option caps:escape

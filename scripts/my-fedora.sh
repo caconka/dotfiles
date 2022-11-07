@@ -30,7 +30,7 @@ wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.
 ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
 
 # Install zsh xclip, tmux and vim
-sudo dnf install -y zsh xclip tmux vim vim-X11 neovim exa ripgrep fd-find fzf kitty
+sudo dnf install -y zsh xclip tmux vim vim-X11 exa ripgrep fd-find fzf kitty bat
 ln -s ~/.dotfiles/shell/tmux/.tmux.conf ~/
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/ctags/.ctags ~/
