@@ -32,6 +32,9 @@ alias k=kubectl
 # bazel
 alias bz=bazel --action_env=TESTCONTAINERS_RYUK_DISABLED=true
 
+# maven
+alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar"
+
 # navigation masmovil
 alias k8s-clusters="cd ~/code/masmovil/kubernetes-clusters/"
 alias mm="cd ~/code/masmovil/mm-monorepo/"

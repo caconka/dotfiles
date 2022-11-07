@@ -12,13 +12,18 @@ let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 let $FZF_DEFAULT_OPTS='--layout=reverse'
 
 nmap <C-p> :Files<CR>
-nmap <Leader>p :GFiles<CR>
-nmap <Leader>b :Buffers<CR>
-nmap <Leader>h :History<CR>
-nmap <Leader>l :BLines<CR>
-nmap <Leader>L :Lines<CR>
+nmap <leader>p :GFiles<CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>h :History<CR>
+nmap <leader>l :BLines<CR>
+nmap <leader>L :Lines<CR>
 
-nnoremap <leader>f :Rg<CR>
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+nnoremap <leader>f :GGrep<CR>
 
 imap <c-x><c-f> <plug>(fzf-complete-file)
 

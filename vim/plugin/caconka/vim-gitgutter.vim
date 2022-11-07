@@ -1,7 +1,7 @@
 let g:gitgutter_terminal_reports_focus=0
 
-nmap <Leader>hn <Plug>GitGutterNextHunk
-nmap <Leader>hp <Plug>GitGutterPrevHunk
-nmap <Leader>ha <Plug>GitGutterStageHunk
-nmap <Leader>hr <Plug>GitGutterUndoHunk
-nmap <Leader>hv <Plug>GitGutterPreviewHunk
+nmap <leader>hn <Plug>GitGutterNextHunk
+nmap <leader>hp <Plug>GitGutterPrevHunk
+nmap <leader>ha <Plug>GitGutterStageHunk
+nmap <leader>hr <Plug>GitGutterUndoHunk
+nmap <leader>hv <Plug>GitGutterPreviewHunk

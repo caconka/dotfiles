@@ -1,16 +1,18 @@
 [user]
 	email = carloscabezascontra@gmail.com
 	name = Carlos Cabezas
+[init]
+	defaultBranch = main
 [pull]
 	rebase = true
 [alias]
 	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an> %C(red)%D' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
 	sc = show --name-only
-	unstage = reset HEAD --
 	st = status -sb
 	com = commit -m
 	ch = checkout
+	sw = switch
 	poh = push origin HEAD
 	plob = !git pull origin $(git branch --show-current)
 	cleanup = !git fetch -p && git branch -vv | grep -v '*' | grep -v 'origin' | awk '{print $1}' | \
