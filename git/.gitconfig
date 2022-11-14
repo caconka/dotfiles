@@ -8,7 +8,6 @@
 [alias]
 	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an> %C(red)%D' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
-	sc = show --name-only
 	st = status -sb
 	com = commit -m
 	ch = checkout

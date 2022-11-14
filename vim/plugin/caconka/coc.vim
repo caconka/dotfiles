@@ -56,4 +56,4 @@ let b:coc_pairs_disabled = ['<']
 
 " coc-explorer
 :nmap <leader>tt <Cmd>CocCommand explorer<CR>
-:nmap <leader>tf <Cmd>CocCommand explorer --no-toggle<CR>
+:nmap <leader>tf <Cmd>call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR><C-w>h
