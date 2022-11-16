@@ -46,5 +46,9 @@ export VERTX_CONFIG_PATH=config.yaml
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# Gcloud Masmovil
+## Masmovil ##
+# Gcloud
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+# mas-subscriptions
+export CADENCE_CLI_ADDRESS='cadence-frontend.private.dev.k8s.masmovil.com'
+export CADENCE_TASK_LIST_LOCAL_SUFFIX='-ccabezas'
