@@ -1,8 +1,5 @@
 # ~/.bash_profile
 
-# profile
-[ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
-
 # git-completion
 # linux
 if [ -f /usr/share/git/completion/git-completion.bash ]; then

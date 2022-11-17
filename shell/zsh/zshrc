@@ -26,8 +26,7 @@ autoload -U promptinit; promptinit
 prompt pure
 
 ## Profile configs ##
-[ -f "$HOME/.common_profile" ] && source $HOME/.common_profile
-[ -f "$HOME/.common_bash_zsh" ] && source $HOME/.common_bash_zsh
+[ -f "$HOME/.shell/profile" ] && source $HOME/.shell/profile
 
 # Google Cloud SDK.
 if [ -f "$HOME/.google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/.google-cloud-sdk/path.zsh.inc"; fi

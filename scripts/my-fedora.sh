@@ -19,8 +19,8 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Alt>Tab']"
 
 # Git
-ln -s ~/.dotfiles/git/.gitconfig ~/
-ln -s ~/.dotfiles/git/.gitignore_global ~/
+ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 # Terminal kitty
 sudo dnf update -y
@@ -30,40 +30,30 @@ wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.
 ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
 
 # Install zsh xclip, tmux and vim
-sudo dnf install -y zsh xclip tmux vim vim-X11 exa ripgrep fd-find fzf kitty bat
-ln -s ~/.dotfiles/shell/tmux/.tmux.conf ~/
+sudo dnf install -y zsh xclip tmux vim vim-X11 exa ripgrep fd-find fzf bat
+ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.dotfiles/ctags/.ctags ~/
+ln -s ~/.dotfiles/ctags/ctags ~/.ctags
 cd ~/.dotfiles
 git submodule update --init --recursive
 
 # Neovim
-mkdir -p ~/.local/share/nvim/site
-mkdir -p ~/.config/nvim
-ln -s ~/.dotfiles/vim/pack ~/.local/share/nvim/site/
-ln -s ~/.dotfiles/vim/ftplugin ~/.local/share/nvim/site/
-ln -s ~/.dotfiles/vim/plugin ~/.local/share/nvim/site/
-ln -s ~/.dotfiles/vim/undo ~/.local/share/nvim/site/
-ln -s ~/.dotfiles/vim/backup ~/.local/share/nvim/site/
-ln -s ~/.dotfiles/vim/coc-settings.json ~/.config/nvim/
-ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/
+# mkdir -p ~/.local/share/nvim/site
+# mkdir -p ~/.config/nvim
+# ln -s ~/.dotfiles/vim/pack ~/.local/share/nvim/site/
+# ln -s ~/.dotfiles/vim/ftplugin ~/.local/share/nvim/site/
+# ln -s ~/.dotfiles/vim/plugin ~/.local/share/nvim/site/
+# ln -s ~/.dotfiles/vim/undo ~/.local/share/nvim/site/
+# ln -s ~/.dotfiles/vim/backup ~/.local/share/nvim/site/
+# ln -s ~/.dotfiles/vim/coc-settings.json ~/.config/nvim/
+# ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/
 
 # Shell
-ln -fs ~/.dotfiles/shell/.common_bash_zsh ~/
-ln -fs ~/.dotfiles/shell/.common_profile ~/
-ln -fs ~/.dotfiles/shell/.aliases ~/
-
-# Bashrc
-ln -fs ~/.dotfiles/shell/bash/.git-prompt.sh ~/
-ln -fs ~/.dotfiles/shell/bash/.inputrc ~/
-ln -fs ~/.dotfiles/shell/bash/.bashrc ~/
-ln -fs ~/.dotfiles/shell/bash/.bash_profile ~/
-ln -fs ~/.dotfiles/shell/bash/.bash_functions ~/
-
-# Gnome nord-theme
-git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
-./nord-gnome-terminal/src/nord.sh
-rm -rf nord-gnome-terminal
+mkdir ~/.shell
+ln -fs ~/.dotfiles/shell/common ~/.shell/
+ln -fs ~/.dotfiles/shell/profile ~/.shell/
+ln -fs ~/.dotfiles/shell/aliases ~/.shell/
+ln -fs ~/.dotfiles/shell/functions ~/.shell/
 
 # Programming
 sudo dnf install -y docker golang
@@ -77,10 +67,10 @@ mkdir ~/code/go/bin
 mkdir ~/ephemeral
 
 # vscode
-mkdir -p ~/.config/Code/User
-ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
-ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
-mkdir -p ~/.vscode/extensions/
+# mkdir -p ~/.config/Code/User
+# ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
+# ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
+# mkdir -p ~/.vscode/extensions/
 
 # Gcloud & kubectl
 sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
@@ -140,16 +130,8 @@ sdk install gradle
 
 # Node
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.bashrc
-source /usr/share/git/completion/git-completion.bash
 nvm install stable
 nvm use node
-
-# flatpak
-sudo dnf install -y flatpak
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-# spotify
-flatpak install -y flathub com.spotify.Client
 
 # rpmfusion
 sudo dnf install -y \
@@ -167,19 +149,15 @@ sudo dnf install ffmpeg-libs
 # Zshrc
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-ln -fs ~/.dotfiles/shell/zsh/.zshrc ~/
+ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
 ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
 
 # Pure theme
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
-# Starship theme
-# sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-# ln -fs ~/.dotfiles/shell/startship/starship.toml ~/.config/
-
 # kubectl completions
 mkdir -p ~/.oh-my-zsh/completions
 chmod -R 755 ~/.oh-my-zsh/completions
-ln -s /opt/kubectx/completion/kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh
-ln -s /opt/kubectx/completion/kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh
+ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/
+ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/

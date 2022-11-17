@@ -1,11 +1,11 @@
 # profile
 
-## ALIASES ##
-[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+# Common config
+[ -f "$HOME/.shell/common" ] && source $HOME/.shell/common
 
 ## FZF ##
 export FZF_DEFAULT_OPTS='--color=bg+:#d8dee9,fg+:#2e3440'
-[ -f "$HOME/.dotfiles/shell/fzf_functions" ] && source "$HOME/.dotfiles/shell/fzf_functions"
+[ -f "$HOME/.shell/fzf_functions" ] && source "$HOME/.shell/fzf_functions"
 
 ## ENV VARS ##
 # Basics

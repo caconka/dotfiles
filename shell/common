@@ -1,5 +1,10 @@
+# common config
+
+## ALIASES ##
+[ -f "$HOME/.shell/aliases" ] && source "$HOME/.shell/aliases"
+
 ## FUNCTIONS ##
-[ -f "$HOME/.bash_functions" ] && source "$HOME/.bash_functions"
+[ -f "$HOME/.shell/functions" ] && source "$HOME/.shell/functions"
 
 # TMUX
 if [[ -z "$TMUX" && -z "$DISABLE_TMUX" ]]; then
