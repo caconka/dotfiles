@@ -16,7 +16,11 @@ dotenv() {
 
 # navigate
 cd..() {
-	cd $(printf "%0.0s../" $(seq 1 "$1"))
+	if [ -z "$1" ]; then
+		cd ..
+	else
+		cd $(printf "%0.0s../" $(seq 1 "$1" ))
+	fi
 }
 
 # docker
