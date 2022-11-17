@@ -65,6 +65,7 @@ sudo mkdir ephemeral projects go
 sudo chown $USER ephemeral/ projects/ go/
 mkdir ~/code/go/bin
 mkdir ~/ephemeral
+ln -fs ~/.dotfiles/.editorconfig ~/
 
 # vscode
 # mkdir -p ~/.config/Code/User
