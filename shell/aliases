@@ -30,7 +30,7 @@ alias docker-rmi="docker-list rmi images"
 alias k=kubectl
 
 # bazel
-alias bz=bazel --action_env=TESTCONTAINERS_RYUK_DISABLED=true
+alias bz=bazel
 
 # maven
 alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar"

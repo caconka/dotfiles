@@ -30,6 +30,11 @@ docker-list() {
 	done
 }
 
+# bazel
+bz-test() {
+	bazel $1 --action_env=TESTCONTAINERS_RYUK_DISABLED=true "${@:2}"
+}
+
 ### MASMOVIL ###
 tunnel-qvantel() {
 	if [ ! -z "$1" ]; then
@@ -42,5 +47,28 @@ tunnel-qvantel() {
 		elif [ "$1" = "off" ]; then
 			sudo cp -f /etc/hosts_default /etc/hosts
 		fi
+	fi
+}
+
+update-versions() {
+	if [ -n "$1" ]; then
+		for d in $1/*; do
+			versionFile="$d/version.bzl"
+			if [[ -d "$d" && -e "$versionFile" ]]; then
+				while read line; do
+					if [[ "$line" =~ ^"VERSION=" ]]; then
+						current=$(echo ${line##*=} | sed -E 's/("v|")//g')
+						patch="${${line##*.}%%\"}"
+						patchUpdated=$(("$patch" + 1))
+						versionUpdated="${current%.*}.$patchUpdated"
+
+						sed -ir "s/$current/$versionUpdated/" "$versionFile"
+
+						echo "$d version updated from v$current to v$versionUpdated"
+						break
+					fi
+				done < "$versionFile"
+			fi
+		done
 	fi
 }
