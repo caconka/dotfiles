@@ -76,6 +76,7 @@ set showmatch       " higlight matching parentheses and brackets
 set autoread        " if file is changed on disk
 set ignorecase      " searching is not case sensitive
 set hlsearch        " Highlighting when search
+set cursorline
 
 " Italics
 let &t_ZH="\e[3m"
