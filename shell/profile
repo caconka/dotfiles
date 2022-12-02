@@ -52,3 +52,4 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # mas-subscriptions
 export CADENCE_CLI_ADDRESS='cadence-frontend.private.dev.k8s.masmovil.com'
 export CADENCE_TASK_LIST_LOCAL_SUFFIX='-ccabezas'
+export MONOREPO_PATH="$HOME"/code/masmovil/mm-monorepo

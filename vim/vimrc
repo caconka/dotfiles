@@ -6,6 +6,7 @@ set undodir=~/.vim/undo//
 set undofile
 set noswapfile
 set nobackup
+autocmd BufLeave,FocusLost * silent! wall
 
 " Settings about files
 set encoding=utf-8

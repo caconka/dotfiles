@@ -13,8 +13,5 @@ max_line_length = 120
 [*.{c,cpp,h,hpp,cc}]
 max_line_length = 80
 
-[*.{html,css,json,js,jsx,ts,tsx,yml,yaml,avsc}]
-indent_style = space
-
 [*.md]
 trim_trailing_whitespace = false
