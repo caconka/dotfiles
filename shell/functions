@@ -37,7 +37,7 @@ bz-test() {
 
 ### MASMOVIL ###
 tunnel-qvantel() {
-	if [ ! -z "$1" ]; then
+	if [ -n "$1" ]; then
 		if [ "$1" = "on" ]; then
 			if [ ! -e "/etc/hosts_default" ]; then
 				sudo cp /etc/hosts /etc/hosts_default
