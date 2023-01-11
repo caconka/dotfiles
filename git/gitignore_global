@@ -24,8 +24,13 @@ tags
 # nodejs
 node_modules/
 
-# idea
+### IDEA ###
 .ijwb/
+.idea/
+.fleet/
+*.iws
+*.iml
+*.ipr
 
 ### Mac ###
 .DS_Store
