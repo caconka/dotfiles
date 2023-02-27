@@ -34,3 +34,6 @@
 [submodule "vim/pack/theme/start/nord"]
 	path = vim/pack/theme/start/nord
 	url = https://github.com/arcticicestudio/nord-vim.git
+[submodule "vim/pack/caconka/start/vimwiki"]
+	path = vim/pack/caconka/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
