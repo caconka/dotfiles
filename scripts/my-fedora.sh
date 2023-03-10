@@ -22,6 +22,13 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
+# Shell
+mkdir ~/.shell
+ln -fs ~/.dotfiles/shell/common ~/.shell/
+ln -fs ~/.dotfiles/shell/profile ~/.shell/
+ln -fs ~/.dotfiles/shell/aliases ~/.shell/
+ln -fs ~/.dotfiles/shell/functions ~/.shell/
+
 # Terminal kitty
 sudo dnf update -y
 sudo dnf install -y kitty
@@ -47,13 +54,6 @@ git submodule update --init --recursive
 # ln -s ~/.dotfiles/vim/backup ~/.local/share/nvim/site/
 # ln -s ~/.dotfiles/vim/coc-settings.json ~/.config/nvim/
 # ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/
-
-# Shell
-mkdir ~/.shell
-ln -fs ~/.dotfiles/shell/common ~/.shell/
-ln -fs ~/.dotfiles/shell/profile ~/.shell/
-ln -fs ~/.dotfiles/shell/aliases ~/.shell/
-ln -fs ~/.dotfiles/shell/functions ~/.shell/
 
 # Programming
 sudo dnf install -y docker golang
