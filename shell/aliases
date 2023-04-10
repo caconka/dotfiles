@@ -18,9 +18,6 @@ alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 # vim
 alias vi="vim -u NONE"
 
-# idea
-alias idea="nohup ~/.local/share/JetBrains/Toolbox/scripts/idea > /dev/null & "
-
 # navigation
 alias dotfiles="cd ~/.dotfiles"
 

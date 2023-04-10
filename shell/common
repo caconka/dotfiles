@@ -21,4 +21,5 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias open="xdg-open"
 	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
 	alias vim="gvim -v"
+	alias idea="nohup ~/.local/share/JetBrains/Toolbox/scripts/idea > /dev/null & "
 fi
