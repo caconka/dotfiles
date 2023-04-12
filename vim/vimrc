@@ -94,3 +94,6 @@ if &term == "screen"
 endif
 
 let mapleader="\<Space>"
+
+" fzf
+set rtp+=~/.fzf
