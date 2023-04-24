@@ -58,7 +58,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Gcloud
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # mas-subscriptions
-export CADENCE_CLI_ADDRESS='cadence-frontend.private.dev.k8s.masmovil.com'
+export CADENCE_CLI_ADDRESS='frontend.cadence.europe-southwest1.private.sta.k8s.masmovil.com:7933'
 export CADENCE_TASK_LIST_LOCAL_SUFFIX='-ccabezas'
 export MONOREPO_PATH="$HOME"/code/masmovil/mm-monorepo
 export MAS_STACK_ROLES_PERMISSIONS_FULL_PATH="$MONOREPO_PATH"/pkg/mas-stack/bss/mas-subscriptions/internal/lib/src/test/resources/roles_permissions.json
