@@ -147,18 +147,19 @@ sudo dnf groupupdate multimedia sound-and-video
 # for firefox
 sudo dnf install ffmpeg-libs
 
-# Zshrc
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
-ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
-
-# Pure theme
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-
 # kubectl completions
 mkdir -p ~/.oh-my-zsh/completions
 chmod -R 755 ~/.oh-my-zsh/completions
 ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/
 ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/
+
+# Zshrc
+mkdir -p "$HOME/.oh-my-zsh/custom/plugins"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
+ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
+# Pure theme
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
