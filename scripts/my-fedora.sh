@@ -118,6 +118,7 @@ Terminal=false
 Type=Application
 Categories=Development;Utilities;
 EOF
+chmod +x ~/.local/share/applications/postman.desktop
 
 # Docker
 sudo usermod -a -G docker $USER
@@ -135,9 +136,9 @@ nvm install stable
 nvm use node
 
 # rpmfusion
-# sudo dnf install -y \
-#   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-# 	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # nvidia drivers
 #sudo dnf install akmod-nvidia
