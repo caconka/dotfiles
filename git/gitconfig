@@ -1,10 +1,23 @@
 [user]
-	email = carloscabezascontra@gmail.com
-	name = Carlos Cabezas
+	email = caconka@users.noreply.github.com
+	name = caconka
+
+[includeIf "gitdir:~/code/masmovil/"]
+	 path = ~/.gitconfig-masmovil
+
 [init]
 	defaultBranch = main
+
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim --noplugin
+
+[diff "sopsdiffer"]
+	textconv = sops -d
+
 [pull]
 	rebase = true
+
 [alias]
 	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an> %C(red)%D' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
@@ -18,14 +31,12 @@
 		grep -v 'master|main' | xargs git branch -D && git gc
 	master = !git switch master && git pull origin master
 	main = !git switch main && git pull origin main
-[core]
-	excludesfile = ~/.gitignore_global
-	editor = vim --noplugin
-[diff "sopsdiffer"]
-	textconv = sops -d
+
 [color]
 	ui = auto
+
 [color "branch"]
 	remote = magenta
+
 [color "status"]
 	changed = magenta
