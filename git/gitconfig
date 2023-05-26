@@ -1,9 +1,13 @@
 [user]
-	email = caconka@users.noreply.github.com
 	name = caconka
+	email = 28691030+caconka@users.noreply.github.com
+	signingkey = 28691030+caconka@users.noreply.github.com
 
 [includeIf "gitdir:~/code/masmovil/"]
 	 path = ~/.gitconfig-masmovil
+
+[commit]
+	gpgsign = true
 
 [init]
 	defaultBranch = main
