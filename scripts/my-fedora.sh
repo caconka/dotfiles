@@ -67,6 +67,11 @@ mkdir ~/code/go/bin
 mkdir ~/ephemeral
 ln -fs ~/.dotfiles/.editorconfig ~/
 
+
+# idea
+ln -s ~/.dotfiles/idea/.ideavimrc ~/
+sudo ln -s ~/.dotfiles/idea/idea.conf /etc/sysctl.d/
+
 # vscode
 # mkdir -p ~/.config/Code/User
 # ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
