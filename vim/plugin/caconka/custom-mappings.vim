@@ -14,6 +14,9 @@ nnoremap <C-k> :m .-2<CR>==
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Toggle numbers
+nnoremap <leader>n :set number! relativenumber! <CR>
+
 " Toggle conceallevel
 nnoremap <leader>c :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
 

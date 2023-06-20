@@ -11,9 +11,10 @@
 	"diagnostic.warningSign": "•",
 	"diagnostic.errorSign": "✖",
 	"diagnostic.enableHighlightLineNumber": false,
+	"java.enabled": true,
 	"java.format.enabled": true,
 	"java.format.onType.enabled": true,
-	"java.enabled": false,
+	"java.inlayHints.parameterNames.enabled": "none",
 	"explorer.file.column.indent.indentLine": true,
 	"explorer.keyMappings.global": {
 		"<cr>": ["wait", "expandable?", ["expanded?", "collapse", "expand"], "open"],

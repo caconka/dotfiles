@@ -71,8 +71,9 @@ set wildmenu           " enable visual wildmenu
 set wildoptions=pum
 
 set nowrap          " don't wrap long lines
-set number          " show line numbers
-set relativenumber  " show numbers as relative by default
+" set number          " show line numbers
+" set relativenumber  " show numbers as relative by default
+set numberwidth=1
 set showmatch       " higlight matching parentheses and brackets
 set autoread        " if file is changed on disk
 set ignorecase      " searching is not case sensitive
@@ -84,7 +85,7 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 highlight Comment cterm=italic
 
-"" Change tab tittle
+" Change tab tittle
 autocmd BufEnter * let &titlestring = "%:t"
 set title
 
