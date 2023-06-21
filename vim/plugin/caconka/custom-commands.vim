@@ -1,3 +1,10 @@
+" Toggle number and sign columns
+function! s:toggleColumns()
+	set number! relativenumber!
+	exe "set signcolumn=" .. (&signcolumn == "yes" || &signcolumn == "auto" ? "no" : "yes")
+endfunction
+command! ToggleColumns :call s:toggleColumns()
+
 function! s:wrapToggle()
 	if &wrap
 		echo "Wrap OFF"

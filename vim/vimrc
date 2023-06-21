@@ -74,6 +74,7 @@ set nowrap          " don't wrap long lines
 " set number          " show line numbers
 " set relativenumber  " show numbers as relative by default
 set numberwidth=1
+set signcolumn=no
 set showmatch       " higlight matching parentheses and brackets
 set autoread        " if file is changed on disk
 set ignorecase      " searching is not case sensitive

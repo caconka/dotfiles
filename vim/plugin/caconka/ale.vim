@@ -14,16 +14,12 @@ let g:ale_fixers = {
 	\ 'go': ['goimports']
 \}
 
-let g:ale_sign_error = ' ✖'
-let g:ale_sign_warning = ' •'
+let g:ale_sign_error = '✖ '
+let g:ale_sign_warning = '•'
 
 let g:ale_echo_msg_error_str = 'ERROR'
 let g:ale_echo_msg_warning_str = 'WARNING'
 let g:ale_echo_msg_format = '[%linter%] %severity% - %s'
-
-"Loc List
-nmap <leader>e :lopen<CR>
-nmap <leader>w :lclose<CR>
 
 nmap <silent> gp <Plug>(ale_previous_wrap)
 nmap <silent> gn <Plug>(ale_next_wrap)
