@@ -6,7 +6,7 @@ autocmd! FileType fzf set laststatus=0 noshowmode noruler
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " use fd instead find
-let $FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude .git'
+let $FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude .git --exclude target'
 let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 let $FZF_DEFAULT_OPTS="--layout=reverse --preview 'bat --decorations=never --line-range :300 {}' --preview-window=noborder
   \ --color=fg:#383a42,bg:#fafafa,hl:#383a42

@@ -22,6 +22,7 @@ alias vi="vim -u NONE"
 alias dotfiles="cd ~/.dotfiles"
 
 # docker
+# alias docker=podman
 alias docker-stop="docker-list stop ps"
 alias docker-rm="docker-list rm ps"
 alias docker-rmi="docker-list rmi images"
