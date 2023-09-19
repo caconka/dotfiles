@@ -23,14 +23,15 @@ require("caconka.config.lazy").setup({
 
 
 	-- Code manipulation
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, -- In Fedora install "gcc-c++" package
+	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}, -- In Fedora install "gcc-c++" package
 	{"numToStr/Comment.nvim"},
 	{"tpope/vim-surround"},
 	{"windwp/nvim-autopairs"},
-	{"iamcco/markdown-preview.nvim", ft = "markdown", build = ":call mkdp#util#install()",},
+	{"iamcco/markdown-preview.nvim", ft = "markdown", build = ":call mkdp#util#install()"},
 
 	-- Utilities
 	{"nvim-lua/plenary.nvim"},
+	{"vimwiki/vimwiki", init = require("plugins.vimwiki")},
 
 	-- LSP support
 	{"neovim/nvim-lspconfig"},
