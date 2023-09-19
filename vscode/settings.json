@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "Inconsolata, Source Code Pro",
-    "editor.fontSize": 14.5,
+    "editor.fontSize": 14,
     "editor.tabSize": 2,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
