@@ -1,0 +1,97 @@
+-- See :help lspconfig-global-defaults
+local lspconfig = require("lspconfig")
+local lsp_defaults = lspconfig.util.default_config
+
+lsp_defaults.capabilities = vim.tbl_deep_extend(
+	"force",
+	lsp_defaults.capabilities,
+	require("cmp_nvim_lsp").default_capabilities())
+
+---
+-- Diagnostic customization
+---
+local sign = function(opts)
+	-- See :help sign_define()
+	vim.fn.sign_define(opts.name, {
+		texthl = opts.name,
+		text = opts.text,
+		numhl = ""
+	})
+end
+
+sign({name = "DiagnosticSignError", text = "✘"})
+sign({name = "DiagnosticSignWarn", text = "▲"})
+sign({name = "DiagnosticSignHint", text = "⚑"})
+sign({name = "DiagnosticSignInfo", text = "»"})
+
+-- See :help vim.diagnostic.config()
+vim.diagnostic.config({
+	virtual_text = false,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+		source = "always",
+	},
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+	vim.lsp.handlers.hover,
+	{ border = "rounded" })
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+	vim.lsp.handlers.signature_help,
+	{ border = "rounded" })
+
+---
+-- LSP Keybindings
+---
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = group,
+	desc = "LSP actions",
+	callback = function()
+		local keymap = vim.keymap.set
+		local opts = {buffer = true, silent = true, noremap = true}
+
+		-- You can search each function in the help page.
+		-- For example :help vim.lsp.buf.hover()
+		keymap("n", "K", vim.lsp.buf.hover, opts)
+		keymap("n", "gd", vim.lsp.buf.definition, opts)
+		keymap("n", "gD", vim.lsp.buf.declaration, opts)
+		keymap("n", "gi", vim.lsp.buf.implementation, opts)
+		keymap("n", "go", vim.lsp.buf.type_definition, opts)
+		keymap("n", "gr", vim.lsp.buf.references, opts)
+		keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+		keymap("n", "<leader>r", vim.lsp.buf.rename, opts)
+		keymap({"n", "x"}, "<F3>", function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+		keymap("n", "<leader>e", vim.diagnostic.open_float, opts)
+		keymap("n", "[d", vim.diagnostic.goto_prev, opts)
+		keymap("n", "]d", vim.diagnostic.goto_next, opts)
+		keymap({"n", "x"}, "<F4>", vim.lsp.buf.code_action, opts)
+	end
+})
+
+
+---
+-- LSP servers
+---
+
+-- Prevent multiple instance of lsp servers
+-- if file is sourced again
+if vim.g.lsp_setup_ready == nil then
+	vim.g.lsp_setup_ready = true
+
+	-- See :help lspconfig-setup
+	lspconfig.html.setup({})
+	lspconfig.cssls.setup({})
+	lspconfig.eslint.setup({})
+	lspconfig.tsserver.setup({
+		settings = {
+			completions = {
+				completeFunctionCalls = true
+			}
+		},
+	})
+	lspconfig.java_language_server.setup({})
+end
