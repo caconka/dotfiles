@@ -11,13 +11,16 @@ require("telescope").setup({
 		}
 	},
 	pickers = {
-    find_files = {
+		find_files = {
 			theme = "ivy"
-    }
-  },
-  extensions = {
-    fzf = {}
-  }
+		},
+		live_grep = {
+			theme = "ivy"
+		}
+	},
+	extensions = {
+		fzf = {}
+	}
 })
 
 vim.keymap.set("n", "<leader>?", ":Telescope oldfiles<cr>")
