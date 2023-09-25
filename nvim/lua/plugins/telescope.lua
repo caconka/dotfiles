@@ -1,5 +1,6 @@
 require("telescope").setup({
 	defaults = {
+		sorting_strategy = "ascending",
 		mappings = {
 			i = {
 				["<C-k>"] = "preview_scrolling_up",
@@ -8,14 +9,17 @@ require("telescope").setup({
 		},
 		preview = {
 			treesitter = false
-		}
+		},
 	},
 	pickers = {
 		find_files = {
-			theme = "ivy"
+			layout_config = {prompt_position = "top"}
 		},
 		live_grep = {
-			theme = "ivy"
+			layout_config = {prompt_position = "top"}
+		},
+		buffers = {
+			layout_config = {prompt_position = "top"}
 		}
 	},
 	extensions = {

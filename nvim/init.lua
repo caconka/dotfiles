@@ -9,7 +9,7 @@ require("caconka.config.mappings")
 ---
 -- Plugins
 ---
-require("caconka.config.lazy").setup({
+require("plugins.lazy").setup({
 	-- Theming
 	{"mcchrish/zenbones.nvim"},
 	{"rktjmp/lush.nvim"},
@@ -34,12 +34,18 @@ require("caconka.config.lazy").setup({
 	{"vimwiki/vimwiki", init = require("plugins.vimwiki")},
 
 	-- LSP support
+	{"williamboman/mason.nvim"},
+	{"williamboman/mason-lspconfig.nvim"},
 	{"neovim/nvim-lspconfig"},
 
-	-- Snippets
+	-- Lint
+	{"mfussenegger/nvim-lint"},
+
+	-- Autocomplete
 	{"hrsh7th/nvim-cmp"},
 	{"hrsh7th/cmp-buffer"},
 	{"hrsh7th/cmp-path"},
+	{"hrsh7th/cmp-cmdline"},
 	{"hrsh7th/cmp-nvim-lsp"},
 	{"saadparwaiz1/cmp_luasnip"},
 
@@ -59,5 +65,6 @@ require("plugins.telescope")
 require("plugins.nvim-treesitter")
 require("Comment").setup({})
 require("nvim-autopairs").setup({})
-require("caconka.config.lsp")
-require("caconka.config.cmp")
+require("plugins.lsp")
+require("plugins.nvim-lint")
+require("plugins.cmp")

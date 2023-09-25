@@ -46,7 +46,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 -- LSP Keybindings
 ---
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = group,
 	desc = "LSP actions",
 	callback = function()
 		local keymap = vim.keymap.set
@@ -76,22 +75,73 @@ vim.api.nvim_create_autocmd("LspAttach", {
 ---
 -- LSP servers
 ---
+--
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Prevent multiple instance of lsp servers
 -- if file is sourced again
 if vim.g.lsp_setup_ready == nil then
 	vim.g.lsp_setup_ready = true
 
+	require("mason").setup()
+	require("mason-lspconfig").setup({
+		ensure_installed = {
+			"lua_ls",
+			"html",
+			"cssls",
+			"tailwindcss",
+			"tsserver",
+			"eslint",
+			"astro",
+			'jdtls'
+		},
+		-- auto-install configured servers (with lspconfig)
+		automatic_installation = true, -- not the same as ensure_installed
+	})
+
 	-- See :help lspconfig-setup
-	lspconfig.html.setup({})
-	lspconfig.cssls.setup({})
-	lspconfig.eslint.setup({})
+	lspconfig.lua_ls.setup({
+		capabilities = capabilities,
+		settings = {
+			Lua = {
+				-- make the language server recognize "vim" global
+				diagnostics = {
+					globals = { "vim" },
+				},
+			}
+		}
+	})
+
+	lspconfig["html"].setup({
+		capabilities = capabilities,
+	})
+
+	lspconfig["cssls"].setup({
+		capabilities = capabilities,
+	})
+
+	lspconfig["tailwindcss"].setup({
+		capabilities = capabilities,
+	})
+
 	lspconfig.tsserver.setup({
+		capabilities = capabilities,
 		settings = {
 			completions = {
 				completeFunctionCalls = true
 			}
 		},
 	})
-	lspconfig.java_language_server.setup({})
+
+	lspconfig["eslint"].setup({
+		capabilities = capabilities,
+	})
+
+	lspconfig["astro"].setup({
+		capabilities = capabilities,
+	})
+
+	lspconfig.jdtls.setup({
+		capabilities = capabilities,
+	})
 end

@@ -14,9 +14,6 @@ opt.backupdir = config .. "/backup//" -- keep backup files out of the way (ie. i
 opt.backupdir = opt.backupdir + "." -- fallback
 opt.backupskip = opt.backupskip + "*.re,*.rei" -- prevent bsb"s watch mode from getting confused (if "backup" is ever set)
 opt.belloff = "all" -- never ring the bell for any reason
-opt.completeopt = "menu" -- show completion menu (for nvim-cmp)
-opt.completeopt = opt.completeopt + "menuone" -- show menu even if there is only one candidate (for nvim-cmp)
-opt.completeopt = opt.completeopt + "noselect" -- don"t automatically select canditate (for nvim-cmp)
 opt.cursorline = true -- highlight current line
 opt.diffopt = opt.diffopt + "foldcolumn:0" -- don"t show fold column in diff view
 opt.directory = config .. "/nvim/swap//" -- keep swap files out of the way
@@ -52,7 +49,7 @@ if vi then
 end
 
 opt.modelines = 5 -- scan this many lines looking for modeline
-opt.number = false -- do not show line numbers in gutter
+opt.number = true -- show line numbers in gutter
 opt.pumblend = 10 -- pseudo-transparency for popup-menu
 opt.relativenumber = false -- do not show relative numbers in gutter
 opt.scrolloff = 3 -- start scrolling 3 lines before edge of viewport

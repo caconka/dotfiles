@@ -1,3 +1,9 @@
+local opt = vim.opt
+
+opt.completeopt = "menu" -- show completion menu
+opt.completeopt = opt.completeopt + "menuone" -- show menu even if there is only one candidate (for nvim-cmp)
+opt.completeopt = opt.completeopt + "noselect" -- don"t automatically select canditate (for nvim-cmp)
+
 -- See :help luasnip-loaders
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -90,4 +96,20 @@ cmp.setup({
 	},
 })
 
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = 'buffer' }
+	}
+})
 
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+		{ name = 'cmdline' }
+	})
+})
