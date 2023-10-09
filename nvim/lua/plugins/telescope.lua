@@ -1,6 +1,12 @@
 require("telescope").setup({
 	defaults = {
 		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = {
+			horizontal = {
+				prompt_position = "top"
+			}
+		},
 		mappings = {
 			i = {
 				["<C-k>"] = "preview_scrolling_up",
@@ -10,17 +16,12 @@ require("telescope").setup({
 		preview = {
 			treesitter = false
 		},
+		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
 	},
 	pickers = {
 		find_files = {
-			layout_config = {prompt_position = "top"}
+			previewer = false
 		},
-		live_grep = {
-			layout_config = {prompt_position = "top"}
-		},
-		buffers = {
-			layout_config = {prompt_position = "top"}
-		}
 	},
 	extensions = {
 		fzf = {}
