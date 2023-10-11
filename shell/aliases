@@ -39,3 +39,11 @@ alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar
 # navigation masmovil
 alias k8s-clusters="cd ~/code/masmovil/kubernetes-clusters/"
 alias mm="cd ~/code/masmovil/mm-monorepo/"
+
+# LINUX
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias open="xdg-open"
+	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+	alias vim="gvim -v"
+	alias idea="nohup ~/.local/share/JetBrains/Toolbox/scripts/idea > /dev/null & "
+fi

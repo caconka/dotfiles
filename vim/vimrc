@@ -33,8 +33,8 @@ endif
 if &t_Co > 2
 	syntax on
 
-	silent! colorscheme onehalflight
-	autocmd colorscheme onehalflight highlight Italic cterm=italic gui=italic
+	silent! colorscheme zenbones
+	autocmd colorscheme zenbones highlight Italic cterm=italic gui=italic
 
 	set background=light
 
