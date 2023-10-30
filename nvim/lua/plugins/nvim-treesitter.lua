@@ -26,5 +26,6 @@ require("nvim-treesitter.configs").setup({
 		"vim",
 		"vimdoc",
 		"yaml",
+		"norg",
 	},
 })

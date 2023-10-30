@@ -4,7 +4,7 @@ local root = vim.env.USER == "root"
 local vi = vim.v.progname == "vi"
 local opt = vim.opt
 
-vim.wo.colorcolumn = "120"
+vim.wo.colorcolumn = "+1"
 
 opt.autoindent = true -- maintain indent of current line
 opt.backspace = "indent,start,eol" -- allow unrestricted backspacing in insert mode
@@ -51,7 +51,7 @@ end
 opt.modelines = 5 -- scan this many lines looking for modeline
 opt.number = true -- show line numbers in gutter
 opt.pumblend = 10 -- pseudo-transparency for popup-menu
-opt.relativenumber = false -- do not show relative numbers in gutter
+opt.relativenumber = true -- show relative numbers in gutter
 opt.scrolloff = 3 -- start scrolling 3 lines before edge of viewport
 
 if root then

@@ -15,8 +15,8 @@ alias temps="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class
 # ctags
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
-# vim
-alias vi="vim -u NONE"
+# nvim
+alias vim="nvim"
 
 # navigation
 alias dotfiles="cd ~/.dotfiles"
@@ -44,6 +44,5 @@ alias mm="cd ~/code/masmovil/mm-monorepo/"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias open="xdg-open"
 	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-	alias vim="gvim -v"
 	alias idea="nohup ~/.local/share/JetBrains/Toolbox/scripts/idea > /dev/null & "
 fi

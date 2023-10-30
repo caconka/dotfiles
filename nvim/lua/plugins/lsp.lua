@@ -60,11 +60,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		keymap("n", "go", vim.lsp.buf.type_definition, opts)
 		keymap("n", "gr", vim.lsp.buf.references, opts)
 		keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-		keymap("n", "<leader>r", vim.lsp.buf.rename, opts)
+		keymap("n", "<Leader>r", vim.lsp.buf.rename, opts)
 		keymap({"n", "x"}, "<F3>", function()
       vim.lsp.buf.format { async = true }
     end, opts)
-		keymap("n", "<leader>e", vim.diagnostic.open_float, opts)
+		keymap("n", "<Leader>e", vim.diagnostic.open_float, opts)
 		keymap("n", "[d", vim.diagnostic.goto_prev, opts)
 		keymap("n", "]d", vim.diagnostic.goto_next, opts)
 		keymap({"n", "x"}, "<F4>", vim.lsp.buf.code_action, opts)

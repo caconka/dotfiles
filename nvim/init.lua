@@ -1,3 +1,7 @@
+if vim.loader then
+	vim.loader.enable()
+end
+
 vim.g.mapleader = " "
 
 ---
@@ -31,7 +35,7 @@ require("plugins.lazy").setup({
 
 	-- Utilities
 	{"nvim-lua/plenary.nvim"},
-	{"vimwiki/vimwiki", init = require("plugins.vimwiki")},
+	{"nvim-neorg/neorg", build = ":Neorg sync-parsers", dependencies = { "nvim-lua/plenary.nvim" }},
 
 	-- LSP support
 	{"williamboman/mason.nvim"},
@@ -65,6 +69,7 @@ require("plugins.telescope")
 require("plugins.nvim-treesitter")
 require("Comment").setup({})
 require("nvim-autopairs").setup({})
+require("plugins.neorg")
 require("plugins.lsp")
 require("plugins.nvim-lint")
 require("plugins.cmp")

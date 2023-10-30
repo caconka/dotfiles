@@ -36,10 +36,11 @@ mkdir ~/.config/kitty
 wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.conf -P ~/.config/kitty
 ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
 
-# Install zsh xclip, tmux and vim
-sudo dnf install -y zsh xclip tmux vim vim-X11 exa ripgrep fd-find fzf bat
+# Install zsh xclip, tmux and neovim
+sudo dnf install -y zsh xclip tmux neovim vim vim-X11 exa ripgrep fd-find fzf bat
 ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vim ~/.vim
+ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
 cd ~/.dotfiles
 git submodule update --init --recursive
@@ -61,8 +62,8 @@ sudo dnf install -y docker golang docker-compose
 # Code dir config
 sudo mkdir ~/code
 cd ~/code
-sudo mkdir ephemeral projects go
-sudo chown $USER ephemeral/ projects/ go/
+sudo mkdir ephemeral projects go code-configs
+sudo chown $USER ephemeral/ projects/ go/ code-configs/
 mkdir ~/code/go/bin
 mkdir ~/ephemeral
 ln -fs ~/.dotfiles/.editorconfig ~/

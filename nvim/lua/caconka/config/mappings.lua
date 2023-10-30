@@ -2,15 +2,15 @@ local keymap = vim.keymap.set
 
 keymap({"n", "v"}, "<C-r>+", '"+p')
 
-keymap({"n", "v"}, "<leader>n", ":set number! relativenumber!<CR>")
+keymap({"n", "v"}, "<Leader>nt", ":set number! relativenumber!<CR>")
 
 ---
 -- Buffers
 ---
 keymap("n", "<C-l>", ":bn<CR>", { silent = true })
 keymap("n", "<C-h>", ":bp<CR>", { silent = true })
-keymap("n", "<leader>d", ":bd<CR>", { silent = true })
-keymap("n", "<leader>ad", ":%bd<CR>", { silent = true })
+keymap("n", "<Leader>d", ":bd<CR>", { silent = true })
+keymap("n", "<Leader>ad", ":%bd<CR>", { silent = true })
 
 ---
 -- Tabs
