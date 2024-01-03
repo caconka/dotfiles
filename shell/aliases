@@ -3,7 +3,7 @@
 # sudo
 alias sudo="sudo "
 
-alias ll="exa -lg --icons"
+alias ll="eza -lg --icons"
 alias llt="ll --tree --level=2"
 alias lla="ll -a"
 alias llta="llt -a"
@@ -22,7 +22,7 @@ alias vim="nvim"
 alias dotfiles="cd ~/.dotfiles"
 
 # docker
-# alias docker=podman
+alias docker=podman
 alias docker-stop="docker-list stop ps"
 alias docker-rm="docker-list rm ps"
 alias docker-rmi="docker-list rmi images"
@@ -37,7 +37,7 @@ alias bz=bazel
 alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar"
 
 # navigation masmovil
-alias k8s-clusters="cd ~/code/masmovil/kubernetes-clusters/"
+alias k8s="cd ~/code/masmovil/kubernetes-clusters/"
 alias mm="cd ~/code/masmovil/mm-monorepo/"
 
 # LINUX

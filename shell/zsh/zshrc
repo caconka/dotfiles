@@ -21,6 +21,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+## Mappings
+# iterm
+bindkey "\e\e[D" backward-word # ⌥←
+bindkey "\e\e[C" forward-word # ⌥→
+# kitty
+bindkey "\e[1;3D" backward-word # ⌥←
+bindkey "\e[1;3C" forward-word # ⌥→
+
 # prompt
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
