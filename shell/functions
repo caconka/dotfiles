@@ -23,10 +23,16 @@ cd..() {
 	fi
 }
 
-# docker
+# containers
 docker-list() {
 	docker "$2" -aq | while read line; do
 		docker "$1" $line
+	done
+}
+
+podman-list() {
+	podman "$2" -aq | while read line; do
+		podman "$1" $line
 	done
 }
 

@@ -2,7 +2,7 @@ vim.opt.showmode = false
 
 require("lualine").setup({
 	options = {
-		theme = "zenbones",
+		theme = "zenwritten",
 		component_separators = "|",
 		section_separators = "",
     disabled_filetypes = {

@@ -13,7 +13,7 @@ max_line_length = 120
 [*.{c,cpp,h,hpp,cc}]
 max_line_length = 80
 
-[*.{md,norg,txt}]
+[*.{md,norg,txt,yaml,yml}]
 trim_trailing_whitespace = false
 indent_style = space
 max_line_length = 90

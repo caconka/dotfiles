@@ -37,24 +37,13 @@ wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.
 ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
 
 # Install zsh xclip, tmux and neovim
-sudo dnf install -y zsh xclip tmux neovim vim vim-X11 exa ripgrep fd-find fzf bat
+sudo dnf install -y zsh xclip tmux neovim eza ripgrep fd-find fzf bat
 ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
 cd ~/.dotfiles
 git submodule update --init --recursive
-
-# Neovim
-# mkdir -p ~/.local/share/nvim/site
-# mkdir -p ~/.config/nvim
-# ln -s ~/.dotfiles/vim/pack ~/.local/share/nvim/site/
-# ln -s ~/.dotfiles/vim/ftplugin ~/.local/share/nvim/site/
-# ln -s ~/.dotfiles/vim/plugin ~/.local/share/nvim/site/
-# ln -s ~/.dotfiles/vim/undo ~/.local/share/nvim/site/
-# ln -s ~/.dotfiles/vim/backup ~/.local/share/nvim/site/
-# ln -s ~/.dotfiles/vim/coc-settings.json ~/.config/nvim/
-# ln -s ~/.dotfiles/nvim/init.vim ~/.config/nvim/
 
 # Programming
 sudo dnf install -y docker golang docker-compose
