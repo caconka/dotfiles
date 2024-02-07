@@ -1,5 +1,6 @@
 -- See :help lspconfig-global-defaults
 local lspconfig = require("lspconfig")
+local util = require("lspconfig/util")
 local lsp_defaults = lspconfig.util.default_config
 
 lsp_defaults.capabilities = vim.tbl_deep_extend(
@@ -93,7 +94,8 @@ if vim.g.lsp_setup_ready == nil then
 			"tsserver",
 			"eslint",
 			"astro",
-			'jdtls'
+			"jdtls",
+			"gopls"
 		},
 		-- auto-install configured servers (with lspconfig)
 		automatic_installation = true, -- not the same as ensure_installed
@@ -130,7 +132,7 @@ if vim.g.lsp_setup_ready == nil then
 			completions = {
 				completeFunctionCalls = true
 			}
-		},
+		}
 	})
 
 	lspconfig["eslint"].setup({
@@ -143,5 +145,22 @@ if vim.g.lsp_setup_ready == nil then
 
 	lspconfig.jdtls.setup({
 		capabilities = capabilities,
+	})
+
+	lspconfig.gopls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		cmd = {"gopls"},
+		filetypes = { "go", "gomod", "gowork", "gotmpl" },
+		root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+		settings = {
+			gopls = {
+				completeUnimported = true,
+				usePlaceHolders = true,
+				analyses = {
+					unusedparams = true
+				}
+			}
+		}
 	})
 end

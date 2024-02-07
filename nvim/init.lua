@@ -38,6 +38,8 @@ require("plugins.lazy").setup({
 	{"nvim-lua/plenary.nvim"},
 	{"nvim-neorg/neorg", build = ":Neorg sync-parsers", dependencies = { "nvim-lua/plenary.nvim" }},
 	{"FabijanZulj/blame.nvim"},
+	{"junegunn/vim-easy-align"},
+	{"github/copilot.vim"},
 
 	-- LSP support
 	{"williamboman/mason.nvim"},

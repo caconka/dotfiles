@@ -6,14 +6,21 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
-tab_width = 2
-indent_size = 2
+tab_width = 4
+indent_size = 4
 max_line_length = 120
 
 [*.{c,cpp,h,hpp,cc}]
 max_line_length = 80
 
-[*.{md,norg,txt,yaml,yml}]
+[*.{js,json,html,css,yaml,yml,bzl,xml,feature}]
+indent_style = space
+tab_width = 2
+indent_size = 2
+
+[*.{md,norg,txt}]
 trim_trailing_whitespace = false
 indent_style = space
+tab_width = 2
+indent_size = 2
 max_line_length = 90
