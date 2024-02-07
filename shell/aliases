@@ -40,6 +40,8 @@ alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar
 # masmovil
 alias k8s="cd ~/code/masmovil/kubernetes-clusters/"
 alias mm="cd ~/code/masmovil/mm-monorepo/"
+alias msubs="cd ~/code/masmovil/mm-monorepo/pkg/mas-stack/bss/mas-subscriptions/"
+alias mcat="cd ~/code/masmovil/mm-monorepo/pkg/mas-stack/bss/mas-catalogue/"
 alias wfsel=mm-msubs-wf-selector.sh
 alias wftest=mm-msubs-wf-tester.sh
 
