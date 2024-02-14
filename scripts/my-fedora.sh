@@ -23,11 +23,12 @@ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 # Shell
-mkdir ~/.shell
+mkdir -p ~/.shell/work
 ln -fs ~/.dotfiles/shell/common ~/.shell/
 ln -fs ~/.dotfiles/shell/profile ~/.shell/
 ln -fs ~/.dotfiles/shell/aliases ~/.shell/
 ln -fs ~/.dotfiles/shell/functions ~/.shell/
+ln -fs ~/.dotfiles/shell/work/masmovil/* ~/.shell/work/
 
 # Terminal kitty
 sudo dnf update -y

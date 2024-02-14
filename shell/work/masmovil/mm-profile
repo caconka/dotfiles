@@ -1,0 +1,12 @@
+# Masmovil profile
+
+# Gcloud
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+# mas-subscriptions
+export CADENCE_CLI_ADDRESS='frontend.cadence.europe-southwest1.private.dev.k8s.masmovil.com'
+export CADENCE_TASK_LIST_LOCAL_SUFFIX='-caconka'
+export MONOREPO_PATH="$HOME"/code/masmovil/mm-monorepo
+export K8S_CLUSTERS_PATH="$HOME"/code/masmovil/kubernetes-clusters
+export MAS_STACK_ROLES_PERMISSIONS_FULL_PATH="$MONOREPO_PATH"/pkg/mas-stack/bss/mas-subscriptions/internal/lib/src/test/resources/roles_permissions.json
+export MAS_STACK_ROLES_PERMISSIONS_PATH="$MONOREPO_PATH"/pkg/mas-stack/bss/mas-subscriptions/internal/lib/src/test/resources/
