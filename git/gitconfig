@@ -15,6 +15,8 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim --noplugin
+	fsmonitor = true
+	untrackedcache = true
 
 [diff "sopsdiffer"]
 	textconv = sops -d

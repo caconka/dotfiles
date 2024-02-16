@@ -2,3 +2,6 @@
 	name = Carlos Cabezas
 	email = carlos.cabezas@masmovil.com
 	signingkey = carlos.cabezas@masmovil.com
+
+[maintenance]
+	repo = ~/code/masmovil/mm-monorepo

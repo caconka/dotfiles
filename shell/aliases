@@ -3,7 +3,7 @@
 # sudo
 alias sudo="sudo "
 
-alias ll="eza -lg --icons"
+alias ll="eza -lg --icons auto"
 alias llt="ll --tree --level=2"
 alias lla="ll -a"
 alias llta="llt -a"

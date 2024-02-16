@@ -6,3 +6,7 @@ alias msubs="cd ~/code/masmovil/mm-monorepo/pkg/mas-stack/bss/mas-subscriptions/
 alias mcat="cd ~/code/masmovil/mm-monorepo/pkg/mas-stack/bss/mas-catalogue/"
 alias wfsel=mm-msubs-wf-selector.sh
 alias wftest=mm-msubs-wf-tester.sh
+
+alias redis-dev="redis-cli -h 10.192.54.27"
+alias redis-sta="redis-cli -h 10.192.54.51"
+alias redis-pro="redis-cli -h 10.192.52.20"
