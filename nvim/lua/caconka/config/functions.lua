@@ -1,9 +1,8 @@
-local function todayNote()
-	local fileName = os.date("%y-%m-%d.norg")
-
-	return ":e ~/notes/ephemeral/"..fileName.."<CR>"
+local function openNote()
+	return ":e ~/notes/work/notes.norg <CR>"
 end
+vim.keymap.set("n", "<Leader>nn", openNote, { expr = true })
 
-vim.keymap.set("n", "<Leader>nn", todayNote, { expr = true })
+vim.api.nvim_create_user_command("Date", ":pu=strftime('%Y-%m-%d')", {})
 
 vim.api.nvim_create_user_command("Blame", "ToggleBlame", {})

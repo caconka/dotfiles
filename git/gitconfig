@@ -14,7 +14,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim --noplugin
+	editor = vi
 	fsmonitor = true
 	untrackedcache = true
 
@@ -33,10 +33,10 @@
 	sw = switch
 	poh = push origin HEAD
 	plob = !git pull origin $(git branch --show-current)
+	main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 	cleanup = !git fetch -p && git branch -vv | grep -v '*' | grep -v 'origin' | awk '{print $1}' | \
-		grep -v 'master|main' | xargs git branch -D && git gc
-	master = !git switch master && git pull origin master
-	main = !git switch main && git pull origin main
+		grep -v "$(git main-branch)" | xargs git branch -D && git gc
+	main = "!git switch $(git main-branch) && git pull origin $(git main-branch)"
 
 [color]
 	ui = auto

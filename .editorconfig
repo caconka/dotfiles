@@ -12,6 +12,8 @@ max_line_length = 120
 
 [*.{js,json,html,css,yaml,yml,bzl,xml,feature}]
 indent_style = space
+tab_width = 2
+indent_size = 2
 
 [*.{md,norg,txt}]
 indent_style = space
