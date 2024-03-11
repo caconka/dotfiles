@@ -47,7 +47,12 @@ cd ~/.dotfiles
 git submodule update --init --recursive
 
 # Programming
-sudo dnf install -y docker golang docker-compose
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl start docker
+
+sudo dnf install -y golang
 
 # Code dir config
 sudo mkdir ~/code

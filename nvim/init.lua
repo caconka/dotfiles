@@ -40,6 +40,7 @@ require("plugins.lazy").setup({
 	{"FabijanZulj/blame.nvim"},
 	{"junegunn/vim-easy-align"},
 	{"github/copilot.vim"},
+	{"folke/zen-mode.nvim", opts = require("plugins.zen-mode")},
 
 	-- LSP support
 	{"williamboman/mason.nvim"},
