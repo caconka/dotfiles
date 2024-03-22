@@ -17,6 +17,7 @@ require("caconka.config.functions")
 require("plugins.lazy").setup({
 	-- Theming
 	{"mcchrish/zenbones.nvim"},
+	{"EdenEast/nightfox.nvim"},
 	{"rktjmp/lush.nvim"},
 	{"nvim-lualine/lualine.nvim"},
 	{"akinsho/bufferline.nvim"},
@@ -33,14 +34,16 @@ require("plugins.lazy").setup({
 	{"tpope/vim-surround"},
 	{"windwp/nvim-autopairs"},
 	{"iamcco/markdown-preview.nvim", ft = "markdown", build = ":call mkdp#util#install()"},
+	{"preservim/vim-pencil"},
 
 	-- Utilities
 	{"nvim-lua/plenary.nvim"},
 	{"nvim-neorg/neorg", build = ":Neorg sync-parsers", dependencies = { "nvim-lua/plenary.nvim" }},
 	{"FabijanZulj/blame.nvim"},
-	{"junegunn/vim-easy-align"},
-	{"github/copilot.vim"},
+	{"godlygeek/tabular"},
+	{"preservim/vim-markdown"},
 	{"folke/zen-mode.nvim", opts = require("plugins.zen-mode")},
+	{"github/copilot.vim"},
 
 	-- LSP support
 	{"williamboman/mason.nvim"},
@@ -59,14 +62,14 @@ require("plugins.lazy").setup({
 	{"saadparwaiz1/cmp_luasnip"},
 
 	-- Snippets
-	{"L3MON4D3/LuaSnip"},
-	{"rafamadriz/friendly-snippets"},
+	{"L3MON4D3/LuaSnip", dependencies = { "rafamadriz/friendly-snippets" }},
 })
 
 ---
 -- Plugins setups
 ---
-require("plugins.zenbones")
+-- require("plugins.zenbones")
+require("plugins.nightfox")
 require("plugins.lualine")
 require("plugins.bufferline")
 require("plugins.nvim-tree")
@@ -75,6 +78,9 @@ require("plugins.nvim-treesitter")
 require("Comment").setup({})
 require("nvim-autopairs").setup({})
 require("plugins.neorg")
+require("plugins.vim-markdown")
+require("plugins.vim-pencil")
+require("plugins.copilot")
 require("plugins.lsp")
 require("plugins.nvim-lint")
 require("plugins.cmp")

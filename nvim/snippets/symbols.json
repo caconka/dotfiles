@@ -1,0 +1,22 @@
+{
+  "bullet": {
+    "prefix": ".-",
+    "body": [ "• $1" ],
+    "description": "bullet"
+  },
+  "check": {
+    "prefix": ".v",
+    "body": [ "✓ $1" ],
+    "description": "check"
+  },
+  "ballot": {
+    "prefix": ".x",
+    "body": [ "✗ $1" ],
+    "description": "ballot"
+  },
+  "coffee": {
+    "prefix": "coffee",
+    "body": [ "☕ $1" ],
+    "description": "coffee"
+  }
+}

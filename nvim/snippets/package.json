@@ -1,0 +1,19 @@
+{
+  "name": "caconka-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./symbols.json"
+      },
+      {
+        "language": [
+          "norg"
+        ],
+        "path": "./norg.json"
+      }
+    ]
+  }
+}
