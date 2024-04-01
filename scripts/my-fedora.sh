@@ -39,6 +39,7 @@ ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
 
 # Install zsh xclip, tmux and neovim
 sudo dnf install -y zsh xclip tmux neovim eza ripgrep fd-find fzf bat
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # tmux package manager
 ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/nvim ~/.config/nvim

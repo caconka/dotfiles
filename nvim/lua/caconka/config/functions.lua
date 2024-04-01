@@ -15,9 +15,11 @@ vim.api.nvim_create_user_command("Blame", "ToggleBlame", {})
 
 local function toggleColor()
 	if (vim.opt.background:get() == "dark") then
-		vim.cmd("colorscheme dayfox")
+		vim.opt.background = "light"
+		vim.cmd("colorscheme github_light_default")
 	else
-		vim.cmd("colorscheme nightfox")
+		vim.opt.background = "dark"
+		vim.cmd("colorscheme zenbones")
 	end
 end
 

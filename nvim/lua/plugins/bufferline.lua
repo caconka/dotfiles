@@ -1,17 +1,29 @@
-require("bufferline").setup({
-	options = {
-		mode = "buffers",
-		offsets = {
-			{filetype = "NvimTree"}
-		},
-	},
-	highlights = {
-		buffer_selected = {
-			italic = false
-		},
-		indicator_selected = {
-			fg = {attribute = "fg", highlight = "Function"},
-			italic = false
-		}
-	}
-})
+return {
+	"akinsho/bufferline.nvim",
+	config = function()
+		require("bufferline").setup({
+			options = {
+				mode = "buffers",
+				offsets = {
+					{filetype = "NvimTree"}
+				},
+			},
+			highlights = {
+				fill = {
+					fg = "#000000",
+					bg = "#ffffff",
+				},
+				buffer = {
+					fg = "#000000",
+					bg = "#dce0e8",
+				},
+				buffer_selected = {
+					italic = false,
+				},
+				indicator_selected = {
+					italic = false,
+				}
+			}
+		})
+	end,
+}

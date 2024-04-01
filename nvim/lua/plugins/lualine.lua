@@ -1,11 +1,16 @@
 vim.opt.showmode = false
 
-require("lualine").setup({
-	options = {
-		component_separators = "|",
-		section_separators = "",
-		disabled_filetypes = {
-			statusline = {"NvimTree"},
-		},
-	},
-})
+return {
+	"nvim-lualine/lualine.nvim",
+	config = function()
+		require("lualine").setup({
+			options = {
+				component_separators = "|",
+				section_separators = "",
+				disabled_filetypes = {
+					statusline = {"NvimTree"},
+				},
+			},
+		})
+	end,
+}

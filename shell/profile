@@ -4,12 +4,12 @@
 [ -f "$HOME/.shell/common" ] && source $HOME/.shell/common
 
 ## FZF ##
-# fg:#2c363c bg:#f0edec hl+:#c18401
+# fg:#000000 bg:#ffffff
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse
-	--color=fg:#2c363c,bg:#f0edec,hl:#2c363c
-	--color=fg+:#2c363c,bg+:#f0edec,hl+:#944927
-	--color=info:#2c363c,prompt:#2c363c,pointer:#2c363c
-	--color=marker:#2c363c,spinner:#2c363c,header:#2c363c'
+	--color=fg:#000000,bg:#ffffff,hl:#000000
+	--color=fg+:#000000,bg+:#ffffff,hl+:#000000
+	--color=info:#000000,prompt:#000000,pointer:#000000
+	--color=marker:#000000,spinner:#000000,header:#000000'
 
 [ -f "$HOME/.shell/fzf_functions" ] && source $HOME/.shell/fzf_functions
 

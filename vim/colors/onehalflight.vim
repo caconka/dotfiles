@@ -17,20 +17,20 @@ let g:colors_name="onehalflight"
 let colors_name="onehalflight"
 
 
-let s:black       = { "gui": "#383a42", "cterm": "237" }
+let s:black       = { "gui": "#000000", "cterm": "237" }
 let s:red         = { "gui": "#e45649", "cterm": "167" }
 let s:green       = { "gui": "#50a14f", "cterm": "71" }
 let s:yellow      = { "gui": "#c18401", "cterm": "136" }
 let s:blue        = { "gui": "#0184bc", "cterm": "31" }
 let s:purple      = { "gui": "#a626a4", "cterm": "127" }
 let s:cyan        = { "gui": "#0997b3", "cterm": "31" }
-let s:white       = { "gui": "#fafafa", "cterm": "231" }
+let s:white       = { "gui": "#ffffff", "cterm": "231" }
 
 let s:fg          = s:black
 let s:bg          = s:white
 
 let s:comment_fg  = { "gui": "#a0a1a7", "cterm": "247" }
-let s:gutter_bg   = { "gui": "#fafafa", "cterm": "231" }
+let s:gutter_bg   = { "gui": "#ffffff", "cterm": "231" }
 let s:gutter_fg   = { "gui": "#d4d4d4", "cterm": "252" }
 let s:non_text    = { "gui": "#e5e5e5", "cterm": "252" }
 
