@@ -19,7 +19,7 @@ local function toggleColor()
 		vim.cmd("colorscheme github_light_default")
 	else
 		vim.opt.background = "dark"
-		vim.cmd("colorscheme zenbones")
+		vim.cmd("colorscheme github_dark_default")
 	end
 end
 

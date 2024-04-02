@@ -2,7 +2,7 @@ local keymap = vim.keymap.set
 
 keymap({"n", "v"}, "<C-r>+", '"+p')
 
-keymap({"n", "v"}, "<Leader>nt", ":set number! relativenumber!<CR>")
+keymap({"n", "v"}, "<Leader>tn", ":set number! relativenumber!<CR>")
 
 ---
 -- Buffers
@@ -21,8 +21,8 @@ keymap("v", "<S-Tab>", "<gv")
 ---
 -- Move lines vertically
 ---
-keymap("n", "<C-j>", ":m .+1<CR>==")
 keymap("v", "<C-j>", ":m '>+1<CR>gv=gv")
-keymap("n", "<C-k>", ":m .-2<CR>==")
 keymap("v", "<C-k>", ":m '<-2<CR>gv=gv")
+-- keymap("n", "<C-j>", ":m .+1<CR>==")
+-- keymap("n", "<C-k>", ":m .-2<CR>==")
 

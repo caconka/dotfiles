@@ -29,6 +29,7 @@
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
 	st = status -sb
 	com = commit -m
+	cam = !git add -A && git commit -m
 	ch = checkout
 	sw = switch
 	poh = push origin HEAD
