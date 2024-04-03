@@ -11,8 +11,6 @@ end
 
 vim.api.nvim_create_user_command("PresentationMode", presentationMode, {})
 
-vim.api.nvim_create_user_command("Blame", "ToggleBlame", {})
-
 local function toggleColor()
 	if (vim.opt.background:get() == "dark") then
 		vim.opt.background = "light"

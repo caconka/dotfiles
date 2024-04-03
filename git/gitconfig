@@ -34,6 +34,7 @@
 	sw = switch
 	poh = push origin HEAD
 	plob = !git pull origin $(git branch --show-current)
+	fom = "!mb=$(git main-branch) && git fetch origin $mb:$mb"
 	main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 	cleanup = !git fetch -p && git branch -vv | grep -v '*' | grep -v 'origin' | awk '{print $1}' | \
 		grep -v "$(git main-branch)" | xargs git branch -D && git gc
