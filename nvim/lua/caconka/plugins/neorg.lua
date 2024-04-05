@@ -1,7 +1,8 @@
 return {
 	"nvim-neorg/neorg",
 	lazy = false,
-	version = "*", -- Pin Neorg to the latest stable release
+	--version = "*", -- Pin Neorg to the latest stable release
+	version = "v7.0.0",
 	-- dependencies = { "luarocks.nvim" },
 	config = function()
 		require("neorg").setup({

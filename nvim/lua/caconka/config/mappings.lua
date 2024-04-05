@@ -3,6 +3,7 @@ local keymap = vim.keymap.set
 keymap({"n", "v"}, "<C-r>+", '"+p')
 
 keymap({"n", "v"}, "<Leader>tn", ":set number! relativenumber!<CR>")
+keymap("n", "<Leader>qa", ":qa<CR>")
 
 ---
 -- Buffers

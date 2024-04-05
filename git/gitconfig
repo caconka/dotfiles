@@ -24,6 +24,12 @@
 [pull]
 	rebase = true
 
+[diff]
+	tool = nvimdiff
+
+[difftool]
+	prompt = false
+
 [alias]
 	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an> %C(red)%D' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
@@ -32,6 +38,8 @@
 	cam = !git add -A && git commit -m
 	ch = checkout
 	sw = switch
+	df = diff
+	dt = difftool
 	poh = push origin HEAD
 	plob = !git pull origin $(git branch --show-current)
 	fom = "!mb=$(git main-branch) && git fetch origin $mb:$mb"

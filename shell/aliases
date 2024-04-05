@@ -17,6 +17,7 @@ alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
 # nvim
 alias vim="nvim"
+alias v="vim"
 
 # git
 alias g="git"
@@ -34,6 +35,8 @@ alias docker-rmi="docker-list rmi images"
 
 # kubernetes
 alias k=kubectl
+alias kx=kubectx
+alias ks=kubens
 
 # bazel
 alias bz=bazel
