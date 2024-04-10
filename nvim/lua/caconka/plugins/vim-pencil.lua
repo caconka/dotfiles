@@ -4,6 +4,8 @@ return {
 		local group = vim.api.nvim_create_augroup("pencil", {clear = true})
 
 		vim.g["pencil#textwidth"] = 90
+		vim.g["pencil#conceallevel"] = 2
+		vim.g["pencil#concealcursor"] = "n"
 
 		vim.api.nvim_create_autocmd("BufEnter", {
 			pattern = { "*.md", "*.txt", "*.norg" },

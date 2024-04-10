@@ -30,6 +30,16 @@
 [difftool]
 	prompt = false
 
+[merge]
+	tool = nvimdiff
+
+[mergetool]
+	keepBackup = false
+	prompt = false
+
+[mergetool "nvimdiff"]
+	cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+
 [alias]
 	lod = log --graph --decorate --pretty=format:'%C(bold yellow)%h %Creset%ad - %s  %Cblue<%an> %C(red)%D' \
 		--abbrev-commit --date=format:'%Y.%m.%d %H:%M'
@@ -40,6 +50,11 @@
 	sw = switch
 	df = diff
 	dt = difftool
+	df1 = diff HEAD~1
+	dt1 = difftool HEAD~1
+	mt = mergetool
+	aa = add -A
+	ap = add -Ap
 	poh = push origin HEAD
 	plob = !git pull origin $(git branch --show-current)
 	fom = "!mb=$(git main-branch) && git fetch origin $mb:$mb"

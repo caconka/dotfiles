@@ -6,19 +6,22 @@ local opt = vim.opt
 
 vim.wo.colorcolumn = "+1"
 
+opt.conceallevel = 2 -- show conceals (like listchars and conceallevel)
+opt.concealcursor = "n" -- don't conceal when cursor is on it
+
 opt.autoindent = true -- maintain indent of current line
 opt.backspace = "indent,start,eol" -- allow unrestricted backspacing in insert mode
-opt.backup = false -- don"t make backups before writing
+opt.backup = false -- don't make backups before writing
 opt.backupcopy = "yes" -- overwrite files to update, instead of renaming + rewriting
 opt.backupdir = config .. "/backup//" -- keep backup files out of the way (ie. if "backup" is ever set)
 opt.backupdir = opt.backupdir + "." -- fallback
 opt.backupskip = opt.backupskip + "*.re,*.rei" -- prevent bsb"s watch mode from getting confused (if "backup" is ever set)
 opt.belloff = "all" -- never ring the bell for any reason
 opt.cursorline = true -- highlight current line
-opt.diffopt = opt.diffopt + "vertical,foldcolumn:0" -- don"t show fold column in diff view
+opt.diffopt = opt.diffopt + "vertical,foldcolumn:0" -- don't show fold column in diff view
 opt.directory = config .. "/nvim/swap//" -- keep swap files out of the way
 opt.directory = opt.directory + "." -- fallback
-opt.emoji = false -- don"t assume all emoji are double width
+opt.emoji = false -- don't assume all emoji are double width
 opt.fillchars = {
 	diff = "∙", -- BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
 	eob = " ", -- NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
@@ -31,9 +34,9 @@ opt.formatoptions = opt.formatoptions + "n" -- smart auto-indenting inside numbe
 opt.hidden = true -- allows you to hide buffers with unsaved changes without being prompted
 opt.inccommand = "split" -- live preview of :s results
 opt.ignorecase = true -- ignore case in searches
-opt.joinspaces = false -- don"t autoinsert two spaces after ".", "?", "!" for join command
+opt.joinspaces = false -- don't autoinsert two spaces after ".", "?", "!" for join command
 opt.laststatus = 2 -- always show status line
-opt.lazyredraw = true -- don"t bother updating screen during macro playback
+opt.lazyredraw = true -- don't bother updating screen during macro playback
 opt.linebreak = true -- wrap long lines at characters in "breakat"
 opt.list = true -- show whitespace
 opt.listchars = {
@@ -55,7 +58,7 @@ opt.relativenumber = true -- show relative numbers in gutter
 opt.scrolloff = 3 -- start scrolling 3 lines before edge of viewport
 
 if root then
-	opt.shada = "" -- Don"t create root-owned files.
+	opt.shada = "" -- don't create root-owned files.
 	opt.shadafile = "NONE"
 else
 	-- Defaults:
@@ -69,48 +72,48 @@ else
 	--
 	-- Our overrides:
 	-- - "0 store marks for 0 files
-	-- - <0 don"t save registers
-	-- - f0 don"t store file marks
+	-- - <0 don't save registers
+	-- - f0 don't store file marks
 	-- - n: store in ~/.config/nvim/
 	--
 	opt.shada = "'0,<0,f0,n~/.config/nvim/shada"
 end
 
 opt.shell = "sh" -- shell to use for `!`, `:!`, `system()` etc.
-opt.shiftround = false -- don"t always indent by multiple of shiftwidth
+opt.shiftround = false -- don't always indent by multiple of shiftwidth
 opt.shiftwidth = 2 -- spaces per tab (when shifting)
 opt.shortmess = opt.shortmess + "A" -- ignore annoying swapfile messages
 opt.shortmess = opt.shortmess + "I" -- no splash screen
 opt.shortmess = opt.shortmess + "O" -- file-read message overwrites previous
 opt.shortmess = opt.shortmess + "T" -- truncate non-file messages in middle
-opt.shortmess = opt.shortmess + "W" -- don"t echo "[w]"/"[written]" when writing
+opt.shortmess = opt.shortmess + "W" -- don't echo "[w]"/"[written]" when writing
 opt.shortmess = opt.shortmess + "a" -- use abbreviations in messages eg. `[RO]` instead of `[readonly]`
 opt.shortmess = opt.shortmess + "c" -- completion messages
 opt.shortmess = opt.shortmess + "o" -- overwrite file-written messages
 opt.shortmess = opt.shortmess + "t" -- truncate file messages at start
 opt.showbreak = "↳ " -- DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
-opt.showcmd = false -- don"t show extra info at end of command line
+opt.showcmd = false -- don't show extra info at end of command line
 opt.sidescroll = 0 -- sidescroll in jumps because terminals are slow
 opt.sidescrolloff = 3 -- same as scrolloff, but for columns
-opt.smartcase = true -- don"t ignore case in searches if uppercase characters present
+opt.smartcase = true -- don't ignore case in searches if uppercase characters present
 opt.smarttab = true -- <tab>/<BS> indent/dedent in leading whitespace
 
 if not vi then
 	opt.softtabstop = -1 -- use "shiftwidth" for tab/bs at end of line
 end
 
-opt.spellcapcheck = "" -- don"t check for capital letters at start of sentence
+opt.spellcapcheck = "" -- don't check for capital letters at start of sentence
 opt.splitbelow = true -- open horizontal splits below current window
 opt.splitright = true -- open vertical splits to the right of the current window
-opt.suffixes = opt.suffixes - ".h" -- don"t sort header files at lower priority
-opt.swapfile = false -- don"t create swap files
+opt.suffixes = opt.suffixes - ".h" -- don't sort header files at lower priority
+opt.swapfile = false -- don't create swap files
 opt.switchbuf = "usetab" -- try to reuse windows/tabs when switching buffers
-opt.synmaxcol = 200 -- don"t bother syntax highlighting long lines
+opt.synmaxcol = 200 -- don't bother syntax highlighting long lines
 opt.tabstop = 2 -- spaces per tab
 opt.termguicolors = true -- use guifg/guibg instead of ctermfg/ctermbg in terminal
 
 if root then
-	opt.undofile = false -- don"t create root-owned files
+	opt.undofile = false -- don't create root-owned files
 else
 	opt.undodir = config .. "/undo//" -- keep undo files out of the way
 	opt.undodir = opt.undodir + "." -- fallback
@@ -129,4 +132,4 @@ opt.wildignore = opt.wildignore + "*.o,*.rej,*.so" -- patterns to ignore during 
 opt.wildmenu = true -- show options as list when switching buffers etc
 opt.wildmode = "longest:full,full" -- shell-like autocomplete to unambiguous portion
 opt.winblend = 10 -- psuedo-transparency for floating windows
-opt.writebackup = false -- don"t keep backups after writing
+opt.writebackup = false -- don't keep backups after writing
