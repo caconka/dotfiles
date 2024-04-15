@@ -7,7 +7,7 @@ local opt = vim.opt
 vim.wo.colorcolumn = "+1"
 
 opt.conceallevel = 2 -- show conceals (like listchars and conceallevel)
-opt.concealcursor = "n" -- don't conceal when cursor is on it
+-- opt.concealcursor = "n" -- don't conceal when cursor is on it
 
 opt.autoindent = true -- maintain indent of current line
 opt.backspace = "indent,start,eol" -- allow unrestricted backspacing in insert mode

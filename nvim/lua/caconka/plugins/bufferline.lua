@@ -4,6 +4,8 @@ return {
 		require("bufferline").setup({
 			options = {
 				mode = "buffers",
+				buffer_close_icon = "",
+				close_icon = "",
 				offsets = {
 					{filetype = "NvimTree"}
 				},

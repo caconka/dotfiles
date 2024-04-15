@@ -25,6 +25,7 @@ return {
 			},
 			notes_subdir = "ephemeral",
 			new_notes_location = "notes_subdir",
+			preferred_link_style = "markdown",
 			wiki_link_func = function(opts)
 				if opts.id == nil then
 					return string.format("[[%s]]", opts.label)
@@ -34,15 +35,7 @@ return {
 					return string.format("[[%s]]", opts.id)
 				end
 			end,
-
 			mappings = {
-				-- "Obsidian follow"
-				["<leader>of"] = {
-					action = function()
-						return require("obsidian").util.gf_passthrough()
-					end,
-					opts = { noremap = false, expr = true, buffer = true },
-				},
 				-- Toggle check-boxes "obsidian done"
 				["<leader>nc"] = {
 					action = function()
