@@ -28,6 +28,7 @@ alias notes="cd ~/notes"
 
 # docker
 # alias docker=podman
+alias d="docker"
 alias docker-compose="docker compose"
 alias docker-stop="docker-list stop ps"
 alias docker-rm="docker-list rm ps"
