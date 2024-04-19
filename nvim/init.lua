@@ -5,6 +5,7 @@ end
 vim.g.mapleader = " "
 
 require("caconka.lazy")
+require("caconka.config.color")
 require("caconka.config.options")
 require("caconka.config.mappings")
 require("caconka.config.functions")

@@ -21,7 +21,7 @@ local function toggleColor()
 				},
 			},
 		})
-		vim.cmd("colorscheme github_light_default")
+		vim.cmd.colorscheme "github_light_default"
 		vim.opt.background = "light"
 	else
 		require("bufferline").setup({
@@ -32,7 +32,7 @@ local function toggleColor()
 				},
 			},
 		})
-		vim.cmd("colorscheme github_dark_default")
+		vim.cmd.colorscheme "catppuccin"
 		vim.opt.background = "dark"
 	end
 end
