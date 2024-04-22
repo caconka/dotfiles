@@ -85,18 +85,7 @@ return {
 			}
 		})
 
-		vim.opt.background = "light"
-		vim.cmd.colorscheme "github_light_default"
 		vim.api.nvim_command("hi DiffChange guifg=#7a6326 guibg=#e5d5ac")
 		vim.api.nvim_command("hi DiffText guifg=black guibg=#f5eede")
-
-		-- local spec = require("github-theme.spec").load("github_light_default")
-		-- print(vim.inspect(spec.syntax))
-		--
-		-- local palette = require("github-theme.palette").load("github_light_default")
-		-- print(vim.inspect(palette))
-		--
-		-- local group = require("github-theme.group").load("github_light_default")
-		-- print(vim.inspect(group))
 	end,
 }

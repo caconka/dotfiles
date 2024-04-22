@@ -4,7 +4,5 @@ return {
 		require("treesitter-context").setup {
 			separator = "-",
 		}
-
-		vim.cmd("hi TreesitterContext guibg=white")
 	end,
 }
