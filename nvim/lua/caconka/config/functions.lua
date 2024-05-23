@@ -1,9 +1,3 @@
-local function openNote()
-	return ":e ~/notes/work/notes.norg <CR>"
-end
-
-vim.keymap.set("n", "<Leader>nn", openNote, { expr = true })
-
 local function presentationMode()
 	vim.fn.execute(":ZenMode")
 	vim.fn.execute(":set mouse=")

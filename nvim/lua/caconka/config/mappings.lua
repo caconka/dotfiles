@@ -4,6 +4,9 @@ keymap({"n", "v"}, "<C-r>+", '"+p')
 
 keymap({"n", "v"}, "<Leader>tn", ":set number! relativenumber!<CR>")
 keymap("n", "<Leader>qa", ":qa<CR>")
+keymap("n", "<Leader>gr", ":diffget RE<CR>")
+keymap("n", "<Leader>gl", ":diffget LO<CR>")
+keymap("n", "<Leader>gb", ":diffget BA<CR>")
 
 ---
 -- Buffers
