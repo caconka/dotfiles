@@ -7,6 +7,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"saadparwaiz1/cmp_luasnip",
 	},
+	event = "InsertEnter",
 	config = function()
 		local opt = vim.opt
 

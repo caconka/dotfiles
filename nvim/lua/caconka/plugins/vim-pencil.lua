@@ -1,5 +1,6 @@
 return {
 	"preservim/vim-pencil",
+	event = "InsertEnter",
 	config = function()
 		local group = vim.api.nvim_create_augroup("pencil", {clear = true})
 

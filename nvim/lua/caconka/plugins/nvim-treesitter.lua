@@ -1,6 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate", -- In Fedora install "gcc-c++" package
+	event = "BufReadPre",
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			highlight = {

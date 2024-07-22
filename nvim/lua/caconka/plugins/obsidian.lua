@@ -3,6 +3,7 @@ return {
 	version = "*",  -- recommended, use latest release instead of latest commit
 	lazy = true,
 	ft = "markdown",
+	event = "BufRead",
 	keys = {
 		{ "<leader>nn", "<cmd>ObsidianNew<cr>", desc = "New Obsidian note", mode = "n" },
 		{ "<leader>nf", "<cmd>ObsidianSearch<cr>", desc = "Search Obsidian notes", mode = "n" },

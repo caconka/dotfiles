@@ -47,7 +47,6 @@
 	com = commit -m
 	cam = !git add -A && git commit -m
 	b = branch
-	r = rebase
 	ch = checkout
 	sw = switch
 	df = diff

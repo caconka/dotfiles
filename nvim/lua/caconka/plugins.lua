@@ -1,8 +1,8 @@
 return {
-	"godlygeek/tabular",
-	"tpope/vim-fugitive",
-	"tpope/vim-surround",
+	{ "godlygeek/tabular", event = "BufRead" },
+	{ "tpope/vim-fugitive", event = "BufRead" },
+	{ "tpope/vim-surround", event = "BufRead" },
 	"nvim-lua/plenary.nvim",
 
-	{"L3MON4D3/LuaSnip", dependencies = { "rafamadriz/friendly-snippets" }},
+	{"L3MON4D3/LuaSnip", event = "InsertCharPre", dependencies = { "rafamadriz/friendly-snippets" }},
 }

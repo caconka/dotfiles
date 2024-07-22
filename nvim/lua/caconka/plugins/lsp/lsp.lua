@@ -4,6 +4,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	},
+	event = { "BufReadPost", "BufNewFile" },
 	config = function()
 		-- See :help lspconfig-global-defaults
 		local lspconfig = require("lspconfig")

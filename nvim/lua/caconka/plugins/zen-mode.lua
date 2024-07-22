@@ -2,6 +2,7 @@ vim.keymap.set({"n", "v"}, "<Leader>z", ":ZenMode<CR>", { silent = true })
 
 return {
 	"folke/zen-mode.nvim",
+	event = "BufRead",
 	opts = {
 		window = {
 			backdrop = 1,

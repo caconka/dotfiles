@@ -3,6 +3,7 @@ return {
 	branch = "0.1.x",
 	requires = { {"nvim-lua/plenary.nvim"} },
 	dependencies = { "nvim-lua/plenary.nvim", {"nvim-telescope/telescope-fzf-native.nvim", build = "make"} },
+	event = "BufWinEnter",
 	config = function()
 		require("telescope").setup({
 			defaults = {
