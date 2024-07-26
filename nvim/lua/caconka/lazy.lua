@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {
 	install = {
-		colorscheme = { "github_light_default" },
+		colorscheme = { "catppuccin" },
 	},
 	checker = {
 		enabled = true,

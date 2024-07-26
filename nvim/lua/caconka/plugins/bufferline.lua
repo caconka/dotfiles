@@ -12,14 +12,6 @@ return {
 				},
 			},
 			highlights = {
-				fill = {
-					fg = "#000000",
-					bg = "#ffffff",
-				},
-				-- buffer = {
-				-- 	fg = "#000000",
-				-- 	bg = "#dce0e8",
-				-- },
 				buffer_selected = {
 					italic = false,
 				},
