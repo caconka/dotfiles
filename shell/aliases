@@ -45,6 +45,9 @@ alias bz=bazel
 # maven
 alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar"
 
+# task
+alias task=go-task
+
 # masmovil
 [ -f "$HOME/.shell/work/mm-aliases" ] && source $HOME/.shell/work/mm-aliases
 

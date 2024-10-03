@@ -108,7 +108,7 @@ return {
 					"html",
 					"cssls",
 					"tailwindcss",
-					"tsserver",
+					"ts_ls",
 					"eslint",
 					"astro",
 					"jdtls",
@@ -143,7 +143,7 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig.tsserver.setup({
+			lspconfig["ts_ls"].setup({
 				capabilities = capabilities,
 				settings = {
 					completions = {
