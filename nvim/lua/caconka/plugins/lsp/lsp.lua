@@ -107,12 +107,12 @@ return {
 					"lua_ls",
 					"html",
 					"cssls",
-					"tailwindcss",
 					"ts_ls",
 					"eslint",
 					"astro",
 					"jdtls",
-					"gopls"
+					"gopls",
+					"yamlls"
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
@@ -139,10 +139,6 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig["tailwindcss"].setup({
-				capabilities = capabilities,
-			})
-
 			lspconfig["ts_ls"].setup({
 				capabilities = capabilities,
 				settings = {
@@ -161,6 +157,10 @@ return {
 			})
 
 			lspconfig.jdtls.setup({
+				capabilities = capabilities,
+			})
+
+			lspconfig.yamlls.setup({
 				capabilities = capabilities,
 			})
 

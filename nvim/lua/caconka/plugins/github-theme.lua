@@ -70,7 +70,7 @@ return {
 						func = "black",
 						ident = "black",
 						keyword = "blue",
-						number = "blue.bright",
+						number = "blue",
 						operator = "black",
 						param = "black",
 						preproc = "black",
