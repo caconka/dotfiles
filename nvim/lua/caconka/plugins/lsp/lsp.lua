@@ -3,18 +3,20 @@ return {
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	event = { "BufReadPost", "BufNewFile" },
+	build = function ()
+		pcall(vim.cmd, "MasonUpdate")
+	end,
 	config = function()
 		-- See :help lspconfig-global-defaults
 		local lspconfig = require("lspconfig")
 		local util = require("lspconfig/util")
 		local lsp_defaults = lspconfig.util.default_config
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-		lsp_defaults.capabilities = vim.tbl_deep_extend(
-			"force",
-			lsp_defaults.capabilities,
-			require("cmp_nvim_lsp").default_capabilities())
+		lsp_defaults.capabilities = vim.tbl_deep_extend( "force", lsp_defaults.capabilities, capabilities)
 
 		---
 		-- Diagnostic customization
@@ -43,13 +45,13 @@ return {
 			},
 		})
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-			vim.lsp.handlers.hover,
-			{ border = "rounded" })
-
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-			vim.lsp.handlers.signature_help,
-			{ border = "rounded" })
+		-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+		-- 	vim.lsp.handlers.hover,
+		-- 	{ border = "rounded" })
+		--
+		-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+		-- 	vim.lsp.handlers.signature_help,
+		-- 	{ border = "rounded" })
 
 		---
 		-- LSP Keybindings
@@ -84,8 +86,6 @@ return {
 		---
 		-- LSP servers
 		---
-		--
-		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 		-- Prevent multiple instance of lsp servers
 		-- if file is sourced again
@@ -109,13 +109,38 @@ return {
 					"cssls",
 					"ts_ls",
 					"eslint",
-					"astro",
 					"jdtls",
 					"gopls",
 					"yamlls"
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
+			})
+
+			local lspconfig = require('lspconfig')
+
+			require('mason-tool-installer').setup({
+				-- Install these linters, formatters, debuggers automatically
+				ensure_installed = {
+					'java-debug-adapter',
+					'java-test',
+				},
+			})
+
+			-- There is an issue with mason-tools-installer running with VeryLazy, since it triggers on VimEnter which has already occurred prior to this plugin loading so we need to call install explicitly
+			-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim/issues/39
+			vim.api.nvim_command('MasonToolsInstall')
+
+			-- Call setup on each LSP server
+			require("mason-lspconfig").setup_handlers({
+				function(server_name)
+					-- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
+					if server_name ~= "jdtls" then
+						lspconfig[server_name].setup({
+							capabilities = capabilities,
+						})
+					end
+				end
 			})
 
 			-- See :help lspconfig-setup
@@ -131,41 +156,7 @@ return {
 				}
 			})
 
-			lspconfig["html"].setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig["cssls"].setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig["ts_ls"].setup({
-				capabilities = capabilities,
-				settings = {
-					completions = {
-						completeFunctionCalls = true
-					}
-				}
-			})
-
-			lspconfig["eslint"].setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig["astro"].setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.jdtls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.yamlls.setup({
-				capabilities = capabilities,
-			})
-
 			lspconfig.gopls.setup({
-				on_attach = on_attach,
 				capabilities = capabilities,
 				cmd = {"gopls"},
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },

@@ -50,7 +50,7 @@ git submodule update --init --recursive
 # Programming
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin
 sudo systemctl start docker
 
 sudo dnf install -y golang
@@ -103,27 +103,27 @@ sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
 # Postman
-POSTMAN_FILE=postman-linux-x64.tar.gz
-wget https://dl.pstmn.io/download/latest/linux64 -O $POSTMAN_FILE
-sudo tar -xvzf $POSTMAN_FILE -C /opt
-sudo ln -s /opt/Postman/Postman /usr/local/bin/postman
-rm $POSTMAN_FILE
-mkdir -p ~/.local/share/applications
-cat << EOF > ~/.local/share/applications/postman.desktop
-[Desktop Entry]
-Encoding=UTF-8
-Name=Postman
-Exec=/usr/local/bin/postman
-Icon=/opt/Postman/app/resources/app/assets/icon.png
-Keywords=api;
-Terminal=false
-Type=Application
-Categories=Development;Utilities;
-EOF
-chmod +x ~/.local/share/applications/postman.desktop
+# POSTMAN_FILE=postman-linux-x64.tar.gz
+# wget https://dl.pstmn.io/download/latest/linux64 -O $POSTMAN_FILE
+# sudo tar -xvzf $POSTMAN_FILE -C /opt
+# sudo ln -s /opt/Postman/Postman /usr/local/bin/postman
+# rm $POSTMAN_FILE
+# mkdir -p ~/.local/share/applications
+# cat << EOF > ~/.local/share/applications/postman.desktop
+# [Desktop Entry]
+# Encoding=UTF-8
+# Name=Postman
+# Exec=/usr/local/bin/postman
+# Icon=/opt/Postman/app/resources/app/assets/icon.png
+# Keywords=api;
+# Terminal=false
+# Type=Application
+# Categories=Development;Utilities;
+# EOF
+# chmod +x ~/.local/share/applications/postman.desktop
 
 # Docker
-sudo usermod -a -G docker $USER
+sudo usermod -a -g docker $USER
 
 # Java
 curl -s https://get.sdkman.io | bash
