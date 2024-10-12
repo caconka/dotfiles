@@ -31,11 +31,16 @@ ln -fs ~/.dotfiles/shell/functions ~/.shell/
 ln -fs ~/.dotfiles/shell/work/masmovil/* ~/.shell/work/
 
 # Terminal kitty
-sudo dnf update -y
-sudo dnf install -y kitty
-mkdir ~/.config/kitty
-wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.conf -P ~/.config/kitty
-ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
+# sudo dnf update -y
+# sudo dnf install -y kitty
+# mkdir ~/.config/kitty
+# wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.conf -P ~/.config/kitty
+# ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
+
+# Terminal wezterm
+sudo dnf copr enable wezfurlong/wezterm-nightly
+sudo dnf install wezterm
+ln -s ~/.dotfiles/shell/wezterm ~/.config/wezterm
 
 # Install zsh xclip, tmux and neovim
 sudo dnf install -y zsh xclip tmux neovim eza ripgrep fd-find fzf bat

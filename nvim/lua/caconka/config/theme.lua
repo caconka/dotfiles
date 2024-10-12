@@ -1,7 +1,8 @@
 vim.cmd.colorscheme "catppuccin"
 vim.opt.background = "light"
 
-vim.cmd("hi TreesitterContext guibg=white")
+vim.cmd("hi TreesitterContext guibg=white guifg=#080808")
+
 
 -- vim.api.nvim_command("au BufHidden *.{md,json,yaml,yml} if &bg == 'light' | colorscheme github_light_default | endif")
 -- vim.api.nvim_command("au BufEnter *.{md,json,yaml,yml} colorscheme catppuccin")
