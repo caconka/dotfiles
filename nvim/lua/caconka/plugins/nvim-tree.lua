@@ -1,6 +1,6 @@
 return {
 	"kyazdani42/nvim-tree.lua",
-	event = "BufWinEnter",
+	event = "VimEnter",
 	config = function()
 		require("nvim-tree").setup({
 			view = {
@@ -12,7 +12,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<Leader>tt", ":NvimTreeToggle<CR>", { silent = true })
-		vim.keymap.set("n", "<Leader>tf", ":NvimTreeFindFile<CR>", { silent = true })
+		vim.keymap.set("n", "<Leader>tt", ":NvimTreeToggle<CR>", { silent = true, noremap = true })
+		vim.keymap.set("n", "<Leader>tf", ":NvimTreeFindFile<CR>", { silent = true, noremap = true })
 	end,
 }

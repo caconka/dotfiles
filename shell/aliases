@@ -1,16 +1,10 @@
 ##### Alias #####
 
-# sudo
-alias sudo="sudo "
-
 alias ll="eza -lg --icons auto"
 alias llt="ll --tree --level=2"
 alias lla="ll -a"
 alias llta="llt -a"
 alias grep="grep --color"
-
-# temperatures
-alias temps="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
 
 # ctags
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
@@ -30,9 +24,9 @@ alias notes="cd ~/notes"
 # alias docker=podman
 alias d="docker"
 alias docker-compose="docker compose"
-alias docker-stop="docker-list stop ps"
-alias docker-rm="docker-list rm ps"
-alias docker-rmi="docker-list rmi images"
+alias dstop="docker stop $(docker ps -aq)"
+alias drm="docker rm $(docker ps -aq)"
+alias drmi="docker rmi $(docker images -q)"
 
 # kubernetes
 alias k=kubectl
@@ -47,13 +41,3 @@ alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar
 
 # task
 alias task=go-task
-
-# masmovil
-[ -f "$HOME/.shell/work/mm-aliases" ] && source $HOME/.shell/work/mm-aliases
-
-# LINUX
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias open="xdg-open"
-	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-	alias idea="nohup ~/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin/idea.sh > /dev/null & "
-fi

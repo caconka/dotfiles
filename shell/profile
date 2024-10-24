@@ -1,15 +1,38 @@
 # profile
 
-# Common config
-[ -f "$HOME/.shell/common" ] && source $HOME/.shell/common
+## ALIASES ##
+[ -f "$HOME/.shell/aliases" ] && source "$HOME/.shell/aliases"
+
+
+# LINUX
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias open="xdg-open"
+	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+	alias idea="nohup ~/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin/idea.sh > /dev/null & "
+	# temperatures
+	alias temps="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
+fi
+
+## FUNCTIONS ##
+[ -f "$HOME/.shell/functions" ] && source "$HOME/.shell/functions"
+
+# TMUX
+if [[ -z "$TMUX" && -z "$DISABLE_TMUX" ]]; then
+	ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )"
+	if [[ -z "$ID" ]] ;then
+		tmux new-session -s main
+	else
+		tmux attach-session -t "$ID"
+	fi
+fi
 
 ## FZF ##
-# fg:#000000 bg:#ffffff
+# fg:#080808 bg:#ffffff
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse
-	--color=fg:#000000,bg:#ffffff,hl:#000000
-	--color=fg+:#000000,bg+:#ffffff,hl+:#000000
-	--color=info:#000000,prompt:#000000,pointer:#000000
-	--color=marker:#000000,spinner:#000000,header:#000000'
+	--color=fg:#080808,bg:#ffffff,hl:#080808
+	--color=fg+:#080808,bg+:#ffffff,hl+:#080808
+	--color=info:#080808,prompt:#080808,pointer:#080808
+	--color=marker:#080808,spinner:#080808,header:#080808'
 
 [ -f "$HOME/.shell/fzf_functions" ] && source $HOME/.shell/fzf_functions
 
@@ -56,4 +79,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ## Masmovil ##
-[ -f "$HOME/.shell/work/mm-profile" ] && source $HOME/.shell/work/mm-profile
+[ -f "$HOME/.shell/work/mm-shell" ] && source $HOME/.shell/work/mm-shell

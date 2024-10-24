@@ -24,11 +24,20 @@ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 # Shell
 mkdir -p ~/.shell/work
-ln -fs ~/.dotfiles/shell/common ~/.shell/
 ln -fs ~/.dotfiles/shell/profile ~/.shell/
 ln -fs ~/.dotfiles/shell/aliases ~/.shell/
 ln -fs ~/.dotfiles/shell/functions ~/.shell/
 ln -fs ~/.dotfiles/shell/work/masmovil/* ~/.shell/work/
+
+# Fish
+mkdir -p ~/.config/fish/completions
+ln -fs ~/.dotfiles/shell/aliases ~/.config/fish/
+ln -fs ~/.dotfiles/shell/fish/config.fish ~/.config/fish/
+ln -fs ~/.dotfiles/shell/fish/completions/bazel.fish ~/.config/fish/completions/
+ln -fs ~/.dotfiles/shell/fish/functions/__kube_prompt.fish ~/.config/fish/functions/
+ln -fs ~/.dotfiles/shell/fish/functions/kube_ps.fish ~/.config/fish/functions/
+ln -fs ~/.dotfiles/shell/fish/functions/fish_prompt.fish ~/.config/fish/functions/
+
 
 # Terminal kitty
 # sudo dnf update -y
