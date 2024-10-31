@@ -59,15 +59,10 @@ set -gx KUBECTX_CURRENT_BGCOLOR (tput sgr0) # white background
 # bat
 set -gx BAT_THEME OneHalfLight
 
-# nvm
-set NVM_DIR "$HOME/.nvm"
-test -s "$NVM_DIR/nvm.sh" && bass source "$NVM_DIR/nvm.sh" --no-use ';'
-
 # java
-set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"
-set -gx VERTX_CONFIG_PATH config.yaml
 set -gx SDKMAN_DIR "$HOME/.sdkman"
-test -s "$HOME/.sdkman/bin/sdkman-init.sh" && bass source "$HOME/.sdkman/bin/sdkman-init.sh"
+set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"
+set -gx __sdkman_custom_dir "$SDKMAN_DIR"
 
 ## Masmovil ##
 test -f "$HOME/.config/fish/work/mm-shell" && source "$HOME/.config/fish/work/mm-shell"

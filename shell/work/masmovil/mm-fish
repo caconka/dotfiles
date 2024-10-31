@@ -8,6 +8,8 @@ test -s "$HOME/.shell/work/mm-aliases" && source "$HOME/.shell/work/mm-aliases"
 set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
 set -gx CLOUDSDK_PYTHON "/usr/bin/python3.11"
 
+set -gx VERTX_CONFIG_PATH config.yaml
+
 # mas-subscriptions
 set -gx CADENCE_CLI_ADDRESS 'frontend.cadence.europe-southwest1.private.dev.k8s.masmovil.com'
 set -gx CADENCE_TASK_LIST_LOCAL_SUFFIX '-caconka'
