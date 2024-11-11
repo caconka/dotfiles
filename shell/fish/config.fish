@@ -4,6 +4,10 @@ set fish_greeting
 ## ALIASES ##
 test -f "$HOME/.config/fish/aliases" && source "$HOME/.config/fish/aliases"
 
+alias dstop="docker stop (docker ps -aq)"
+alias drm="docker rm (docker ps -aq)"
+alias drmi="docker rmi (docker images -q)"
+
 # LINUX
 if test "$OSTYPE" = "linux-gnu"
 	alias open='xdg-open'

@@ -1,6 +1,7 @@
 return {
 	"akinsho/bufferline.nvim",
 	event = "BufWinEnter",
+	after = "catppuccin",
 	config = function()
 		require("bufferline").setup({
 			options = {
@@ -11,14 +12,7 @@ return {
 					{filetype = "NvimTree"}
 				},
 			},
-			highlights = {
-				buffer_selected = {
-					italic = false,
-				},
-				indicator_selected = {
-					italic = false,
-				}
-			}
+      highlights = require("catppuccin.groups.integrations.bufferline").get()
 		})
 	end,
 }

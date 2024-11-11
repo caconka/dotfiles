@@ -24,9 +24,6 @@ alias notes="cd ~/notes"
 # alias docker=podman
 alias d="docker"
 alias docker-compose="docker compose"
-alias dstop="docker stop $(docker ps -aq)"
-alias drm="docker rm $(docker ps -aq)"
-alias drmi="docker rmi $(docker images -q)"
 
 # kubernetes
 alias k=kubectl

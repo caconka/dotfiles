@@ -3,6 +3,9 @@
 ## ALIASES ##
 [ -f "$HOME/.shell/aliases" ] && source "$HOME/.shell/aliases"
 
+alias dstop="docker stop $(docker ps -aq)"
+alias drm="docker rm $(docker ps -aq)"
+alias drmi="docker rmi $(docker images -q)"
 
 # LINUX
 if [[ "$OSTYPE" == "linux-gnu" ]]; then

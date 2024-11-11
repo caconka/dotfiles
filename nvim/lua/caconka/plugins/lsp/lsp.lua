@@ -111,7 +111,8 @@ return {
 					"eslint",
 					"jdtls",
 					"gopls",
-					"yamlls"
+					"yamlls",
+					"vale_ls"
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
@@ -122,8 +123,7 @@ return {
 			require('mason-tool-installer').setup({
 				-- Install these linters, formatters, debuggers automatically
 				ensure_installed = {
-					'java-debug-adapter',
-					'java-test',
+					"vale"
 				},
 			})
 
@@ -164,7 +164,7 @@ return {
 				settings = {
 					gopls = {
 						completeUnimported = true,
-						usePlaceHolders = true,
+						usePlaceholders = true,
 						analyses = {
 							unusedparams = true
 						}
