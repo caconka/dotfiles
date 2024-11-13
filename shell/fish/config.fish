@@ -61,7 +61,10 @@ set -gx KUBECTX_CURRENT_FGCOLOR (tput setaf 3) # yellow text
 set -gx KUBECTX_CURRENT_BGCOLOR (tput sgr0) # white background
 
 # bat
-set -gx BAT_THEME OneHalfLight
+set -gx BAT_THEME GitHub
+
+# vale
+set -gx VALE_CONFIG_PATH "$HOME/.config/vale/vale.ini"
 
 # java
 set -gx SDKMAN_DIR "$HOME/.sdkman"

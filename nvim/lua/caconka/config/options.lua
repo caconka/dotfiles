@@ -13,6 +13,7 @@ opt.smartcase = true -- don't ignore case in searches if uppercase characters pr
 opt.scrolloff = 3 -- start scrolling 3 lines before edge of viewport
 opt.sidescroll = 0 -- sidescroll in jumps because terminals are slow
 opt.sidescrolloff = 3 -- same as scrolloff, but for columns
+opt.tabstop = 3 -- tab width
 
 opt.diffopt = opt.diffopt + "vertical,foldcolumn:0" -- don't show fold column in diff view
 opt.foldlevelstart = 99 -- start unfolded
