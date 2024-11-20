@@ -63,9 +63,6 @@ set -gx KUBECTX_CURRENT_BGCOLOR (tput sgr0) # white background
 # bat
 set -gx BAT_THEME GitHub
 
-# vale
-set -gx VALE_CONFIG_PATH "$HOME/.config/vale/vale.ini"
-
 # java
 set -gx SDKMAN_DIR "$HOME/.sdkman"
 set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"

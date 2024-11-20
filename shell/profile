@@ -68,9 +68,6 @@ export KUBECTX_CURRENT_BGCOLOR=$(tput sgr0) # white background
 # bat
 export BAT_THEME=GitHub
 
-# vale
-export VALE_CONFIG_PATH="$HOME/.config/vale/vale.ini"
-
 # Caps-lock -> ESC
 [ command -v xetxkbmap &> /dev/null ] && setxkbmap -option caps:escape
 

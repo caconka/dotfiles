@@ -111,20 +111,10 @@ return {
 					"eslint",
 					"jdtls",
 					"gopls",
-					"yamlls",
-					"vale_ls"
+					"yamlls"
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
-			})
-
-			local lspconfig = require('lspconfig')
-
-			require('mason-tool-installer').setup({
-				-- Install these linters, formatters, debuggers automatically
-				ensure_installed = {
-					"vale"
-				},
 			})
 
 			-- There is an issue with mason-tools-installer running with VeryLazy, since it triggers on VimEnter which has already occurred prior to this plugin loading so we need to call install explicitly
@@ -135,7 +125,7 @@ return {
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
 					-- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
-					if server_name ~= "jdtls" then
+					if server_name ~= "gopls" and server_name ~= "lua_ls" and server_name ~= "jdtls" then
 						lspconfig[server_name].setup({
 							capabilities = capabilities,
 						})

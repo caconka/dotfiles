@@ -32,7 +32,7 @@ opt.listchars = {
 	extends = "»", -- RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
 	precedes = "«", -- LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
 	-- tab = "▷⋯", -- WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + MIDLINE HORIZONTAL ELLIPSIS (U+22EF, UTF-8: E2 8B AF)
-	tab = "⎸ ",
+	tab = "| ",
 	trail = "·", -- MIDDLE DOT (U+00B7, UTF-8: C2 B7)
 }
 
