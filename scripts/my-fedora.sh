@@ -17,6 +17,10 @@ done
 
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows ['<Super>Tab']
+gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>Up']"
+gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Super>Down']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute "['<Super>m']"
 
 # Git
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
@@ -34,15 +38,15 @@ sudo dnf copr enable wezfurlong/wezterm-nightly
 sudo dnf install -y wezterm
 ln -s ~/.dotfiles/shell/wezterm ~/.config/wezterm
 
-# Install zsh xclip, tmux and neovim
-sudo dnf install -y zsh xclip tmux neovim eza ripgrep fd-find fzf bat
+# Install xclip, tmux and neovim
+sudo dnf install -y xclip tmux neovim eza ripgrep fd-find fzf bat
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # tmux package manager
 ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/vim ~/.vim
+# ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
 cd ~/.dotfiles
-git submodule update --init --recursive
+# git submodule update --init --recursive
 
 # Programming
 sudo dnf -y install dnf-plugins-core
@@ -157,9 +161,9 @@ nvm install stable
 nvm use node
 
 # rpmfusion
-sudo dnf install -y \
-  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# sudo dnf install -y \
+#   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+# 	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # nvidia drivers
 #sudo dnf install akmod-nvidia
@@ -169,18 +173,19 @@ sudo dnf groupupdate multimedia sound-and-video
 # for firefox
 sudo dnf install ffmpeg-libs
 
-# Zshrc
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
-ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
+# Zsh
+# sudo dnf install -y zsh
+# sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
+# ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
 
 # Pure theme
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+# mkdir -p "$HOME/.zsh"
+# git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 # kubectl completions
-mkdir -p ~/.oh-my-zsh/completions
-chmod -R 755 ~/.oh-my-zsh/completions
-ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/
-ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/
+# mkdir -p ~/.oh-my-zsh/completions
+# chmod -R 755 ~/.oh-my-zsh/completions
+# ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/
+# ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/

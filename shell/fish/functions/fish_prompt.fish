@@ -18,9 +18,9 @@ function fish_prompt
 	set -g __fish_git_prompt_color_upstream cyan
 	set -g __fish_git_prompt_char_upstream_prefix ' '
 	set -g __fish_git_prompt_char_upstream_equal '='
-	set -g __fish_git_prompt_char_upstream_ahead '⇡'
-	set -g __fish_git_prompt_char_upstream_behind '⇣'
-	set -g __fish_git_prompt_char_upstream_diverged '⇣⇡'
+	set -g __fish_git_prompt_char_upstream_ahead '↑'
+	set -g __fish_git_prompt_char_upstream_behind '↓'
+	set -g __fish_git_prompt_char_upstream_diverged '↓↑'
 
 	set -l last_status $status
 	set -l stat
