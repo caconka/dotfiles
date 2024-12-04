@@ -3,7 +3,6 @@
 # Dotfiles caconka
 
 # Fonts
-mkdir ~/.fonts
 fc-cache -f -v
 
 # Shorcuts
@@ -17,7 +16,7 @@ done
 
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Alt>Tab']"
-gsettings set org.gnome.desktop.wm.keybindings switch-windows ['<Super>Tab']
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>Up']"
 gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Super>Down']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute "['<Super>m']"
