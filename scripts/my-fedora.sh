@@ -7,6 +7,10 @@ fc-cache -f -v
 mkdir -p ~/.local/share/fonts
 ln -fs ~/.dotfiles/fonts/* ~/.local/share/fonts/
 
+# Icons
+mkdir -p ~/.local/share/icons
+ln -fs ~/.dotfiles/icons/* ~/.local/share/icons/
+
 # Shorcuts
 for i in {1..9}; do
 	gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"
@@ -16,6 +20,7 @@ for i in {1..5}; do
 	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"
 done
 
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab']"
@@ -27,35 +32,18 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute "['<Super>m'
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
-# Terminal kitty
-# sudo dnf update -y
-# sudo dnf install -y kitty
-# mkdir ~/.config/kitty
-# wget https://raw.githubusercontent.com/sonph/onehalf/master/kitty/onehalf-light.conf -P ~/.config/kitty
-# ln -s ~/.dotfiles/shell/kitty/kitty.conf ~/.config/kitty/
-
 # Terminal wezterm
-sudo dnf copr enable wezfurlong/wezterm-nightly
-sudo dnf install -y wezterm
-ln -s ~/.dotfiles/shell/wezterm ~/.config/wezterm
+# sudo dnf copr enable wezfurlong/wezterm-nightly
+# sudo dnf install -y wezterm
+# ln -s ~/.dotfiles/shell/wezterm ~/.config/wezterm
 
 # Install xclip, tmux and neovim
 sudo dnf install -y xclip tmux neovim eza ripgrep fd-find fzf bat
+mkidr -p ~/.tmux/plugins/tmp
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # tmux package manager
 ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
-# ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
-cd ~/.dotfiles
-# git submodule update --init --recursive
-
-# Programming
-sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin
-sudo systemctl start docker
-
-sudo dnf install -y golang
 
 # Code dir config
 sudo mkdir ~/code
@@ -89,47 +77,51 @@ git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 # Fish
 sudo dnf install -y fish
 mkdir -p ~/.config/fish/completions
+mkdir ~/.config/fish/functions
 mkdir ~/.config/fish/work
 ln -fs ~/.dotfiles/shell/aliases ~/.config/fish/
 ln -fs ~/.dotfiles/shell/fish/config.fish ~/.config/fish/
 ln -fs ~/.dotfiles/shell/fish/completions/bazel.fish ~/.config/fish/completions/
-ln -fs ~/.dotfiles/shell/fish/functions/__kube_prompt.fish ~/.config/fish/functions/
-ln -fs ~/.dotfiles/shell/fish/functions/kube_ps.fish ~/.config/fish/functions/
-ln -fs ~/.dotfiles/shell/fish/functions/fish_prompt.fish ~/.config/fish/functions/
+ln -fs ~/.dotfiles/shell/fish/functions/* ~/.config/fish/functions/
 ln -fs ~/code/code-configs/shell/work/masmovil/mm-aliases ~/.config/fish/work/mm-aliases
 ln -fs ~/code/code-configs/shell/work/masmovil/mm-fish ~/.config/fish/work/mm-shell
+
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install edc/bass
+fisher install reitzig/sdkman-for-fish@v2.1.0
 
 # idea
 ln -s ~/.dotfiles/idea/.ideavimrc ~/
 sudo ln -s ~/.dotfiles/idea/idea.conf /etc/sysctl.d/
 
-# vscode
-# mkdir -p ~/.config/Code/User
-# ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
-# ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
-# mkdir -p ~/.vscode/extensions/
-
 # Gcloud & kubectl
-# sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
-# [google-cloud-sdk]
-# name=Google Cloud SDK
-# baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
-# enabled=1
-# gpgcheck=1
-# repo_gpgcheck=0
-# gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-#        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-# EOM
-# cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-# [kubernetes]
-# name=Kubernetes
-# baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-# enabled=1
-# gpgcheck=1
-# repo_gpgcheck=1
-# gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-# EOF
-# sudo dnf install -y google-cloud-sdk kubectl
+sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+[google-cloud-sdk]
+name=Google Cloud SDK
+baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOM
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+sudo dnf install -y google-cloud-sdk kubectl
+
+# Docker
+sudo dnf install -y docker-cli containerd
+sudo systemctl start docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 # kubectx
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
@@ -162,8 +154,11 @@ ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/
 # EOF
 # chmod +x ~/.local/share/applications/postman.desktop
 
-# Docker
-sudo usermod -a -g docker $USER
+# Bruno
+flatpak install flathub com.usebruno.Bruno
+
+# Go
+sudo dnf install -y golang
 
 # Java
 curl -s https://get.sdkman.io | bash
