@@ -4,6 +4,8 @@
 
 # Fonts
 fc-cache -f -v
+mkdir -p ~/.local/share/fonts
+ln -fs ~/.dotfiles/fonts/* ~/.local/share/fonts/
 
 # Shorcuts
 for i in {1..9}; do
@@ -59,8 +61,7 @@ sudo dnf install -y golang
 sudo mkdir ~/code
 cd ~/code
 git clone git@github.com:caconka/code-configs.git code-configs
-sudo mkdir ephemeral projects go
-sudo chown $USER ephemeral/ projects/ go/ code-configs/
+mkdir ephemeral projects go
 mkdir ~/code/go/bin
 mkdir ~/ephemeral
 ln -fs ~/.dotfiles/.editorconfig ~/
@@ -73,6 +74,17 @@ ln -fs ~/.dotfiles/shell/functions ~/.shell/
 ln -fs ~/.dotfiles/shell/work/masmovil/* ~/.shell/work/
 ln -fs ~/code/code-configs/shell/work/masmovil/mm-aliases ~/.shell/work/mm-aliases
 ln -fs ~/code/code-configs/shell/work/masmovil/mm-bash ~/.shell/work/mm-shell
+
+# Zsh
+sudo dnf install -y zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
+ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
+
+# Pure theme
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 # Fish
 sudo dnf install -y fish
@@ -124,6 +136,12 @@ sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
+# kubectl completions
+mkdir -p ~/.oh-my-zsh/completions
+chmod -R 755 ~/.oh-my-zsh/completions
+ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/
+ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/
+
 # Postman
 # POSTMAN_FILE=postman-linux-x64.tar.gz
 # wget https://dl.pstmn.io/download/latest/linux64 -O $POSTMAN_FILE
@@ -172,19 +190,4 @@ sudo dnf groupupdate multimedia sound-and-video
 # for firefox
 sudo dnf install ffmpeg-libs
 
-# Zsh
-# sudo dnf install -y zsh
-# sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
-# ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
-
-# Pure theme
-# mkdir -p "$HOME/.zsh"
-# git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-
-# kubectl completions
-# mkdir -p ~/.oh-my-zsh/completions
-# chmod -R 755 ~/.oh-my-zsh/completions
-# ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/
-# ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/
+chsh -s $(which fish)
