@@ -33,9 +33,9 @@ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 
 # Terminal wezterm
-# sudo dnf copr enable wezfurlong/wezterm-nightly
-# sudo dnf install -y wezterm
-# ln -s ~/.dotfiles/shell/wezterm ~/.config/wezterm
+sudo dnf copr enable wezfurlong/wezterm-nightly
+sudo dnf install -y wezterm
+ln -s ~/.dotfiles/shell/wezterm ~/.config/wezterm
 
 # Install xclip, tmux and neovim
 sudo dnf install -y xclip tmux neovim eza ripgrep fd-find fzf bat
@@ -46,7 +46,7 @@ ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
 
 # Code dir config
-sudo mkdir ~/code
+mkdir ~/code
 cd ~/code
 git clone git@github.com:caconka/code-configs.git code-configs
 mkdir ephemeral projects go
@@ -54,41 +54,7 @@ mkdir ~/code/go/bin
 mkdir ~/ephemeral
 ln -fs ~/.dotfiles/.editorconfig ~/
 
-# Shell
-mkdir -p ~/.shell/work
-ln -fs ~/.dotfiles/shell/profile ~/.shell/
-ln -fs ~/.dotfiles/shell/aliases ~/.shell/
-ln -fs ~/.dotfiles/shell/functions ~/.shell/
-ln -fs ~/.dotfiles/shell/work/masmovil/* ~/.shell/work/
-ln -fs ~/code/code-configs/shell/work/masmovil/mm-aliases ~/.shell/work/mm-aliases
-ln -fs ~/code/code-configs/shell/work/masmovil/mm-bash ~/.shell/work/mm-shell
-
-# Zsh
-sudo dnf install -y zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
-ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
-
-# Pure theme
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-
-# Fish
-sudo dnf install -y fish
-mkdir -p ~/.config/fish/completions
-mkdir ~/.config/fish/functions
-mkdir ~/.config/fish/work
-ln -fs ~/.dotfiles/shell/aliases ~/.config/fish/
-ln -fs ~/.dotfiles/shell/fish/config.fish ~/.config/fish/
-ln -fs ~/.dotfiles/shell/fish/completions/bazel.fish ~/.config/fish/completions/
-ln -fs ~/.dotfiles/shell/fish/functions/* ~/.config/fish/functions/
-ln -fs ~/code/code-configs/shell/work/masmovil/mm-aliases ~/.config/fish/work/mm-aliases
-ln -fs ~/code/code-configs/shell/work/masmovil/mm-fish ~/.config/fish/work/mm-shell
-
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher install edc/bass
-fisher install reitzig/sdkman-for-fish@v2.1.0
+git clone git@github.com:caconka/notes.git ~/notes
 
 # idea
 ln -s ~/.dotfiles/idea/.ideavimrc ~/
@@ -104,8 +70,7 @@ gpgcheck=1
 repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
-sudo dnf install -y google-cloud-sdk
-gcloud components install gke-gcloud-auth-plugin kubectl
+sudo dnf install -y google-cloud-sdk google-cloud-sdk-gke-gcloud-auth-plugin kubectl
 
 # Docker
 sudo dnf install -y docker-cli containerd
@@ -146,7 +111,7 @@ ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/
 # chmod +x ~/.local/share/applications/postman.desktop
 
 # Bruno
-flatpak install flathub com.usebruno.Bruno
+flatpak install -y flathub com.usebruno.Bruno
 
 # Go
 sudo dnf install -y golang
@@ -180,5 +145,40 @@ sudo dnf install -y brave-browser
 sudo dnf groupupdate multimedia sound-and-video
 # for firefox
 sudo dnf install ffmpeg-libs
+
+# Shell
+mkdir -p ~/.shell/work
+ln -fs ~/.dotfiles/shell/profile ~/.shell/
+ln -fs ~/.dotfiles/shell/aliases ~/.shell/
+ln -fs ~/.dotfiles/shell/functions ~/.shell/
+ln -fs ~/code/code-configs/shell/work/masmovil/mm-aliases ~/.shell/work/mm-aliases
+ln -fs ~/code/code-configs/shell/work/masmovil/mm-bash ~/.shell/work/mm-shell
+
+# Zsh
+sudo dnf install -y zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
+ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
+
+# Pure theme
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+
+# Fish
+sudo dnf install -y fish
+mkdir -p ~/.config/fish/completions
+mkdir ~/.config/fish/functions
+mkdir ~/.config/fish/work
+ln -fs ~/.dotfiles/shell/aliases ~/.config/fish/
+ln -fs ~/.dotfiles/shell/fish/config.fish ~/.config/fish/
+ln -fs ~/.dotfiles/shell/fish/completions/bazel.fish ~/.config/fish/completions/
+ln -fs ~/.dotfiles/shell/fish/functions/* ~/.config/fish/functions/
+ln -fs ~/code/code-configs/shell/work/masmovil/mm-aliases ~/.config/fish/work/mm-aliases
+ln -fs ~/code/code-configs/shell/work/masmovil/mm-fish ~/.config/fish/work/mm-shell
+
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install edc/bass
+fisher install reitzig/sdkman-for-fish@v2.1.0
 
 chsh -s $(which fish)

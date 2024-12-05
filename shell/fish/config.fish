@@ -75,3 +75,6 @@ test -f "$HOME/.config/fish/work/mm-shell" && source "$HOME/.config/fish/work/mm
 if test -f "$HOME/.google-cloud-sdk/path.fish.inc"
 	source "$HOME/.google-cloud-sdk/path.fish.inc"
 end
+if test -f "/usr/lib64/google-cloud-sdk/completion.bash.inc"
+	bass source "/usr/lib64/google-cloud-sdk/completion.bash.inc"
+end
