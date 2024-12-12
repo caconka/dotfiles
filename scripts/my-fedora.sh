@@ -26,7 +26,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings maximize "['<Super>Up']"
 gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Super>Down']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute "['<Super>m']"
 
 # Git
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
@@ -44,6 +43,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # tmux package
 ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
+ln -s ~/.dotfiles/vim/virc ~/.virc
 
 # Code dir config
 mkdir ~/code
@@ -78,6 +78,8 @@ sudo systemctl start docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
+mkdir ~/.docker
+ln -s ~/code/code-configs/docker/mm-config.json ~/.docker/config.json
 
 # kubectx
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx

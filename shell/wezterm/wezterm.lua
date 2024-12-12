@@ -5,13 +5,13 @@ local config = wezterm.config_builder()
 -- config.font = wezterm.font('Cascadia Code')
 -- config.font_size = 10.5
 config.font = wezterm.font('SF Mono', { weight = 'Medium' })
-config.font_size = 10.25
+config.font_size = 10
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- disable ligatures
 
 config.window_padding = {
-	left = '0.33cell',
-	right = 0,
-	top = '0.2cell',
+	left = '1cell',
+	right = '1cell',
+	top = 0,
 	bottom = 0,
 }
 

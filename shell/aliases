@@ -10,8 +10,7 @@ alias grep="grep --color"
 alias ctagsjava="ctags -R --tag-relative=yes --exclude=.git"
 
 # nvim
-alias vim="nvim"
-alias v="vim"
+alias v="nvim"
 
 # git
 alias g="git"
@@ -31,6 +30,7 @@ alias kx=kubectx
 alias ks=kubens
 
 # bazel
+alias bazel=bazelisk
 alias bz=bazel
 
 # maven

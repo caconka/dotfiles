@@ -4,6 +4,8 @@ if vim.v.progname == "vi" then
 	opt.loadplugins = false
 end
 
+opt.guifont = "*"
+
 opt.cursorline = true -- highlight current line
 opt.number = true -- show line numbers in gutter
 opt.relativenumber = true -- show relative numbers in gutter
