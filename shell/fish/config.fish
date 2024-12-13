@@ -72,9 +72,9 @@ set -gx __sdkman_custom_dir "$SDKMAN_DIR"
 test -f "$HOME/.config/fish/work/mm-shell" && source "$HOME/.config/fish/work/mm-shell"
 
 ## Gcloud and kubectl ##
+set -gx CLOUDSDK_PYTHON (which python3.11)
 if test -f "$HOME/.google-cloud-sdk/path.fish.inc"
 	source "$HOME/.google-cloud-sdk/path.fish.inc"
-end
-if test -f "/usr/lib64/google-cloud-sdk/completion.bash.inc"
+else if test -f "/usr/lib64/google-cloud-sdk/completion.bash.inc"
 	bass source "/usr/lib64/google-cloud-sdk/completion.bash.inc"
 end

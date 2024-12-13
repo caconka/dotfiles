@@ -4,7 +4,7 @@
 	signingkey = 28691030+caconka@users.noreply.github.com
 
 [includeIf "gitdir:~/code/masmovil/"]
-	 path = ~/.gitconfig-masmovil
+	path = ~/code/masmovil/.gitconfig
 
 [commit]
 	gpgsign = true
@@ -13,7 +13,7 @@
 	defaultBranch = main
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore
 	editor = vi
 	fsmonitor = true
 	untrackedcache = true

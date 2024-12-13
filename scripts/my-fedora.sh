@@ -29,7 +29,7 @@ gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Super>Down']"
 
 # Git
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore
 
 # Terminal wezterm
 sudo dnf copr enable wezfurlong/wezterm-nightly
@@ -49,10 +49,11 @@ ln -s ~/.dotfiles/vim/virc ~/.virc
 mkdir ~/code
 cd ~/code
 git clone git@github.com:caconka/code-configs.git code-configs
-mkdir ephemeral projects go
+mkdir ephemeral projects go masmovil
 mkdir ~/code/go/bin
 mkdir ~/ephemeral
 ln -fs ~/.dotfiles/.editorconfig ~/
+ln -s ~/.dotfiles/git/gitconfig_masmovil ~/code/masmovil/.gitconfig
 
 git clone git@github.com:caconka/notes.git ~/notes
 
