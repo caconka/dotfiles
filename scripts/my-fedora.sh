@@ -82,6 +82,9 @@ newgrp docker
 mkdir ~/.docker
 ln -s ~/code/code-configs/docker/mm-config.json ~/.docker/config.json
 
+# TestContainers
+ln -s ~/.dotfiles/testcontainers/testcontainers.properties ~/.testcontainers.properties
+
 # kubectx
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
@@ -132,12 +135,11 @@ nvm install stable
 nvm use node
 
 # rpmfusion
-# sudo dnf install -y \
-#   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-# 	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-# nvidia drivers
-#sudo dnf install akmod-nvidia
+sudo dnf install -y \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+	https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+sudo dnf update @core
 
 # Brave
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
@@ -146,8 +148,16 @@ sudo dnf install -y brave-browser
 
 # multimedia codecs
 sudo dnf groupupdate multimedia sound-and-video
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 # for firefox
-sudo dnf install ffmpeg-libs
+# sudo dnf install ffmpeg-libs
+
+# nvidia drivers
+# sudo dnf install akmod-nvidia
+
+# intel drivers
+# sudo dnf install intel-media-driver
 
 # Shell
 mkdir -p ~/.shell/work
@@ -163,6 +173,9 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ln -fs ~/.dotfiles/shell/zsh/zshrc ~/.zshrc
 ln -fs ~/.dotfiles/shell/zsh/patches.zsh ~/.oh-my-zsh/custom/patches.zsh
+
+# Bash
+ln -fs ~/.dotfiles/shell/bash/bashrc ~/.bashrc
 
 # Pure theme
 mkdir -p "$HOME/.zsh"

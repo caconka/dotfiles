@@ -18,9 +18,9 @@ config.window_padding = {
 config.color_scheme = 'Catppuccin Latte'
 config.colors = {
 	background = 'white',
-	foreground = '#080808',
-	cursor_bg = '#080808',
-	cursor_border = '#080808',
+	foreground = '#000000',
+	cursor_bg = '#000000',
+	cursor_border = '#000000',
 }
 
 config.enable_tab_bar = false

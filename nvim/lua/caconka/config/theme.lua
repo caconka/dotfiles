@@ -1,7 +1,8 @@
+vim.o.termguicolors = true
 vim.cmd.colorscheme "catppuccin"
 vim.opt.background = "light"
 
-vim.cmd("hi TreesitterContext guibg=white guifg=#080808")
+-- vim.cmd("hi TreesitterContext guibg=white guifg=#000000")
 
 
 -- vim.api.nvim_command("au BufHidden *.{md,json,yaml,yml} if &bg == 'light' | colorscheme github_light_default | endif")
