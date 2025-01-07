@@ -1,0 +1,17 @@
+window-decoration = false
+window-padding-x = 3,1
+window-padding-y = 0
+
+keybind = clear
+
+theme = catppuccin-latte
+background = #ffffff
+foreground = #000000
+cursor-color = #000000
+
+font-family = SF Mono
+font-style = Medium
+font-style-bold = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
+font-size = 10
