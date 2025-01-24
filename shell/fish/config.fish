@@ -4,23 +4,15 @@ set fish_greeting
 ## ALIASES ##
 test -f "$HOME/.config/fish/aliases" && source "$HOME/.config/fish/aliases"
 
-alias dstop="docker stop (docker ps -aq)"
-alias drm="docker rm (docker ps -aq)"
-alias drmi="docker rmi (docker images -q)"
-
-# LINUX
-if test "$OSTYPE" = "linux-gnu"
-	alias open='xdg-open'
-	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-end
-
 # TMUX
 if test -z "$TMUX" -a -z "$DISABLE_TMUX"
-	set ID (tmux ls | grep -vm1 attached | cut -d: -f1)
-	if test -z "$ID"
+	if not tmux ls &>/dev/null
 		tmux new-session -s main
 	else
-		tmux attach-session -t "$ID"
+		set -l id (tmux ls | grep -vm 1 attached | cut -d: -f1)
+		if test -n "$id"
+			tmux attach-session -t "$id"
+		end
 	end
 end
 

@@ -2,7 +2,8 @@ window-decoration = false
 window-padding-x = 3,1
 window-padding-y = 0
 
-keybind = clear
+mouse-hide-while-typing = true
+keybind = ctrl+enter=ignore
 
 theme = catppuccin-latte
 background = #ffffff

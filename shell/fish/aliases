@@ -1,0 +1,46 @@
+##### ALIASES #####
+
+if test "$OSTYPE" = "linux-gnu"
+	abbr -a open 'xdg-open'
+	abbr -a myip "ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+end
+
+abbr -a ll 'eza -lg --icons auto'
+abbr -a llt 'eza -lg --icons auto --tree --level 2'
+abbr -a lla 'eza -lg --icons auto -a'
+abbr -a llta 'eza -lg --icons auto --tree --level 2 -a'
+abbr -a grep 'grep --color'
+
+# nvim
+abbr -a v nvim
+
+# git
+abbr -a g git
+
+# navigation
+abbr -a dotfiles 'cd ~/.dotfiles'
+abbr -a notes 'cd ~/notes'
+
+# docker
+# abbr -a docker podman
+abbr -a d 'docker'
+abbr -a docker-compose 'docker compose'
+abbr -a dstop 'docker stop (docker ps -aq)'
+abbr -a drm 'docker rm (docker ps -aq)'
+abbr -a drmi 'docker rmi (docker images -q)'
+
+
+# kubernetes
+abbr -a k kubectl
+abbr -a kx kubectx
+abbr -a ks kubens
+
+# bazel
+abbr -a bazel bazelisk
+abbr -a bz bazel
+
+# maven
+abbr -a mvn-dev 'mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar'
+
+# task
+abbr -a task go-task
