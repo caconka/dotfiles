@@ -3,19 +3,6 @@
 ## ALIASES ##
 [ -f "$HOME/.shell/aliases" ] && source "$HOME/.shell/aliases"
 
-alias dstop="docker stop $(docker ps -aq)"
-alias drm="docker rm $(docker ps -aq)"
-alias drmi="docker rmi $(docker images -q)"
-
-# LINUX
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias open="xdg-open"
-	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
-	alias idea="nohup ~/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin/idea.sh > /dev/null & "
-	# temperatures
-	alias temps="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
-fi
-
 ## FUNCTIONS ##
 [ -f "$HOME/.shell/functions" ] && source "$HOME/.shell/functions"
 

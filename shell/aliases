@@ -1,5 +1,14 @@
 ##### Alias #####
 
+# LINUX
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias open="xdg-open"
+	alias myip="ip addr show | grep 'inet 192' | awk '{ print \$2}'"
+	alias idea="nohup ~/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin/idea.sh > /dev/null & "
+	# temperatures
+	alias temps="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
+fi
+
 alias ll="eza -lg --icons auto"
 alias llt="ll --tree --level=2"
 alias lla="ll -a"
@@ -20,9 +29,20 @@ alias dotfiles="cd ~/.dotfiles"
 alias notes="cd ~/notes"
 
 # docker
-# alias docker=podman
-alias d="docker"
+#alias docker=podman
+alias d=docker
 alias docker-compose="docker compose"
+alias dstop="docker stop $(docker ps -aq)"
+alias dkill="docker kill $(docker ps -aq)"
+alias drm="docker rm $(docker ps -aq)"
+alias drmi="docker rmi $(docker images -q)"
+
+# podman
+alias p=podman
+alias pstop="podman stop $(podman ps -aq)"
+alias pkill="podman kill $(podman ps -q)"
+alias prm="podman rm $(podman ps -aq)"
+alias prmi="podman rmi $(podman images -q)"
 
 # kubernetes
 alias k=kubectl
@@ -36,7 +56,7 @@ alias kxp="kubectx gke_mm-k8s-prod-01_europe-southwest1_mm-k8s-prod-eusw1-01"
 
 # bazel
 alias bazel=bazelisk
-alias bz=bazel
+alias bz=bazelisk
 
 # maven
 alias mvn-dev="mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar"

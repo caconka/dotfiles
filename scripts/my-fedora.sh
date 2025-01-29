@@ -74,13 +74,23 @@ EOM
 sudo dnf install -y google-cloud-sdk google-cloud-sdk-gke-gcloud-auth-plugin kubectl
 
 # Docker
-sudo dnf install -y docker-cli containerd
-sudo systemctl start docker
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-mkdir ~/.docker
-ln -s ~/code/code-configs/docker/mm-config.json ~/.docker/config.json
+# sudo dnf install -y docker-cli containerd
+# sudo systemctl start docker
+# sudo groupadd docker
+# sudo usermod -aG docker $USER
+# newgrp docker
+# mkdir ~/.docker
+# ln -s ~/code/code-configs/docker/mm-config.json ~/.docker/config.json
+
+# Podman
+sudo dnf install -y podman-docker podman-compose
+sudo touch /etc/containers/nodocker
+systemctl --user enable --now podman.socket
+ln -s ~/.dotfiles/containers/containers.conf ~/.config/containers/containers.conf
+ln -s ~/code/code-configs/docker/mm-config.json ~/.config/containers/auth.json
+
+# Redis -  Valkey
+sudo dnf install -y valkey valkey-compat-redis
 
 # TestContainers
 ln -s ~/.dotfiles/testcontainers/testcontainers.properties ~/.testcontainers.properties
