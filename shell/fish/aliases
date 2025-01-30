@@ -38,8 +38,8 @@ abbr -a prmi 'podman rmi (podman images -q)'
 
 # kubernetes
 abbr -a k kubectl
-abbr -a kx kubectx
-abbr -a ks kubens
+abbr -a kx kubectl ctx
+abbr -a ks kubectl ns
 
 # bazel
 abbr -a bazel bazelisk

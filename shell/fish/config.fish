@@ -64,6 +64,7 @@ set -gx __sdkman_custom_dir "$SDKMAN_DIR"
 test -f "$HOME/.config/fish/work/mm-shell" && source "$HOME/.config/fish/work/mm-shell"
 
 ## Gcloud and kubectl ##
+set -gx PATH $PATH $HOME/.krew/bin # kubectl krew plugin manager
 set -gx CLOUDSDK_PYTHON (which python3.11)
 if test -f "$HOME/.google-cloud-sdk/path.fish.inc"
 	source "$HOME/.google-cloud-sdk/path.fish.inc"

@@ -73,6 +73,17 @@ gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 sudo dnf install -y google-cloud-sdk google-cloud-sdk-gke-gcloud-auth-plugin kubectl
 
+# kubectl krew plugin manager
+(
+set -x; cd "$(mktemp -d)" &&
+	OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+	ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+	KREW="krew-${OS}_${ARCH}" &&
+	curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+	tar zxvf "${KREW}.tar.gz" &&
+	./"${KREW}" install krew
+)
+
 # Docker
 # sudo dnf install -y docker-cli containerd
 # sudo systemctl start docker
@@ -95,17 +106,6 @@ sudo dnf install -y valkey valkey-compat-redis
 
 # TestContainers
 ln -s ~/.dotfiles/testcontainers/testcontainers.properties ~/.testcontainers.properties
-
-# kubectx
-sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
-sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
-sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
-
-# kubectl completions
-mkdir -p ~/.oh-my-zsh/completions
-chmod -R 755 ~/.oh-my-zsh/completions
-ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/
-ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/
 
 # Postman
 # POSTMAN_FILE=postman-linux-x64.tar.gz

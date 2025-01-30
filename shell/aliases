@@ -49,11 +49,6 @@ alias k=kubectl
 alias kx=kubectx
 alias ks=kubens
 
-# masmovil
-alias kxd="kubectx gke_mm-k8s-dev-01_europe-southwest1_mm-k8s-dev-eusw1-01"
-alias kxs="kubectx gke_mm-k8s-dev-01_europe-southwest1_mm-k8s-sta-eusw1-01"
-alias kxp="kubectx gke_mm-k8s-prod-01_europe-southwest1_mm-k8s-prod-eusw1-01"
-
 # bazel
 alias bazel=bazelisk
 alias bz=bazelisk

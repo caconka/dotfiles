@@ -41,6 +41,9 @@ export PATH=$HOME/.npm-global/bin:$PATH
 # JetBrains
 export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH
 
+# kubectl krew plugin manager
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # golang
 export GOPATH=$HOME/code/go
 export GOBIN=$GOPATH/bin
