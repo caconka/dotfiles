@@ -86,6 +86,7 @@ sudo dnf install -y google-cloud-sdk google-cloud-sdk-gke-gcloud-auth-plugin kub
 sudo dnf install -y podman-docker podman-compose
 sudo touch /etc/containers/nodocker
 systemctl --user enable --now podman.socket
+mkdir ~/.config/containers
 ln -s ~/.dotfiles/containers/containers.conf ~/.config/containers/containers.conf
 ln -s ~/code/code-configs/docker/mm-config.json ~/.config/containers/auth.json
 
@@ -197,7 +198,7 @@ mkdir ~/.config/fish/functions
 mkdir ~/.config/fish/work
 ln -fs ~/.dotfiles/shell/fish/aliases ~/.config/fish/
 ln -fs ~/.dotfiles/shell/fish/config.fish ~/.config/fish/
-ln -fs ~/.dotfiles/shell/fish/completions/bazel.fish ~/.config/fish/completions/
+ln -fs ~/.dotfiles/shell/fish/completions/* ~/.config/fish/completions/
 ln -fs ~/.dotfiles/shell/fish/functions/* ~/.config/fish/functions/
 ln -fs ~/code/code-configs/shell/work/masmovil/mm-fish ~/.config/fish/work/mm-shell
 
