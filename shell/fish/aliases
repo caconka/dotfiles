@@ -12,10 +12,10 @@ abbr -a llta 'eza -lg --icons auto --tree --level 2 -a'
 abbr -a grep 'grep --color'
 
 # nvim
-abbr -a v nvim
+abbr -a v 'nvim'
 
 # git
-abbr -a g git
+abbr -a g 'git'
 
 # navigation
 abbr -a dotfiles 'cd ~/.dotfiles'
@@ -37,16 +37,16 @@ abbr -a prm 'podman rm (podman ps -aq)'
 abbr -a prmi 'podman rmi (podman images -q)'
 
 # kubernetes
-abbr -a k kubectl
-abbr -a kx kubectl ctx
-abbr -a ks kubectl ns
+abbr -a k 'kubectl'
+abbr -a kx 'kubectl ctx'
+abbr -a ks 'kubectl ns'
 
 # bazel
-abbr -a bazel bazelisk
-abbr -a bz bazelisk
+abbr -a bazel 'bazelisk'
+abbr -a bz 'bazelisk'
 
 # maven
 abbr -a mvn-dev 'mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar'
 
 # task
-abbr -a task go-task
+abbr -a task 'go-task'

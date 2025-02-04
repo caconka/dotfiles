@@ -44,6 +44,7 @@ ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
 ln -s ~/.dotfiles/vim/virc ~/.virc
+ln -s ~/.dotfiles/vim/virc ~/.vimrc
 
 # Code dir config
 mkdir ~/code
@@ -199,6 +200,7 @@ mkdir ~/.config/fish/work
 ln -fs ~/.dotfiles/shell/fish/aliases ~/.config/fish/
 ln -fs ~/.dotfiles/shell/fish/config.fish ~/.config/fish/
 ln -fs ~/.dotfiles/shell/fish/completions/* ~/.config/fish/completions/
+ln -fs ~/code/code-configs/shell/work/masmovil/fish/completions/* ~/.config/fish/completions/
 ln -fs ~/.dotfiles/shell/fish/functions/* ~/.config/fish/functions/
 ln -fs ~/code/code-configs/shell/work/masmovil/mm-fish ~/.config/fish/work/mm-shell
 
