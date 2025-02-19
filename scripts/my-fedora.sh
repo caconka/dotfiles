@@ -91,8 +91,8 @@ set -x; cd "$(mktemp -d)" &&
 # sudo groupadd docker
 # sudo usermod -aG docker $USER
 # newgrp docker
-# mkdir ~/.docker
-# ln -s ~/code/code-configs/docker/mm-config.json ~/.docker/config.json
+mkdir ~/.docker
+ln -s ~/code/code-configs/docker/mm-config.json ~/.docker/config.json
 
 # Podman
 sudo dnf install -y podman-docker podman-compose
