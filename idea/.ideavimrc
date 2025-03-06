@@ -50,7 +50,7 @@ imap <C-p> <Up>
 map <C-l> <action>(NextTab)
 map <C-h> <action>(PreviousTab)
 map <leader>d <action>(CloseEditor)
-map <leader>ad <action>(CloseAllEditors)
+map <leader>ad <action>(CloseAllEditorsButActive)
 
 map <C-k> <action>(MoveLineUp)
 map <C-j> <action>(MoveLineDown)
