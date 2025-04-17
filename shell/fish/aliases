@@ -50,3 +50,7 @@ abbr -a mvn-dev 'mvn clean package -Dmaven.test.skip && java -jar target/*-fat.j
 
 # task
 abbr -a task 'go-task'
+
+# github copilot
+abbr -a cs 'gh copilot suggest'
+abbr -a ce 'gh copilot explain'
