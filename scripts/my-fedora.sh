@@ -108,6 +108,13 @@ sudo dnf install -y valkey valkey-compat-redis
 # TestContainers
 ln -s ~/.dotfiles/testcontainers/testcontainers.properties ~/.testcontainers.properties
 
+# VSCode
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+
+dnf check-update
+sudo dnf install code
+
 # Postman
 # POSTMAN_FILE=postman-linux-x64.tar.gz
 # wget https://dl.pstmn.io/download/latest/linux64 -O $POSTMAN_FILE
@@ -145,6 +152,10 @@ sdk install gradle
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 nvm install stable
 nvm use node
+
+# npm without sudo
+mkdir -p ~/.npm-global
+npm config set prefix ~/.npm-global
 
 # rpmfusion
 sudo dnf install -y \

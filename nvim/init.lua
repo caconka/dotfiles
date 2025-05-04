@@ -9,3 +9,11 @@ require("caconka.config.theme")
 require("caconka.config.options")
 require("caconka.config.mappings")
 require("caconka.config.functions")
+
+vim.api.nvim_create_autocmd("FocusLost", {
+	pattern = "*",
+	desc = "Save all files when focus is lost",
+	callback = function()
+		vim.cmd("silent! wa")
+	end,
+})

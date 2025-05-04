@@ -65,6 +65,9 @@ export BAT_THEME=GitHub
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# npm without sudo
+export PATH=$HOME/.npm-global/bin:$PATH
+
 # java
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 export VERTX_CONFIG_PATH=config.yaml
