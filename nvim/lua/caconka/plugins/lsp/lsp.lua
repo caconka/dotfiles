@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	event = { "BufReadPost", "BufNewFile" },
 	build = function ()
@@ -109,56 +108,51 @@ return {
 					"cssls",
 					"ts_ls",
 					"eslint",
-					"jdtls",
+					-- "jdtls",
 					"gopls",
 					"yamlls"
 				},
 				-- auto-install configured servers (with lspconfig)
 				automatic_installation = true, -- not the same as ensure_installed
-			})
-
-			-- There is an issue with mason-tools-installer running with VeryLazy, since it triggers on VimEnter which has already occurred prior to this plugin loading so we need to call install explicitly
-			-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim/issues/39
-			vim.api.nvim_command('MasonToolsInstall')
-
-			-- Call setup on each LSP server
-			require("mason-lspconfig").setup_handlers({
-				function(server_name)
-					-- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
-					if server_name ~= "gopls" and server_name ~= "lua_ls" and server_name ~= "jdtls" then
-						lspconfig[server_name].setup({
+				handlers = {
+					function(server_name)
+						-- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
+						if server_name ~= "gopls" and server_name ~= "lua_ls" and server_name ~= "jdtls" then
+							lspconfig[server_name].setup({
+								capabilities = capabilities,
+							})
+						end
+					end,
+					["lua_ls"] = function()
+						lspconfig.lua_ls.setup {
 							capabilities = capabilities,
-						})
-					end
-				end
-			})
-
-			-- See :help lspconfig-setup
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						-- make the language server recognize "vim" global
-						diagnostics = {
-							globals = { "vim" },
-						},
-					}
-				}
-			})
-
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-				cmd = {"gopls"},
-				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-				root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-				settings = {
-					gopls = {
-						completeUnimported = true,
-						usePlaceholders = true,
-						analyses = {
-							unusedparams = true
+							settings = {
+								Lua = {
+									-- make the language server recognize "vim" global
+									diagnostics = {
+										globals = { "vim" },
+									},
+								}
+							}
 						}
-					}
+					end,
+					["gopls"] = function()
+						lspconfig.gopls.setup {
+							capabilities = capabilities,
+							cmd = {"gopls"},
+							filetypes = { "go", "gomod", "gowork", "gotmpl" },
+							root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+							settings = {
+								gopls = {
+									completeUnimported = true,
+									usePlaceholders = true,
+									analyses = {
+										unusedparams = true
+									}
+								}
+							}
+						}
+					end,
 				}
 			})
 		end

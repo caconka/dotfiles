@@ -9,13 +9,13 @@ return {
 		vim.g["pencil#concealcursor"] = "n"
 
 		vim.api.nvim_create_autocmd("BufEnter", {
-			pattern = { "*.md", "*.txt", "*.norg" },
+			pattern = { "*.md" },
 			command = "PencilHard | set textwidth=90",
 			group = group
 		})
 
 		vim.api.nvim_create_autocmd("BufLeave", {
-			pattern = { "*.md", "*.txt", "*.norg" },
+			pattern = { "*.md" },
 			command = "PencilOff | set textwidth=0",
 			group = group
 		})
