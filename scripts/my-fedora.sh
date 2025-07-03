@@ -31,10 +31,13 @@ gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Super>Down']"
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore
 
+# Terminal
+ln -s ~/.dotfiles/shell/ptyxis/caconka.palette ~/.local/share/org.gnome.Ptyxis/palettes/caconka.palette
+
 # Terminal ghostty
-sudo dnf copr enable pgdev/ghostty
-sudo dnf install ghostty
-ln -s ~/.dotfiles/shell/ghostty ~/.config/ghostty
+# sudo dnf copr enable pgdev/ghostty
+# sudo dnf install ghostty
+# ln -s ~/.dotfiles/shell/ghostty ~/.config/ghostty
 
 # Install xclip, tmux and neovim
 sudo dnf install -y xclip tmux neovim eza ripgrep fd-find fzf bat
