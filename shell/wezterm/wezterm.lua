@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+config.window_decorations = "NONE"
+
 -- config.color_scheme = 'AdventureTime'
 -- config.font = wezterm.font('Cascadia Code')
 -- config.font_size = 10.5

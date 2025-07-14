@@ -3,8 +3,8 @@
 Name=Caconka
 Background=#FFFFFF
 Foreground=#000000
-Cursor=#4C4F69
-Color0=#5C5F77
+Cursor=#262626
+Color0=#000000
 Color1=#D20F39
 Color2=#40A02B
 Color3=#DF8E1D
@@ -19,4 +19,4 @@ Color11=#DF8E1D
 Color12=#1E66F5
 Color13=#EA76CB
 Color14=#179299
-Color15=#BCC0CC
+Color15=#FFFFFF
