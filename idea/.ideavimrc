@@ -12,7 +12,7 @@ map <leader>tf :NERDTreeFind<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
 
 """ Common settings -------------------------
-set relativenumber number
+set relativenumber
 set showmode
 set so=5
 set incsearch

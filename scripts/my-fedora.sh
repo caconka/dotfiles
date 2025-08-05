@@ -7,6 +7,9 @@ fc-cache -f -v
 mkdir -p ~/.local/share/fonts
 ln -fs ~/.dotfiles/fonts/* ~/.local/share/fonts/
 
+mkdir -p ~/.local/share/icons
+ln -s ~/.dotfiles/icons/* ~/.local/share/icons/
+
 # Icons
 mkdir -p ~/.local/share/icons
 ln -fs ~/.dotfiles/icons/* ~/.local/share/icons/
