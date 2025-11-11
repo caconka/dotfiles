@@ -32,6 +32,8 @@ set -gx LANG en_US.UTF-8
 set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
 
+test -f "$HOME/.config/fish/env" && source "$HOME/.config/fish/env"
+
 # scripts
 set -gx PATH $HOME/.local/bin $PATH
 
