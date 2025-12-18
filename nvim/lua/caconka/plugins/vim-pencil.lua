@@ -8,16 +8,16 @@ return {
 		vim.g["pencil#conceallevel"] = 2
 		vim.g["pencil#concealcursor"] = "n"
 
-		vim.api.nvim_create_autocmd("BufEnter", {
-			pattern = { "*.md" },
-			command = "PencilHard | set textwidth=90",
-			group = group
-		})
-
-		vim.api.nvim_create_autocmd("BufLeave", {
-			pattern = { "*.md" },
-			command = "PencilOff | set textwidth=0",
-			group = group
-		})
+		-- vim.api.nvim_create_autocmd("BufEnter", {
+		-- 	pattern = { "*.md" },
+		-- 	command = "PencilHard | set textwidth=90",
+		-- 	group = group
+		-- })
+		--
+		-- vim.api.nvim_create_autocmd("BufLeave", {
+		-- 	pattern = { "*.md" },
+		-- 	command = "PencilOff | set textwidth=0",
+		-- 	group = group
+		-- })
 	end,
 }

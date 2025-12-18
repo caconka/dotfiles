@@ -24,6 +24,9 @@ tags
 # nodejs
 node_modules/
 
+# Claude
+settings.local.json
+
 ### IDEA ###
 .ijwb/
 .idea/

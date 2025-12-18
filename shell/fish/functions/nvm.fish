@@ -1,4 +1,3 @@
-
 set -gx NVM_DIR "$HOME/.nvm"
 
 function nvm
