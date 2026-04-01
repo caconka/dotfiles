@@ -1,0 +1,9 @@
+[tools]
+"aqua:rtk-ai/rtk" = "latest"
+bazelisk = "latest"
+go = "latest"
+java = "21"
+maven = "latest"
+node = "24"
+opencode = "latest"
+usage = "latest"

@@ -34,6 +34,9 @@ set -gx VISUAL $EDITOR
 
 test -f "$HOME/.config/fish/env" && source "$HOME/.config/fish/env"
 
+# mise
+/usr/bin/mise activate fish | source
+
 # scripts
 set -gx PATH $HOME/.local/bin $PATH
 
@@ -56,11 +59,6 @@ set -gx KUBECTX_CURRENT_BGCOLOR (tput sgr0) # white background
 
 # bat
 set -gx BAT_THEME GitHub
-
-# java
-set -gx SDKMAN_DIR "$HOME/.sdkman"
-set -gx JAVA_HOME "$HOME/.sdkman/candidates/java/current"
-set -gx __sdkman_custom_dir "$SDKMAN_DIR"
 
 ## Masmovil ##
 test -f "$HOME/.config/fish/work/mm-shell" && source "$HOME/.config/fish/work/mm-shell"

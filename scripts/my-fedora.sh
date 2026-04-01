@@ -45,8 +45,10 @@ ln -s ~/.dotfiles/shell/ptyxis/caconka.palette ~/.local/share/org.gnome.Ptyxis/p
 # Install xclip, tmux and neovim
 sudo dnf install -y xclip tmux neovim eza ripgrep fd-find fzf bat
 mkidr -p ~/.tmux/plugins/tmp
+mkidr -p ~/.config/tmux/scripts
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # tmux package manager
 ln -s ~/.dotfiles/shell/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/shell/tmux/scripts/window-name.sh ~/.config/tmux/scripts/window-name.sh
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/ctags/ctags ~/.ctags
 ln -s ~/.dotfiles/vim/virc ~/.virc
@@ -121,47 +123,8 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 dnf check-update
 sudo dnf install code
 
-# Postman
-# POSTMAN_FILE=postman-linux-x64.tar.gz
-# wget https://dl.pstmn.io/download/latest/linux64 -O $POSTMAN_FILE
-# sudo tar -xvzf $POSTMAN_FILE -C /opt
-# sudo ln -s /opt/Postman/Postman /usr/local/bin/postman
-# rm $POSTMAN_FILE
-# mkdir -p ~/.local/share/applications
-# cat << EOF > ~/.local/share/applications/postman.desktop
-# [Desktop Entry]
-# Encoding=UTF-8
-# Name=Postman
-# Exec=/usr/local/bin/postman
-# Icon=/opt/Postman/app/resources/app/assets/icon.png
-# Keywords=api;
-# Terminal=false
-# Type=Application
-# Categories=Development;Utilities;
-# EOF
-# chmod +x ~/.local/share/applications/postman.desktop
-
 # Bruno
 flatpak install -y flathub com.usebruno.Bruno
-
-# Go
-sudo dnf install -y golang
-
-# Java
-curl -s https://get.sdkman.io | bash
-source ~/.sdkman/bin/sdkman-init.sh
-sdk install java
-sdk install maven
-sdk install gradle
-
-# Node
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-nvm install stable
-nvm use node
-
-# npm without sudo
-mkdir -p ~/.npm-global
-npm config set prefix ~/.npm-global
 
 # rpmfusion
 sudo dnf install -y \
@@ -223,6 +186,21 @@ ln -fs ~/code/code-configs/shell/work/masmovil/mm-fish ~/.config/fish/work/mm-sh
 
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher install edc/bass
-fisher install reitzig/sdkman-for-fish@v2.1.0
 
 chsh -s $(which fish)
+
+# mise
+sudo dnf copr enable jdxcode/mise
+sudo dnf install mise
+
+mise plugin add usage
+mise use -g usage
+
+mise completion fish > ~/.config/fish/completions/mise.fish
+
+mkdir -p ~/.config/mise
+ln -fs ~/.dotfiles/
+
+# npm without sudo
+# mkdir -p ~/.npm-global
+# npm config set prefix ~/.npm-global

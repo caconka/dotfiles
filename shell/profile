@@ -69,10 +69,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$HOME/.npm-global/bin:$PATH
 
 # java
-export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 export VERTX_CONFIG_PATH=config.yaml
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ## Masmovil ##
 [ -f "$HOME/.shell/work/mm-shell" ] && source $HOME/.shell/work/mm-shell

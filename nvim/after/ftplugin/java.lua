@@ -60,22 +60,9 @@ local config = {
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	settings = {
 		java = {
-			home = home .. "/.sdkman/candidates/java/current/bin/java",
+			home = home .. "/.local/share/mise/installs/java/latest/bin/java",
 			eclipse = {
 				downloadSources = true,
-			},
-			configuration = {
-				updateBuildConfiguration = "interactive",
-				runtimes = {
-					{
-						name = "JavaSE-11",
-						path = home .. "/.sdkman/candidates/java/11.0.22-tem",
-					},
-					{
-						name = "JavaSE-21",
-						path = home .. "/.sdkman/candidates/java/21.0.4-tem",
-					},
-				},
 			},
 			maven = {
 				downloadSources = true,
