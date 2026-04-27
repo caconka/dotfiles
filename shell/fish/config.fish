@@ -1,6 +1,9 @@
 # Disable greeting message
 set fish_greeting
 
+# mise
+/usr/bin/mise activate fish | source
+
 ## ALIASES ##
 test -f "$HOME/.config/fish/aliases" && source "$HOME/.config/fish/aliases"
 
@@ -33,9 +36,6 @@ set -gx EDITOR nvim
 set -gx VISUAL $EDITOR
 
 test -f "$HOME/.config/fish/env" && source "$HOME/.config/fish/env"
-
-# mise
-/usr/bin/mise activate fish | source
 
 # scripts
 set -gx PATH $HOME/.local/bin $PATH
