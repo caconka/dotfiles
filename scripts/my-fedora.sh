@@ -65,6 +65,18 @@ ln -fs ~/.dotfiles/.editorconfig ~/
 
 git clone git@github.com:caconka/notes.git ~/notes
 
+# mise
+sudo dnf copr enable jdxcode/mise
+sudo dnf install mise
+
+mise plugin add usage
+mise use -g usage
+
+mkdir -p ~/.config/mise
+ln -fs ~/.dotfiles/mise/config.toml ~/.config/mise/config.toml
+
+mise install
+
 # idea
 ln -s ~/.dotfiles/idea/.ideavimrc ~/
 sudo ln -s ~/.dotfiles/idea/idea.conf /etc/sysctl.d/
@@ -151,16 +163,6 @@ ln -fs ~/.dotfiles/shell/fish/aliases ~/.config/fish/
 ln -fs ~/.dotfiles/shell/fish/config.fish ~/.config/fish/
 ln -fs ~/.dotfiles/shell/fish/completions/* ~/.config/fish/completions/
 ln -fs ~/.dotfiles/shell/fish/functions/* ~/.config/fish/functions/
-
-
-# mise
-sudo dnf copr enable jdxcode/mise
-sudo dnf install mise
-
-mise plugin add usage
-mise use -g usage
-
-mkdir -p ~/.config/mise
 
 mise completion fish > ~/.config/fish/completions/mise.fish
 
