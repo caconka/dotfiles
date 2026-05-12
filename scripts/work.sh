@@ -4,6 +4,9 @@
 mkdir -p ~/.shell/work
 ln -fs ~/code/code-configs/shell/work/masmovil/mm-bash ~/.shell/work/mm-shell
 
+# mise
+ln -fs ~/code/code-configs/shell/work/masmovil/mise.toml ~/code/masmovil/mise.toml
+
 # Code dir config
 mkdir ~/code/masmovil
 ln -s ~/.dotfiles/git/gitconfig_masmovil ~/code/masmovil/.gitconfig
