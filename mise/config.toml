@@ -1,7 +1,7 @@
 [tools]
-tmux = "latest"
 go = "latest"
 node = "latest"
+pnpm = "latest"
 java = "latest"
 maven = "latest"
 opencode = "latest"

@@ -43,7 +43,7 @@ ln -s ~/.dotfiles/shell/ptyxis/caconka.palette ~/.local/share/org.gnome.Ptyxis/p
 # ln -s ~/.dotfiles/shell/ghostty ~/.config/ghostty
 
 # Tools
-sudo dnf install -y xclip neovim eza ripgrep fd-find fzf bat
+sudo dnf install -y tmux xclip neovim eza ripgrep fd-find fzf bat
 mkidr -p ~/.tmux/plugins/tmp
 mkidr -p ~/.config/tmux/scripts
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # tmux package manager

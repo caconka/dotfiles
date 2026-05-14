@@ -45,6 +45,9 @@ abbr -a ks 'kubectl ns'
 abbr -a bazel 'bazelisk'
 abbr -a bz 'bazelisk'
 
+# npm
+abbr -a npm 'pnpm'
+
 # maven
 abbr -a mvn-dev 'mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar'
 
