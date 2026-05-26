@@ -47,6 +47,7 @@ abbr -a bz 'bazelisk'
 
 # npm
 abbr -a npm 'pnpm'
+abbr -a npx 'pnpm dlx'
 
 # maven
 abbr -a mvn-dev 'mvn clean package -Dmaven.test.skip && java -jar target/*-fat.jar'
