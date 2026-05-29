@@ -62,12 +62,3 @@ set -gx BAT_THEME GitHub
 
 ## Masmovil ##
 test -f "$HOME/.config/fish/work/mm-shell" && source "$HOME/.config/fish/work/mm-shell"
-
-## Gcloud and kubectl ##
-set -gx PATH $PATH $HOME/.krew/bin # kubectl krew plugin manager
-set -gx CLOUDSDK_PYTHON (which python3.11)
-if test -f "$HOME/.google-cloud-sdk/path.fish.inc"
-	source "$HOME/.google-cloud-sdk/path.fish.inc"
-else if test -f "/usr/lib64/google-cloud-sdk/completion.bash.inc"
-	bass source "/usr/lib64/google-cloud-sdk/completion.bash.inc"
-end
