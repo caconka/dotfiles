@@ -17,6 +17,7 @@
 	editor = vi
 	fsmonitor = true
 	untrackedcache = true
+	pager = less -x3
 
 [diff "sopsdiffer"]
 	textconv = sops -d

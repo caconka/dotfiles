@@ -1,9 +1,10 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
 	build = ":TSUpdate", -- In Fedora install "gcc-c++" package
 	event = "BufReadPre",
 	config = function()
-		require("nvim-treesitter.configs").setup({
+		require("nvim-treesitter").setup({
 			highlight = {
 				enable = true,
 				disable = function(lang, buf)
@@ -26,6 +27,8 @@ return {
 				"tsx",
 				"json",
 				"yaml",
+				"markdown",
+				"markdown_inline",
 			},
 		})
 	end,
