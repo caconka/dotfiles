@@ -1,0 +1,18 @@
+gtk-titlebar = false
+window-decoration = false
+window-padding-balance = true
+window-padding-x = 4
+window-padding-y = 0
+
+scrollback-limit = 10000
+
+mouse-hide-while-typing = true
+keybind = ctrl+enter=ignore
+
+theme = Catppuccin Latte
+background = #ffffff
+foreground = #000000
+cursor-invert-fg-bg = true
+
+font-family = CaskaydiaCove Nerd Font
+font-size = 10.5
