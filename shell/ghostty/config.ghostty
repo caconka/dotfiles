@@ -12,7 +12,11 @@ keybind = ctrl+enter=ignore
 theme = Catppuccin Latte
 background = #ffffff
 foreground = #000000
+cursor-color = #000000
 cursor-invert-fg-bg = true
+
+cursor-click-to-move = false
 
 font-family = CaskaydiaCove Nerd Font
 font-size = 10.5
+font-thicken = true

@@ -1,9 +1,12 @@
 [tools]
+lazygit = "latest"
 go = "latest"
 node = "lts"
 pnpm = "latest"
 java = "latest"
 maven = "latest"
+herdr = "latest"
+pi = "latest"
 opencode = "latest"
 claude = "latest"
 "aqua:rtk-ai/rtk" = "latest"

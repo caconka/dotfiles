@@ -65,6 +65,7 @@
 	cleanup = !git fetch -p && git branch -vv | grep -v '*' | grep -v 'origin' | awk '{print $1}' | \
 		grep -v "$(git main-branch)" | xargs git branch -D && git gc
 	main = "!git switch $(git main-branch) && git pull origin $(git main-branch)"
+	wt = worktree
 	wtl = worktree list
 
 [color]

@@ -1,0 +1,13 @@
+onboarding = false
+
+[ui.toast]
+delivery = "herdr"
+
+[theme]
+name = "catppuccin-latte"
+
+[keys]
+split_vertical = "prefix+percent"
+split_horizontal = 'prefix+"'
+rename_tab = "prefix+comma"
+focus_agent = "alt+1..9"
