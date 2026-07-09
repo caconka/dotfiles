@@ -12,3 +12,6 @@ claude = "latest"
 "aqua:rtk-ai/rtk" = "latest"
 usage = "3.3.0"
 kubecolor = "0.6.0"
+
+[settings]
+minimum_release_age = "0s"

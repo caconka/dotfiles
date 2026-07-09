@@ -10,6 +10,8 @@ require("caconka.config.options")
 require("caconka.config.mappings")
 require("caconka.config.functions")
 
+require("caconka.plugins.vendor.herdr-navigator")
+
 vim.api.nvim_create_autocmd("BufRead", {
 	pattern = "*",
 	callback = function()

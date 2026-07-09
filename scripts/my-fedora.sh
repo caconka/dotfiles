@@ -69,13 +69,15 @@ git clone git@github.com:caconka/notes.git ~/notes
 sudo dnf copr enable jdxcode/mise
 sudo dnf install mise
 
-mise plugin add usage
-mise use -g usage
-
 mkdir -p ~/.config/mise
 ln -fs ~/.dotfiles/mise/config.toml ~/.config/mise/config.toml
 
 mise install
+
+mkdir -p ~/.config/herdr
+ln -fs ~/.dotfiles/herdr/config.toml ~/.config/herdr/config.toml
+ln -fs ~/.dotfiles/herdr/navigate.sh ~/.config/herdr/navigate.sh
+ln -fs ~/.dotfiles/herdr/navigate.sh ~/.config/herdr/navigate.sh
 
 # idea
 ln -s ~/.dotfiles/idea/.ideavimrc ~/

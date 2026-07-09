@@ -7,7 +7,28 @@ delivery = "herdr"
 name = "catppuccin-latte"
 
 [keys]
+last_pane = "alt+["
 split_vertical = "prefix+percent"
 split_horizontal = 'prefix+"'
 rename_tab = "prefix+comma"
 focus_agent = "alt+1..9"
+
+[[keys.command]]
+key = "alt+h"
+type = "shell"
+command = "$HOME/.config/herdr/navigate.sh left"
+
+[[keys.command]]
+key = "alt+j"
+type = "shell"
+command = "$HOME/.config/herdr/navigate.sh down"
+
+[[keys.command]]
+key = "alt+k"
+type = "shell"
+command = "$HOME/.config/herdr/navigate.sh up"
+
+[[keys.command]]
+key = "alt+l"
+type = "shell"
+command = "$HOME/.config/herdr/navigate.sh right"
