@@ -79,6 +79,8 @@ ln -fs ~/.dotfiles/herdr/config.toml ~/.config/herdr/config.toml
 ln -fs ~/.dotfiles/herdr/navigate.sh ~/.config/herdr/navigate.sh
 ln -fs ~/.dotfiles/herdr/navigate.sh ~/.config/herdr/navigate.sh
 
+mkdir ~/.config/pi
+
 # idea
 ln -s ~/.dotfiles/idea/.ideavimrc ~/
 sudo ln -s ~/.dotfiles/idea/idea.conf /etc/sysctl.d/

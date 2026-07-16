@@ -7,13 +7,11 @@ delivery = "herdr"
 name = "catppuccin-latte"
 
 [keys]
-last_pane = "alt+["
+last_pane = "alt+;"
 split_vertical = "prefix+percent"
 split_horizontal = 'prefix+"'
 rename_tab = "prefix+comma"
 focus_agent = "alt+1..9"
-previous_workspace = "ctrl+["
-next_workspace = "ctrl+]"
 
 [[keys.command]]
 key = "alt+h"

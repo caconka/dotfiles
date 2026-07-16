@@ -60,5 +60,8 @@ set -gx KUBECTX_CURRENT_BGCOLOR (tput sgr0) # white background
 # bat
 set -gx BAT_THEME GitHub
 
+# Pi
+set -gx PI_CODING_AGENT_DIR "$HOME/.config/pi"
+
 ## Masmovil ##
 test -f "$HOME/.config/fish/work/mm-shell" && source "$HOME/.config/fish/work/mm-shell"
